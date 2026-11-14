@@ -1,0 +1,706 @@
+[
+  {
+    "index": 1,
+    "term": "Abstract deformation",
+    "slug": "abstract-deformation",
+    "section": "sec:first-order",
+    "definition": "A flat family with an identified special fibre, considered as a deformation of the scheme itself rather than of its position in an ambient scheme. Isomorphisms must respect the base and the identification of the special fibre. Forgetting an embedding can identify previously different embedded deformations.",
+    "examples": [
+      "The sections $x=0$ and $x=\\epsilon$ in $\\A^1\\times\\Spec k[\\epsilon]/(\\epsilon^2)$ give different embedded deformations of the origin. Abstractly each is simply $\\Spec k[\\epsilon]/(\\epsilon^2)$, so both give the trivial deformation of a point.",
+      "The deformation $x^2=\\epsilon$ of the double point has total ring $k[x]/(x^4)$, whereas the trivial deformation has ring $k[x,\\epsilon]/(x^2,\\epsilon^2)$. Their maximal ideals need different numbers of generators, so the two abstract deformations are not isomorphic."
+    ]
+  },
+  {
+    "index": 2,
+    "term": "Associated graded algebra",
+    "slug": "associated-graded-algebra",
+    "section": "sec:cones",
+    "definition": "The graded algebra $\\gr_I A=\\bigoplus_{n\\geq0}I^n/I^{n+1}$ attached to powers of an ideal. Its degree-zero ring is $A/I$. Multiplication retains the leading normal order of products. The relative spectrum of this algebra is the normal cone of the corresponding closed immersion.",
+    "examples": [
+      "For the origin in $\\A^2$, $I=(x,y)$ and $\\gr_I k[x,y]\\simeq k[u,v]$, with $u,v$ in degree one. Thus the normal cone is an affine plane over the origin.",
+      "For $I=(x^2)\\subset k[x]$, the associated graded algebra is $(k[x]/(x^2))[u]$, with $x$ of degree zero and $u$ of degree one. The normal direction is free, but the degree-zero base is a double point."
+    ]
+  },
+  {
+    "index": 3,
+    "term": "Base change",
+    "slug": "base-change",
+    "section": "sec:flatness",
+    "definition": "Replacing the parameter scheme of a family by another scheme mapping to it, using a fibre product. For affine schemes this is tensor product of coordinate rings. Taking a fibre is a special case. Flatness is preserved by base change, although many other properties require separate hypotheses.",
+    "examples": [
+      "Base change of $x^2=t$ along the point $t=0$ gives $k[x]/(x^2)$. Along $t=1$ it gives $k[x]/(x^2-1)$, which describes two reduced complex points.",
+      "Base change of the same family along $k[t]\\to k[\\epsilon]/(\\epsilon^2)$, $t\\mapsto\\epsilon$, gives $x^2=\\epsilon$. This turns an ordinary parameter family into a first-order deformation."
+    ]
+  },
+  {
+    "index": 4,
+    "term": "Blow-up",
+    "slug": "blow-up",
+    "section": "sec:blowup",
+    "definition": "For an ideal sheaf $\\mathcal I$, the scheme $\\Proj_X\\bigoplus_{n\\geq0}\\mathcal I^n$. It replaces the centre by projectivised normal directions and has a projective morphism to $X$. The construction uses the ordinary Rees algebra, rather than the extended algebra defining deformation to the normal cone.",
+    "examples": [
+      "Blowing up the origin in $\\A^2$ gives charts $y=ax$ and $x=by$. The exceptional fibre is obtained by gluing the two coordinate lines with $b=1/a$, producing $\\PP^1$.",
+      "Blowing up the origin in $\\A^1$ gives back $\\A^1$: the ideal $(x)$ is already invertible. A blow-up need not change the scheme when its centre is an effective Cartier divisor."
+    ]
+  },
+  {
+    "index": 5,
+    "term": "Cartier divisor",
+    "slug": "cartier-divisor",
+    "section": "sec:chern",
+    "definition": "A divisor described locally by invertible rational functions whose ratios on overlaps are regular units. It is effective when its local equations are regular nonzerodivisors. Effective Cartier divisors are regular embeddings of codimension one and determine line bundles through their local equations.",
+    "examples": [
+      "The equation $x^2=0$ defines an effective Cartier divisor in $\\A^1$, since $x^2$ is a nonzerodivisor in $k[x]$. Its underlying point is reduced only after discarding its multiplicity.",
+      "On the nodal scheme $xy=0$, the function $x$ is a zerodivisor. Its vanishing subscheme is therefore not an effective Cartier divisor cut out by that function."
+    ]
+  },
+  {
+    "index": 6,
+    "term": "Chern class",
+    "slug": "chern-class",
+    "section": "sec:chern",
+    "definition": "Characteristic classes of a vector bundle acting on Chow groups. The operation $c_r(E)$ lowers cycle dimension by $r$. For a line bundle, its first Chern class is intersection with the divisor of a rational section. The top Chern class governs the self-intersection of the zero section.",
+    "examples": [
+      "On $\\PP^1$, $c_1(\\OO(1))\\cap[\\PP^1]=[p]$, while $c_1(\\OO(-1))\\cap[\\PP^1]=-[p]$. The sign records the degree of the line bundle.",
+      "A trivial line bundle has a nowhere-vanishing section and first Chern class zero. Consequently a zero section with trivial normal line has zero self-intersection class."
+    ]
+  },
+  {
+    "index": 7,
+    "term": "Chow group",
+    "slug": "chow-group",
+    "section": "sec:cycles",
+    "definition": "The group $\\CH_d(X)$ of finite integer combinations of integral closed $d$-dimensional subschemes, modulo rational equivalence. It records cycles up to relations supplied by rational functions on subvarieties. Dimension subscripts matter because pullbacks and intersections can shift cycle dimension.",
+    "examples": [
+      "The group $\\CH_0(\\PP^1)$ is $\\mathbb Z$, measured by degree. Any two points represent the same class, because their difference is the divisor of a rational function.",
+      "In $\\A^1$, the function $x-a$ has divisor $[a]$ and no pole inside the affine line. Hence $[a]=0$ in $\\CH_0(\\A^1)$, and in fact this Chow group is zero."
+    ]
+  },
+  {
+    "index": 8,
+    "term": "Closed immersion",
+    "slug": "closed-immersion",
+    "section": "sec:conormal",
+    "definition": "A morphism identifying its source with a closed subscheme, including its scheme structure. Locally it corresponds to a surjection $A\\to A/I$. The kernel ideal, rather than merely its zero set, determines the immersion, its conormal sheaf and its normal cone.",
+    "examples": [
+      "The origin of $\\A^2$ is the closed immersion corresponding to $k[x,y]\\to k$, with kernel $(x,y)$. Its normal cone is two-dimensional.",
+      "The map $\\Spec k[x]/(x^2)\\to\\A^1$ is also a closed immersion. It has the same underlying image as the reduced origin, but a different ideal and a different normal-cone base."
+    ]
+  },
+  {
+    "index": 9,
+    "term": "Cone",
+    "slug": "cone",
+    "section": "sec:cones",
+    "definition": "A relative affine scheme $\\Spec_Z S$ from a nonnegatively graded algebra with $S_0=\\OO_Z$. Its grading supplies scalar dilation, and projection to degree zero supplies a vertex section. A cone can be singular or nonreduced and need not be the total space of a vector bundle.",
+    "examples": [
+      "The graded algebra $k[u,v]$ gives the cone $\\A^2$ over a point. Its dilation is $(u,v)\\mapsto(\\lambda u,\\lambda v)$, and this cone is a vector space.",
+      "The graded algebra $k[u,v]/(uv)$ gives two lines meeting at their common vertex. This cone is not a vector space: it is reducible and singular at the vertex."
+    ]
+  },
+  {
+    "index": 10,
+    "term": "Conormal sheaf",
+    "slug": "conormal-sheaf",
+    "section": "sec:conormal",
+    "definition": "For a closed immersion defined by $\\mathcal I$, the $\\OO_Z$-module $\\mathcal I/\\mathcal I^2$. It records equations to first normal order. Its symmetric algebra maps onto the associated graded algebra, giving the normal cone a closed embedding in the normal space.",
+    "examples": [
+      "For the line $y=0$ in $\\A^2$, the class of $y$ generates $I/I^2$ freely over $k[x]$. Thus its conormal sheaf is the trivial line bundle.",
+      "For the double point $(x^2)\\subset\\A^1$, the class of $x^2$ generates $(x^2)/(x^4)$ freely over $k[x]/(x^2)$. A nonreduced centre can still have locally free conormal sheaf."
+    ]
+  },
+  {
+    "index": 11,
+    "term": "Cotangent sheaf",
+    "slug": "cotangent-sheaf",
+    "section": "sec:conormal",
+    "definition": "The sheaf $\\Omega_{X/k}$ of K\\\"ahler differentials, characterised by the universal derivation of functions. It describes first-order changes in functions and fits into the conormal sequence for a closed immersion. On a smooth scheme it is locally free; at singularities it need not be.",
+    "examples": [
+      "For $\\A^2$, $\\Omega_{\\A^2/k}=\\OO\\,dx\\oplus\\OO\\,dy$. A derivation is determined freely by its values on the two coordinate functions.",
+      "For the node $A=k[x,y]/(xy)$, $\\Omega_{A/k}=(A\\,dx\\oplus A\\,dy)/(y\\,dx+x\\,dy)$. At the origin the relation vanishes after tensoring with $k$, leaving a two-dimensional cotangent space."
+    ]
+  },
+  {
+    "index": 12,
+    "term": "Cycle",
+    "slug": "cycle",
+    "section": "sec:cycles",
+    "definition": "A finite formal integer combination of integral closed subschemes of a fixed dimension. Coefficients may record multiplicity or a formal subtraction. A cycle is not itself a subscheme, and different scheme structures can determine the same cycle. Chow groups impose further rational-equivalence relations.",
+    "examples": [
+      "Two distinct points $p,q$ determine the zero-cycle $[p]+[q]$. The expression $[p]-[q]$ is also a cycle, even though a negative coefficient cannot describe a closed subscheme.",
+      "The double line $y^2=0$ in $\\A^2$ has fundamental cycle $2[\\{y=0\\}]$. The reduced line has fundamental cycle $[\\{y=0\\}]$, so their common support does not determine the cycle."
+    ]
+  },
+  {
+    "index": 13,
+    "term": "Deformation",
+    "slug": "deformation",
+    "section": "sec:flatness",
+    "definition": "A flat family over a pointed parameter scheme, together with an identification of its distinguished fibre with the scheme being deformed. Flatness is part of the definition used here. An embedded deformation also remembers an inclusion into a fixed ambient family; an abstract deformation forgets that inclusion.",
+    "examples": [
+      "The family $xy=t$ deforms the nodal curve $xy=0$ into smooth curves for $t\\ne0$. Its total coordinate ring is torsion-free over the parameter ring $k[t]$, so the family is flat.",
+      "The product $X\\times\\A^1\\to\\A^1$, with the fibre at zero identified with $X$, is a trivial deformation. The points of its total space still vary, but its scheme fibres are constantly $X$."
+    ]
+  },
+  {
+    "index": 14,
+    "term": "Deformation functor",
+    "slug": "deformation-functor",
+    "section": "sec:obstructions",
+    "definition": "A rule assigning to each local Artinian $k$-algebra with residue field $k$ the isomorphism classes of marked flat deformations over that algebra, compatibly with base change. Its value on the dual numbers records first-order deformation classes. Representability is an additional theorem, not part of the definition.",
+    "examples": [
+      "For the abstract deformation functor of a reduced point, every local Artinian base gives the trivial deformation of that point. Thus this functor has only one isomorphism class on each such base.",
+      "For a point embedded at zero in $\\A^1$, a deformation over a local Artinian algebra $R$ is a section $x=a$ with $a$ in its maximal ideal. Over the dual numbers this gives one scalar first-order parameter."
+    ]
+  },
+  {
+    "index": 15,
+    "term": "Deformation parameter",
+    "slug": "deformation-parameter",
+    "section": "sec:rees",
+    "definition": "A coordinate on the base of a family, such as $t$ on $\\A^1$, or the nilpotent $\\epsilon$ on the dual numbers. It specifies which fibre is chosen. It must be distinguished from coordinates on the scheme and from graded variables recording normal directions.",
+    "examples": [
+      "In $k[t,u]$ with the map to $\\A^1_t$, $t$ is the deformation parameter. In the normal-cone model $x=tu$, $u$ is a normal coordinate, rather than another base parameter.",
+      "In $x^2=\\epsilon$ over $k[\\epsilon]/(\\epsilon^2)$, $\\epsilon$ is a nilpotent parameter. It cannot be assigned a small nonzero complex number while retaining the relation $\\epsilon^2=0$."
+    ]
+  },
+  {
+    "index": 16,
+    "term": "Deformation to the normal cone",
+    "slug": "deformation-to-the-normal-cone",
+    "section": "sec:dnc",
+    "definition": "The canonical flat family associated with a closed immersion $Z\\subset X$. Its fibres at nonzero parameter values are $X$, while its fibre at zero is $C_ZX$. Affinely it is the spectrum of $A[t,I/t]$; globally it is an open subscheme of a blow-up.",
+    "examples": [
+      "For the origin in $\\A^1$, the family is $\\Spec k[t,u]$ with $x=tu$. Every nonzero fibre identifies with the original affine line, and the zero fibre is its normal line at the origin.",
+      "For the double point $I=(x^2)\\subset k[x]$, the family has equation $tu=x^2$. Its special fibre is $x^2=0$ in the $(x,u)$-plane: a normal line over a nonreduced base."
+    ]
+  },
+  {
+    "index": 17,
+    "term": "Dual numbers",
+    "slug": "dual-numbers",
+    "section": "sec:first-order",
+    "definition": "The algebra $k[\\epsilon]/(\\epsilon^2)$, whose nonzero nilpotent direction retains first-order terms but kills products of two first-order terms. Its spectrum is the standard infinitesimal parameter scheme. Maps from it to a scheme, with specified closed point, describe tangent vectors.",
+    "examples": [
+      "A tangent vector to $\\A^1$ at $a$ is the map $x\\mapsto a+b\\epsilon$. The scalar $b$ records the first-order change; all higher powers of $\\epsilon$ vanish.",
+      "The element $\\epsilon$ is not zero, but $\\epsilon^2=0$. The element $1+\\epsilon$ is nevertheless invertible, with inverse $1-\\epsilon$. This explains why first-order coordinate changes can be invertible."
+    ]
+  },
+  {
+    "index": 18,
+    "term": "Embedded deformation",
+    "slug": "embedded-deformation",
+    "section": "sec:embedded",
+    "definition": "A closed subscheme of a fixed ambient scheme times a parameter scheme, flat over the parameter and with a specified original fibre. Equivalence must preserve the fixed ambient embedding. An ambient coordinate change can produce an abstract isomorphism without identifying the embedded deformations in this sense.",
+    "examples": [
+      "The ideals $(x)$ and $(x-\\epsilon)$ in $k[x,\\epsilon]/(\\epsilon^2)$ give distinct embedded deformations of the origin. Both quotients are free of rank one over the dual numbers.",
+      "The double-point equations $x^2=0$ and $x^2+\\epsilon x=0$ define distinct embedded deformations in the fixed affine line. The change $x\\mapsto x+\\epsilon/2$ identifies them abstractly, since $\\epsilon^2=0$."
+    ]
+  },
+  {
+    "index": 19,
+    "term": "Exceptional divisor",
+    "slug": "exceptional-divisor",
+    "section": "sec:blowup",
+    "definition": "In a blow-up, the scheme-theoretic inverse image of the centre, defined by its pulled-back invertible ideal. It is $\\Proj_Z\\gr_{\\mathcal I}\\OO_X$. This projectivised cone is only part of the special fibre in the full blow-up construction of deformation to the normal cone.",
+    "examples": [
+      "For the blow-up of the origin in $\\A^2$, the exceptional divisor is $\\PP^1$. Its points record lines of approach to the original point.",
+      "For the blow-up of $\\A^1$ along $(x)$, the blow-up is an isomorphism and the inverse-image divisor is still the origin. The divisor defined by the pulled-back ideal should not be confused with a nonempty locus where the morphism fails to be an isomorphism."
+    ]
+  },
+  {
+    "index": 20,
+    "term": "Excess intersection",
+    "slug": "excess-intersection",
+    "section": "sec:excess",
+    "definition": "An intersection whose actual dimension exceeds the dimension predicted by adding codimensions in the ambient space. Its intersection class cannot generally be obtained by taking the fundamental cycle of the intersection. Under regularity hypotheses an excess normal bundle supplies the correcting Chern class.",
+    "examples": [
+      "Intersecting a line in $\\PP^2$ with itself leaves a whole line, although the expected dimension is zero. Its intersection class is a point class, obtained from its normal line bundle $\\OO(1)$.",
+      "Intersecting a plane in $\\PP^3$ with itself leaves a plane, while the expected dimension is one. The excess line bundle is $\\OO(1)$ on that plane, whose first Chern class produces a line class."
+    ]
+  },
+  {
+    "index": 21,
+    "term": "Excess normal bundle",
+    "slug": "excess-normal-bundle",
+    "section": "sec:excess",
+    "definition": "For a base-changed regular embedding that is again regular, the quotient of the pulled-back original normal bundle by the new normal bundle. Its rank is the excess codimension. The top Chern class of this quotient converts the actual intersection into the refined intersection class.",
+    "examples": [
+      "In the self-intersection of a line $L\\subset\\PP^2$, the base-changed embedding is the identity of $L$, with zero normal bundle. The excess bundle is therefore $N_{L/\\PP^2}=\\OO_L(1)$.",
+      "For the transverse coordinate axes in $\\A^2$, the normal line of the intersection point inside one axis maps isomorphically to the other axis's pulled-back normal line. Their quotient is the zero bundle, so there is no excess correction."
+    ]
+  },
+  {
+    "index": 22,
+    "term": "Expected dimension",
+    "slug": "expected-dimension",
+    "section": "sec:multiplicity",
+    "definition": "For subschemes of dimensions $a,b$ in a smooth ambient scheme of dimension $n$, the dimension $a+b-n$ predicted for an intersection. Proper intersection has this dimension componentwise. It is a prediction based on codimensions, not a guarantee for arbitrary equations.",
+    "examples": [
+      "Two distinct planes in $\\A^3$ defined by independent linear equations have expected dimension $2+2-3=1$. Their intersection is indeed a line.",
+      "Two copies of the same line in $\\PP^2$ have expected intersection dimension $1+1-2=0$, but actual intersection dimension one. This is the simplest excess-intersection situation."
+    ]
+  },
+  {
+    "index": 23,
+    "term": "Extended Rees algebra",
+    "slug": "extended-rees-algebra",
+    "section": "sec:rees",
+    "definition": "The subalgebra $A[t,I/t]\\subset A[t,t^{-1}]$ generated by $A$, $t$ and the elements $f/t$ for $f\\in I$. Its nonzero fibres recover $A$, and its quotient by $t$ is $\\gr_I A$. It is the affine algebra underlying deformation to the normal cone.",
+    "examples": [
+      "For $A=k[x]$ and $I=(x)$, writing $u=x/t$ gives $A[t,I/t]\\simeq k[t,u]$, with the original coordinate recovered as $x=tu$.",
+      "For $I=(x^2)$, writing $u=x^2/t$ gives $k[t,x,u]/(tu-x^2)$. At $t=0$ the equation becomes $x^2=0$; eliminating the original coordinate before taking the fibre would lose this nilpotent structure."
+    ]
+  },
+  {
+    "index": 24,
+    "term": "Fibre",
+    "slug": "fibre",
+    "section": "sec:flatness",
+    "definition": "For $f:X\\to S$ and a point $s\\in S$, the scheme $X_s=X\\times_S\\Spec\\kappa(s)$. Affinely its ring is obtained by tensoring with the residue field. A fibre retains nilpotents and multiplicities, rather than only the set of points lying over $s$.",
+    "examples": [
+      "The fibre of $x^2=t$ at $t=0$ is the double point $\\Spec k[x]/(x^2)$. Its topological space has one point, but its coordinate ring has dimension two over $k$.",
+      "The fibre of $tx=0$ at $t=0$ is an entire affine line; every nonzero fibre is the single reduced point $x=0$. This dimension jump accompanies failure of flatness."
+    ]
+  },
+  {
+    "index": 25,
+    "term": "First-order deformation",
+    "slug": "first-order-deformation",
+    "section": "sec:first-order",
+    "definition": "A marked flat deformation over $\\Spec k[\\epsilon]/(\\epsilon^2)$. It retains only the infinitesimal linear variation of equations or gluing. Its equivalence relation depends on whether the deformation is embedded or abstract; changing ambient coordinates is not automatically an allowed embedded equivalence.",
+    "examples": [
+      "The equation $x=\\epsilon a$ gives a first-order embedded motion of the origin in $\\A^1$. Its quotient ring is the dual-number ring itself, so it is abstractly trivial for every scalar $a$.",
+      "The equation $x^2=\\epsilon$ gives a first-order deformation of a double point. Its algebra is free over the dual numbers with basis $1,x$, and it is not isomorphic to the trivial deformation."
+    ]
+  },
+  {
+    "index": 26,
+    "term": "Flat family",
+    "slug": "flat-family",
+    "section": "sec:flatness",
+    "definition": "A morphism of finite presentation that is flat over its base. Affinely, flatness means tensoring with its coordinate module preserves exact sequences. A deformation additionally marks a distinguished fibre. Flat families can have singular or nonreduced special fibres, so flatness is weaker than smoothness.",
+    "examples": [
+      "The ring $k[t,x]/(x^2-t)$ is free over $k[t]$ with basis $1,x$. Thus two reduced points can specialise flatly to a double point while their total length remains two.",
+      "The family $tx=0$ is not flat over $k[t]$: its coordinate ring contains the nonzero element $x$ killed by $t$. Here torsion over the principal ideal domain $k[t]$ detects nonflatness."
+    ]
+  },
+  {
+    "index": 27,
+    "term": "Flat pullback",
+    "slug": "flat-pullback",
+    "section": "sec:gysin",
+    "definition": "For a flat morphism of constant relative dimension $r$, pullback of cycles and Chow classes increasing dimension by $r$. It uses the fundamental cycles of scheme-theoretic inverse images, including their generic multiplicities. It differs from the dimension-decreasing Gysin map for a regular embedding.",
+    "examples": [
+      "Under the projection $\\A^1\\times\\A^1\\to\\A^1$, the flat pullback of the point at zero is the whole fibre $\\{0\\}\\times\\A^1$, a one-dimensional cycle.",
+      "For the finite flat map $\\A^1_x\\to\\A^1_u$ defined by $u=x^2$, pullback of $[0]$ is $2[0]$. The coefficient comes from the length of $k[x]/(x^2)$, although the relative dimension is zero."
+    ]
+  },
+  {
+    "index": 28,
+    "term": "Fundamental cycle",
+    "slug": "fundamental-cycle",
+    "section": "sec:cycles",
+    "definition": "For a pure-dimensional scheme, the cycle obtained by summing its reduced irreducible components with coefficients equal to lengths at their generic points. It remembers generic nilpotent multiplicity. Embedded components do not appear as additional terms in this fundamental cycle.",
+    "examples": [
+      "The double point $\\Spec k[x]/(x^2)$ has fundamental zero-cycle $2[0]$, since its local ring has length two.",
+      "The nodal curve $xy=0$ has fundamental cycle $[\\{x=0\\}]+[\\{y=0\\}]$. Each branch is generically reduced, so each coefficient is one."
+    ]
+  },
+  {
+    "index": 29,
+    "term": "Gysin pullback",
+    "slug": "gysin-pullback",
+    "section": "sec:gysin",
+    "definition": "For a regular embedding of codimension $c$, a pullback on Chow groups lowering dimension by $c$. Deformation to the normal cone defines it by specialization followed by inverse vector-bundle pullback. It extends proper intersection and also gives self-intersection classes when ordinary dimension counting fails.",
+    "examples": [
+      "For the embedding of the origin $i:\\Spec k\\hookrightarrow\\A^1$, one has $i^![\\A^1]=[0]$ in the Chow group of the point. This is a codimension-one, hence dimension-decreasing, pullback.",
+      "In $\\PP^2$ with coordinates $[X:Y:Z]$, let $L$ be $Y=0$ and $C$ the conic $YZ=X^2$. Then $i_L^![C]=2[p]$ in $\\CH_0(L)$, where $p=[0:0:1]$, because the tangency has length two."
+    ]
+  },
+  {
+    "index": 30,
+    "term": "Hilbert polynomial",
+    "slug": "hilbert-polynomial",
+    "section": "sec:flatness",
+    "definition": "For a projective scheme with a chosen ample twisting line bundle, the polynomial giving the dimension of its global twisted sections for sufficiently large twists. In a projective flat family with a fixed relative polarization it is locally constant. Scheme structure, not only support, affects this polynomial.",
+    "examples": [
+      "A zero-dimensional scheme of length two has constant Hilbert polynomial $2$. This holds both for two distinct reduced points and for a double point, explaining their compatibility in a projective flat family.",
+      "A line in $\\PP^2$ has Hilbert polynomial $n+1$, while the double line defined by its squared equation has polynomial $2n+1$. Their identical reduced support therefore does not give equal Hilbert polynomials."
+    ]
+  },
+  {
+    "index": 31,
+    "term": "Ideal sheaf",
+    "slug": "ideal-sheaf",
+    "section": "sec:conormal",
+    "definition": "For a closed immersion $Z\\subset X$, the kernel $\\mathcal I$ of $\\OO_X\\to i_*\\OO_Z$. It specifies the full scheme structure and generates the powers used in infinitesimal neighbourhoods, the associated graded algebra and the Rees constructions. Different ideals can have the same vanishing set.",
+    "examples": [
+      "The ideal of the origin in $\\A^2$ is $(x,y)$. Its square $(x^2,xy,y^2)$ defines a thicker subscheme supported at the same point.",
+      "The ideals $(x)$ and $(x^2)$ in $k[x]$ define respectively a reduced point and a double point. Their radicals agree, but the quotient rings have lengths one and two."
+    ]
+  },
+  {
+    "index": 32,
+    "term": "Infinitesimal neighbourhood",
+    "slug": "infinitesimal-neighbourhood",
+    "section": "sec:conormal",
+    "definition": "For an ideal sheaf $\\mathcal I$ defining $Z\\subset X$, the subscheme defined by $\\mathcal I^{r+1}$ is its $r$th infinitesimal neighbourhood, in the convention used here. Its underlying topological space is $Z$, but it retains normal information to higher order. The first neighbourhood uses $\\mathcal I^2$.",
+    "examples": [
+      "For the origin in $\\A^1$, the first infinitesimal neighbourhood is $\\Spec k[x]/(x^2)$. The second is $\\Spec k[x]/(x^3)$, which retains one additional order of nilpotence.",
+      "For the line $y=0$ in $\\A^2$, its first neighbourhood is $y^2=0$. Functions have the form $a(x)+y b(x)$, with products of two normal first-order terms set to zero."
+    ]
+  },
+  {
+    "index": 33,
+    "term": "Intersection multiplicity",
+    "slug": "intersection-multiplicity",
+    "section": "sec:multiplicity",
+    "definition": "A local numerical contribution to an intersection. For two plane curves with no common component, the multiplicity at an isolated intersection point is the length of the local quotient by their two equations. It can exceed one even when both curves are smooth.",
+    "examples": [
+      "The coordinate axes in $\\A^2$ have local quotient $k[x,y]_{(x,y)}/(x,y)=k$. Their intersection multiplicity at the origin is one.",
+      "For $y=0$ and $y=x^2$, the quotient is $k[x]_{(x)}/(x^2)$, with basis $1,x$. The origin has intersection multiplicity two, although the underlying intersection contains only one point."
+    ]
+  },
+  {
+    "index": 34,
+    "term": "Intersection product",
+    "slug": "intersection-product",
+    "section": "sec:gysin",
+    "definition": "An operation on Chow classes that produces the intersection class with its expected dimension. On a smooth $n$-dimensional variety it is defined using the regular diagonal and refined Gysin pullback: $\\alpha\\cdot\\beta=\\Delta^!(\\alpha\\times\\beta)$. The result is a class, not generally a literal intersection subscheme.",
+    "examples": [
+      "Two distinct lines in $\\PP^2$ meet transversely in a point, so their Chow-class product is the point class.",
+      "A line $L$ in $\\PP^2$ also has $[L]\\cdot[L]=[p]$. Its scheme-theoretic intersection with itself is the whole line; the product uses the normal bundle to produce the expected zero-dimensional class."
+    ]
+  },
+  {
+    "index": 35,
+    "term": "Length",
+    "slug": "length",
+    "section": "sec:multiplicity",
+    "definition": "The number of simple factors in a composition series of a module of finite length. For an Artinian local algebra with residue field $k$, its length equals its $k$-vector-space dimension. This provides a scheme-sensitive way to count isolated intersections.",
+    "examples": [
+      "The local algebra $k[x]/(x^3)$ has filtration $(0)\\subset(x^2)\\subset(x)\\subset k[x]/(x^3)$. Its length is three, with vector-space basis $1,x,x^2$.",
+      "The reduced scheme of two distinct $k$-points has coordinate algebra $k\\times k$. Its two local lengths are one each, giving total length two; this is not a local algebra."
+    ]
+  },
+  {
+    "index": 36,
+    "term": "Local complete intersection",
+    "slug": "local-complete-intersection",
+    "section": "sec:regular",
+    "definition": "A closed subscheme is a local complete intersection in its specified ambient scheme when its ideal is locally generated by a regular sequence. This is a property of the embedding. A local complete intersection morphism more generally locally factors as a regular embedding followed by a smooth morphism.",
+    "examples": [
+      "The double point $V(x^2)\\subset\\A^1$ is a local complete intersection: $x^2$ is a nonzero divisor in $k[x]$, although the subscheme is nonreduced.",
+      "The three equations of $(x,y)^2\\subset k[x,y]$ are minimally needed at the origin, while the subscheme has codimension two. This fat point is not a local complete intersection in $\\A^2$."
+    ]
+  },
+  {
+    "index": 37,
+    "term": "Normal bundle",
+    "slug": "normal-bundle",
+    "section": "sec:regular",
+    "definition": "For a regular embedding $Z\\hookrightarrow X$, the vector bundle with sheaf of sections $(\\mathcal I/\\mathcal I^2)^\\vee$. Its total space is $\\Spec_Z\\Sym(\\mathcal I/\\mathcal I^2)$, and equals the normal cone. Local freeness distinguishes this case from a general normal sheaf.",
+    "examples": [
+      "The origin in $\\A^2$ has conormal space spanned by the classes of $x,y$. Its normal bundle is the two-dimensional vector space $\\A^2$ over that point.",
+      "For a line $L\\subset\\PP^2$, the normal bundle is $\\OO_L(1)$. For the exceptional curve of the blow-up of $\\PP^2$ at a point, it is $\\OO_{\\PP^1}(-1)$. These opposite degrees control their opposite self-intersections."
+    ]
+  },
+  {
+    "index": 38,
+    "term": "Normal cone",
+    "slug": "normal-cone",
+    "section": "sec:cones",
+    "definition": "For a closed immersion with ideal $\\mathcal I$, the cone $C_ZX=\\Spec_Z\\bigoplus_{n\\ge0}\\mathcal I^n/\\mathcal I^{n+1}$. It records all leading orders along the centre, including nonlinear relations and nilpotents. It becomes an honest vector bundle for a regular embedding.",
+    "examples": [
+      "For $Z=V(x^2)\\subset\\A^1$, the cone has coordinate algebra $(k[x]/(x^2))[U]$. It is a line bundle over a nonreduced double point, and its total space is nonreduced.",
+      "For the origin in the nodal curve $V(xy)\\subset\\A^2$, the cone is $\\Spec k[U,V]/(UV)$. Its two axes are not a vector space, even though the ambient normal space at the point is $\\A^2$."
+    ]
+  },
+  {
+    "index": 39,
+    "term": "Normal sheaf",
+    "slug": "normal-sheaf",
+    "section": "sec:conormal",
+    "definition": "The sheaf $\\mathcal N_{Z/X}=\\mathcal Hom_{\\OO_Z}(\\mathcal I/\\mathcal I^2,\\OO_Z)$ associated with a closed immersion. Its global sections classify embedded first-order deformations with the ambient scheme fixed. It need not be locally free, and therefore need not define an honest vector bundle.",
+    "examples": [
+      "For the origin in $\\A^1$, the normal sheaf is the one-dimensional vector space $k$. Its section $a$ describes the embedded first-order point $x=\\epsilon a$.",
+      "For a line $L\\subset\\PP^2$, the normal sheaf is $\\OO_L(1)$. Its two independent global sections give the two parameters for moving a line near $L$ in the dual projective plane."
+    ]
+  },
+  {
+    "index": 40,
+    "term": "Obstruction",
+    "slug": "obstruction",
+    "section": "sec:obstructions",
+    "definition": "A failure to extend specified infinitesimal data across a thicker base. An obstruction class belongs to a space determined by the deformation problem; that space is not itself the obstruction. A first-order direction need not extend to second order, even when it satisfies all first-order equations.",
+    "examples": [
+      "The parameter map $\\Spec k[\\epsilon]/(\\epsilon^2)\\to\\Spec k[a]/(a^2)$ given by $a\\mapsto\\epsilon$ cannot lift with the same first-order term to $k[\\epsilon]/(\\epsilon^3)$: every candidate $a=\\epsilon+c\\epsilon^2$ has square $\\epsilon^2\\ne0$. This is an obstructed lifting problem.",
+      "The embedded deformation $x^2+\\epsilon x=0$ does extend to every base $k[\\epsilon]/(\\epsilon^{m+1})$ using the same monic equation. Its quotient is free on $1,x$, so these explicit extensions remain flat."
+    ]
+  },
+  {
+    "index": 41,
+    "term": "Ordinary Rees algebra",
+    "slug": "ordinary-rees-algebra",
+    "section": "sec:blowup",
+    "definition": "The graded algebra $\\mathcal R(I)=\\bigoplus_{n\\ge0}I^n s^n\\subset A[s]$, where the auxiliary symbol $s$ has degree one. Its Proj is the blow-up of $\\Spec A$ along $I$. It differs from the extended Rees algebra used to obtain a family over the deformation parameter.",
+    "examples": [
+      "For $I=(x,y)\\subset k[x,y]$, the Rees algebra is $k[x,y,U,V]/(yU-xV)$, with $U,V$ of degree one. Its Proj is the blow-up of the origin.",
+      "For the principal ideal $I=(x^2)\\subset k[x]$, the Rees algebra is a polynomial algebra $k[x][U]$ with $U\\mapsto x^2s$. Its relative Proj is $\\A^1$: blowing up an effective Cartier divisor does not change the ambient scheme."
+    ]
+  },
+  {
+    "index": 42,
+    "term": "Proper intersection",
+    "slug": "proper-intersection",
+    "section": "sec:multiplicity",
+    "definition": "An intersection whose components have the expected codimension in the ambient smooth variety. This condition concerns dimensions and does not mean transverse intersection. It also differs from properness of a morphism, which is a compactness-type condition.",
+    "examples": [
+      "The curves $y=0$ and $y=x^2$ meet properly in $\\A^2$: their intersection is zero-dimensional as expected. They are tangent, so proper intersection does not force multiplicity one.",
+      "A line in $\\PP^2$ intersected with itself has a one-dimensional scheme-theoretic intersection, although the expected dimension is zero. This is an excess intersection."
+    ]
+  },
+  {
+    "index": 43,
+    "term": "Proper morphism",
+    "slug": "proper-morphism",
+    "section": "sec:compactification",
+    "definition": "A morphism that is separated, of finite type and universally closed. Proper maps admit pushforward on Chow groups, and allow degrees of zero-cycles over the ground field. Projective morphisms are proper; an affine morphism or a flat family need not be proper.",
+    "examples": [
+      "The blow-up $\\Bl_ZX\\to X$ is projective and hence proper, even when $X$ itself is affine. Properness here refers to the map, not necessarily to its source over $k$.",
+      "The open deformation to the normal cone of the origin in $\\A^1$ is $\\A^2_{u,t}\\to\\A^1_t$. Its fibres are affine lines, so this flat morphism is not proper."
+    ]
+  },
+  {
+    "index": 44,
+    "term": "Projective completion of a cone",
+    "slug": "projective-completion-of-a-cone",
+    "section": "sec:compactification",
+    "definition": "For a cone $C=\\Spec_Z S$ generated in degree one, the scheme $\\overline C=\\Proj_Z S[z]$ with $z$ of degree one. The chart $z\\ne0$ is $C$ and the boundary $z=0$ is $\\Proj_Z S$. The completion is projective over the centre.",
+    "examples": [
+      "Completing the cone $\\A^1$ over a point gives $\\Proj k[U,z]=\\PP^1$. The original affine line is the chart $z\\ne0$, and the boundary is one point.",
+      "Completing the nodal cone $UV=0$ gives $\\Proj k[U,V,z]/(UV)$. It is the union of two projective lines meeting at $[0:0:1]$; its boundary consists of two points."
+    ]
+  },
+  {
+    "index": 45,
+    "term": "Rational equivalence",
+    "slug": "rational-equivalence",
+    "section": "sec:cycles",
+    "definition": "The equivalence relation on cycles generated by divisors of nonzero rational functions on integral subvarieties of one larger dimension. Quotienting cycles by these relations gives Chow groups. A nonzero cycle may therefore determine the zero Chow class, especially on a nonproper scheme.",
+    "examples": [
+      "On $\\PP^1$, the rational function $x$ has divisor $[0]-[\\infty]$. Thus the two points have the same Chow class, although they are distinct cycles.",
+      "On $\\A^1$, the regular function $x$ has divisor $[0]$, since the pole at infinity lies outside the scheme. Consequently $[0]=0$ in $\\CH_0(\\A^1)$; degree does not descend here as it does on a proper curve."
+    ]
+  },
+  {
+    "index": 46,
+    "term": "Refined Gysin pullback",
+    "slug": "refined-gysin-pullback",
+    "section": "sec:gysin",
+    "definition": "For a regular embedding $i:Z\\hookrightarrow X$ of codimension $r$ and any $Y\\to X$, an operation $i^!: \\CH_k(Y)\\to\\CH_{k-r}(Z\\times_XY)$. It specializes to the normal cone of the inverse image, embeds that cone in the pulled-back normal bundle, and applies the zero-section operation.",
+    "examples": [
+      "Pull the divisor $y=0$ back to the curve $y=x^2$. The inverse-image subscheme is $\\Spec k[x]/(x^2)$, and refined intersection gives its length-two zero-cycle rather than the reduced origin.",
+      "Pull a line $L\\subset\\PP^2$ back along its own inclusion. The inverse image is $L$, but the refined pullback lowers dimension by one and gives $c_1(\\OO_L(1))\\cap[L]$, a point class."
+    ]
+  },
+  {
+    "index": 47,
+    "term": "Regular embedding",
+    "slug": "regular-embedding",
+    "section": "sec:regular",
+    "definition": "A closed immersion whose ideal is locally generated by a regular sequence, with the specified codimension equal to its length. In the Noetherian setting here this makes the conormal sheaf locally free and identifies the normal cone with the associated normal bundle. The centre itself can still be singular or nonreduced.",
+    "examples": [
+      "The origin in $\\A^2$ is a regular embedding of codimension two: $x$ is a nonzero divisor, and $y$ remains a nonzero divisor modulo $x$.",
+      "The double point $V(x^2)\\subset\\A^1$ is a regular embedding of codimension one. In contrast, the origin in $V(xy)$ is not regularly embedded: its ideal needs two generators despite the curve having dimension one."
+    ]
+  },
+  {
+    "index": 48,
+    "term": "Regular sequence",
+    "slug": "regular-sequence",
+    "section": "sec:regular",
+    "definition": "A sequence $f_1,\\ldots,f_r$ generating a proper ideal such that each $f_j$ is a nonzero divisor after quotienting by its predecessors. The condition controls relations among equations and gives the expected normal bundle. Merely having $r$ equations does not establish regularity.",
+    "examples": [
+      "In $k[x,y]$, the sequence $x,y$ is regular because the successive quotient rings are $k[y]$ and $k$. The same conclusion holds for $x^2,y$, although the intermediate quotient has nilpotents.",
+      "The sequence $x,xy$ is not regular in $k[x,y]$: modulo $x$, the second element becomes zero. Its common zero locus is a line, not a codimension-two complete intersection."
+    ]
+  },
+  {
+    "index": 49,
+    "term": "Saturation",
+    "slug": "saturation",
+    "section": "sec:rees",
+    "definition": "For an ideal $J$ in a ring with parameter $t$, its saturation $J:t^\\infty$ consists of elements whose product with some power of $t$ lies in $J$. It describes the closure of the family over $t\\ne0$ and removes components and parameter torsion supported only at the special parameter.",
+    "examples": [
+      "In $k[t,u]$, saturating $(tu)$ by $t$ gives $(u)$. The component $t=0$ in the naive equation disappears when one closes only the family $u=0$ over $t\\ne0$.",
+      "Let $A=k[x]/(x^2)$ and $I=(x)$. The naive relation $tu=x$ leaves $t^2u^2=0$; saturation also imposes $u^2=0$. The actual extended Rees algebra is $k[t,u]/(u^2)$, with $x=tu$."
+    ]
+  },
+  {
+    "index": 50,
+    "term": "Scheme-theoretic intersection",
+    "slug": "scheme-theoretic-intersection",
+    "section": "sec:multiplicity",
+    "definition": "The fibre product of two closed subschemes inside an ambient scheme. Affinely, ideals $I$ and $J$ give intersection ideal $I+J$ and coordinate algebra $A/(I+J)$. This retains nilpotents and multiplicities which disappear if one first replaces the intersection by its reduced underlying set.",
+    "examples": [
+      "For $V(y)$ and $V(y-x^2)$ in $\\A^2$, the intersection ideal is $(y,x^2)$. The intersection is a double point rather than the reduced origin.",
+      "Intersecting a subscheme with itself gives the same subscheme: $I+I=I$. Thus the scheme-theoretic self-intersection of a line is the line itself, whereas its intersection product in a surface is a zero-dimensional class."
+    ]
+  },
+  {
+    "index": 51,
+    "term": "Segre class",
+    "slug": "segre-class",
+    "section": "sec:excess",
+    "definition": "A Chow class attached to a cone or an embedding, obtained from the projective completion by pushing forward powers of its tautological hyperplane class against the fundamental cycle. For a regular embedding with normal bundle $N$, it is $c(N)^{-1}\\cap[Z]$. Its components have different dimensions.",
+    "examples": [
+      "For a line $L\\subset\\PP^2$, the normal bundle is $\\OO_L(1)$. Hence $s(L,\\PP^2)=(1-h)[L]=[L]-[p]$, with components of dimensions one and zero.",
+      "For the exceptional curve $E\\subset\\Bl_p\\PP^2$, the normal bundle is $\\OO_E(-1)$. Its Segre class is $[E]+[p]$, since $(1-h)^{-1}=1+h$ on the curve."
+    ]
+  },
+  {
+    "index": 52,
+    "term": "Self-intersection",
+    "slug": "self-intersection",
+    "section": "sec:self",
+    "definition": "The intersection-theoretic class obtained by intersecting an embedding with itself. For a regular embedding $i$ of codimension $r$, the formula $i^!i_*\\alpha=c_r(N_{Z/X})\\cap\\alpha$ uses the normal bundle. It produces the expected dimension even though the literal self-intersection retains the whole subscheme.",
+    "examples": [
+      "A line in $\\PP^2$ has normal bundle $\\OO(1)$ and self-intersection number $1$. Moving one copy to a distinct line makes the single intersection point visible.",
+      "The exceptional curve in the proper surface $\\Bl_p\\PP^2$ has normal bundle $\\OO(-1)$ and self-intersection number $-1$. Its negative contribution is a normal-bundle degree, not a negative count of actual intersection points."
+    ]
+  },
+  {
+    "index": 53,
+    "term": "Smooth morphism",
+    "slug": "smooth-morphism",
+    "section": "sec:flatness",
+    "definition": "A morphism of finite presentation that is flat with geometrically regular fibres. It describes a family without singularities relative to the base. Flatness alone allows singular fibres, and a morphism from a smooth total space can still fail to be smooth at a singular fibre.",
+    "examples": [
+      "The projection $\\A^2_{x,t}\\to\\A^1_t$ is smooth: it is a product family of affine lines.",
+      "The map $\\A^2_{x,y}\\to\\A^1_t$ given by $t=xy$ is flat, but its fibre over zero is the nodal union $xy=0$. It is not smooth at the origin, despite the total space being smooth."
+    ]
+  },
+  {
+    "index": 54,
+    "term": "Specialization",
+    "slug": "specialization",
+    "section": "sec:specialization",
+    "definition": "For deformation to the normal cone, the homomorphism $\\sigma:\\CH_k(X)\\to\\CH_k(C_ZX)$ obtained by extending a cycle through the deformation family and restricting at zero. On an integral subvariety $V$, it gives the fundamental cycle of $C_{Z\\cap V}V$ inside the ambient normal cone.",
+    "examples": [
+      "For the origin in $\\A^2$, the entire plane specializes to its normal plane. The line $y=mx$ through the origin specializes to the same direction $V=mU$ in that plane.",
+      "For $Z=V(y)\\subset\\A^2$ and $V=V(y-x^2)$, the induced deformation is $tv=x^2$. Its special fibre is the doubled line $x^2=0$, so specialization retains multiplicity two."
+    ]
+  },
+  {
+    "index": 55,
+    "term": "Strict transform",
+    "slug": "strict-transform",
+    "section": "sec:blowup",
+    "definition": "The scheme-theoretic closure of the inverse image of a subscheme away from the blow-up centre. It differs from the full inverse image, which can contain exceptional components. In deformation arguments the same closure principle selects the family coming from the general fibres.",
+    "examples": [
+      "In the $x$-chart of $\\Bl_0\\A^2$, write $y=xu$. The total transform of the line $y=0$ is $xu=0$, while its strict transform is $u=0$. The other component is exceptional.",
+      "In that chart, the parabola $y=x^2$ has strict-transform equation $u=x$. It meets the exceptional divisor $x=0$ at $u=0$, recording its tangent direction."
+    ]
+  },
+  {
+    "index": 56,
+    "term": "Tangent cone",
+    "slug": "tangent-cone",
+    "section": "sec:cones",
+    "definition": "The normal cone to a point, given by $\\Spec\\gr_{\\mathfrak m}\\OO_{X,p}$ at a closed point with maximal ideal $\\mathfrak m$. It records the lowest-degree local equations and lies in the Zariski tangent space. It can be reducible or nonreduced, and need not be a vector space.",
+    "examples": [
+      "At the origin of the node $xy=0$, the tangent cone is the union of the two coordinate axes $UV=0$. Its two components record two tangent directions.",
+      "At the cusp $y^2=x^3$, the tangent cone is the doubled line $V^2=0$, because the lowest-degree term of the equation is $y^2$. Its reduced support is only one line."
+    ]
+  },
+  {
+    "index": 57,
+    "term": "Tangent space",
+    "slug": "tangent-space",
+    "section": "sec:first-order",
+    "definition": "The vector space $T_pX=\\Hom_k(\\mathfrak m_p/\\mathfrak m_p^2,k)$ at a $k$-point. Equivalently, its vectors are maps from the dual-number point to $X$ centred at $p$. For singular schemes this linear approximation can be larger than the tangent cone or the dimension of the scheme.",
+    "examples": [
+      "At the origin of $\\A^2$, a tangent vector is the map $x\\mapsto a\\epsilon$, $y\\mapsto b\\epsilon$. All pairs $(a,b)$ occur, giving $T_0\\A^2=k^2$.",
+      "At the origin of $xy=0$, the equation imposes no first-order condition because $\\epsilon^2=0$. The tangent space is all $k^2$, while the tangent cone is only the union of its coordinate axes."
+    ]
+  },
+  {
+    "index": 58,
+    "term": "Tor-independence",
+    "slug": "tor-independence",
+    "section": "sec:gysin",
+    "definition": "A condition on two schemes over an ambient scheme requiring all positive local Tor sheaves of their structure sheaves to vanish. For a regular embedding, it holds when its defining regular sequence stays regular after pullback. It eliminates higher homological intersection terms but does not imply geometric transversality.",
+    "examples": [
+      "For the coordinate axes in $\\A^2$, resolve $A/(x)$ by multiplication by $x$. After tensoring with $A/(y)=k[x]$, that multiplication stays injective; positive Tor groups vanish.",
+      "The tangent curves $y=0$ and $y=x^2$ are also Tor-independent: multiplication by $y$ becomes multiplication by $x^2$ on $k[x]$, which is injective. Their intersection nevertheless has length two."
+    ]
+  },
+  {
+    "index": 59,
+    "term": "Torsion-free module",
+    "slug": "torsion-free-module",
+    "section": "sec:rees",
+    "definition": "A module over an integral domain for which multiplication by every nonzero ring element is injective. Over the principal ideal domain $k[t]$, torsion-free modules are flat, a fact used for the extended Rees family. This equivalence is not valid over arbitrary base rings.",
+    "examples": [
+      "The extended Rees algebra $A[t,I/t]\\subset A[t,t^{-1}]$ has no $k[t]$-torsion. Any nonzero polynomial in $t$ acts injectively, so it is flat over $k[t]$, even if $A$ contains nilpotents.",
+      "The $k[t]$-module $k[t,x]/(tx)$ has torsion: $x\\ne0$ but $tx=0$. This exhibits the failure of flatness in that family."
+    ]
+  },
+  {
+    "index": 60,
+    "term": "Total space of a vector bundle",
+    "slug": "total-space-of-a-vector-bundle",
+    "section": "sec:regular",
+    "definition": "For a locally free sheaf $E$, the scheme $\\Tot(E)=\\Spec_Z\\Sym(E^\\vee)$, whose fibre is the vector space represented by $E$. The dual in this formula matters. The projection is flat, and its zero section is a regular embedding with normal bundle $E$.",
+    "examples": [
+      "For $E=\\OO_Z^{\\oplus r}$, the total space is $Z\\times\\A^r$. Its fibre coordinates are the linear functions dual to a chosen basis of sections of $E$.",
+      "The blow-up of $\\A^2$ at the origin is the total space of $\\OO_{\\PP^1}(-1)$. Its zero section is the exceptional projective line; the projection to $\\PP^1$ records the direction of a point."
+    ]
+  },
+  {
+    "index": 61,
+    "term": "Transversality",
+    "slug": "transversality",
+    "section": "sec:multiplicity",
+    "definition": "For smooth subvarieties meeting in a smooth ambient variety, the condition that their tangent spaces together span the ambient tangent space at each intersection point. In the complementary-dimensional cases used here it gives isolated reduced intersections with multiplicity one. Proper intersection alone is weaker.",
+    "examples": [
+      "The axes $x=0$ and $y=0$ in $\\A^2$ have different tangent directions spanning $k^2$. They meet transversely with multiplicity one.",
+      "The line $y=0$ and parabola $y=x^2$ share the same tangent line at the origin. Their intersection is proper but not transverse, and has multiplicity two."
+    ]
+  },
+  {
+    "index": 62,
+    "term": "Trivial deformation",
+    "slug": "trivial-deformation",
+    "section": "sec:embedded",
+    "definition": "A deformation isomorphic to the product with the parameter base through an isomorphism compatible with its marked special fibre. For embedded deformations in a fixed ambient product, the product subscheme is the zero direction. A family can be trivial abstractly while moving nontrivially inside its ambient scheme.",
+    "examples": [
+      "The family $Z\\times\\Spec k[\\epsilon]/(\\epsilon^2)$ with its product identification of the special fibre is a trivial first-order deformation of $Z$.",
+      "The embedded line $y=\\epsilon$ in $\\A^2\\times\\Spec k[\\epsilon]/(\\epsilon^2)$ differs from the product line $y=0$. Abstractly it is still the product affine line, parametrized by $x$; translating $y$ changes the ambient embedding."
+    ]
+  },
+  {
+    "index": 63,
+    "term": "Vector bundle",
+    "slug": "vector-bundle",
+    "section": "sec:regular",
+    "definition": "A scheme locally isomorphic over its base to a product with affine space, with linear transition maps; equivalently, the total space associated with a finite locally free sheaf. Its rank is the dimension of each fibre. In these notes a cone with nonlinear fibres is not called a vector bundle.",
+    "examples": [
+      "The normal bundle to the origin in $\\A^r$ is a rank-$r$ vector bundle over a point. There are no transition functions to check in this case.",
+      "The line bundle $\\OO_{\\PP^1}(-1)$ has one-dimensional fibres but is not the product $\\PP^1\\times\\A^1$. Its nontrivial transition function encodes the negative self-intersection of its zero section."
+    ]
+  },
+  {
+    "index": 64,
+    "term": "Zero section",
+    "slug": "zero-section",
+    "section": "sec:gysin",
+    "definition": "The section $s:Z\\to\\Tot(E)$ that selects the zero vector in each fibre. For a rank-$r$ vector bundle it is regularly embedded with normal bundle $E$. Its Gysin pullback inverts flat pullback from the base and lowers cycle dimension by $r$.",
+    "examples": [
+      "For $Z=\\Spec k$ and $E=k$, the zero section is $0\\hookrightarrow\\A^1$. Its Gysin map sends the one-dimensional fundamental class $[\\A^1]$ to the class of the base point.",
+      "In $\\Tot(\\OO_{\\PP^1}(-1))$, the zero section is the exceptional $\\PP^1$ of the plane blow-up. The self-intersection formula gives $s^!s_*[\\PP^1]=c_1(\\OO(-1))\\cap[\\PP^1]$, a class of degree $-1$ on the proper base."
+    ]
+  }
+]

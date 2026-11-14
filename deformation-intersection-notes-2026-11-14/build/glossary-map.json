@@ -1,0 +1,386 @@
+[
+  {
+    "index": 1,
+    "term": "Abstract deformation",
+    "slug": "abstract-deformation",
+    "section": "sec:first-order"
+  },
+  {
+    "index": 2,
+    "term": "Associated graded algebra",
+    "slug": "associated-graded-algebra",
+    "section": "sec:cones"
+  },
+  {
+    "index": 3,
+    "term": "Base change",
+    "slug": "base-change",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 4,
+    "term": "Blow-up",
+    "slug": "blow-up",
+    "section": "sec:blowup"
+  },
+  {
+    "index": 5,
+    "term": "Cartier divisor",
+    "slug": "cartier-divisor",
+    "section": "sec:chern"
+  },
+  {
+    "index": 6,
+    "term": "Chern class",
+    "slug": "chern-class",
+    "section": "sec:chern"
+  },
+  {
+    "index": 7,
+    "term": "Chow group",
+    "slug": "chow-group",
+    "section": "sec:cycles"
+  },
+  {
+    "index": 8,
+    "term": "Closed immersion",
+    "slug": "closed-immersion",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 9,
+    "term": "Cone",
+    "slug": "cone",
+    "section": "sec:cones"
+  },
+  {
+    "index": 10,
+    "term": "Conormal sheaf",
+    "slug": "conormal-sheaf",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 11,
+    "term": "Cotangent sheaf",
+    "slug": "cotangent-sheaf",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 12,
+    "term": "Cycle",
+    "slug": "cycle",
+    "section": "sec:cycles"
+  },
+  {
+    "index": 13,
+    "term": "Deformation",
+    "slug": "deformation",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 14,
+    "term": "Deformation functor",
+    "slug": "deformation-functor",
+    "section": "sec:obstructions"
+  },
+  {
+    "index": 15,
+    "term": "Deformation parameter",
+    "slug": "deformation-parameter",
+    "section": "sec:rees"
+  },
+  {
+    "index": 16,
+    "term": "Deformation to the normal cone",
+    "slug": "deformation-to-the-normal-cone",
+    "section": "sec:dnc"
+  },
+  {
+    "index": 17,
+    "term": "Dual numbers",
+    "slug": "dual-numbers",
+    "section": "sec:first-order"
+  },
+  {
+    "index": 18,
+    "term": "Embedded deformation",
+    "slug": "embedded-deformation",
+    "section": "sec:embedded"
+  },
+  {
+    "index": 19,
+    "term": "Exceptional divisor",
+    "slug": "exceptional-divisor",
+    "section": "sec:blowup"
+  },
+  {
+    "index": 20,
+    "term": "Excess intersection",
+    "slug": "excess-intersection",
+    "section": "sec:excess"
+  },
+  {
+    "index": 21,
+    "term": "Excess normal bundle",
+    "slug": "excess-normal-bundle",
+    "section": "sec:excess"
+  },
+  {
+    "index": 22,
+    "term": "Expected dimension",
+    "slug": "expected-dimension",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 23,
+    "term": "Extended Rees algebra",
+    "slug": "extended-rees-algebra",
+    "section": "sec:rees"
+  },
+  {
+    "index": 24,
+    "term": "Fibre",
+    "slug": "fibre",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 25,
+    "term": "First-order deformation",
+    "slug": "first-order-deformation",
+    "section": "sec:first-order"
+  },
+  {
+    "index": 26,
+    "term": "Flat family",
+    "slug": "flat-family",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 27,
+    "term": "Flat pullback",
+    "slug": "flat-pullback",
+    "section": "sec:gysin"
+  },
+  {
+    "index": 28,
+    "term": "Fundamental cycle",
+    "slug": "fundamental-cycle",
+    "section": "sec:cycles"
+  },
+  {
+    "index": 29,
+    "term": "Gysin pullback",
+    "slug": "gysin-pullback",
+    "section": "sec:gysin"
+  },
+  {
+    "index": 30,
+    "term": "Hilbert polynomial",
+    "slug": "hilbert-polynomial",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 31,
+    "term": "Ideal sheaf",
+    "slug": "ideal-sheaf",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 32,
+    "term": "Infinitesimal neighbourhood",
+    "slug": "infinitesimal-neighbourhood",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 33,
+    "term": "Intersection multiplicity",
+    "slug": "intersection-multiplicity",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 34,
+    "term": "Intersection product",
+    "slug": "intersection-product",
+    "section": "sec:gysin"
+  },
+  {
+    "index": 35,
+    "term": "Length",
+    "slug": "length",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 36,
+    "term": "Local complete intersection",
+    "slug": "local-complete-intersection",
+    "section": "sec:regular"
+  },
+  {
+    "index": 37,
+    "term": "Normal bundle",
+    "slug": "normal-bundle",
+    "section": "sec:regular"
+  },
+  {
+    "index": 38,
+    "term": "Normal cone",
+    "slug": "normal-cone",
+    "section": "sec:cones"
+  },
+  {
+    "index": 39,
+    "term": "Normal sheaf",
+    "slug": "normal-sheaf",
+    "section": "sec:conormal"
+  },
+  {
+    "index": 40,
+    "term": "Obstruction",
+    "slug": "obstruction",
+    "section": "sec:obstructions"
+  },
+  {
+    "index": 41,
+    "term": "Ordinary Rees algebra",
+    "slug": "ordinary-rees-algebra",
+    "section": "sec:blowup"
+  },
+  {
+    "index": 42,
+    "term": "Proper intersection",
+    "slug": "proper-intersection",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 43,
+    "term": "Proper morphism",
+    "slug": "proper-morphism",
+    "section": "sec:compactification"
+  },
+  {
+    "index": 44,
+    "term": "Projective completion of a cone",
+    "slug": "projective-completion-of-a-cone",
+    "section": "sec:compactification"
+  },
+  {
+    "index": 45,
+    "term": "Rational equivalence",
+    "slug": "rational-equivalence",
+    "section": "sec:cycles"
+  },
+  {
+    "index": 46,
+    "term": "Refined Gysin pullback",
+    "slug": "refined-gysin-pullback",
+    "section": "sec:gysin"
+  },
+  {
+    "index": 47,
+    "term": "Regular embedding",
+    "slug": "regular-embedding",
+    "section": "sec:regular"
+  },
+  {
+    "index": 48,
+    "term": "Regular sequence",
+    "slug": "regular-sequence",
+    "section": "sec:regular"
+  },
+  {
+    "index": 49,
+    "term": "Saturation",
+    "slug": "saturation",
+    "section": "sec:rees"
+  },
+  {
+    "index": 50,
+    "term": "Scheme-theoretic intersection",
+    "slug": "scheme-theoretic-intersection",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 51,
+    "term": "Segre class",
+    "slug": "segre-class",
+    "section": "sec:excess"
+  },
+  {
+    "index": 52,
+    "term": "Self-intersection",
+    "slug": "self-intersection",
+    "section": "sec:self"
+  },
+  {
+    "index": 53,
+    "term": "Smooth morphism",
+    "slug": "smooth-morphism",
+    "section": "sec:flatness"
+  },
+  {
+    "index": 54,
+    "term": "Specialization",
+    "slug": "specialization",
+    "section": "sec:specialization"
+  },
+  {
+    "index": 55,
+    "term": "Strict transform",
+    "slug": "strict-transform",
+    "section": "sec:blowup"
+  },
+  {
+    "index": 56,
+    "term": "Tangent cone",
+    "slug": "tangent-cone",
+    "section": "sec:cones"
+  },
+  {
+    "index": 57,
+    "term": "Tangent space",
+    "slug": "tangent-space",
+    "section": "sec:first-order"
+  },
+  {
+    "index": 58,
+    "term": "Tor-independence",
+    "slug": "tor-independence",
+    "section": "sec:gysin"
+  },
+  {
+    "index": 59,
+    "term": "Torsion-free module",
+    "slug": "torsion-free-module",
+    "section": "sec:rees"
+  },
+  {
+    "index": 60,
+    "term": "Total space of a vector bundle",
+    "slug": "total-space-of-a-vector-bundle",
+    "section": "sec:regular"
+  },
+  {
+    "index": 61,
+    "term": "Transversality",
+    "slug": "transversality",
+    "section": "sec:multiplicity"
+  },
+  {
+    "index": 62,
+    "term": "Trivial deformation",
+    "slug": "trivial-deformation",
+    "section": "sec:embedded"
+  },
+  {
+    "index": 63,
+    "term": "Vector bundle",
+    "slug": "vector-bundle",
+    "section": "sec:regular"
+  },
+  {
+    "index": 64,
+    "term": "Zero section",
+    "slug": "zero-section",
+    "section": "sec:gysin"
+  }
+]

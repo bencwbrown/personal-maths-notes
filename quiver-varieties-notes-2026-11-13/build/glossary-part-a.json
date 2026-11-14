@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "affine-quotient",
+    "term": "Affine quotient",
+    "section": "sec:quotients",
+    "definition": "For an affine variety with coordinate ring $A$ and a group action, the scheme $\\Spec A^G$ defined by invariant functions. Its points correspond to closed orbits in the reductive examples here, rather than to every orbit.",
+    "examples": [
+      "For scalar multiplication on $\\A^1$, the invariant polynomials are constants. The affine quotient is a point, identifying the zero orbit with the distinct nonzero orbit whose closure contains zero.",
+      "For one loop on a one-dimensional vector space, the base-change action is trivial. Every scalar loop value is invariant, so the affine quotient remains the affine line of possible values."
+    ]
+  },
+  {
+    "slug": "arrow",
+    "term": "Arrow",
+    "section": "sec:quivers",
+    "definition": "A directed edge of a quiver, with a specified tail and head. A representation assigns it a linear map from the vector space at its tail to the vector space at its head; loops are allowed.",
+    "examples": [
+      "An arrow $1\\to2$ with vertex spaces $\\mathbb C$ and $\\mathbb C^2$ can carry the map $z\\mapsto(z,0)$. The arrow specifies the direction of this map, not its numerical entries.",
+      "A loop starts and ends at the same vertex. If its vertex space is $\\mathbb C^2$, its assigned map is an endomorphism, such as the nonzero nilpotent matrix $\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)$."
+    ]
+  },
+  {
+    "slug": "automorphism",
+    "term": "Automorphism",
+    "section": "sec:representations",
+    "definition": "An isomorphism from a representation to itself, given by invertible maps at the vertices commuting with all arrow maps. For framed data the maps must also preserve the framing maps, while the framing spaces remain fixed.",
+    "examples": [
+      "A one-dimensional representation of the Jordan quiver has scalar loop map. Every nonzero scalar change of basis commutes with it, so its automorphism group is $\\mathbb C^*$, independently of the loop value.",
+      "With $V=W=\\mathbb C$, no arrows, and framing $i=1$, an automorphism satisfies $g i=i$. This forces $g=1$: fixing the framing removes the scalar automorphisms of this example."
+    ]
+  },
+  {
+    "slug": "base-change-group",
+    "term": "Base-change group",
+    "section": "sec:representations",
+    "definition": "The product $G_v=\\prod_k\\GL(V_k)$ of general linear groups at the internal vertices. It acts by changing bases independently at those vertices; an arrow map transforms as $B_a\\mapsto g_{h(a)}B_ag_{t(a)}^{-1}$. Framing bases are not quotiented.",
+    "examples": [
+      "For one arrow with dimensions $(1,1)$, the group is $\\mathbb C^*\\times\\mathbb C^*$. Its action on an arrow value $x$ is $x\\mapsto(g_2/g_1)x$, showing why the diagonal subgroup acts trivially.",
+      "For one framed vertex with $V=\\mathbb C^2$ and $W=\\mathbb C^3$, only $\\GL_2$ is the base-change group. It changes the target basis of $i:W\\to V$; the chosen framing space stays fixed."
+    ]
+  },
+  {
+    "slug": "character",
+    "term": "Character",
+    "section": "sec:git",
+    "definition": "An algebraic-group homomorphism $\\chi:G\\to\\mathbb C^*$. Choosing a character specifies which semi-invariant functions enter the graded algebra defining a GIT quotient. Products of integer powers of determinants give the characters used for quiver representations.",
+    "examples": [
+      "The determinant $\\det:\\GL_2\\to\\mathbb C^*$ is a character, since $\\det(gh)=\\det(g)\\det(h)$. Its inverse is another character; choosing the inverse can change which points are semistable.",
+      "For the two-vertex dimension vector $(1,1)$ and $\\theta=(-1,1)$, the character is $\\chi_\\theta(g_1,g_2)=g_1^{-1}g_2$. Both Kronecker arrow coordinates transform by this character, so they are degree-one semi-invariants."
+    ]
+  },
+  {
+    "slug": "commutator",
+    "term": "Commutator",
+    "section": "sec:moment",
+    "definition": "For two endomorphisms of the same vector space, the operator $[X,Y]=XY-YX$. It measures failure to commute. A loop and its reverse contribute such a term to the complex moment-map equation for the doubled quiver.",
+    "examples": [
+      "Two scalar endomorphisms of $\\mathbb C$ always commute, so their commutator is zero. Thus the unframed one-dimensional Jordan zero-moment equation imposes no restriction on its two scalar variables.",
+      "Take $X=\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)$ and $Y=\\left(\\begin{smallmatrix}0&0\\\\1&0\\end{smallmatrix}\\right)$. Then $[X,Y]=\\operatorname{diag}(1,-1)$, so this pair does not satisfy the unframed zero-moment equation. Its two nonzero diagonal entries explicitly display the failure to commute."
+    ]
+  },
+  {
+    "slug": "cotangent-bundle",
+    "term": "Cotangent bundle",
+    "section": "sec:doubling",
+    "definition": "The vector bundle whose fibre at a smooth point is the dual of its tangent space. A linear representation space has a cotangent space obtained by adding dual linear coordinates; reversing quiver arrows supplies precisely these dual directions.",
+    "examples": [
+      "The cotangent bundle of $\\A^1_x$ is $\\A^2_{x,p}$: a point consists of a position $x$ and a covector $p\\,dx$. The second coordinate adds a dual direction, rather than another position.",
+      "The cotangent bundle of $\\PP^1$ is the total space of $\\OO(-2)$. This same surface appears as the quiver variety for one internal dimension and two framing dimensions, with cyclic stability."
+    ]
+  },
+  {
+    "slug": "cyclic-stability",
+    "term": "Cyclic stability",
+    "section": "sec:cyclic",
+    "definition": "The framed stability condition that no proper collection of invariant subspaces contains the images of all framing maps $i_k$. Equivalently, applying paths in the doubled quiver to those images generates every internal vertex space. It uses the character $\\prod_k\\det g_k$ here.",
+    "examples": [
+      "With one vertex and no arrows, generation means that $i:W\\to V$ is surjective. For $V=\\mathbb C$ and $W=\\mathbb C^2$, this simply requires a nonzero row $(i_1,i_2)$.",
+      "For the Jordan quiver, let $V=\\mathbb C^2$, $W=\\mathbb C$, $j=0$, $i(1)=e_1$, $Xe_1=e_2$, $Xe_2=0$, and $Y=0$. The framing generates both basis vectors, so these commuting data are cyclically stable."
+    ]
+  },
+  {
+    "slug": "cyclic-vector",
+    "term": "Cyclic vector",
+    "section": "sec:jordan",
+    "definition": "A vector whose images under the algebra's operators span the whole representation. For commuting Jordan operators $X,Y$, this means $\\mathbb C[X,Y]v=V$. A cyclic vector identifies the module with a quotient of a polynomial ring.",
+    "examples": [
+      "On $V=\\mathbb C^2$, choose $Xe_1=e_2$, $Xe_2=0$, and $Y=0$. The vector $e_1$ is cyclic because $e_1,Xe_1$ span $V$; its polynomial-module relation is $X^2=0$.",
+      "If both operators are zero on $\\mathbb C^2$, no single vector is cyclic. Every polynomial in the operators acts by a scalar, so the span generated from one vector stays one-dimensional."
+    ]
+  },
+  {
+    "slug": "deformed-moment-level",
+    "term": "Deformed moment level",
+    "section": "sec:moment",
+    "definition": "A moment-map equation $\\mu_k=\\lambda_k\\id_{V_k}$ with specified scalars $\\lambda_k$, replacing the zero equations. These central values are preserved by base change. A scaling can move the value, so preservation of a fixed level requires checking.",
+    "examples": [
+      "For one internal and one framing dimension, with no arrows, the equation is $ij=\\lambda$. At $\\lambda=1$ it is a hyperbola; scaling both coordinates by $t$ changes the equation's value to $t^2$.",
+      "For an unframed one-dimensional Jordan representation, $[X,Y]=0$ for every pair of scalars. The deformed equation $[X,Y]=1$ is therefore impossible: changing the moment level can make a variety empty."
+    ]
+  },
+  {
+    "slug": "dimension-vector",
+    "term": "Dimension vector",
+    "section": "sec:quivers",
+    "definition": "The list $v=(v_k)$ recording the dimensions of the vector spaces at the vertices. Fixing this list turns the collection of all arrow maps into an affine representation space. Framed constructions additionally specify a separate framing dimension vector $w$.",
+    "examples": [
+      "For the quiver $1\\to2$ and dimension vector $(1,2)$, an arrow map is a $2\\times1$ matrix. The representation space is therefore $\\Hom(\\mathbb C,\\mathbb C^2)\\simeq\\A^2$.",
+      "For the Jordan quiver, dimension vector $v=1$ assigns a one-dimensional space to its single vertex. Loop values zero and two give different representations with exactly the same dimension vector."
+    ]
+  },
+  {
+    "slug": "direct-sum",
+    "term": "Direct sum",
+    "section": "sec:representations",
+    "definition": "The representation obtained by taking direct sums of the vertex spaces and block-diagonal sums of every arrow map. It combines smaller representations without introducing maps between the summands. A decomposition must hold simultaneously for every arrow.",
+    "examples": [
+      "For a single arrow, take one-dimensional arrow maps $1$ and $2$. Their direct sum has vertex dimensions $(2,2)$ and arrow matrix $\\operatorname{diag}(1,2)$, displaying both original maps as separate blocks.",
+      "For one loop, the matrix $\\operatorname{diag}(\\lambda,\\nu)$ is the direct sum of two one-dimensional loop representations. The two coordinate lines are preserved, so the block decomposition is a decomposition of representations."
+    ]
+  },
+  {
+    "slug": "doubled-quiver",
+    "term": "Doubled quiver",
+    "section": "sec:doubling",
+    "definition": "The quiver obtained by adding a reverse arrow $a^*$ for every original arrow $a$. A loop gains a second loop. The trace pairing identifies maps on the added arrows with dual coordinates, making the doubled representation space a cotangent space.",
+    "examples": [
+      "Doubling $1\\to2$ adds the arrow $2\\to1$. With one-dimensional vertex spaces, the two maps are scalar coordinates $x,y$, so the doubled representation space is an affine plane.",
+      "Doubling the one-loop Jordan quiver produces two loops. A representation now has two endomorphisms $X,Y$ on the same vector space; imposing the moment equation can require these endomorphisms to commute."
+    ]
+  },
+  {
+    "slug": "effective-group-action",
+    "term": "Effective group action",
+    "section": "sec:stability",
+    "definition": "A group action whose common kernel is trivial: only the identity acts as the identity on the whole space. It need not have trivial point stabilisers. Removing an ineffective scalar subgroup is important in unframed quiver GIT stability.",
+    "examples": [
+      "The scaling action of $\\mathbb C^*$ on $\\A^1$ is effective: a scalar fixing every point must equal one. Nevertheless, the origin is fixed by the entire group, so effectiveness does not imply freeness.",
+      "For Kronecker dimension vector $(1,1)$, diagonal pairs $(g,g)$ act trivially on both arrows. Dividing $(\\mathbb C^*)^2$ by this diagonal gives the effective group $\\mathbb C^*$ acting by their ratio."
+    ]
+  },
+  {
+    "slug": "euler-form",
+    "term": "Euler form",
+    "section": "sec:geometry",
+    "definition": "The bilinear form $\\langle u,v\\rangle=\\sum_k u_kv_k-\\sum_a u_{t(a)}v_{h(a)}$ determined by an oriented quiver. Its self-pairing appears in the dimension formula $2(v\\cdot w-\\langle v,v\\rangle)$ for nonempty smooth framed quiver varieties in the stated chamber.",
+    "examples": [
+      "For one vertex without arrows, $\\langle v,v\\rangle=v^2$. With $v=1,w=2$, the dimension formula gives $2(2-1)=2$, agreeing with the cotangent surface $T^*\\PP^1$.",
+      "For one vertex with one loop, the vertex term $v^2$ cancels the loop term $v^2$. Thus $\\langle v,v\\rangle=0$, and framing dimension one gives dimension $2v$, as for the plane Hilbert scheme."
+    ]
+  },
+  {
+    "slug": "family-of-representations",
+    "term": "Family of representations",
+    "section": "sec:representations",
+    "definition": "Representations whose vector spaces and arrow maps vary over a parameter scheme. The vertex spaces become vector bundles on that scheme, and arrows become bundle maps. Restricting to a parameter point recovers an ordinary representation and its isomorphism class.",
+    "examples": [
+      "On $T=\\A^1_t$, put trivial lines at both ends of one arrow and use multiplication by $t$. Every nonzero fibre has a nonzero arrow, while the fibre at zero has the zero arrow.",
+      "For the Jordan quiver over $\\A^1_t$, the matrix $\\left(\\begin{smallmatrix}0&t\\\\0&0\\end{smallmatrix}\\right)$ is a family of loop operators. Nonzero fibres are conjugate to one nonzero Jordan block, while the zero fibre is split."
+    ]
+  },
+  {
+    "slug": "framing",
+    "term": "Framing",
+    "section": "sec:framing",
+    "definition": "Auxiliary fixed vector spaces $W_k$ with maps $i_k:W_k\\to V_k$ and $j_k:V_k\\to W_k$. Only internal bases are changed. The framing records how representations interact with fixed external data and can eliminate scalar automorphisms through stability.",
+    "examples": [
+      "At one vertex with $V=W=\\mathbb C$, choose $i=1,j=0$. Preserving $i$ forces the internal scalar change of basis to be one, so this framing removes the automorphisms of the unframed vertex.",
+      "With $V=\\mathbb C$ and $W=\\mathbb C^2$, the map $i$ is a row $(i_1,i_2)$ and $j$ is a column. Changing the internal basis rescales them oppositely, but does not change the framing basis."
+    ]
+  },
+  {
+    "slug": "gauge-fixing",
+    "term": "Gauge fixing",
+    "section": "sec:grassmannian",
+    "definition": "Choosing a representative of a group orbit by normalising some coordinates. Such a choice is usually valid only on a chart and may leave residual symmetries. It is a concrete way to compute quotient coordinates, not an additional moduli condition.",
+    "examples": [
+      "For a nonzero row $i=(a,b)$ with $a\\ne0$, the scalar base change $g=a^{-1}$ normalises it to $(1,b/a)$. The ratio $b/a$ is then a coordinate on a projective-line chart.",
+      "For the Jordan example with $V=W=\\mathbb C$, cyclic stability requires $i\\ne0$. Normalise $i=1$; the moment equation then forces $j=0$. The two remaining scalar loop values give the quotient coordinates of $\\A^2$."
+    ]
+  },
+  {
+    "slug": "geometric-quotient",
+    "term": "Geometric quotient",
+    "section": "sec:git",
+    "definition": "A quotient whose geometric points correspond to actual group orbits, with invariant functions furnishing the quotient's structure sheaf. Stable loci in the examples have such quotients after the appropriate effective action is used; arbitrary affine invariant quotients can identify orbit closures instead.",
+    "examples": [
+      "Scalar multiplication on $\\A^2\\setminus\\{0\\}$ has geometric quotient $\\PP^1$. Each point $[x:y]$ represents one nonzero line orbit, and the ratios on the two standard charts are invariant coordinates.",
+      "For multiplication of $\\mathbb C^*$ on itself, every point belongs to one orbit and every stabiliser is trivial. The geometric quotient is a point; no additional nonclosed orbit is present in this space."
+    ]
+  },
+  {
+    "slug": "git-quotient",
+    "term": "GIT quotient",
+    "section": "sec:git",
+    "definition": "The quotient built as $\\Proj\\bigoplus_{n\\ge0}\\mathbb C[X]^{G,\\chi^n}$ for a chosen character. Nonvanishing positive-degree semi-invariants defines semistability. The resulting space is projective over the affine invariant quotient and classifies the appropriate equivalence classes.",
+    "examples": [
+      "Let $\\mathbb C^*$ scale $(x,y)$ and take $\\chi(t)=t$. Degree-$n$ semi-invariants are homogeneous polynomials of degree $n$. Their graded ring is $\\mathbb C[x,y]$, giving the quotient $\\PP^1$.",
+      "With the trivial character on the same affine plane, the quotient is the affine invariant quotient, a point. Changing the character therefore changes the semistable locus and the quotient, even though the original group action is unchanged."
+    ]
+  },
+  {
+    "slug": "grassmannian",
+    "term": "Grassmannian",
+    "section": "sec:grassmannian",
+    "definition": "The projective variety parameterising vector-space quotients of a fixed space $W$ with specified dimension $v$, modulo isomorphism of the quotient. Equivalently it records their kernels of dimension $\\dim W-v$. Its cotangent bundle is the isolated-vertex quiver model.",
+    "examples": [
+      "A one-dimensional quotient of $\\mathbb C^2$ is a nonzero row $(a,b)$ up to common rescaling. Its parameter space is $\\PP^1$, with affine chart coordinate $b/a$ when $a\\ne0$.",
+      "A two-dimensional quotient of $\\mathbb C^3$ is determined by its one-dimensional kernel. Those kernels form $\\PP^2$. This illustrates how quotient and subspace descriptions of a Grassmannian encode the same data."
+    ]
+  },
+  {
+    "slug": "hamiltonian-reduction",
+    "term": "Hamiltonian reduction",
+    "section": "sec:moment",
+    "definition": "The construction that first imposes a moment-map level and then takes a group quotient, using a character when an algebraic GIT quotient is required. Under the stated regularity and stability hypotheses, the quotient inherits a nondegenerate symplectic form.",
+    "examples": [
+      "For one vertex with no arrows and $v=w=1$, the zero moment equation is $ij=0$. In the cyclic chamber $i\\ne0$, so $j=0$; normalising $i=1$ leaves a single quotient point.",
+      "For one internal dimension and two framing dimensions, impose $i_1j_1+i_2j_2=0$, require $i\\ne0$, and divide by internal rescaling. Four coordinates minus one equation minus one group dimension leave the surface $T^*\\PP^1$."
+    ]
+  },
+  {
+    "slug": "hilbert-chow-morphism",
+    "term": "Hilbert--Chow morphism",
+    "section": "sec:hilbert-two",
+    "definition": "The morphism from a Hilbert scheme of points to the symmetric product, sending a finite subscheme to its support with multiplicities. It forgets infinitesimal information retained by the ideal. For the plane it is projective and resolves the symmetric-product singularities.",
+    "examples": [
+      "For a single point, the ideal $(x-a,y-b)$ maps to the cycle $(a,b)$. Here the Hilbert--Chow morphism is the identity identification between the length-one plane Hilbert scheme and the affine plane.",
+      "The distinct ideals $(x^2,y)$ and $(x,y^2)$ both have length two and map to the doubled origin. Their different tangent directions are visible in the ideals but are forgotten by the cycle."
+    ]
+  },
+  {
+    "slug": "hilbert-scheme-of-points",
+    "term": "Hilbert scheme of points",
+    "section": "sec:jordan",
+    "definition": "The parameter space of finite subschemes of specified length. For an affine variety with ring $A$, its points are ideals $I$ with $\\dim_{\\mathbb C}(A/I)=n$. Families require flat finite quotients, so this space records collisions as well as distinct points.",
+    "examples": [
+      "For length one on $\\A^2$, each ideal is $(x-a,y-b)$. The quotient ring is one-dimensional, and the two scalars $a,b$ identify this Hilbert scheme with $\\A^2$ itself.",
+      "The ideal $(x^2,y)$ defines a length-two subscheme supported at the origin. Its quotient has basis $1,x$ and relation $x^2=0$, illustrating why a subscheme can have length two without two distinct support points."
+    ]
+  },
+  {
+    "slug": "indecomposable-representation",
+    "term": "Indecomposable representation",
+    "section": "sec:representations",
+    "definition": "A nonzero representation that cannot be expressed as a direct sum of two nonzero representations. This is weaker than simplicity: an indecomposable object may still contain proper nonzero subrepresentations, provided they do not admit a compatible complementary summand.",
+    "examples": [
+      "For one arrow between one-dimensional spaces, the map $1$ gives an indecomposable representation. A decomposition into the two vertex representations would have zero arrow, so cannot be isomorphic to this nonzero-arrow object.",
+      "A nonzero nilpotent Jordan block on $\\mathbb C^2$ is indecomposable. A decomposition into two one-dimensional blocks would make the nilpotent operator zero; nevertheless, its kernel is a proper invariant line, so it is not simple."
+    ]
+  },
+  {
+    "slug": "invariant-function",
+    "term": "Invariant function",
+    "section": "sec:quotients",
+    "definition": "A regular function unchanged by every group element. Invariant functions descend to the affine quotient, but they can fail to distinguish distinct nonclosed orbits. Traces of products around oriented cycles are basic invariant functions on quiver representation spaces.",
+    "examples": [
+      "For a one-dimensional arrow value $x$, base change acts by $x\\mapsto(g_2/g_1)x$. Only constant polynomials are invariant, so the affine quotient cannot distinguish the zero arrow from the nonzero orbit.",
+      "For a loop represented by a $2\\times2$ matrix $X$, both $\\tr X$ and $\\det X$ are invariant under conjugation. They record its characteristic polynomial, but do not distinguish a nonzero nilpotent Jordan block from zero."
+    ]
+  },
+  {
+    "slug": "isomorphism-of-representations",
+    "term": "Isomorphism of representations",
+    "section": "sec:representations",
+    "definition": "A collection of invertible maps at the vertices intertwining every arrow map. Thus representations are isomorphic precisely when their matrices differ by the corresponding base-change action. For framed representations the isomorphisms must also commute with the fixed framing maps.",
+    "examples": [
+      "For one-dimensional spaces on an arrow $1\\to2$, arrow values $1$ and $2$ are isomorphic: use $g_1=1,g_2=2$. The zero arrow is not isomorphic to either, since invertible maps preserve rank.",
+      "For the Jordan quiver, the zero operator and a nonzero nilpotent block on $\\mathbb C^2$ are not isomorphic representations. Their matrices have different ranks, although they have the same characteristic polynomial."
+    ]
+  },
+  {
+    "slug": "jordan-quiver",
+    "term": "Jordan quiver",
+    "section": "sec:jordan",
+    "definition": "The quiver with one vertex and one loop. Its representations are vector spaces with one endomorphism. Doubling gives two endomorphisms; adding one-dimensional framing and cyclic stability at zero moment level leads to the Hilbert scheme of points on the plane.",
+    "examples": [
+      "A one-dimensional Jordan representation is a scalar $\\lambda$. Conjugation has no effect, so different scalars give different representations. Their parameter space is the affine line, not a discrete list.",
+      "After doubling, take $V=\\mathbb C$, framing $i=1$, and $j=0$. Both loop operators are arbitrary scalars $x,y$, their commutator vanishes, and these data give the point $(x,y)$ of the plane Hilbert scheme."
+    ]
+  },
+  {
+    "slug": "king-stability",
+    "term": "King stability",
+    "section": "sec:stability",
+    "definition": "For an unframed dimension vector $v$ and integral $\\theta$ with $\\theta\\cdot v=0$, the condition $\\theta\\cdot\\dim S\\ge0$ for every subrepresentation; stability requires strict inequality for proper nonzero $S$. Here the matching character is $\\prod_k\\det(g_k)^{\\theta_k}$.",
+    "examples": [
+      "For two Kronecker arrows and $v=(1,1)$, choose $\\theta=(-1,1)$. If an arrow is nonzero, the only proper nonzero subrepresentation has vector $(0,1)$ and positive weight, so the representation is stable.",
+      "For the same dimensions and parameter, the representation with both arrows zero has a subrepresentation of dimension $(1,0)$. Its weight is $-1$, violating semistability. This shows how the inequality removes a degenerate representation."
+    ]
+  },
+  {
+    "slug": "kronecker-quiver",
+    "term": "Kronecker quiver",
+    "section": "sec:stability",
+    "definition": "The quiver with two vertices and two parallel arrows from the first to the second. It provides a simple representation problem with a continuous parameter: dimension vector $(1,1)$ and the chosen nonzero-arrow stability condition yield a projective-line quotient.",
+    "examples": [
+      "With dimensions $(1,1)$, a representation is a pair of scalars $(a,b)$. Nonzero pairs up to common rescaling give $[a:b]\\in\\PP^1$, so the stable moduli has a familiar geometric parameter.",
+      "The stable pairs $(1,0)$ and $(0,1)$ give different points of that projective line. No base change can exchange the two arrow labels, since an isomorphism changes vertex bases rather than permuting arrows."
+    ]
+  },
+  {
+    "slug": "lie-algebra",
+    "term": "Lie algebra",
+    "section": "sec:moment",
+    "definition": "The vector space of infinitesimal group transformations, equipped with a bracket. For $\\GL(V)$ it is $\\End(V)$ with bracket $[A,B]=AB-BA$. Its dual is the target of the moment map, identified with matrices using the trace pairing.",
+    "examples": [
+      "The Lie algebra of $\\mathbb C^*$ is one-dimensional. Differentiating the scaling action on a vector gives the infinitesimal action $v\\mapsto\\alpha v$ for a scalar $\\alpha$, illustrating a tangent direction at the identity.",
+      "The Lie algebra of $\\GL_2$ consists of all $2\\times2$ matrices. The matrices $E_{12}$ and $E_{21}$ have bracket $\\operatorname{diag}(1,-1)$, so this Lie algebra has a nonzero bracket."
+    ]
+  },
+  {
+    "slug": "moment-map",
+    "term": "Moment map",
+    "section": "sec:moment",
+    "definition": "A map from a symplectic representation space to the dual Lie algebra recording infinitesimal symmetry. In these notes its components are explicit matrix polynomials: incoming products minus outgoing products plus $i_kj_k$. The zero fibre supplies the equations before quotienting.",
+    "examples": [
+      "For the unframed doubled Jordan quiver, the moment map is $\\mu(X,Y)=[X,Y]$. The zero fibre consists of commuting pairs, so the abstract moment-map condition becomes a familiar matrix equation.",
+      "With one internal dimension, two framing dimensions, and no arrows, the moment map is the scalar $i_1j_1+i_2j_2$. Its zero equation says that the framing row annihilates the framing column."
+    ]
+  }
+]

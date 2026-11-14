@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}The route through the construction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Quivers and their representations}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}A short algebra translation}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Representation spaces and forgetting the bases}{4}{section.3}%
+\contentsline {section}{\numberline {4}Why affine invariant quotients can lose information}{4}{section.4}%
+\contentsline {section}{\numberline {5}Characters, semi-invariants, and relative Proj}{5}{section.5}%
+\contentsline {section}{\numberline {6}King stability and the Kronecker example}{6}{section.6}%
+\contentsline {section}{\numberline {7}Framing fixes some external linear data}{6}{section.7}%
+\contentsline {section}{\numberline {8}Doubling produces a cotangent space}{7}{section.8}%
+\contentsline {section}{\numberline {9}The moment map and its equations}{7}{section.9}%
+\contentsline {section}{\numberline {10}Cyclic stability and why it removes automorphisms}{8}{section.10}%
+\contentsline {section}{\numberline {11}The definition of the Nakajima quiver variety}{9}{section.11}%
+\contentsline {section}{\numberline {12}Smoothness, dimension, and the descended two-form}{9}{section.12}%
+\contentsline {section}{\numberline {13}An isolated vertex gives a cotangent Grassmannian}{10}{section.13}%
+\contentsline {subsection}{\numberline {13.1}The two charts of the smallest surface}{10}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}The affine target is a quadratic cone}{11}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Why the same claim cannot be made for every dimension}{11}{subsection.13.3}%
+\contentsline {section}{\numberline {14}The Jordan quiver and ideals of points on the plane}{11}{section.14}%
+\contentsline {subsection}{\numberline {14.1}The commuting-matrix to ideal correspondence}{12}{subsection.14.1}%
+\contentsline {section}{\numberline {15}A four-coordinate chart of the two-point Hilbert scheme}{12}{section.15}%
+\contentsline {section}{\numberline {16}Changing stability and changing the moment level}{13}{section.16}%
+\contentsline {section}{\numberline {17}Scaling and the connection with semiprojective cutting}{13}{section.17}%
+\contentsline {subsection}{\numberline {17.1}A different action has different fixed loci}{13}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}What this supplies for the project}{14}{subsection.17.2}%
+\contentsline {section}{\numberline {18}Connections with stacks, Higgs fields, and real reduction}{14}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Quotient stacks and residual symmetries}{14}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}A finite-dimensional cousin of the Higgs construction}{14}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}An optional real-equation picture}{15}{subsection.18.3}%
+\contentsline {section}{\numberline {19}Exercises with worked solutions}{15}{section.19}%
+\contentsline {section}{\numberline {A}Conventions, tools used without proof, and a reading route}{17}{appendix.A}%
+\contentsline {section}{\numberline {B}Glossary of terms and notation}{19}{appendix.B}%
+\contentsline {section}{\numberline {C}Examples Glossary}{26}{appendix.C}%

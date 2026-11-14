@@ -1,0 +1,57 @@
+\contentsline {section}{\numberline {1}How to read these notes}{4}{section.1}%
+\contentsline {paragraph}{A useful question to keep asking.}{4}{section*.2}%
+\contentsline {section}{\numberline {2}What an invariant quotient forgets}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}A quotient whose coarse space is smooth}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}A quotient whose coarse space is singular}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Retain arrows as well as orbits}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}From points to families: why a stack is groupoid-valued}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The functor-of-points viewpoint}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Gluing must retain the chosen isomorphisms}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Why étale covers enter}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The simplest twisted family}{7}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Quotient stacks and classifying stacks}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}A torsor is a family of copies of a group}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Definition of the quotient stack}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Atlases and the first stack fibre product}{8}{subsection.4.3}%
+\contentsline {section}{\numberline {5}The definition of a Deligne--Mumford stack}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}A short bridge through algebraic spaces}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Representability and the diagonal}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Examples, nonexamples, and what the definition does not assert}{10}{subsection.5.3}%
+\contentsline {paragraph}{Separatedness.}{11}{section*.3}%
+\contentsline {paragraph}{Dimension and smoothness.}{11}{section*.4}%
+\contentsline {paragraph}{Relation to orbifolds.}{11}{section*.5}%
+\contentsline {section}{\numberline {6}Coarse spaces and local finite quotients}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}A coarse map preserves points but changes families}{12}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Good moduli spaces are a different notion}{12}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Sheaves and line bundles retain stabiliser representations}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Equivariant sheaves are sheaves on the quotient stack}{12}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Character conventions and invariant sections}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Pushforward is not descent}{13}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}An invariant module which is not a line bundle}{13}{subsection.7.4}%
+\contentsline {paragraph}{Why invariants behave well here.}{14}{section*.6}%
+\contentsline {section}{\numberline {8}A weighted projective line, worked out in charts}{14}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The two charts}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}A description in families}{15}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}The boundary and the line bundles}{15}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Counting sections and computing pushforward}{15}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Root stacks, divisors, and normal lines}{16}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Making the root of a divisor into geometric data}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}The reduced root divisor and the scheme-theoretic fibre}{17}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Normal and conormal characters}{17}{subsection.9.3}%
+\contentsline {paragraph}{Root stacks versus root gerbes.}{17}{section*.7}%
+\contentsline {section}{\numberline {10}Where these ideas enter algebraic cutting}{18}{section.10}%
+\contentsline {subsection}{\numberline {10.1}The setting and the chosen sign convention}{18}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Stack cut, coarse cut, and boundary}{18}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Why the stabilisers are concentrated on the boundary}{19}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Normal character versus polarisation character}{19}{subsection.10.4}%
+\contentsline {paragraph}{A distinction from residual symmetry.}{19}{section*.8}%
+\contentsline {section}{\numberline {11}One complete cutting toy model}{20}{section.11}%
+\contentsline {subsection}{\numberline {11.1}The lower cut is the weighted projective line}{20}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}The upper cut is an affine root stack}{20}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Weights, sections, and the boundary contribution}{21}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}What changes at the critical level}{21}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Exercises with solutions}{22}{section.12}%
+\contentsline {section}{\numberline {13}A reading plan}{23}{section.13}%
+\contentsline {section}{\numberline {A}Relation to the repository and source conventions}{24}{appendix.A}%
+\contentsline {section}{\numberline {B}Glossary of terms and notation}{26}{appendix.B}%
+\contentsline {section}{\numberline {C}Examples Glossary}{35}{appendix.C}%

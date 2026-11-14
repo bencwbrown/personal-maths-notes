@@ -1,0 +1,167 @@
+\examplegloss{affine-invariant-quotient}{Affine invariant quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Let $\mu_2$ act on $\A^1_z$ by $z\mapsto-z$. The invariant polynomials are the even ones, so the quotient is $\Spec k[z^2]\simeq\A^1_u$, with $u=z^2$. The points $z$ and $-z$ have the same image.
+\item Let $\Gm$ scale $\A^1_z$. Only constant polynomials are invariant, so the affine invariant quotient is a point. It identifies the zero orbit and the nonzero orbit, although those are distinct geometric isomorphism classes.
+\end{enumerate}}
+
+\examplegloss{affinisation}{Affinisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\A^1$, the global-function ring is $k[x]$. Its affinisation $\A^1\to\Spec k[x]$ is the identity. This morphism is projective even though $\A^1$ is not projective over $k$.
+\item Every global regular function on $\PP^1$ is constant. Its affinisation is therefore $\PP^1\to\Spec k$, the map to a point. This morphism is projective because $\PP^1$ itself is projective over $k$.
+\end{enumerate}}
+
+\examplegloss{algebraic-space}{Algebraic space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The affine line is an algebraic space: its identity map is an étale atlas, and its diagonal in $\A^1\times\A^1$ is the ordinary closed subscheme $x=x'$. Its points have no nonidentity arrows.
+\item The projective line is also an algebraic space. Its two standard affine charts give an étale surjective atlas $\A^1\sqcup\A^1\to\PP^1$. Both examples happen to be schemes; the definition of algebraic space also allows more general étale gluing.
+\end{enumerate}}
+
+\examplegloss{algebraic-stack}{Algebraic stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The quotient $[\A^1/\mu_2]$ has atlas $\A^1\to[\A^1/\mu_2]$. The atlas is étale, and its arrow scheme is $\mu_2\times\A^1$. The fixed origin retains two automorphisms.
+\item The stack $B\Gm$ has smooth atlas $\Spec k\to B\Gm$. Base-changing this atlas by a line bundle on $T$ gives its torsor of frames or dual frames, according to the chosen convention. Thus this atlas has one-dimensional fibres, although its source is a point.
+\end{enumerate}}
+
+\examplegloss{ample-line-bundle}{Ample line bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP^1$, the bundle $\OO(1)$ is ample: its coordinate sections $X_0,X_1$ give the usual projective embedding. The nonvanishing loci of these sections are the two affine charts.
+\item On $\A^1$, the trivial bundle $\OO$ is ample. Its sections are polynomials, and their nonvanishing loci are principal affine opens. This differs from $\OO$ on $\PP^1$, whose only global sections are constants and which is not ample there.
+\end{enumerate}}
+
+\examplegloss{artin-stack}{Artin stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $B\Gm$ is Artin: the point is a smooth atlas, and its geometric object has automorphism group $\Gm$. That positive-dimensional group prevents an étale atlas.
+\item The scaling quotient $[\A^1/\Gm]$ is Artin. At zero its stabiliser is $\Gm$, but on the nonzero open the action is free and the quotient stack is a point. One Artin stack can therefore contain both continuous-stabiliser and trivial-stabiliser regions.
+\end{enumerate}}
+
+\examplegloss{atlas}{Atlas}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The map $\A^1_z\to[\A^1_z/\mu_2]$ is an étale atlas, including at $z=0$. Its base change by a family is the corresponding $\mu_2$-torsor. Its composite to the coarse line, $z\mapsto z^2$, is instead ramified at zero.
+\item For $\PP(2,1)$, the map $\A^2\setminus0\to\PP(2,1)$ is a smooth atlas of relative dimension one. The stack is DM, but this particular atlas is not étale; its smaller quotient charts provide an étale atlas.
+\end{enumerate}}
+
+\examplegloss{automorphism}{Automorphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A one-dimensional vector space has automorphisms $v\mapsto\lambda v$ for every $\lambda\in k^*$. This explains the automorphism group $\Gm$ of the geometric object of $B\Gm$.
+\item In $[\A^1/\mu_2]$, the origin has two automorphisms, represented by $1$ and $-1$. A nonzero point has only the identity automorphism, because $-z=z$ would force $z=0$ in characteristic zero.
+\end{enumerate}}
+
+\examplegloss{boundary-stack-and-coarse-boundary}{Boundary stack and coarse boundary}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the weight-one affine-line cut at level $1$, the lower cut is the ordinary $\PP^1$. The boundary $y=0$ is the point $[1:0]$, with no nontrivial stabiliser, so its stack and coarse descriptions agree.
+\item For the weight-two cut, the lower stack is $\PP(2,1)$. Its boundary is $B\mu_2$, while the coarse boundary is still one point of $\PP^1$. The extra sign automorphism acts on the stack normal line.
+\end{enumerate}}
+
+\examplegloss{cartier-divisor}{Cartier divisor}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The origin in $\A^1_z$ is an effective Cartier divisor, since $z$ is a non-zero-divisor in $k[z]$. Its ideal is $(z)$ and its divisor line is generated locally by $z^{-1}$.
+\item The substack $\{z=0\}\subset[\A^1_z/\mu_2]$ is also Cartier: its pullback to the atlas is the same divisor $(z)$. Its ideal line has an equivariant structure, so taking the quotient does not discard the stabiliser character.
+\end{enumerate}}
+
+\examplegloss{character}{Character}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The formula $t\mapsto t^2$ is a character of $\Gm$. A line with this character has geometric action $v\mapsto t^2v$. Tensoring two such lines gives character $t^4$.
+\item On $\mu_3$, the characters $\zeta\mapsto\zeta$ and $\zeta\mapsto\zeta^4$ are equal because $\zeta^3=1$. Their common tensor cube is the trivial character. Thus finite stabiliser characters are indexed modulo the group order.
+\end{enumerate}}
+
+\examplegloss{classifying-stack}{Classifying stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $B\mu_2$ has one geometric isomorphism class with automorphism group $\mu_2$. Over $T=\Gm_t$, it also has the nontrivial family given by the torsor $s^2=t$.
+\item A map $\PP^1\to B\Gm$ can specify the line bundle $\OO_{\PP^1}(1)$. The trivial bundle specifies a different map, although the fibres of both bundles over each geometric point are one-dimensional vector spaces. The classifying stack remembers the global gluing.
+\end{enumerate}}
+
+\examplegloss{coarse-moduli-space}{Coarse moduli space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The coarse space of $B\mu_2$ is $\Spec k$: there is one geometric isomorphism class. The coarse point forgets the two automorphisms and the different torsor families over parameter schemes.
+\item The coarse map $[\A^1_z/\mu_2]\to\A^1_u$ is $u=z^2$. Each nonzero $u$ corresponds to the single orbit of its two square roots, while $u=0$ corresponds to the origin orbit. Both have one coarse point, despite their different stabilisers.
+\end{enumerate}}
+
+\examplegloss{cocycle-condition}{Cocycle condition}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On any three-open cover, choose identity identifications between copies of the trivial line. Then $\alpha_{ij}\alpha_{jk}=\id\,\id=\id=\alpha_{ik}$, so the local bundles glue to the trivial bundle.
+\item On a triple overlap, transition functions $g_{12}=2$ and $g_{23}=3$ require $g_{13}=6$. Choosing $g_{13}=5$ would make transporting a vector directly from chart $3$ to chart $1$ disagree with transporting it through chart $2$.
+\end{enumerate}}
+
+\examplegloss{conormal-line}{Conormal line}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item At the origin of $\A^1_z$, the conormal is $(z)/(z^2)$, a one-dimensional vector space spanned by the class of $z$. Its dual is the usual tangent, or normal, line at that point.
+\item For the origin substack in $[\A^1_z/\mu_3]$, a normal vector has geometric character $\zeta$. The conormal covector has the inverse geometric character $\zeta^{-1}=\zeta^2$. Their tensor product has trivial character, as expected for a line and its dual.
+\end{enumerate}}
+
+\examplegloss{contracting-action}{Contracting action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $t\cdot x=tx$ on $\A^1$, every point has limit $0$ as $t\to0$. Algebraically the formula extends to $(t,x)\mapsto tx$ on $\A^1_t\times\A^1_x$.
+\item For $t\cdot(x,y)=(tx,t^2y)$ on $\A^2$, every point again limits to the origin. Both coordinates have positive weights, so both vanish in the limit. The fixed locus is the origin in each example.
+\end{enumerate}}
+
+\examplegloss{critical-cutting-level}{Critical cutting level}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $M=\A^1$ with $t\cdot x=t^2x$ and the trivial fibre action on $L=\OO$, the fixed origin has $\Phi(0)=0$. Thus $d=0$ is critical. In the lower cut every point is semistable, and the product origin has stabiliser $\Gm$.
+\item Let $M=\Spec k$ and give its line $L$ geometric fibre weight $-1$. Its nonzero section has weight $\Phi=1$, so $d=1$ is critical. The level twist cancels that fibre action, and the auxiliary origin again survives with stabiliser $\Gm$.
+\end{enumerate}}
+
+\examplegloss{deligne-mumford-stack}{Deligne--Mumford stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The classifying stack $B\mu_2$ is DM because the map $\Spec k\to B\mu_2$ is an étale atlas. Its geometric object has two automorphisms, showing that DM does not mean absence of automorphisms.
+\item The stack $[\A^1/\mu_2]$ is DM with étale atlas $\A^1$. It is a scheme away from the origin, but the origin retains $\mu_2$. Thus an étale atlas can coexist with stabilisers that vary from point to point.
+\end{enumerate}}
+
+\examplegloss{descent-datum}{Descent datum}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $T=U\cup V$, take trivial lines on $U,V$ and identify them by the constant multiplier $1$ on $U\cap V$. Together with the inverse identification, this is descent data for the trivial line on $T$.
+\item On the standard charts $U_0,U_1$ of $\PP^1$, the overlap coordinate $z=X_1/X_0$ is invertible. Multiplication by $z$ glues the two trivial lines into a line bundle. The transition isomorphism, rather than only the two local isomorphism classes, is essential data.
+\end{enumerate}}
+
+\examplegloss{descent-of-a-line-bundle-to-the-coarse-space}{Descent of a line bundle to the coarse space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $B\mu_2$, the trivial-character line is the pullback of the ordinary one-dimensional line on its coarse point. The stabiliser acts trivially, so descent is explicit.
+\item The sign-character line on $B\mu_2$ does not descend: the coarse point has no automorphism that could induce the sign action. Its tensor square does descend, because the square of the sign character is trivial. The obstruction is the fibre representation.
+\end{enumerate}}
+
+\examplegloss{diagonal}{Diagonal}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $\A^1$, the diagonal is the closed line $x=x'$ in $\A^2$. Pulling it back along two functions $f,g$ on $T$ gives their equality locus $f-g=0$.
+\item Pull back the diagonal of $B\mu_2$ along its geometric object paired with itself. The resulting isomorphism space is $\mu_2$, with two points, because that object has two automorphisms. A stack diagonal therefore records more than equality of underlying coarse points.
+\end{enumerate}}
+
+\examplegloss{dimension-of-a-quotient-stack}{Dimension of a quotient stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $[\A^1/\mu_2]$ has dimension $1-0=1$. A finite group has dimension zero, so passing to this finite quotient stack does not lower the dimension of the atlas.
+\item The weighted line $\PP(2,1)$ has dimension $2-1=1$, because its atlas is $\A^2\setminus0$ and its presentation group is $\Gm$. Its finite boundary stabiliser does not change the subtraction by the dimension of that presentation group.
+\end{enumerate}}
+
+\examplegloss{effective-descent}{Effective descent}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Glue two trivial lines on an open cover by identity maps. The resulting global line is the trivial bundle; restricting it to the cover recovers exactly the original bundles and their identifications. This is effective descent.
+\item The nontrivial torsor $s^2=t$ over $\Gm_t$ becomes trivial on its own étale cover. Its trivial local copies, equipped with the transition signs inherited from the torsor, glue back to that nontrivial torsor. Effectiveness allows the global object to be nontrivial even when every local object is trivial.
+\end{enumerate}}
+
+\examplegloss{equivariant-map}{Equivariant map}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Give the source $\A^1_z$ weight $1$ and the target $\A^1_w$ weight $2$. The map $w=z^2$ is equivariant, since $(tz)^2=t^2z^2$: applying the group before or after the map agrees.
+\item The constant map from any $G$-scheme to a fixed point is equivariant. For example, $\A^1\to\{0\}\subset\A^1$ is equivariant for scaling. The same constant map to the nonfixed point $1$ is not equivariant.
+\end{enumerate}}
+
+\examplegloss{equivariant-vector-bundle}{Equivariant vector bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Over the sign action on $\A^1_z$, give the trivial line the action $(z,v)\mapsto(-z,v)$. Its fibre at the origin is the trivial representation, and the corresponding stack line descends to the coarse line.
+\item On the same underlying trivial line, use $(z,v)\mapsto(-z,-v)$. Now the origin fibre is the sign representation and descent fails. The underlying nonequivariant bundle has not changed; the equivariant structure has.
+\end{enumerate}}
+
+\examplegloss{etale-cover}{Étale cover}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The two standard opens $\A^1\sqcup\A^1\to\PP^1$ form an étale cover: open immersions are étale, and the two images cover the projective line.
+\item The map $\Gm_s\to\Gm_t$, $t=s^2$, is a single finite étale cover. The derivative $2s$ is invertible, and every geometric $t\ne0$ has a square root. This cover supplies roots that cannot be chosen on any nonempty Zariski open of $\Gm_t$.
+\end{enumerate}}
+
+\examplegloss{etale-morphism}{Étale morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The open immersion $\A^1\setminus\{0\}\hookrightarrow\A^1$ is étale. It introduces no equations or branching locally, although it is not surjective and therefore is not by itself a cover of $\A^1$.
+\item The squaring map on $\Gm$ is étale because its derivative is invertible there. The same formula on $\A^1$ is not étale at zero: the derivative $2s$ vanishes. Restricting away from the branch point changes the answer.
+\end{enumerate}}
+
+\examplegloss{family}{Family}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Take $T=\A^1_a$ and the map $T\to\A^1_x$ defined by $x=a$. This is a family of affine-line points; its fibre at $a=c$ is the point $x=c$. A map $T'\to T$ changes the parameter by substitution.
+\item The line bundle $\OO_{\PP^1}(1)$ is a family of one-dimensional vector spaces over $\PP^1$, hence a map $\PP^1\to B\Gm$. Every geometric fibre is a line, but the family is globally nontrivial because its transition function is nontrivial.
+\end{enumerate}}

@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "automorphism",
+    "term": "Automorphism",
+    "section": "sec:moduli",
+    "definition": "An isomorphism of an object with itself. For a Higgs bundle it is an invertible bundle map commuting with the Higgs field. Nonzero scalar maps always give automorphisms; stable Higgs bundles have only scalar automorphisms.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, multiplication by any $c\\in\\mathbb C^*$ is an automorphism: scalar multiplication commutes with the section $\\omega$. Thus stability does not remove all automorphisms.",
+      "For $(\\OO_C^{\\oplus2},0)$, every constant invertible matrix gives an automorphism. The group is $\\mathrm{GL}_2(\\mathbb C)$, larger than the scalar group because the zero Higgs field imposes no commutation restriction."
+    ]
+  },
+  {
+    "slug": "canonical-bundle",
+    "term": "Canonical bundle",
+    "section": "sec:curves",
+    "definition": "The line bundle $K_C=\\Omega_C^1$ of regular differentials on a smooth curve. Its sections are global regular one-forms. It supplies the twist in an ordinary Higgs field $E\\to E\\otimes K_C$.",
+    "examples": [
+      "On $\\mathbb P^1$, changing coordinates by $w=1/z$ gives $dw=-z^{-2}dz$. This transition yields $K_{\\mathbb P^1}\\simeq\\OO(-2)$, which has no nonzero global sections.",
+      "On an elliptic curve, a nonzero global regular one-form has no zeros. It therefore trivialises the canonical line bundle, giving $K_C\\simeq\\OO_C$."
+    ]
+  },
+  {
+    "slug": "characteristic-polynomial",
+    "term": "Characteristic polynomial",
+    "section": "sec:hitchin",
+    "definition": "For a Higgs field, the determinant of $\\lambda I-\\phi$, interpreted in the canonical line bundle rather than in a fixed scalar variable. Its coefficients $a_i$ are global sections of $K_C^{\\otimes i}$.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, the polynomial is $\\lambda-\\omega$. Its coefficient $a_1=-\\omega$ is a one-form, rather than generally a complex number.",
+      "For $\\phi=\\operatorname{diag}(\\alpha,\\beta)$ on $\\OO_C^{\\oplus2}$, the polynomial is $\\lambda^2-(\\alpha+\\beta)\\lambda+\\alpha\\beta$. The last coefficient lies in $H^0(C,K_C^2)$ because it multiplies two one-forms under tensor product."
+    ]
+  },
+  {
+    "slug": "coarse-moduli-space",
+    "term": "Coarse moduli space",
+    "section": "sec:moduli",
+    "definition": "A space classifying geometric isomorphism classes and universal for maps to algebraic spaces, while forgetting automorphisms. This description applies to the stable locus here; the entire semistable moduli space instead identifies S-equivalent objects.",
+    "examples": [
+      "For degree-$d$ lines on $\\mathbb P^1$, there is one isomorphism class, namely $\\OO(d)$. The corresponding coarse space is a point, although every line has nonzero scalar automorphisms.",
+      "For rank-one Higgs bundles, the coarse parameter space is $\\operatorname{Pic}^d(C)\\times H^0(C,K_C)$. Its points record $(L,\\omega)$, but do not retain the scalar automorphisms of each pair."
+    ]
+  },
+  {
+    "slug": "companion-matrix",
+    "term": "Companion matrix",
+    "section": "sec:spectral",
+    "definition": "A matrix encoding multiplication by the variable on a polynomial quotient, using the basis $1,\\lambda,\\ldots,\\lambda^{r-1}$. It turns a spectral equation into an endomorphism and thereby supplies an explicit local spectral correspondence.",
+    "examples": [
+      "The free $k[z]$-module $k[z,\\lambda]/(\\lambda^2-z)$ has basis $1,\\lambda$. Multiplication by $\\lambda$ is the matrix $\\left(\\begin{smallmatrix}0&z\\\\1&0\\end{smallmatrix}\\right)$, since $\\lambda^2=z$. Its characteristic polynomial recovers the equation.",
+      "For $k[\\lambda]/(\\lambda^2)$, multiplication by $\\lambda$ in the basis $1,\\lambda$ is $\\left(\\begin{smallmatrix}0&0\\\\1&0\\end{smallmatrix}\\right)$. This nonzero nilpotent matrix remembers more than its repeated eigenvalue zero."
+    ]
+  },
+  {
+    "slug": "connection",
+    "term": "Connection",
+    "section": "sec:nah",
+    "definition": "A complex-linear differentiation operator $\\nabla:E\\to E\\otimes K_C$ satisfying the Leibniz rule $\\nabla(fs)=f\\nabla(s)+s\\otimes df$. Unlike a Higgs field, it differentiates functions and is therefore not $\\OO_C$-linear.",
+    "examples": [
+      "On the trivial line over $\\mathbb A^1$, the usual derivative $\\nabla(f)=df$ is a connection. It satisfies $d(fg)=f\\,dg+g\\,df$, which displays the extra Leibniz term.",
+      "On $\\OO_C$, a global one-form $\\omega$ gives the connection $\\nabla(f)=df+f\\omega$. Multiplication $f\\mapsto f\\omega$ alone is instead a Higgs field, because it is $\\OO_C$-linear."
+    ]
+  },
+  {
+    "slug": "cotangent-bundle",
+    "term": "Cotangent bundle",
+    "section": "sec:cotangent",
+    "definition": "The vector bundle whose fibre at a smooth point is the dual of the tangent space there. Over the stable vector-bundle moduli space, Serre duality identifies cotangent vectors with Higgs fields on the corresponding bundles.",
+    "examples": [
+      "The cotangent bundle of $\\mathbb A^1_x$ is $\\mathbb A^2_{x,p}$: the coordinate $p$ specifies the covector $p\\,dx$ at the point $x$. Each fibre is a one-dimensional vector space.",
+      "The cotangent bundle of $\\mathbb P^1$ is the total space of $\\OO(-2)$. The transition $dw=-z^{-2}dz$ is exactly the canonical-bundle transition used to glue its cotangent fibres."
+    ]
+  },
+  {
+    "slug": "degree",
+    "term": "Degree",
+    "section": "sec:bundles",
+    "definition": "For a line bundle, the degree of a divisor representing it; for a vector bundle, the degree of its determinant line. Degree is additive in short exact sequences of vector bundles on a smooth projective curve.",
+    "examples": [
+      "The line $\\OO_{\\mathbb P^1}(3)$ has degree $3$, while $\\OO(-1)$ has degree $-1$. Their tensor product is $\\OO(2)$, so tensoring these lines adds their degrees.",
+      "For $E=\\OO(3)\\oplus\\OO(-1)$ on $\\mathbb P^1$, the determinant is $\\OO(2)$. Thus $\\deg E=2$ even though one summand has negative degree. Negative summands still contribute to the total."
+    ]
+  },
+  {
+    "slug": "determinant-line",
+    "term": "Determinant line",
+    "section": "sec:bundles",
+    "definition": "The highest exterior power $\\det E=\\bigwedge^{\\operatorname{rk}E}E$, which is a line bundle. It packages the degree of a vector bundle and records determinants of its transition matrices.",
+    "examples": [
+      "For $E=\\OO(a)\\oplus\\OO(b)$, the wedge of the two local generators transforms by the product of their transitions. Hence $\\det E=\\OO(a+b)$. This computes determinants on the projective line.",
+      "If $S^2\\simeq K_C$, then $E=S\\oplus S^{-1}$ has determinant $S\\otimes S^{-1}\\simeq\\OO_C$. The determinant is trivial although the two summands can each be nontrivial."
+    ]
+  },
+  {
+    "slug": "differential",
+    "term": "Differential",
+    "section": "sec:curves",
+    "definition": "A section of the sheaf $\\Omega_C^1$, locally written as a regular coefficient times a differential coordinate. Global differentials must obey the coordinate-change rule, so a locally familiar expression need not extend over the whole projective curve.",
+    "examples": [
+      "On an affine coordinate chart with coordinate $z$, the expression $z\\,dz$ is a regular differential. Its coefficient is a regular function, and $dz$ gives a local generator of $\\Omega_C^1$.",
+      "On $\\mathbb P^1$, $dz=-w^{-2}dw$ near infinity. Thus $dz$ has a pole there: an expression regular on the affine chart need not be a global regular differential."
+    ]
+  },
+  {
+    "slug": "direct-sum",
+    "term": "Direct sum",
+    "section": "sec:bundles",
+    "definition": "The bundle obtained by putting the fibres of two bundles side by side. Its rank and degree are sums of the respective ranks and degrees. A decomposition as a direct sum is a global assertion about gluing.",
+    "examples": [
+      "The direct sum $\\OO_C\\oplus\\OO_C$ is a rank-two trivial bundle. Its two constant basis sections identify every fibre with a pair of scalar coordinates.",
+      "On $\\mathbb P^1$, $\\OO(1)\\oplus\\OO(-1)$ has rank two and degree zero. Its degree-one summand can destabilise it, even though the total degree vanishes."
+    ]
+  },
+  {
+    "slug": "discriminant",
+    "term": "Discriminant",
+    "section": "sec:spectral",
+    "definition": "For the rank-two equation $\\lambda^2+a_1\\lambda+a_2=0$, the global section $\\Delta=a_1^2-4a_2$ of $K_C^2$. Its zeros locate repeated eigenvalues and possible branch points of the double spectral cover.",
+    "examples": [
+      "For a diagonal Higgs field with eigenforms $\\alpha,\\beta$, the discriminant is $(\\alpha-\\beta)^2$. It vanishes precisely where the two eigenforms have the same value.",
+      "Locally the equation $\\lambda^2-z=0$ has discriminant $4z$. At $z=0$ its two roots meet; the spectral curve has local coordinate $\\lambda$, with covering map $z=\\lambda^2$."
+    ]
+  },
+  {
+    "slug": "endomorphism-bundle",
+    "term": "Endomorphism bundle",
+    "section": "sec:higgs",
+    "definition": "The vector bundle $\\operatorname{End}(E)=\\operatorname{Hom}(E,E)$, whose sections are bundle endomorphisms. Tensoring it with $K_C$ allows matrices of local one-forms, and its global sections then describe Higgs fields.",
+    "examples": [
+      "For $E=\\OO_C^{\\oplus2}$, the endomorphism bundle is the bundle of $2\\times2$ matrices with regular-function entries. A Higgs field replaces those entries by regular one-forms.",
+      "For a line bundle $L$, one has $\\operatorname{End}(L)=L^\\vee\\otimes L\\simeq\\OO_C$. Consequently a Higgs field on any line bundle is simply an element of $H^0(C,K_C)$."
+    ]
+  },
+  {
+    "slug": "extension",
+    "term": "Extension",
+    "section": "sec:moduli",
+    "definition": "A short exact sequence $0\\to F\\to E\\to Q\\to0$ specifying a bundle built from a subbundle and a quotient. It is split if it identifies $E$ with $F\\oplus Q$ compatibly with the sequence.",
+    "examples": [
+      "The sequence $0\\to\\OO_C\\to\\OO_C\\oplus\\OO_C\\to\\OO_C\\to0$, using inclusion into the first summand and projection from the second, is split. Its middle term visibly separates into the two pieces.",
+      "On an elliptic curve, a nonzero class in $H^1(C,\\OO_C)$ gives a nonsplit extension of $\\OO_C$ by $\\OO_C$. Its degree is still zero, but no compatible global direct-sum decomposition exists."
+    ]
+  },
+  {
+    "slug": "family",
+    "term": "Family",
+    "section": "sec:moduli",
+    "definition": "A bundle on $C\\times T$, together with a relative Higgs field when appropriate, whose restriction to $C\\times\\{t\\}$ is the object at parameter $t$. Families include gluing across the parameter scheme, not just lists of fibres.",
+    "examples": [
+      "Fix a one-form $\\omega$ and take the trivial line on $C\\times\\mathbb A^1_t$ with Higgs field $t\\omega$. Its fibres interpolate from $(\\OO_C,0)$ at $t=0$ to $(\\OO_C,\\omega)$ at $t=1$.",
+      "The diagonal divisor in $C\\times C$ defines the line bundle $\\OO(\\Delta)$. Over a parameter point $p$ in the second factor, its restriction to the first curve is $\\OO_C(p)$, a family of degree-one lines."
+    ]
+  },
+  {
+    "slug": "fine-moduli-space",
+    "term": "Fine moduli space",
+    "section": "sec:moduli",
+    "definition": "A space representing the specified family functor, with a universal family whose pullbacks classify families uniquely in the required sense. The precise functor matters: normalisation or rigidification can change whether such a universal description is possible.",
+    "examples": [
+      "The affine line is a fine parameter space for regular functions: a function on $T$ is uniquely the pullback of its coordinate $x$ along a map $T\\to\\mathbb A^1$.",
+      "After choosing $p_0\\in C$, use line-bundle families with a chosen trivialisation along $\\{p_0\\}\\times T$. A normalised Poincar\\'e line on $C\\times\\Pic^d(C)$ is universal for this rigidified problem."
+    ]
+  },
+  {
+    "slug": "flat-connection",
+    "term": "Flat connection",
+    "section": "sec:nah",
+    "definition": "A connection with zero curvature. Its parallel transport is invariant under homotopies of paths and yields a representation of the fundamental group. This is the connection-side object appearing in the degree-zero nonabelian Hodge correspondence.",
+    "examples": [
+      "The ordinary derivative on a trivial line has zero curvature because $d^2=0$. Its constant local sections are horizontal, meaning that their derivative under the connection vanishes.",
+      "Locally on a curve, $\\nabla=d+A\\,dz$ with constant matrix $A$ is flat: $d(A\\,dz)=0$ and $dz\\wedge dz=0$. Thus matrix-valued differentiation can be flat without the matrix $A$ being zero."
+    ]
+  },
+  {
+    "slug": "frame-and-transition-function",
+    "term": "Frame and transition function",
+    "section": "sec:bundles",
+    "definition": "A frame is a local basis of bundle sections; transition functions are the invertible matrices comparing frames on overlaps. They satisfy a cocycle identity, and changing frames changes the matrices without changing the underlying bundle.",
+    "examples": [
+      "For $\\OO_C^{\\oplus2}$, the standard sections $e_1,e_2$ form a global frame. Replacing them by $e_1+e_2,e_2$ uses a constant invertible matrix and describes the same bundle.",
+      "On the two standard charts of $\\mathbb P^1$, the sections $X_0$ and $X_1$ frame $\\OO(1)$. On their overlap, $X_1=zX_0$ with $z=X_1/X_0$ invertible: this is its transition."
+    ]
+  },
+  {
+    "slug": "genus",
+    "term": "Genus",
+    "section": "sec:curves",
+    "definition": "For a smooth connected projective complex curve, the integer $g=\\dim H^0(C,K_C)$. It also counts handles of the associated compact Riemann surface. The identity $\\deg K_C=2g-2$ links it to line-bundle degree.",
+    "examples": [
+      "The projective line has genus zero: its canonical bundle is $\\OO(-2)$, which has no nonzero global sections. Thus there are no nonzero ordinary Higgs fields on a line over $\\mathbb P^1$.",
+      "An elliptic curve has genus one and a one-dimensional space of regular one-forms. After choosing a generator $\\omega$, every such form is $a\\omega$ for a unique scalar $a$."
+    ]
+  },
+  {
+    "slug": "higgs-bundle",
+    "term": "Higgs bundle",
+    "section": "sec:higgs",
+    "definition": "A pair $(E,\\phi)$ consisting of a vector bundle and an $\\OO_C$-linear map $\\phi:E\\to E\\otimes K_C$. The Higgs field adds geometric data to the bundle, and isomorphisms must respect both pieces.",
+    "examples": [
+      "Choose a line bundle $L$ and a one-form $\\omega$. Multiplication by $\\omega$ gives $\\phi:L\\to L\\otimes K_C$, producing the rank-one Higgs bundle $(L,\\omega)$.",
+      "On $\\OO_C^{\\oplus2}$, the matrix $\\operatorname{diag}(\\omega,-\\omega)$ defines a rank-two Higgs field. Each entry is a one-form, so the target is $\\OO_C^{\\oplus2}\\otimes K_C$, not the original bundle alone."
+    ]
+  },
+  {
+    "slug": "higgs-field",
+    "term": "Higgs field",
+    "section": "sec:higgs",
+    "definition": "An $\\OO_C$-linear morphism $E\\to E\\otimes K_C$, equivalently a global section of $\\operatorname{End}(E)\\otimes K_C$. Locally it is a matrix of one-forms. It does not differentiate coefficients, unlike a connection.",
+    "examples": [
+      "The zero map $E\\to E\\otimes K_C$ is a Higgs field on every vector bundle. Therefore studying Higgs bundles includes studying ordinary bundles as the special case with zero field.",
+      "On the trivial line, a one-form $\\omega$ gives the Higgs field $f\\mapsto f\\omega$. It satisfies $\\phi(fg)=f\\phi(g)$; there is no additional $g\\,df$ term."
+    ]
+  },
+  {
+    "slug": "higgs-morphism-and-isomorphism",
+    "term": "Higgs morphism and isomorphism",
+    "section": "sec:higgs",
+    "definition": "A bundle map $f:(E,\\phi)\\to(E',\\phi')$ is a Higgs morphism if $(f\\otimes1)\\phi=\\phi'f$. It is a Higgs isomorphism when the underlying bundle map is invertible. This condition makes invariant subbundles and automorphisms meaningful.",
+    "examples": [
+      "For any Higgs bundle, multiplication by $c\\in\\mathbb C^*$ commutes with $\\phi$ and is a Higgs isomorphism. Multiplication by zero also commutes, but is only a morphism.",
+      "Between $(\\OO_C,\\omega)$ and $(\\OO_C,\\eta)$, a nonzero constant map $f=c$ obeys the condition exactly when $c\\omega=c\\eta$. Thus different one-forms cannot become isomorphic by changing the frame of this line."
+    ]
+  },
+  {
+    "slug": "hitchin-base",
+    "term": "Hitchin base",
+    "section": "sec:hitchin",
+    "definition": "The affine vector space $\\mathcal A_r=\\bigoplus_{i=1}^rH^0(C,K_C^i)$ containing the characteristic coefficients of rank-$r$ Higgs fields. It parameterises spectral equations rather than complete Higgs bundles; different objects can have the same coefficients.",
+    "examples": [
+      "In rank one, the Hitchin base is $H^0(C,K_C)$. On an elliptic curve, choosing a generator $\\omega$ identifies this vector space with an affine line by $a\\omega\\leftrightarrow a$.",
+      "In rank two, a quadratic differential $q\\in H^0(C,K_C^2)$ determines the base point $(a_1,a_2)=(0,-q)$. Its spectral equation is $\\lambda^2-q=0$. There is no linear term."
+    ]
+  },
+  {
+    "slug": "hitchin-map",
+    "term": "Hitchin map",
+    "section": "sec:hitchin",
+    "definition": "The map sending a Higgs bundle to the coefficients of $\\det(\\lambda I-\\phi)$. With these coefficient conventions, rank two gives $(-\\operatorname{tr}\\phi,\\det\\phi)$. On the semistable moduli space this map is proper.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, the map records $a_1=-\\omega$. Varying $L$ while keeping $\\omega$ fixed stays in one Hitchin fibre, so coefficients do not determine the line bundle.",
+      "Both the zero field and $\\left(\\begin{smallmatrix}0&\\omega\\\\0&0\\end{smallmatrix}\\right)$ on $\\OO_C^{\\oplus2}$ have characteristic polynomial $\\lambda^2$. Their matrices differ when $\\omega\\ne0$, but both map to the zero Hitchin-base point."
+    ]
+  },
+  {
+    "slug": "hodge-chain",
+    "term": "Hodge chain",
+    "section": "sec:scaling",
+    "definition": "A decomposition of a Higgs bundle into graded pieces such that the field moves between consecutive pieces, tensoring with $K_C$, and vanishes at the end. Suitable rescaling of the pieces can identify the pair with its scaled Higgs field.",
+    "examples": [
+      "The Higgs line $(L,0)$ is a chain with one piece and no nonzero arrow. Scaling the Higgs field changes nothing, so its isomorphism class is fixed by the scaling action.",
+      "If $S^2\\simeq K_C$, let $E=S\\oplus S^{-1}$ and let $\\phi$ map $S$ identically to $S^{-1}\\otimes K_C$, killing $S^{-1}$. This two-piece chain is identified with $(E,t\\phi)$ by $\\operatorname{diag}(1,t)$."
+    ]
+  },
+  {
+    "slug": "holomorphic-versus-algebraic-bundle",
+    "term": "Holomorphic versus algebraic bundle",
+    "section": "sec:roadmap",
+    "definition": "On a smooth projective complex curve, algebraic vector bundles and holomorphic vector bundles on the associated Riemann surface describe equivalent data. This comparison allows complex-analytic theorems to be stated alongside algebraic constructions, but depends on the projective setting.",
+    "examples": [
+      "The algebraic bundle $\\OO_{\\mathbb P^1}(1)$ has transition $z$ on the overlap of the standard charts. The same transition is holomorphic and defines its corresponding holomorphic line bundle.",
+      "On the affine complex line, $e^z$ is holomorphic but not an algebraic regular function, since it is not polynomial. This warns against identifying all holomorphic and algebraic morphisms without the projective hypothesis."
+    ]
+  },
+  {
+    "slug": "integrability",
+    "term": "Integrability",
+    "section": "sec:higgs",
+    "definition": "The condition $\\phi\\wedge\\phi=0$ on a Higgs field, obtained by composing its endomorphisms and wedging its differential factors. On a smooth curve it is automatic because $\\bigwedge^2K_C=0$ as a sheaf of differential two-forms.",
+    "examples": [
+      "Locally on a curve write $\\phi=A(z)\\,dz$. The product $\\phi\\wedge\\phi=A(z)^2dz\\wedge dz$ vanishes, even when the matrix $A(z)$ is nonzero. This requires no diagonalisation.",
+      "On $\\mathbb A^2$, a field $A\\,dx+B\\,dy$ instead has wedge square $[A,B]dx\\wedge dy$. Noncommuting constant matrices can therefore violate integrability: this is a real additional condition in higher dimension."
+    ]
+  },
+  {
+    "slug": "invariant-subbundle",
+    "term": "Invariant subbundle",
+    "section": "sec:higgs-stability",
+    "definition": "A subbundle $F\\subset E$ satisfying $\\phi(F)\\subset F\\otimes K_C$. Higgs stability tests slopes only for these subbundles, not for every subbundle of the underlying vector bundle. Invariance must hold as a bundle-map condition.",
+    "examples": [
+      "For $\\phi=\\operatorname{diag}(\\alpha,\\beta)$ on $\\OO_C\\oplus\\OO_C$, each coordinate summand is invariant. Restricting the field gives multiplication by $\\alpha$ on the first and by $\\beta$ on the second.",
+      "For $E=S\\oplus S^{-1}$ with the nonzero arrow $S\\to S^{-1}\\otimes K_C$, the positive-degree summand $S$ is not invariant. The killed summand $S^{-1}$ is invariant and is the kernel."
+    ]
+  },
+  {
+    "slug": "jacobian",
+    "term": "Jacobian",
+    "section": "sec:moduli",
+    "definition": "The degree-zero Picard variety $\\operatorname{Pic}^0(C)$, whose group law is tensor product of line bundles. It is a projective complex variety of dimension $g$. Degree-$d$ Picard varieties are translated versions after choosing a degree-$d$ line.",
+    "examples": [
+      "On $\\mathbb P^1$, every degree-zero line is trivial, so its Jacobian is a point. This agrees with genus zero and contrasts with higher-genus families of degree-zero lines.",
+      "For an elliptic curve with chosen point $p_0$, the map $p\\mapsto\\OO_C(p-p_0)$ identifies the curve with its Jacobian. The group identity corresponds to the trivial line at $p=p_0$."
+    ]
+  },
+  {
+    "slug": "jordan-holder-filtration",
+    "term": "Jordan--Hölder filtration",
+    "section": "sec:moduli",
+    "definition": "A filtration of a semistable bundle or Higgs bundle by subobjects whose successive quotients are stable of the original slope. The filtration need not be unique, but the direct sum of its stable quotients is unique up to isomorphism.",
+    "examples": [
+      "For $(\\OO_C^{\\oplus2},0)$, the filtration $0\\subset\\OO_C\\subset\\OO_C^{\\oplus2}$ using the first summand has two stable rank-one quotients, both $(\\OO_C,0)$. Choosing the other summand gives the same graded object.",
+      "A nonsplit extension of $\\OO_C$ by $\\OO_C$ on an elliptic curve, with zero Higgs field, has the subline from its extension sequence. Its stable quotients are again two copies of $(\\OO_C,0)$, giving S-equivalence to the split pair."
+    ]
+  },
+  {
+    "slug": "kernel",
+    "term": "Kernel",
+    "section": "sec:examples",
+    "definition": "The subsheaf of sections sent to zero by a bundle map, such as a Higgs field. On a smooth curve this sheaf is locally free. Its fibre need not equal the kernel of the fibre map where the latter changes rank.",
+    "examples": [
+      "For the zero Higgs field, every local section is killed, so $\\ker\\phi=E$. This is the simplest kernel calculation and shows that a field can have the entire bundle as its kernel.",
+      "For $\\phi=\\operatorname{diag}(\\omega,0)$ on $\\OO_C^2$ with $\\omega\\ne0$, the kernel sheaf is the second summand. At a zero of $\\omega$, the pointwise fibre map is zero, so its vector-space kernel is larger."
+    ]
+  },
+  {
+    "slug": "line-bundle",
+    "term": "Line bundle",
+    "section": "sec:bundles",
+    "definition": "A vector bundle of rank one, equivalently a sheaf locally isomorphic to the structure sheaf. Its local generators are related by invertible functions. Global triviality requires one nowhere-vanishing generator on the whole curve.",
+    "examples": [
+      "The trivial line $\\OO_C$ has the global generator $1$. Every local section is a regular function times this generator, so no nontrivial transitions are needed.",
+      "The line $\\OO_{\\mathbb P^1}(1)$ is trivial on each standard affine chart but has degree one. It is not globally trivial, since a trivial line has degree zero."
+    ]
+  }
+]

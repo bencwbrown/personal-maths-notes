@@ -1,0 +1,32 @@
+\contentsline {section}{\numberline {1}Two questions, and the route connecting them}{3}{section.1}%
+\contentsline {section}{\numberline {2}Why an intersection needs a scheme structure}{3}{section.2}%
+\contentsline {section}{\numberline {3}Families and the role of flatness}{4}{section.3}%
+\contentsline {section}{\numberline {4}Dual numbers and first-order changes}{5}{section.4}%
+\contentsline {section}{\numberline {5}Embedded changes and a first tangent-space calculation}{5}{section.5}%
+\contentsline {section}{\numberline {6}What an obstruction means}{6}{section.6}%
+\contentsline {section}{\numberline {7}An ideal remembers infinitesimal directions}{7}{section.7}%
+\contentsline {section}{\numberline {8}Regular embeddings and genuine normal bundles}{7}{section.8}%
+\contentsline {section}{\numberline {9}The normal cone and the associated graded algebra}{8}{section.9}%
+\contentsline {section}{\numberline {10}Two Rees algebras, and the actual base parameter}{9}{section.10}%
+\contentsline {section}{\numberline {11}Building the deformation to the normal cone}{10}{section.11}%
+\contentsline {section}{\numberline {12}Three affine models, including a tangency calculation}{10}{section.12}%
+\contentsline {subsection}{\numberline {12.1}The origin of affine space}{10}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}A doubled Cartier centre}{11}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}The tangent curves become a doubled normal line}{11}{subsection.12.3}%
+\contentsline {section}{\numberline {13}Blow-ups: retaining directions rather than only a limit}{12}{section.13}%
+\contentsline {section}{\numberline {14}The full blow-up family and its open part}{12}{section.14}%
+\contentsline {section}{\numberline {15}Cycles, rational equivalence, and Chow groups}{13}{section.15}%
+\contentsline {section}{\numberline {16}Divisors and the small amount of Chern theory we need}{14}{section.16}%
+\contentsline {section}{\numberline {17}Specialization: move a cycle into the normal cone}{15}{section.17}%
+\contentsline {section}{\numberline {18}Gysin pullback and the definition of intersection}{15}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Keeping the actual intersection as the target}{16}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}The diagonal packages the intersection product}{16}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}A short explanation of Tor-independence}{16}{subsection.18.3}%
+\contentsline {section}{\numberline {19}Excess intersection and a brief Segre-class viewpoint}{17}{section.19}%
+\contentsline {subsection}{\numberline {19.1}What a Segre class adds}{17}{subsection.19.1}%
+\contentsline {section}{\numberline {20}Self-intersection, including a negative answer}{18}{section.20}%
+\contentsline {section}{\numberline {21}How this connects with semiprojective algebraic cutting}{18}{section.21}%
+\contentsline {section}{\numberline {22}Exercises with worked solutions}{19}{section.22}%
+\contentsline {section}{\numberline {A}Conventions, tools used without proof, and a reading route}{21}{appendix.A}%
+\contentsline {section}{\numberline {B}Glossary of terms and notation}{23}{appendix.B}%
+\contentsline {section}{\numberline {C}Examples Glossary}{30}{appendix.C}%

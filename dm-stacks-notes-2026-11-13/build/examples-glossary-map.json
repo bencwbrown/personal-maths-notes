@@ -1,0 +1,506 @@
+[
+  {
+    "index": 1,
+    "term": "Affine invariant quotient",
+    "slug": "affine-invariant-quotient",
+    "definition": "For an affine scheme $\\Spec A$\nwith a group action, the scheme $\\Spec A^G$ defined by invariant functions.\nIt can identify different orbits, so it need not classify geometric\nisomorphism classes of the quotient stack. See\nSections~\\ref{sec:quotients} and~\\ref{sec:coarse}."
+  },
+  {
+    "index": 2,
+    "term": "Affinisation",
+    "slug": "affinisation",
+    "definition": "The canonical map\n$M\\to\\Spec\\Gamma(M,\\OO_M)$, which gathers all global regular functions\non $M$ into one morphism to an affine scheme. Projectivity of this map\nis the semiprojectivity condition used here; it is not the same as\nprojectivity of $M$ over $k$. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 3,
+    "term": "Algebraic space",
+    "slug": "algebraic-space",
+    "definition": "A sheaf of sets for the \u00e9tale topology with\ndiagonal representable by schemes and an \u00e9tale surjective cover by a\nscheme. It generalises a scheme without introducing nontrivial\nautomorphisms of its objects. Every scheme is an algebraic space, but\nnot every algebraic space is a scheme. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 4,
+    "term": "Algebraic stack",
+    "slug": "algebraic-stack",
+    "definition": "A stack in groupoids whose diagonal is\nrepresentable by algebraic spaces and which has a representable smooth\nsurjective atlas from a scheme. The diagonal condition makes\nisomorphisms between families algebraic objects; the atlas gives\nscheme charts. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 5,
+    "term": "Ample line bundle",
+    "slug": "ample-line-bundle",
+    "definition": "A line bundle whose positive tensor powers\nprovide sufficiently many sections to describe the scheme by affine\nnonvanishing loci; on a projective scheme, a sufficiently high power\ngives a projective embedding. In these notes ampleness is used on the\nscheme before taking the GIT quotient. The trivial line bundle on an\naffine scheme is ample."
+  },
+  {
+    "index": 6,
+    "term": "Artin stack",
+    "slug": "artin-stack",
+    "definition": "The term commonly used for an algebraic stack\ndefined using a smooth atlas. It allows positive-dimensional stabilisers,\nas in $B\\Gm$, and includes DM stacks as a subclass. It does not mean\nthat every stabiliser must be positive-dimensional. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 7,
+    "term": "Atlas",
+    "slug": "atlas",
+    "definition": "A representable smooth surjective morphism\n$U\\to\\cX$ from a scheme. An \u00e9tale atlas is one which is \u00e9tale, and\nexists precisely for DM stacks. Surjectivity permits local lifts of\nfamilies; it does not guarantee a global lift of every family to $U$.\nSee Sections~\\ref{sec:quotientstacks} and~\\ref{sec:dm}."
+  },
+  {
+    "index": 8,
+    "term": "Automorphism",
+    "slug": "automorphism",
+    "definition": "An isomorphism of an object with itself.\nThe automorphisms of an object form a group. For a geometric object of\na quotient stack represented by $x\\in X$, this is the stabiliser\n$\\{g\\in G:gx=x\\}$."
+  },
+  {
+    "index": 9,
+    "term": "Boundary stack and coarse boundary",
+    "slug": "boundary-stack-and-coarse-boundary",
+    "definition": "At a regular cutting\nlevel, the boundary\nstack is the closed substack $y=0$ before forgetting stabilisers;\nits coarse boundary is the corresponding quotient space. In the running\nexample they are $B\\mu_n$ and a single ordinary point. At critical\nlevels, the quotient need only be a good moduli space. See\nSections~\\ref{sec:cutting} and~\\ref{sec:toycut}."
+  },
+  {
+    "index": 10,
+    "term": "Cartier divisor",
+    "slug": "cartier-divisor",
+    "definition": "An effective Cartier divisor is a closed\nsubscheme locally defined by one non-zero-divisor. It has an associated\nline bundle $\\OO(D)$ and a canonical section whose zero divisor is $D$.\nThe same definition is made on a stack by checking it on scheme charts.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 11,
+    "term": "Character",
+    "slug": "character",
+    "definition": "A homomorphism of algebraic groups $G\\to\\Gm$,\nequivalently a one-dimensional representation. Characters of $\\mu_n$\nare $\\zeta\\mapsto\\zeta^c$, indexed by $c$ modulo $n$. Characters of\n$\\Gm$ are $t\\mapsto t^c$, indexed by integers. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 12,
+    "term": "Classifying stack",
+    "slug": "classifying-stack",
+    "definition": "The stack $BG=[\\Spec k/G]$ assigning to\n$T$ the groupoid of $G$-torsors over $T$. In particular, $B\\Gm$\nclassifies line bundles and $B\\mu_n$ classifies pairs\n$(N,N^{\\otimes n}\\simeq\\OO_T)$. See Section~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 13,
+    "term": "Coarse moduli space",
+    "slug": "coarse-moduli-space",
+    "definition": "A map $\\pi:\\cX\\to X$ to an algebraic\nspace which is universal for maps to algebraic spaces and gives a\nbijection between geometric isomorphism classes and geometric points\nof $X$, over every algebraically closed extension. It forgets\nautomorphisms and need not preserve families over general schemes.\nSee Section~\\ref{sec:coarse}."
+  },
+  {
+    "index": 14,
+    "term": "Cocycle condition",
+    "slug": "cocycle-condition",
+    "definition": "The identity\n$\\alpha_{ij}\\alpha_{jk}=\\alpha_{ik}$ on triple overlaps for chosen gluing\nisomorphisms. For transition functions of a torsor it reads\n$g_{ij}g_{jk}=g_{ik}$. It is the compatibility needed to glue local\nobjects. See Section~\\ref{sec:families}."
+  },
+  {
+    "index": 15,
+    "term": "Conormal line",
+    "slug": "conormal-line",
+    "definition": "For a Cartier divisor with ideal sheaf\n$\\mathcal I$, the line bundle $\\mathcal I/\\mathcal I^2$ on the divisor.\nIt is dual to the normal line. Thus if a stabiliser acts on a normal\nvector by $\\zeta$, it acts on a conormal covector by $\\zeta^{-1}$.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 16,
+    "term": "Contracting action",
+    "slug": "contracting-action",
+    "definition": "In the sense relevant here, a\n$\\Gm$-action for which $\\lim_{t\\to0}t\\cdot p$ exists in $M$ for every\ngeometric point $p$. The limits lie in the fixed locus. Existence of\nthese limits is an extra hypothesis, distinct from projectivity of\nthe affinisation. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 17,
+    "term": "Critical cutting level",
+    "slug": "critical-cutting-level",
+    "definition": "A level $d$ equal to $\\Phi(F)$ for\nsome fixed component $F$, where $\\Phi(F)$ is its section weight.\nAt such a level fixed points can survive semistability and give\n$\\Gm$ stabilisers, so the quotient stack can fail to be DM.\nSee Sections~\\ref{sec:cutting} and~\\ref{sec:toycut}."
+  },
+  {
+    "index": 18,
+    "term": "Deligne--Mumford stack",
+    "slug": "deligne-mumford-stack",
+    "definition": "An algebraic stack admitting a\nrepresentable \u00e9tale surjective atlas from a scheme; equivalently, its\ndiagonal is unramified. The separated finite-type stacks and finite-type\nquotient examples used here have finite reduced stabilisers. With the\nbroad Stacks Project convention, DM alone does not impose\nquasi-compactness of the diagonal or finiteness of every stabiliser.\nSee Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 19,
+    "term": "Descent datum",
+    "slug": "descent-datum",
+    "definition": "Objects on a cover, with specified\nisomorphisms on overlaps satisfying a cocycle condition. Such a datum\nis effective when it comes from an object on the base. A stack\nrequires both effectiveness for objects and sheaf-like gluing for\nisomorphisms. See Section~\\ref{sec:families}."
+  },
+  {
+    "index": 20,
+    "term": "Descent of a line bundle to the coarse space",
+    "slug": "descent-of-a-line-bundle-to-the-coarse-space",
+    "definition": "The existence\nof a line bundle $L$ on $X$ and an isomorphism $\\cL\\simeq\\pi^*L$.\nIn the separated finite-type DM setting here, this holds exactly when\nall stabilisers act trivially on the fibres of $\\cL$. It is stronger\nthan invertibility of $\\pi_*\\cL$. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 21,
+    "term": "Diagonal",
+    "slug": "diagonal",
+    "definition": "The morphism\n$\\Delta_{\\cX}:\\cX\\to\\cX\\times\\cX$. Its pullback along a pair of\nfamilies is their sheaf of isomorphisms. Properties of the diagonal\ntherefore control isomorphisms, automorphisms, and separation.\nSee Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 22,
+    "term": "Dimension of a quotient stack",
+    "slug": "dimension-of-a-quotient-stack",
+    "definition": "For the equidimensional\nexamples with a smooth group, $\\dim[X/G]=\\dim X-\\dim G$.\nThus $\\PP(n,1)$ has dimension one although its standard atlas is\ntwo-dimensional. The dimensions of stabilisers need not equal the\ndimension of the group used in a presentation. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 23,
+    "term": "Effective descent",
+    "slug": "effective-descent",
+    "definition": "The assertion that compatible local\nobjects with specified gluing isomorphisms arise from a global object.\nFor a stack, the global object is unique up to an isomorphism compatible\nwith the gluing data. This does not remove its automorphisms.\nSee Section~\\ref{sec:families}."
+  },
+  {
+    "index": 24,
+    "term": "Equivariant map",
+    "slug": "equivariant-map",
+    "definition": "A map commuting with the declared group\nactions. With left actions, $f(gp)=g f(p)$. Quotient-stack objects\nare torsors equipped with such maps; changing to right torsors requires\nthe corresponding inverse convention. See Section~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 25,
+    "term": "Equivariant vector bundle",
+    "slug": "equivariant-vector-bundle",
+    "definition": "A vector bundle with a compatible\nlift of the group action, linear on the fibres. It is equivalently a\nvector bundle on the quotient stack. At a fixed point its fibre is a\nrepresentation of the stabiliser. In rank one the lift is a\nlinearisation and its fibre representation is a character.\nSee Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 26,
+    "term": "\u00c9tale cover",
+    "slug": "etale-cover",
+    "definition": "A jointly surjective family of \u00e9tale morphisms.\nIts overlaps are fibre products over the base. Such a cover can permit\nchoices, such as roots of units, which are unavailable on any Zariski\nopen cover. See Section~\\ref{sec:families}."
+  },
+  {
+    "index": 27,
+    "term": "\u00c9tale morphism",
+    "slug": "etale-morphism",
+    "definition": "A flat, unramified morphism locally of\nfinite presentation. It is the algebraic model for a local isomorphism\nwithout branching. For example, adjoining an $n$th root of a unit\nis finite \u00e9tale when $n$ is invertible. See Section~\\ref{sec:families}."
+  },
+  {
+    "index": 28,
+    "term": "Family",
+    "slug": "family",
+    "definition": "An object parameterised by a test scheme $T$;\nin stack language it is an object of $\\cX(T)$, or a morphism\n$T\\to\\cX$. Its pullback along $T'\\to T$ is the family with changed\nbase. Testing only over $\\Spec k$ loses information about families.\nSee Section~\\ref{sec:families}."
+  },
+  {
+    "index": 29,
+    "term": "Fibre product of stacks",
+    "slug": "fibre-product-of-stacks",
+    "definition": "A 2-fibre product: its objects are\ntwo objects together with a specified isomorphism between their images\nin the common target. This extra isomorphism is why\n$X\\times_{[X/G]}X\\simeq G\\times X$. See\nSection~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 30,
+    "term": "Flat and faithfully flat",
+    "slug": "flat-and-faithfully-flat",
+    "definition": "A morphism of schemes is flat if\neach local-ring map makes the target local ring a flat module: tensoring\nwith that module preserves exact sequences. A flat morphism which is\nsurjective is faithfully flat. Flatness is part of the definitions of\n\u00e9tale and fppf covers."
+  },
+  {
+    "index": 31,
+    "term": "Fppf topology",
+    "slug": "fppf-topology",
+    "definition": "The topology whose covers are jointly\nsurjective families of flat morphisms locally of finite presentation.\nThe abbreviation comes from the French for faithfully flat and of\nfinite presentation. It contains the \u00e9tale topology. The stacks in\nthese notes satisfy descent in this topology. See\nSection~\\ref{sec:families}."
+  },
+  {
+    "index": 32,
+    "term": "Free action",
+    "slug": "free-action",
+    "definition": "An action with trivial stabilisers; for the\nfinite-type smooth-group actions over characteristic zero considered\nhere, this can be checked on geometric points. If $X\\to Y$ is a\n$G$-torsor, then $[X/G]\\simeq Y$. Freeness is stronger than the finite\nstabiliser condition used in GIT stability. See\nSection~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 33,
+    "term": "Functor of points",
+    "slug": "functor-of-points",
+    "definition": "The functor\n$T\\mapsto\\Hom(T,X)$, together with pullback along maps of test schemes.\nIt determines a scheme $X$. For a stack, the analogous construction\nhas groupoids as values, so it retains isomorphisms as well as objects.\nSee Section~\\ref{sec:families}."
+  },
+  {
+    "index": 34,
+    "term": "Geometric fibre weight",
+    "slug": "geometric-fibre-weight",
+    "definition": "The integer $c$ describing an\nactual action on a line fibre by $v\\mapsto t^c v$. For $\\mu_n$ only\nits residue modulo $n$ matters. Under the section-action convention\nhere, the fibre weight of $L$ at a fixed component is $-\\Phi(F)$,\nwhile the nonvanishing section weight is $\\Phi(F)$.\nSee Sections~\\ref{sec:sheaves} and~\\ref{sec:cutting}."
+  },
+  {
+    "index": 35,
+    "term": "Geometric point",
+    "slug": "geometric-point",
+    "definition": "A morphism $\\Spec\\Omega\\to X$ where\n$\\Omega$ is an algebraically closed field. For a stack this is an\nobject over $\\Omega$ and can have nontrivial automorphisms. Passing\nto its geometric isomorphism class is the step used in defining a\ncoarse moduli space. See Section~\\ref{sec:coarse}."
+  },
+  {
+    "index": 36,
+    "term": "GIT quotient",
+    "slug": "git-quotient",
+    "definition": "The quotient determined by a chosen\nlinearisation and its invariant sections. In the projective or relative\nconstruction here it is $\\Proj B$ in tensor degree. At a regular\nlevel it is the coarse space of the semistable quotient stack; at a\ncritical level it can identify distinct geometric orbit classes.\nSee Sections~\\ref{sec:coarse} and~\\ref{sec:cutting}."
+  },
+  {
+    "index": 37,
+    "term": "Good moduli space",
+    "slug": "good-moduli-space",
+    "definition": "A quasi-compact map\n$\\pi:\\cX\\to X$ to an algebraic space such that pushforward on\nquasi-coherent sheaves is exact and\n$\\OO_X\\simeq\\pi_*\\OO_{\\cX}$. It can identify distinct geometric\nisomorphism classes, unlike a coarse moduli space. The map\n$[\\A^1/\\Gm]\\to\\Spec k$ for scaling is an example.\nSee Section~\\ref{sec:coarse}."
+  },
+  {
+    "index": 38,
+    "term": "Groupoid",
+    "slug": "groupoid",
+    "definition": "A category in which every arrow is invertible.\nThe action groupoid has objects $x\\in X$ and arrows $g:x\\to gx$.\nIts isomorphism classes are orbits, while its automorphism groups are\nstabilisers. See Section~\\ref{sec:quotients}."
+  },
+  {
+    "index": 39,
+    "term": "Groupoid presentation",
+    "slug": "groupoid-presentation",
+    "definition": "An atlas $U\\to\\cX$ together with\nthe arrow space $R=U\\times_{\\cX}U$, source and target maps, and\ncomposition. The stack is recovered by allowing this groupoid to\ndescribe families locally and then glue. For $[X/G]$, the arrow space\nis $G\\times X$. See Section~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 40,
+    "term": "Inertia stack",
+    "slug": "inertia-stack",
+    "definition": "The stack $I\\cX$ of pairs $(\\xi,\\alpha)$,\nwhere $\\xi$ is an object and $\\alpha$ is an automorphism of it.\nIt records stabilisers in families. For the scalar cyclic quotient,\n$I[\\A^1/\\mu_n]$ has the identity component $[\\A^1/\\mu_n]$\nand one extra $B\\mu_n$ component for each nonidentity root of unity.\nSee Exercise~\\ref{ex:inertia}."
+  },
+  {
+    "index": 41,
+    "term": "Invariant function or section",
+    "slug": "invariant-function-or-section",
+    "definition": "A function unchanged by\nthe action, or a section fixed by the action induced by a\nlinearisation. For a line with geometric fibre character $\\chi$,\nequivariance of a section means $f(gx)=\\chi(g) f(x)$; invariance does\nnot require the coefficient function itself to have weight zero.\nSee Sections~\\ref{sec:sheaves} and~\\ref{sec:cutting}."
+  },
+  {
+    "index": 42,
+    "term": "Isomorphism sheaf",
+    "slug": "isomorphism-sheaf",
+    "definition": "For two families $\\xi,\\eta$ over $T$,\nthe sheaf assigning to $T'\\to T$ the isomorphisms between their\npullbacks to $T'$. It is denoted\n$\\underline{\\Isom}_T(\\xi,\\eta)$ and is a pullback of the diagonal.\nWhen the two families coincide it is their automorphism group sheaf.\nSee Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 43,
+    "term": "Line bundle",
+    "slug": "line-bundle",
+    "definition": "A locally free sheaf of rank one, or the\ncorresponding geometric bundle with one-dimensional vector-space\nfibres. A line bundle on a stack also records how automorphisms act\non those fibres. These fibre characters can obstruct descent to a\ncoarse space. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 44,
+    "term": "Linearisation",
+    "slug": "linearisation",
+    "definition": "A lift of a group action to a line bundle,\nlinear on its fibres and compatible with group multiplication. It\nspecifies an action on sections and hence the invariant sections used\nto form a GIT quotient. Different linearisations on the same\nunderlying bundle can give different stability conditions.\nSee Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 45,
+    "term": "Linearly reductive group",
+    "slug": "linearly-reductive-group",
+    "definition": "A group for which taking\ninvariant vectors is an exact operation on representations. Finite\ngroups in characteristic zero have this property by averaging over\nthe group. This exactness explains the good behaviour of invariant\nmodules and tame coarse pushforward here. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 46,
+    "term": "Locally free sheaf",
+    "slug": "locally-free-sheaf",
+    "definition": "A sheaf which is isomorphic locally\nto a finite direct sum of copies of the structure sheaf. Rank-one\nlocally free sheaves are line bundles. A coherent sheaf of generic\nrank one need not be locally free at singular points, as the odd\nmodule on the quadratic cone demonstrates. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 47,
+    "term": "Normal line",
+    "slug": "normal-line",
+    "definition": "For a Cartier divisor\n$\\cD\\subset\\cX$, the line bundle\n$\\normal_{\\cD/\\cX}=(\\mathcal I/\\mathcal I^2)^\\vee\n\\simeq\\OO_{\\cX}(\\cD)|_{\\cD}$. It includes the action of every\nstabiliser on the normal direction. It need not be the pullback of\nthe normal line of the coarse divisor. See Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 48,
+    "term": "Orbit",
+    "slug": "orbit",
+    "definition": "The points obtained from $x$ by acting with the\ngroup. In a quotient stack an orbit gives one geometric isomorphism\nclass, with automorphism group $\\Stab(x)$. An orbit can fail to be\nclosed, which matters when comparing a GIT quotient with a coarse\nmoduli space. See Sections~\\ref{sec:quotients} and~\\ref{sec:coarse}."
+  },
+  {
+    "index": 49,
+    "term": "Polarisation",
+    "slug": "polarisation",
+    "definition": "The chosen ample linearised line bundle\nused in the quotient construction, or the associated line on the\nquotient stack. Its pushforward to the coarse space can fail to be\ninvertible, and even an invertible pushforward need not be a\ndescended polarisation. It is also distinct from the boundary normal\nline. See Sections~\\ref{sec:sheaves} and~\\ref{sec:cutting}."
+  },
+  {
+    "index": 50,
+    "term": "Projective degree",
+    "slug": "projective-degree",
+    "definition": "The tensor degree $m$ in a section\nring $R=\\bigoplus_{m\\ge0}H^0(M,L^{\\otimes m})$. The operation\n$\\Proj$ in these notes uses this grading, not the group-weight\ngrading. Degree-zero functions need not be constant.\nSee Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 51,
+    "term": "Pullback",
+    "slug": "pullback",
+    "definition": "The operation taking a sheaf or family to a new\nbase along a morphism. For a line bundle $L$ on a coarse space,\n$\\pi^*L$ is a line on the stack with trivial stabiliser actions.\nPullback is the operation used in the definition of line-bundle\ndescent. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 52,
+    "term": "Pushforward",
+    "slug": "pushforward",
+    "definition": "The sheaf whose sections downstairs are\nsections upstairs over the inverse image. On affine finite-group\nquotient charts it is computed by taking invariant modules.\nIt can lose stabiliser characters, fail to preserve local freeness,\nand fail to commute with tensor products.\nSee Sections~\\ref{sec:sheaves} and~\\ref{sec:weighted}."
+  },
+  {
+    "index": 53,
+    "term": "Quasi-coherent sheaf",
+    "slug": "quasi-coherent-sheaf",
+    "definition": "A sheaf of modules which, on affine\ncharts $\\Spec A$, is associated to an $A$-module, with compatible\nrestriction maps. On a stack this condition is checked on an atlas\nwith descent data. Vector bundles give quasi-coherent sheaves;\nthe category also includes invariant modules which are not locally\nfree. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 54,
+    "term": "Quotient stack",
+    "slug": "quotient-stack",
+    "definition": "The stack $[X/G]$ whose objects over $T$\nare $G$-torsors $P\\to T$ with equivariant maps $P\\to X$.\nArrows are torsor isomorphisms compatible with those maps. The torsor\nretains the transition functions needed to glue a family, rather\nthan requiring one global map $T\\to X$. See\nSection~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 55,
+    "term": "Regular cutting level",
+    "slug": "regular-cutting-level",
+    "definition": "A level $d$ unequal to\n$\\Phi(F)$ for every fixed component $F$. Under the hypotheses\nof the cutting discussion, the semistable locus then has closed\norbits within it and finite stabilisers, and the quotient stack is\nsmooth DM. Regularity does not imply freeness.\nSee Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 56,
+    "term": "Representable morphism",
+    "slug": "representable-morphism",
+    "definition": "A morphism\n$\\cX\\to\\cY$ representable by algebraic spaces is one whose base\nchange by every scheme $T\\to\\cY$ is an algebraic space. If every\nsuch base change is a scheme, it is representable by schemes.\nProperties such as \u00e9taleness of a representable map are tested on\nthese base changes. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 57,
+    "term": "Residual action",
+    "slug": "residual-action",
+    "definition": "An additional action that commutes with\nthe group being quotiented and therefore induces an action on the\nquotient. Its fixed points describe an external symmetry of the\nresulting stack; they are different data from automorphisms of\nobjects in that stack. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 58,
+    "term": "Residual gerbe at a closed point",
+    "slug": "residual-gerbe-at-a-closed-point",
+    "definition": "The substack retaining\nthe point and its automorphisms. For a closed point with stabiliser\n$H$ over the algebraically closed field here it is $BH$.\nIn $[\\A^1/\\mu_n]$ the reduced origin substack is $B\\mu_n$,\nwhereas the scheme-theoretic fibre of the coarse map is thicker.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 59,
+    "term": "Root divisor",
+    "slug": "root-divisor",
+    "definition": "The Cartier substack $\\cD$ where the\nuniversal section of a divisor root stack vanishes. It satisfies\n$\\pi^*D=n\\cD$. For smooth $D$, it is the reduced substack over\n$D$ and is locally $D\\times B\\mu_n$, although a global product\nneed not exist. See Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 60,
+    "term": "Root gerbe",
+    "slug": "root-gerbe",
+    "definition": "The stack of $n$th roots of a line bundle\n$L$, with no section specified: its objects have an isomorphism\n$N^{\\otimes n}\\simeq f^*L$. It has $\\mu_n$ stabiliser everywhere.\nFor $L=\\OO_X$ it is $X\\times B\\mu_n$.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 61,
+    "term": "Root stack of a divisor",
+    "slug": "root-stack-of-a-divisor",
+    "definition": "The stack\n$\\sqrt[n]{(X,D)}$ of data $(f:T\\to X,N,s,\\phi)$ with\n$\\phi:N^{\\otimes n}\\simeq f^*\\OO_X(D)$ carrying $s^n$\nto the canonical divisor section. It is $X$ away from $D$\nand has $\\mu_n$ stabilisers over $D$. Its local chart is\n$[\\Spec A[z]/(z^n-a)/\\mu_n]$ if $D=(a)$.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 62,
+    "term": "Scheme-theoretic fibre",
+    "slug": "scheme-theoretic-fibre",
+    "definition": "A fibre defined by base change,\nincluding its equations and nilpotents. For the coarse map\n$[\\A^1_z/\\mu_n]\\to\\A^1_u$ with $u=z^n$, the fibre over\nzero is $[\\Spec k[z]/(z^n)/\\mu_n]$. Its reduction is\n$B\\mu_n$, but the two are not the same stack.\nSee Section~\\ref{sec:roots}."
+  },
+  {
+    "index": 63,
+    "term": "Section ring",
+    "slug": "section-ring",
+    "definition": "The graded algebra\n$R=\\bigoplus_{m\\ge0}H^0(M,L^{\\otimes m})$, with multiplication\ngiven by tensoring sections. A linearisation gives a second,\nindependent decomposition by group weights $R_{m,w}$.\nThe finite-generation and $M\\simeq\\Proj R$ hypotheses are stated\nexplicitly in the cutting discussion. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 64,
+    "term": "Section weight",
+    "slug": "section-weight",
+    "definition": "The integer $w$ in $t\\cdot s=t^w s$.\nThese notes use $(t\\cdot s)(p)=t_L^{-1}s(tp)$, so at a fixed\ncomponent the weight of a nonvanishing section is the negative\nof its geometric fibre weight. Invariant cut sections satisfy\n$w+\\epsilon\\ell-md=0$. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 65,
+    "term": "Semiprojective",
+    "slug": "semiprojective",
+    "definition": "In the projective-affinisation sense\nused here, a variety whose global-function algebra is finitely\ngenerated and whose affinisation morphism is projective.\nSome authors impose additional conditions on a $\\Gm$-action,\nincluding existence of contracting limits and properness of the\nfixed locus. Those conditions are not silently included here.\nSee Section~\\ref{sec:cutting} and Appendix~A."
+  },
+  {
+    "index": 66,
+    "term": "Semistable point",
+    "slug": "semistable-point",
+    "definition": "For the chosen ample linearisation,\na point where some invariant section of positive tensor degree\ndoes not vanish. The positive-degree requirement matters when\n$R_0$ is nonconstant. Semistability depends on the linearisation\nand does not by itself imply a finite stabiliser.\nSee Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 67,
+    "term": "Separated stack",
+    "slug": "separated-stack",
+    "definition": "A stack whose diagonal is proper.\nFor a DM stack this makes its unramified diagonal finite.\nIt is a further condition, not part of the broad DM definition\nused here. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 68,
+    "term": "Smooth stack",
+    "slug": "smooth-stack",
+    "definition": "An algebraic stack smooth over the base\nfield. Smoothness can be checked on a smooth atlas.\nThus $[\\A^2/\\mu_2]$ for the sign action is smooth even though\nits coarse quadratic cone is singular. A DM stack need not\nbe smooth. See Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 69,
+    "term": "Stabiliser or isotropy group",
+    "slug": "stabiliser-or-isotropy-group",
+    "definition": "The automorphism group\nof a geometric object. In $[X/G]$, an object represented by\n$x$ has stabiliser $G_x=\\{g:gx=x\\}$. Its representations on\ntangent spaces and line fibres are part of stack geometry.\nSee Sections~\\ref{sec:quotients} and~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 70,
+    "term": "Stable point",
+    "slug": "stable-point",
+    "definition": "In the standard GIT setting used here,\na semistable point whose orbit is closed within the semistable\nlocus and whose stabiliser is finite. Stability is weaker than\nfreeness. Finite stabiliser alone does not ensure that the orbit\nis closed. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 71,
+    "term": "Stack",
+    "slug": "stack",
+    "definition": "A groupoid-valued moduli problem with pullback,\nin which isomorphisms form sheaves and descent data for objects\nare effective. Objects glue up to specified compatible\nisomorphisms, without discarding their automorphisms.\nSee Section~\\ref{sec:families}."
+  },
+  {
+    "index": 72,
+    "term": "Tame stack",
+    "slug": "tame-stack",
+    "definition": "In the finite-inertia setting, meaning\nthat $I\\cX\\to\\cX$ is a finite morphism, a stack\nwhose coarse-space pushforward on quasi-coherent sheaves is exact.\nFinite stabilisers are linearly reductive in the characteristic-zero\nexamples here, so the separated finite-type DM stacks used for\ndescent are tame. This explains why invariants are exact; it does\nnot imply descent of every line bundle. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 73,
+    "term": "Tensor degree",
+    "slug": "tensor-degree",
+    "definition": "Another name for the projective degree\n$m$, counting powers $L^{\\otimes m}$. It is independent of the\ngroup weight $w$ and of any degeneration parameter.\nSee Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 74,
+    "term": "Topology, in descent theory",
+    "slug": "topology-in-descent-theory",
+    "definition": "A specification of which\nfamilies of maps count as covers and hence where objects and\narrows must glue. Zariski, \u00e9tale, and fppf covers give the\nthree topologies used here. This is additional cover data on\ntest schemes, rather than just the usual topology on one\nunderlying space. See Section~\\ref{sec:families}."
+  },
+  {
+    "index": 75,
+    "term": "Torsor",
+    "slug": "torsor",
+    "definition": "A family locally isomorphic to $G\\times T$\nwith the group acting by translation, with no preferred identity\nsection. A section trivialises the torsor. In our left-action\nconvention the map $G\\times P\\to P\\times_T P$, $(g,p)\\mapsto(gp,p)$,\nis an isomorphism. See Section~\\ref{sec:quotientstacks}."
+  },
+  {
+    "index": 76,
+    "term": "Torus",
+    "slug": "torus",
+    "definition": "An algebraic group isomorphic over the\nalgebraically closed field to $(\\Gm)^r$. The cutting group is\nthe one-dimensional torus $\\Gm$. Its finite stabilisers are\ncyclic groups $\\mu_n$; these finite groups are not themselves\npositive-dimensional tori. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 77,
+    "term": "Transporter",
+    "slug": "transporter",
+    "definition": "For two points or families $x,x'$ in an\naction presentation, the space $\\{g\\in G:gx=x'\\}$ of arrows\nbetween them. When $x=x'$ it is the stabiliser. It is a concrete\ndescription of a pullback of the quotient-stack diagonal.\nSee Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 78,
+    "term": "Unramified morphism",
+    "slug": "unramified-morphism",
+    "definition": "For schemes, a morphism locally\nof finite type whose relative differential sheaf $\\Omega_{X/Y}$\nvanishes; geometrically, it has no infinitesimal motion in its\nfibres. For algebraic spaces the condition is checked \u00e9tale\nlocally. An unramified diagonal characterises DM stacks.\nSee Section~\\ref{sec:dm}."
+  },
+  {
+    "index": 79,
+    "term": "Vector bundle",
+    "slug": "vector-bundle",
+    "definition": "A locally free sheaf of finite rank,\nor its associated family of vector spaces. On $[X/G]$, it is\na $G$-equivariant vector bundle on $X$. Its stabiliser\nrepresentations must be trivial if it is to descend to the\ncoarse space in the setting here. See Section~\\ref{sec:sheaves}."
+  },
+  {
+    "index": 80,
+    "term": "Veronese subring",
+    "slug": "veronese-subring",
+    "definition": "For a nonnegatively graded ring $B$,\nthe ring $B^{(N)}=\\bigoplus_{r\\ge0}B_{Nr}$, regraded so that\n$B_{Nr}$ has degree $r$. Its projective spectrum agrees with\n$\\Proj B$. In the toy lower cut, taking the $n$th Veronese\nturns $k[A,B]$ of degrees $(n,1)$ into $k[A,B^n]$\nwith both generators of regraded degree one.\nSee Section~\\ref{sec:toycut}."
+  },
+  {
+    "index": 81,
+    "term": "Weight",
+    "slug": "weight",
+    "definition": "An integer indexing a character of $\\Gm$,\nor a character's residue modulo $n$ for $\\mu_n$.\nOne must specify the representation: a section weight,\ngeometric fibre weight, tangent weight, and residual weight\nneed not be the same. See Sections~\\ref{sec:sheaves}\nand~\\ref{sec:cutting}."
+  },
+  {
+    "index": 82,
+    "term": "Weighted projective stack",
+    "slug": "weighted-projective-stack",
+    "definition": "The quotient\n$[(\\A^{r+1}\\setminus0)/\\Gm]$ for a positive weighted action.\nIn these notes $\\PP(n,1)$ means the stack with action\n$(x,y)\\mapsto(t^n x,ty)$, whose coarse space is $\\PP^1$.\nIt has a $\\mu_n$ stabiliser at $y=0$ and trivial stabilisers\nelsewhere. See Section~\\ref{sec:weighted}."
+  },
+  {
+    "index": 83,
+    "term": "Weight space",
+    "slug": "weight-space",
+    "definition": "The subspace on which the group acts\nby one fixed character. For example, $R_{m,w}$ consists of\nsections of $L^{\\otimes m}$ with section weight $w$.\nTaking invariants selects the weight-zero part of the\ndeclared representation. See Section~\\ref{sec:cutting}."
+  },
+  {
+    "index": 84,
+    "term": "Zariski versus \u00e9tale local",
+    "slug": "zariski-versus-etale-local",
+    "definition": "Zariski local means after\nrestricting to open subsets. \u00c9tale local allows \u00e9tale covers,\nincluding maps adjoining roots of units. A choice can exist\n\u00e9tale locally without existing on any nonempty Zariski open,\nas in the torsor $s^n=t$ on $\\Gm$.\nSee Section~\\ref{sec:families}."
+  }
+]

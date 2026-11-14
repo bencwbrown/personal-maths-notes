@@ -1,0 +1,525 @@
+{
+  "pages": 36,
+  "glossary_entries": 64,
+  "example_entries": 64,
+  "numbered_examples": 128,
+  "verified_named_destinations": 128,
+  "latex_log_issues": [],
+  "entries": [
+    {
+      "term": "Automorphism",
+      "slug": "automorphism",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 26,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Canonical bundle",
+      "slug": "canonical-bundle",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 26,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Characteristic polynomial",
+      "slug": "characteristic-polynomial",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 26,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Coarse moduli space",
+      "slug": "coarse-moduli-space",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 26,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Companion matrix",
+      "slug": "companion-matrix",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 26,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Connection",
+      "slug": "connection",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Cotangent bundle",
+      "slug": "cotangent-bundle",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Degree",
+      "slug": "degree",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Determinant line",
+      "slug": "determinant-line",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Differential",
+      "slug": "differential",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Direct sum",
+      "slug": "direct-sum",
+      "gloss_page": 20,
+      "gloss_destination_verified": true,
+      "examples_page": 27,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Discriminant",
+      "slug": "discriminant",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Endomorphism bundle",
+      "slug": "endomorphism-bundle",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Extension",
+      "slug": "extension",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Family",
+      "slug": "family",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Fine moduli space",
+      "slug": "fine-moduli-space",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Flat connection",
+      "slug": "flat-connection",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 28,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Frame and transition function",
+      "slug": "frame-and-transition-function",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Genus",
+      "slug": "genus",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Higgs bundle",
+      "slug": "higgs-bundle",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Higgs field",
+      "slug": "higgs-field",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Higgs morphism and isomorphism",
+      "slug": "higgs-morphism-and-isomorphism",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Hitchin base",
+      "slug": "hitchin-base",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Hitchin map",
+      "slug": "hitchin-map",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 29,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Hodge chain",
+      "slug": "hodge-chain",
+      "gloss_page": 21,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Holomorphic versus algebraic bundle",
+      "slug": "holomorphic-versus-algebraic-bundle",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Integrability",
+      "slug": "integrability",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Invariant subbundle",
+      "slug": "invariant-subbundle",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Jacobian",
+      "slug": "jacobian",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Jordan--H\u00f6lder filtration",
+      "slug": "jordan-holder-filtration",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 30,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Kernel",
+      "slug": "kernel",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Line bundle",
+      "slug": "line-bundle",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Local system",
+      "slug": "local-system",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Moduli space",
+      "slug": "moduli-space",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Nilpotent Higgs field",
+      "slug": "nilpotent-higgs-field",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Nilpotent cone",
+      "slug": "nilpotent-cone",
+      "gloss_page": 22,
+      "gloss_destination_verified": true,
+      "examples_page": 31,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Nonabelian Hodge correspondence",
+      "slug": "nonabelian-hodge-correspondence",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Picard variety",
+      "slug": "picard-variety",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Polystability",
+      "slug": "polystability",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Proper morphism",
+      "slug": "proper-morphism",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Rank",
+      "slug": "rank",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Riemann--Roch",
+      "slug": "riemann-roch",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 32,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "S-equivalence",
+      "slug": "s-equivalence",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Saturation",
+      "slug": "saturation",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Scaling action",
+      "slug": "scaling-action",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Section space H0",
+      "slug": "section-space-h0",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Semiprojectivity",
+      "slug": "semiprojectivity",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Semistable Higgs bundle",
+      "slug": "semistable-higgs-bundle",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 33,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Semistable vector bundle",
+      "slug": "semistable-vector-bundle",
+      "gloss_page": 23,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Serre duality",
+      "slug": "serre-duality",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Sheaf cohomology H1",
+      "slug": "sheaf-cohomology-h1",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Slope",
+      "slug": "slope",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Spectral curve",
+      "slug": "spectral-curve",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Spectral line bundle",
+      "slug": "spectral-line-bundle",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 34,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Stable Higgs bundle",
+      "slug": "stable-higgs-bundle",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Stable vector bundle",
+      "slug": "stable-vector-bundle",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Subbundle",
+      "slug": "subbundle",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Theta characteristic",
+      "slug": "theta-characteristic",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Torsion sheaf",
+      "slug": "torsion-sheaf",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Trace",
+      "slug": "trace",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 35,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Twisted Higgs bundle",
+      "slug": "twisted-higgs-bundle",
+      "gloss_page": 24,
+      "gloss_destination_verified": true,
+      "examples_page": 36,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Underlying bundle",
+      "slug": "underlying-bundle",
+      "gloss_page": 25,
+      "gloss_destination_verified": true,
+      "examples_page": 36,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Vector bundle",
+      "slug": "vector-bundle",
+      "gloss_page": 25,
+      "gloss_destination_verified": true,
+      "examples_page": 36,
+      "examples_destination_verified": true
+    },
+    {
+      "term": "Zero Higgs field",
+      "slug": "zero-higgs-field",
+      "gloss_page": 25,
+      "gloss_destination_verified": true,
+      "examples_page": 36,
+      "examples_destination_verified": true
+    }
+  ],
+  "pdf_sha256": "aebd6daeb7a36d810d647b6ccdf3423cdbf723920a9134beed1f4d70cc32b0ba",
+  "qpdf_check_passed": true,
+  "exercise_count": 12
+}

@@ -1,0 +1,32 @@
+{
+  "repository_root": "/Users/Benjamin/Developer/AlgebraicCutting",
+  "pre_existing_workspace_files_sha256_checked": 163,
+  "changed_pre_existing_workspace_files": [],
+  "missing_pre_existing_workspace_files": [],
+  "literature_root": "/Users/Benjamin/Literature",
+  "literature_files_size_and_mtime_checked": 1555,
+  "changed_literature_metadata": [],
+  "missing_literature_files": [],
+  "added_literature_files": [],
+  "consulted_literature_pdfs_sha256_checks": [
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Alexander Kirillov Jr_/Quiver Representations and Quiver Varieties (195)/Quiver Representations and Quiver Varietie - Alexander Kirillov Jr_.pdf",
+      "size": 4027052,
+      "sha256": "7bffa6d509d0c1f3266337cfa4877b13334e59aec2bb28de4ec2c77945f2080d",
+      "sha256_after": "7bffa6d509d0c1f3266337cfa4877b13334e59aec2bb28de4ec2c77945f2080d",
+      "unchanged": true,
+      "sha256_at_delivery": "7bffa6d509d0c1f3266337cfa4877b13334e59aec2bb28de4ec2c77945f2080d",
+      "unchanged_at_delivery": true
+    },
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Hiraku Nakajima/Lectures on Hilbert Schemes of Points on Surfaces (20)/Lectures on Hilbert Schemes of Points on S - Hiraku Nakajima.pdf",
+      "size": 954187,
+      "sha256": "64b43e3a421ffcb79fd699cd8ad7e359bc3cde8c43f666b8178d1a6bd3b20d6d",
+      "sha256_after": "64b43e3a421ffcb79fd699cd8ad7e359bc3cde8c43f666b8178d1a6bd3b20d6d",
+      "unchanged": true,
+      "sha256_at_delivery": "64b43e3a421ffcb79fd699cd8ad7e359bc3cde8c43f666b8178d1a6bd3b20d6d",
+      "unchanged_at_delivery": true
+    }
+  ],
+  "scope": "All pre-existing non-Git workspace files were SHA-256 checked. All Literature files were checked by path, size and modification time; the two consulted textbook PDFs were also SHA-256 checked. The entire Literature collection was not content-hashed."
+}

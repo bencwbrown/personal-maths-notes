@@ -1,0 +1,386 @@
+[
+  {
+    "index": 1,
+    "term": "Automorphism",
+    "slug": "automorphism",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 2,
+    "term": "Canonical bundle",
+    "slug": "canonical-bundle",
+    "section": "sec:curves"
+  },
+  {
+    "index": 3,
+    "term": "Characteristic polynomial",
+    "slug": "characteristic-polynomial",
+    "section": "sec:hitchin"
+  },
+  {
+    "index": 4,
+    "term": "Coarse moduli space",
+    "slug": "coarse-moduli-space",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 5,
+    "term": "Companion matrix",
+    "slug": "companion-matrix",
+    "section": "sec:spectral"
+  },
+  {
+    "index": 6,
+    "term": "Connection",
+    "slug": "connection",
+    "section": "sec:nah"
+  },
+  {
+    "index": 7,
+    "term": "Cotangent bundle",
+    "slug": "cotangent-bundle",
+    "section": "sec:cotangent"
+  },
+  {
+    "index": 8,
+    "term": "Degree",
+    "slug": "degree",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 9,
+    "term": "Determinant line",
+    "slug": "determinant-line",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 10,
+    "term": "Differential",
+    "slug": "differential",
+    "section": "sec:curves"
+  },
+  {
+    "index": 11,
+    "term": "Direct sum",
+    "slug": "direct-sum",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 12,
+    "term": "Discriminant",
+    "slug": "discriminant",
+    "section": "sec:spectral"
+  },
+  {
+    "index": 13,
+    "term": "Endomorphism bundle",
+    "slug": "endomorphism-bundle",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 14,
+    "term": "Extension",
+    "slug": "extension",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 15,
+    "term": "Family",
+    "slug": "family",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 16,
+    "term": "Fine moduli space",
+    "slug": "fine-moduli-space",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 17,
+    "term": "Flat connection",
+    "slug": "flat-connection",
+    "section": "sec:nah"
+  },
+  {
+    "index": 18,
+    "term": "Frame and transition function",
+    "slug": "frame-and-transition-function",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 19,
+    "term": "Genus",
+    "slug": "genus",
+    "section": "sec:curves"
+  },
+  {
+    "index": 20,
+    "term": "Higgs bundle",
+    "slug": "higgs-bundle",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 21,
+    "term": "Higgs field",
+    "slug": "higgs-field",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 22,
+    "term": "Higgs morphism and isomorphism",
+    "slug": "higgs-morphism-and-isomorphism",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 23,
+    "term": "Hitchin base",
+    "slug": "hitchin-base",
+    "section": "sec:hitchin"
+  },
+  {
+    "index": 24,
+    "term": "Hitchin map",
+    "slug": "hitchin-map",
+    "section": "sec:hitchin"
+  },
+  {
+    "index": 25,
+    "term": "Hodge chain",
+    "slug": "hodge-chain",
+    "section": "sec:scaling"
+  },
+  {
+    "index": 26,
+    "term": "Holomorphic versus algebraic bundle",
+    "slug": "holomorphic-versus-algebraic-bundle",
+    "section": "sec:roadmap"
+  },
+  {
+    "index": 27,
+    "term": "Integrability",
+    "slug": "integrability",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 28,
+    "term": "Invariant subbundle",
+    "slug": "invariant-subbundle",
+    "section": "sec:higgs-stability"
+  },
+  {
+    "index": 29,
+    "term": "Jacobian",
+    "slug": "jacobian",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 30,
+    "term": "Jordan--H\u00f6lder filtration",
+    "slug": "jordan-holder-filtration",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 31,
+    "term": "Kernel",
+    "slug": "kernel",
+    "section": "sec:examples"
+  },
+  {
+    "index": 32,
+    "term": "Line bundle",
+    "slug": "line-bundle",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 33,
+    "term": "Local system",
+    "slug": "local-system",
+    "section": "sec:nah"
+  },
+  {
+    "index": 34,
+    "term": "Moduli space",
+    "slug": "moduli-space",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 35,
+    "term": "Nilpotent Higgs field",
+    "slug": "nilpotent-higgs-field",
+    "section": "sec:examples"
+  },
+  {
+    "index": 36,
+    "term": "Nilpotent cone",
+    "slug": "nilpotent-cone",
+    "section": "sec:scaling"
+  },
+  {
+    "index": 37,
+    "term": "Nonabelian Hodge correspondence",
+    "slug": "nonabelian-hodge-correspondence",
+    "section": "sec:nah"
+  },
+  {
+    "index": 38,
+    "term": "Picard variety",
+    "slug": "picard-variety",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 39,
+    "term": "Polystability",
+    "slug": "polystability",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 40,
+    "term": "Proper morphism",
+    "slug": "proper-morphism",
+    "section": "sec:scaling"
+  },
+  {
+    "index": 41,
+    "term": "Rank",
+    "slug": "rank",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 42,
+    "term": "Riemann--Roch",
+    "slug": "riemann-roch",
+    "section": "sec:curves"
+  },
+  {
+    "index": 43,
+    "term": "S-equivalence",
+    "slug": "s-equivalence",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 44,
+    "term": "Saturation",
+    "slug": "saturation",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 45,
+    "term": "Scaling action",
+    "slug": "scaling-action",
+    "section": "sec:scaling"
+  },
+  {
+    "index": 46,
+    "term": "Section space H0",
+    "slug": "section-space-h0",
+    "section": "sec:curves"
+  },
+  {
+    "index": 47,
+    "term": "Semiprojectivity",
+    "slug": "semiprojectivity",
+    "section": "sec:scaling"
+  },
+  {
+    "index": 48,
+    "term": "Semistable Higgs bundle",
+    "slug": "semistable-higgs-bundle",
+    "section": "sec:higgs-stability"
+  },
+  {
+    "index": 49,
+    "term": "Semistable vector bundle",
+    "slug": "semistable-vector-bundle",
+    "section": "sec:slope"
+  },
+  {
+    "index": 50,
+    "term": "Serre duality",
+    "slug": "serre-duality",
+    "section": "sec:cotangent"
+  },
+  {
+    "index": 51,
+    "term": "Sheaf cohomology H1",
+    "slug": "sheaf-cohomology-h1",
+    "section": "sec:moduli"
+  },
+  {
+    "index": 52,
+    "term": "Slope",
+    "slug": "slope",
+    "section": "sec:slope"
+  },
+  {
+    "index": 53,
+    "term": "Spectral curve",
+    "slug": "spectral-curve",
+    "section": "sec:spectral"
+  },
+  {
+    "index": 54,
+    "term": "Spectral line bundle",
+    "slug": "spectral-line-bundle",
+    "section": "sec:spectral"
+  },
+  {
+    "index": 55,
+    "term": "Stable Higgs bundle",
+    "slug": "stable-higgs-bundle",
+    "section": "sec:higgs-stability"
+  },
+  {
+    "index": 56,
+    "term": "Stable vector bundle",
+    "slug": "stable-vector-bundle",
+    "section": "sec:slope"
+  },
+  {
+    "index": 57,
+    "term": "Subbundle",
+    "slug": "subbundle",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 58,
+    "term": "Theta characteristic",
+    "slug": "theta-characteristic",
+    "section": "sec:examples"
+  },
+  {
+    "index": 59,
+    "term": "Torsion sheaf",
+    "slug": "torsion-sheaf",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 60,
+    "term": "Trace",
+    "slug": "trace",
+    "section": "sec:hitchin"
+  },
+  {
+    "index": 61,
+    "term": "Twisted Higgs bundle",
+    "slug": "twisted-higgs-bundle",
+    "section": "sec:higgs"
+  },
+  {
+    "index": 62,
+    "term": "Underlying bundle",
+    "slug": "underlying-bundle",
+    "section": "sec:higgs-stability"
+  },
+  {
+    "index": 63,
+    "term": "Vector bundle",
+    "slug": "vector-bundle",
+    "section": "sec:bundles"
+  },
+  {
+    "index": 64,
+    "term": "Zero Higgs field",
+    "slug": "zero-higgs-field",
+    "section": "sec:higgs"
+  }
+]

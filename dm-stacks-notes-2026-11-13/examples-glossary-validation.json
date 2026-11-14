@@ -1,0 +1,686 @@
+{
+  "date": "2026-11-13",
+  "pages": 49,
+  "glossary_entries": 84,
+  "example_entries": 84,
+  "numbered_examples": 168,
+  "verified_pdf_destinations": 168,
+  "all_definition_text_preserved": true,
+  "main_exposition_preserved_except_navigation": true,
+  "original_repository_files_unchanged": 93,
+  "latex_log_issues": [],
+  "entry_checks": [
+    {
+      "term": "Affine invariant quotient",
+      "slug": "affine-invariant-quotient",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 35,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Affinisation",
+      "slug": "affinisation",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 35,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Algebraic space",
+      "slug": "algebraic-space",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 35,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Algebraic stack",
+      "slug": "algebraic-stack",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 35,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Ample line bundle",
+      "slug": "ample-line-bundle",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Artin stack",
+      "slug": "artin-stack",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Atlas",
+      "slug": "atlas",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Automorphism",
+      "slug": "automorphism",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Boundary stack and coarse boundary",
+      "slug": "boundary-stack-and-coarse-boundary",
+      "gloss_page": 26,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Cartier divisor",
+      "slug": "cartier-divisor",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 36,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Character",
+      "slug": "character",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Classifying stack",
+      "slug": "classifying-stack",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Coarse moduli space",
+      "slug": "coarse-moduli-space",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Cocycle condition",
+      "slug": "cocycle-condition",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Conormal line",
+      "slug": "conormal-line",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Contracting action",
+      "slug": "contracting-action",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 37,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Critical cutting level",
+      "slug": "critical-cutting-level",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 38,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Deligne--Mumford stack",
+      "slug": "deligne-mumford-stack",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 38,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Descent datum",
+      "slug": "descent-datum",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 38,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Descent of a line bundle to the coarse space",
+      "slug": "descent-of-a-line-bundle-to-the-coarse-space",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 38,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Diagonal",
+      "slug": "diagonal",
+      "gloss_page": 27,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 38,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Dimension of a quotient stack",
+      "slug": "dimension-of-a-quotient-stack",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Effective descent",
+      "slug": "effective-descent",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Equivariant map",
+      "slug": "equivariant-map",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Equivariant vector bundle",
+      "slug": "equivariant-vector-bundle",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "\u00c9tale cover",
+      "slug": "etale-cover",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "\u00c9tale morphism",
+      "slug": "etale-morphism",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 39,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Family",
+      "slug": "family",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Fibre product of stacks",
+      "slug": "fibre-product-of-stacks",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Flat and faithfully flat",
+      "slug": "flat-and-faithfully-flat",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Fppf topology",
+      "slug": "fppf-topology",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Free action",
+      "slug": "free-action",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Functor of points",
+      "slug": "functor-of-points",
+      "gloss_page": 28,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 40,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Geometric fibre weight",
+      "slug": "geometric-fibre-weight",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Geometric point",
+      "slug": "geometric-point",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "GIT quotient",
+      "slug": "git-quotient",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Good moduli space",
+      "slug": "good-moduli-space",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Groupoid",
+      "slug": "groupoid",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Groupoid presentation",
+      "slug": "groupoid-presentation",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 41,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Inertia stack",
+      "slug": "inertia-stack",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Invariant function or section",
+      "slug": "invariant-function-or-section",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Isomorphism sheaf",
+      "slug": "isomorphism-sheaf",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Line bundle",
+      "slug": "line-bundle",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Linearisation",
+      "slug": "linearisation",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Linearly reductive group",
+      "slug": "linearly-reductive-group",
+      "gloss_page": 29,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 42,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Locally free sheaf",
+      "slug": "locally-free-sheaf",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Normal line",
+      "slug": "normal-line",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Orbit",
+      "slug": "orbit",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Polarisation",
+      "slug": "polarisation",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Projective degree",
+      "slug": "projective-degree",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Pullback",
+      "slug": "pullback",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 43,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Pushforward",
+      "slug": "pushforward",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Quasi-coherent sheaf",
+      "slug": "quasi-coherent-sheaf",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Quotient stack",
+      "slug": "quotient-stack",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Regular cutting level",
+      "slug": "regular-cutting-level",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Representable morphism",
+      "slug": "representable-morphism",
+      "gloss_page": 30,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Residual action",
+      "slug": "residual-action",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 44,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Residual gerbe at a closed point",
+      "slug": "residual-gerbe-at-a-closed-point",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Root divisor",
+      "slug": "root-divisor",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Root gerbe",
+      "slug": "root-gerbe",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Root stack of a divisor",
+      "slug": "root-stack-of-a-divisor",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Scheme-theoretic fibre",
+      "slug": "scheme-theoretic-fibre",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Section ring",
+      "slug": "section-ring",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 45,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Section weight",
+      "slug": "section-weight",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Semiprojective",
+      "slug": "semiprojective",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Semistable point",
+      "slug": "semistable-point",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Separated stack",
+      "slug": "separated-stack",
+      "gloss_page": 31,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Smooth stack",
+      "slug": "smooth-stack",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Stabiliser or isotropy group",
+      "slug": "stabiliser-or-isotropy-group",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 46,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Stable point",
+      "slug": "stable-point",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 47,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Stack",
+      "slug": "stack",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 47,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Tame stack",
+      "slug": "tame-stack",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 47,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Tensor degree",
+      "slug": "tensor-degree",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 47,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Topology, in descent theory",
+      "slug": "topology-in-descent-theory",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 47,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Torsor",
+      "slug": "torsor",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Torus",
+      "slug": "torus",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Transporter",
+      "slug": "transporter",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Unramified morphism",
+      "slug": "unramified-morphism",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Vector bundle",
+      "slug": "vector-bundle",
+      "gloss_page": 32,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Veronese subring",
+      "slug": "veronese-subring",
+      "gloss_page": 33,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 48,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Weight",
+      "slug": "weight",
+      "gloss_page": 33,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 49,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Weighted projective stack",
+      "slug": "weighted-projective-stack",
+      "gloss_page": 33,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 49,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Weight space",
+      "slug": "weight-space",
+      "gloss_page": 33,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 49,
+      "examples_pdf_destination_verified": true
+    },
+    {
+      "term": "Zariski versus \u00e9tale local",
+      "slug": "zariski-versus-etale-local",
+      "gloss_page": 33,
+      "gloss_pdf_destination_verified": true,
+      "examples_page": 49,
+      "examples_pdf_destination_verified": true
+    }
+  ]
+}

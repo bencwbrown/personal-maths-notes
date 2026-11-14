@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "local-system",
+    "term": "Local system",
+    "section": "sec:nah",
+    "definition": "A locally constant sheaf of finite-dimensional complex vector spaces on the associated topological curve. Equivalently, after choosing a base point, it is described by a representation of the fundamental group, with changes of basis giving isomorphic local systems.",
+    "examples": [
+      "The constant sheaf $\\mathbb C_C$ is a rank-one local system. Continuing a constant section around any loop returns the same value, so every monodromy operator is the identity.",
+      "On an elliptic curve, the fundamental group is $\\mathbb Z^2$. Choosing two nonzero scalars $a,b$ gives a rank-one local system: continuation around the two generating loops multiplies values by $a,b$."
+    ]
+  },
+  {
+    "slug": "moduli-space",
+    "term": "Moduli space",
+    "section": "sec:moduli",
+    "definition": "A geometric parameter space for objects up to a specified equivalence, organised so that families give maps to it. For stable bundles the points classify isomorphism classes; for semistable bundles the usual quotient classifies S-equivalence classes.",
+    "examples": [
+      "The variety $\\Pic^d(C)$ parameterises degree-$d$ line bundles on $C$. A point represents an entire line bundle, rather than a point of the original curve or a vector in one fibre.",
+      "Rank-one Higgs bundles of degree $d$ are parameterised by $\\Pic^d(C)\\times H^0(C,K_C)$. The first coordinate chooses a line bundle; the second chooses the one-form acting as its Higgs field."
+    ]
+  },
+  {
+    "slug": "nilpotent-higgs-field",
+    "term": "Nilpotent Higgs field",
+    "section": "sec:examples",
+    "definition": "A Higgs field for which some iterated composite vanishes. The composite $\\phi^m$ maps $E$ to $E\\otimes K_C^{\\otimes m}$, so nilpotence is meaningful even though $\\phi$ is not an ordinary endomorphism of $E$.",
+    "examples": [
+      "The zero field on any vector bundle is nilpotent: already its first power vanishes. Thus nilpotence includes the simplest Higgs fields, but is a weaker condition than being zero.",
+      "Choose $S^2\\simeq K_C$ and $E=S\\oplus S^{-1}$. The field $\\phi_0=\\left(\\begin{smallmatrix}0&0\\\\1&0\\end{smallmatrix}\\right)$ is nonzero but has square zero; the entry $1$ uses $S\\simeq S^{-1}K_C$."
+    ]
+  },
+  {
+    "slug": "nilpotent-cone",
+    "term": "Nilpotent cone",
+    "section": "sec:scaling",
+    "definition": "The zero fibre of the Hitchin map, consisting of semistable Higgs-bundle classes whose characteristic coefficients vanish. Its points are represented by nilpotent fields; the cone includes the zero-field locus but can also contain nonzero fields.",
+    "examples": [
+      "In rank one the Hitchin map sends $(L,\\omega)$ to $-\\omega$. Its zero fibre is therefore $\\Pic^d(C)\\times\\{0\\}$: nilpotent rank-one fields are exactly the zero fields.",
+      "For genus at least two, the stable pair $(S\\oplus S^{-1},\\phi_0)$ with lower-left entry $1$ lies in the nilpotent cone. Its field is nonzero, so this cone is larger than the zero-field locus."
+    ]
+  },
+  {
+    "slug": "nonabelian-hodge-correspondence",
+    "term": "Nonabelian Hodge correspondence",
+    "section": "sec:nah",
+    "definition": "The correspondence between degree-zero polystable Higgs bundles on a smooth projective complex curve and semisimple complex representations of its fundamental group. It gives a homeomorphism of moduli spaces, real-analytic on smooth loci, rather than a complex-algebraic isomorphism.",
+    "examples": [
+      "The trivial rank-one representation corresponds to the trivial Higgs line $(\\OO_C,0)$. Both descriptions give the simplest object, with no monodromy on one side and zero Higgs field on the other.",
+      "A rank-one unitary representation corresponds to a degree-zero holomorphic line bundle with zero Higgs field. Nontrivial unitary monodromy can therefore remain present even when the Higgs field vanishes."
+    ]
+  },
+  {
+    "slug": "picard-variety",
+    "term": "Picard variety",
+    "section": "sec:moduli",
+    "definition": "The variety $\\Pic^d(C)$ parameterising isomorphism classes of degree-$d$ line bundles on $C$. Its dimension is the genus. The component $\\Pic^0(C)$ is the Jacobian, with group operation induced by tensor product.",
+    "examples": [
+      "For $C=\\PP^1$, every degree-$d$ line bundle is isomorphic to $\\OO(d)$. Thus $\\Pic^d(\\PP^1)$ is a single point, even when $d$ is nonzero.",
+      "For an elliptic curve with origin $p_0$, the map $p\\mapsto\\OO_C(p-p_0)$ identifies $C$ with $\\Pic^0(C)$. Moving the point changes a degree-zero line bundle in a one-dimensional family."
+    ]
+  },
+  {
+    "slug": "polystability",
+    "term": "Polystability",
+    "section": "sec:moduli",
+    "definition": "The property of being a direct sum of stable objects of the same slope. For Higgs bundles the decomposition must respect the Higgs fields. A semistable object need not split this way; its Jordan--Hölder graded object does.",
+    "examples": [
+      "If $\\deg L=\\deg M$, then $(L,\\omega_1)\\oplus(M,\\omega_2)$ is polystable: each line Higgs bundle is stable, both slopes agree, and the field preserves the direct-sum decomposition.",
+      "On an elliptic curve, take $E=\\OO_C^2$ and $\\phi=\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)\\omega$ for a nonzero one-form. The pair is semistable but not polystable: its nonzero Jordan block cannot split into Higgs lines."
+    ]
+  },
+  {
+    "slug": "proper-morphism",
+    "term": "Proper morphism",
+    "section": "sec:scaling",
+    "definition": "A morphism which is of finite type, separated, and universally closed. Properness is a relative completeness condition, stable under base change. A source can be noncompact while its morphism to a noncompact base is proper.",
+    "examples": [
+      "The map $\\PP^1\\to\\Spec\\mathbb C$ is proper because the projective line is projective. The affine line mapping to a point is not proper: a point can escape towards infinity.",
+      "The rank-one Hitchin map $\\Pic^d(C)\\times H^0(C,K_C)\\to H^0(C,K_C)$ is proper. It is the projection with projective fibre $\\Pic^d(C)$, although its total space is noncompact when the genus is positive."
+    ]
+  },
+  {
+    "slug": "rank",
+    "term": "Rank",
+    "section": "sec:bundles",
+    "definition": "The dimension of the vector-space fibres of a vector bundle, measured over their residue fields. On the connected curve considered here it is constant. Rank counts independent fibre directions; it is different from the degree of the bundle.",
+    "examples": [
+      "The trivial bundle $\\OO_C^{\\oplus2}$ has rank two. Its two global basis sections give two independent directions in every fibre, regardless of which point of the curve is chosen.",
+      "The bundle $\\OO_{\\PP^1}(5)$ has rank one, just as $\\OO_{\\PP^1}$ does. Its degree is five, but twisting changes how fibres glue rather than their one-dimensional size."
+    ]
+  },
+  {
+    "slug": "riemann-roch",
+    "term": "Riemann--Roch",
+    "section": "sec:curves",
+    "definition": "For a line bundle $L$ on a genus-$g$ smooth projective curve, the identity $h^0(L)-h^0(K_C\\otimes L^{-1})=\\deg L+1-g$. By Serre duality the second term is $h^1(L)$; vector bundles satisfy $\\chi(E)=\\deg E+\\rk(E)(1-g)$.",
+    "examples": [
+      "On $\\PP^1$, the line $\\OO(3)$ has four independent sections, while $K_C\\otimes\\OO(-3)=\\OO(-5)$ has none. Riemann--Roch reads $4-0=3+1-0$, matching the homogeneous-polynomial calculation.",
+      "For $L=K_C$, one has $h^0(K_C)=g$ and $h^0(\\OO_C)=1$. The formula gives $g-1=(2g-2)+1-g$, recovering the canonical degree $2g-2$ from the dimensions of the two section spaces."
+    ]
+  },
+  {
+    "slug": "s-equivalence",
+    "term": "S-equivalence",
+    "section": "sec:moduli",
+    "definition": "The equivalence relation identifying semistable objects with isomorphic Jordan--Hölder graded objects. The stable factors have the same slope, and their direct sum is polystable. In Higgs moduli, the filtrations and factors must respect the Higgs field.",
+    "examples": [
+      "For stable Higgs bundles, S-equivalence reduces to isomorphism. In particular, two rank-one Higgs pairs represent the same moduli point only when their line bundles and one-form fields agree up to isomorphism.",
+      "On an elliptic curve, $(\\OO_C^2,J\\omega)$ for a nonzero nilpotent Jordan block $J$ is S-equivalent to $(\\OO_C,0)\\oplus(\\OO_C,0)$. The pairs are not isomorphic, but their stable graded factors coincide."
+    ]
+  },
+  {
+    "slug": "saturation",
+    "term": "Saturation",
+    "section": "sec:bundles",
+    "definition": "For a subsheaf $F\\subset E$ on a smooth curve, its saturation is the smallest larger subsheaf with the same generic subspace and torsion-free quotient in $E$. It is a subbundle and can have higher degree than $F$.",
+    "examples": [
+      "Inside $\\OO_{\\A^1}$, the subsheaf $z\\OO$ has quotient supported at zero. Its saturation is the whole $\\OO$, since generically multiplication by $z$ already spans the entire one-dimensional fibre.",
+      "In $E=\\OO_{\\A^1}e_1\\oplus\\OO_{\\A^1}e_2$, the subsheaf $z\\OO e_1$ saturates to $\\OO e_1$. The quotient by this larger sheaf is the locally free second summand."
+    ]
+  },
+  {
+    "slug": "scaling-action",
+    "term": "Scaling action",
+    "section": "sec:scaling",
+    "definition": "The action $t\\cdot(E,\\phi)=(E,t\\phi)$ for $t\\in\\mathbb C^*$. The characteristic coefficient of degree $i$ scales by $t^i$. Limits are taken in moduli and can require changing representatives, rather than simply setting the displayed field to zero.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, scaling changes only the one-form: $t\\cdot(L,\\omega)=(L,t\\omega)$. Its limit as $t\\to0$ is the zero-field line $(L,0)$.",
+      "For $E=S\\oplus S^{-1}$, conjugating $t\\phi_q$ by $\\operatorname{diag}(t,1)$ gives $\\phi_{t^2q}$. Thus the moduli limit is the stable nonzero nilpotent pair $(E,\\phi_0)$, rather than the unstable pair $(E,0)$."
+    ]
+  },
+  {
+    "slug": "section-space-h0",
+    "term": "Section space H0",
+    "section": "sec:curves",
+    "definition": "The vector space $H^0(C,F)$ of global sections of a sheaf or bundle $F$. For a vector bundle on the projective curve it is finite-dimensional. Local sections need not combine into a nonzero global section.",
+    "examples": [
+      "The space $H^0(\\PP^1,\\OO(m))$ has basis $X_0^m,X_0^{m-1}X_1,\\ldots,X_1^m$ for $m\\ge0$. Its dimension is $m+1$; for $m<0$ there are no nonzero global sections.",
+      "A nontrivial degree-zero line bundle on $C$ has no nonzero global section. Such a section would have an effective zero divisor of degree zero, hence no zeros, and would trivialise the bundle."
+    ]
+  },
+  {
+    "slug": "semiprojectivity",
+    "term": "Semiprojectivity",
+    "section": "sec:scaling",
+    "definition": "In the scaling discussion, the condition that a smooth quasi-projective variety has a multiplicative-group action with proper fixed locus and limits as $t\\to0$ for all points. Projectivity over an affine base is a related condition requiring separate verification.",
+    "examples": [
+      "The affine line with $t\\cdot z=tz$ has fixed locus the origin, which is proper. Every point tends to that origin, making this the smallest example of the stated scaling condition.",
+      "For rank-one Higgs moduli $\\Pic^d(C)\\times H^0(C,K_C)$, the fixed locus is $\\Pic^d(C)\\times\\{0\\}$. It is projective, and every orbit limits there by scaling its one-form to zero."
+    ]
+  },
+  {
+    "slug": "semistable-higgs-bundle",
+    "term": "Semistable Higgs bundle",
+    "section": "sec:higgs-stability",
+    "definition": "A Higgs pair $(E,\\phi)$ for which every nonzero proper $\\phi$-invariant subbundle $F$ satisfies $\\deg F/\\rk F\\le\\deg E/\\rk E$. Only invariant subbundles are tested, so instability of the underlying vector bundle need not imply Higgs instability.",
+    "examples": [
+      "The pair $(\\OO_C^2,0)$ is semistable of slope zero. Every line subbundle has degree at most zero, while either constant summand attains equality; consequently the pair is not stable.",
+      "For $g\\ge2$, the pair $(S\\oplus S^{-1},\\phi_0)$ with $S^2=K_C$ is stable, hence semistable. Its positive-degree summand $S$ is not invariant, so it does not violate Higgs semistability."
+    ]
+  },
+  {
+    "slug": "semistable-vector-bundle",
+    "term": "Semistable vector bundle",
+    "section": "sec:slope",
+    "definition": "A vector bundle $E$ for which every nonzero proper subbundle $F$ has slope at most that of $E$. Testing saturated subsheaves gives the same condition. Equality is allowed, which distinguishes semistability from stability.",
+    "examples": [
+      "On $\\PP^1$, the bundle $\\OO^{\\oplus2}$ is semistable of slope zero. A nonzero map $\\OO(a)\\to\\OO^2$ requires $a\\le0$, so no line subbundle has positive degree.",
+      "The bundle $\\OO(1)\\oplus\\OO(-1)$ has degree zero but is not semistable. Its first summand is a line subbundle of slope one, larger than the slope zero of the whole bundle."
+    ]
+  },
+  {
+    "slug": "serre-duality",
+    "term": "Serre duality",
+    "section": "sec:cotangent",
+    "definition": "The natural identification $H^1(C,E)^*\\simeq H^0(C,E^*\\otimes K_C)$ for vector bundles on a smooth projective curve. Applied to $\\End E$ and its trace pairing, it identifies dual bundle-deformation directions with Higgs fields.",
+    "examples": [
+      "For $E=\\OO_C$, duality gives $H^1(C,\\OO_C)^*\\simeq H^0(C,K_C)$. Both spaces have dimension $g$, relating infinitesimal line-bundle variation to the holomorphic one-forms used as rank-one Higgs fields.",
+      "At a stable bundle $E$, deformation directions form $H^1(C,\\End E)$. The trace pairing makes their dual $H^0(C,\\End E\\otimes K_C)$, exactly the space of Higgs fields on this fixed bundle."
+    ]
+  },
+  {
+    "slug": "sheaf-cohomology-h1",
+    "term": "Sheaf cohomology H1",
+    "section": "sec:moduli",
+    "definition": "A vector space measuring compatible local gluing data modulo changes of local choices. For bundles on a curve it controls extensions and infinitesimal deformations. The notes state the required properties explicitly, without assuming the general machinery of sheaf cohomology.",
+    "examples": [
+      "One has $H^1(\\PP^1,\\OO)=0$. In particular, an extension of $\\OO$ by $\\OO$ on the projective line splits: there is no nontrivial self-extension class in this group.",
+      "For a genus-$g$ curve, $H^1(C,\\OO_C)$ has dimension $g$. It gives the first-order deformation directions of a line bundle, explaining why the Picard variety has $g$ local parameters."
+    ]
+  },
+  {
+    "slug": "slope",
+    "term": "Slope",
+    "section": "sec:slope",
+    "definition": "The rational number $\\mu(E)=\\deg(E)/\\rk(E)$ for a nonzero vector bundle. It compares degree per fibre direction and is used in stability inequalities. A Higgs field changes which subbundles are tested, not the numerical slope.",
+    "examples": [
+      "The trivial bundle $\\OO_C^2$ has rank two and degree zero, so its slope is zero. Each trivial line summand also has slope zero and therefore prevents strict stability.",
+      "On $\\PP^1$, the bundle $\\OO(2)\\oplus\\OO(-1)$ has rank two, degree one, and slope $1/2$. Its summand $\\OO(2)$ has slope two and destabilises the bundle."
+    ]
+  },
+  {
+    "slug": "spectral-curve",
+    "term": "Spectral curve",
+    "section": "sec:spectral",
+    "definition": "The curve in $\\Tot(K_C)$ defined by the characteristic equation $\\det(\\lambda-\\phi)=0$, where $\\lambda$ is the tautological one-form value. It records eigenvalues geometrically without requiring them to be globally separate functions on $C$.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, the spectral curve is the graph $\\lambda=\\omega$ in $\\Tot(K_C)$. Its projection to $C$ is an isomorphism, because there is exactly one eigenvalue over each point.",
+      "The local equation $\\lambda^2=z$ gives a smooth double cover branched at zero. On the basis $1,\\lambda$, multiplication by $\\lambda$ has matrix $\\left(\\begin{smallmatrix}0&z\\\\1&0\\end{smallmatrix}\\right)$, whose characteristic equation is the same spectral equation."
+    ]
+  },
+  {
+    "slug": "spectral-line-bundle",
+    "term": "Spectral line bundle",
+    "section": "sec:spectral",
+    "definition": "When the spectral curve is smooth and integral, the line bundle $N$ on it whose pushforward gives $E$. Multiplication by the tautological eigenvalue induces the Higgs field. The degree of $N$ includes a correction depending on rank and genus.",
+    "examples": [
+      "For the rank-one graph $\\lambda=\\omega$, the spectral line is the original line bundle $L$. Pushing it forward along the graph projection recovers $L$, with multiplication by $\\lambda$ giving the field $\\omega$.",
+      "For a smooth integral rank-two spectral curve over genus $g$, a degree-zero pushforward bundle comes from a spectral line of degree $2(g-1)$. Taking degree zero upstairs would miss this Riemann--Roch degree correction."
+    ]
+  },
+  {
+    "slug": "stable-higgs-bundle",
+    "term": "Stable Higgs bundle",
+    "section": "sec:higgs-stability",
+    "definition": "A Higgs pair for which every nonzero proper invariant subbundle has strictly smaller slope. It is the Higgs analogue of stable vector bundles, with fewer subbundles tested. Stable Higgs bundles still have scalar automorphisms.",
+    "examples": [
+      "Every Higgs line $(L,\\omega)$ is stable: there is no subbundle with rank strictly between zero and one. This statement holds for any degree and any choice of its one-form field.",
+      "For $g\\ge2$, take $E=S\\oplus S^{-1}$ and $\\phi_q=\\left(\\begin{smallmatrix}0&q\\\\1&0\\end{smallmatrix}\\right)$ with $S^2=K_C$. Every invariant line projects nontrivially to $S^{-1}$, so has negative degree. The underlying bundle nevertheless contains the positive-degree line $S$."
+    ]
+  },
+  {
+    "slug": "stable-vector-bundle",
+    "term": "Stable vector bundle",
+    "section": "sec:slope",
+    "definition": "A vector bundle whose nonzero proper subbundles all have strictly smaller slope. This excludes direct sums of equal-slope bundles. In contrast to Higgs stability, every subbundle is tested, because there is no additional field to preserve.",
+    "examples": [
+      "Every line bundle is stable, whatever its degree, because there are no proper positive-rank subbundles of smaller rank. Thus $\\OO_{\\PP^1}(3)$ is stable despite having positive rather than zero degree.",
+      "The bundle $\\OO(1)\\oplus\\OO(1)$ on $\\PP^1$ is semistable but not stable. Its slope is one, and each summand has slope one as well; equality violates the strict inequality."
+    ]
+  },
+  {
+    "slug": "subbundle",
+    "term": "Subbundle",
+    "section": "sec:bundles",
+    "definition": "A locally free subsheaf $F\\subset E$ whose quotient $E/F$ is also locally free. On a smooth curve these are exactly saturated subsheaves of a vector bundle. A locally free subsheaf can fail to be a subbundle when the quotient has torsion.",
+    "examples": [
+      "The first summand $\\OO_C e_1\\subset\\OO_C e_1\\oplus\\OO_C e_2$ is a subbundle. Its quotient is the second trivial line, so the inclusion remains an inclusion of vector spaces in every fibre.",
+      "The subsheaf $z\\OO_{\\A^1}\\subset\\OO_{\\A^1}$ is locally free but not a subbundle. Its quotient is the skyscraper sheaf at zero, and multiplication by $z$ becomes zero on the origin fibre."
+    ]
+  },
+  {
+    "slug": "theta-characteristic",
+    "term": "Theta characteristic",
+    "section": "sec:examples",
+    "definition": "A line bundle $S$ equipped with an isomorphism $S^{\\otimes2}\\simeq K_C$. Its degree is $g-1$. It provides the two summands $S,S^{-1}$ used in a basic rank-two Higgs construction.",
+    "examples": [
+      "On $\\PP^1$, one can take $S=\\OO(-1)$, since its square is $\\OO(-2)=K_{\\PP^1}$. Its degree is $-1$, agreeing with the formula $g-1$ for genus zero.",
+      "On an elliptic curve, a nowhere-zero holomorphic one-form trivialises $K_C$. The trivial line $S=\\OO_C$ is therefore a theta characteristic; its degree zero again equals $g-1$."
+    ]
+  },
+  {
+    "slug": "torsion-sheaf",
+    "term": "Torsion sheaf",
+    "section": "sec:bundles",
+    "definition": "A coherent sheaf on the smooth curve which vanishes at the generic point and is supported at finitely many points. Its length counts the local algebraic multiplicities. Such sheaves arise as quotients of nonsaturated subsheaves of bundles.",
+    "examples": [
+      "On $\\A^1_z$, the module $k[z]/(z)$ gives a sheaf supported only at zero. Its space there is one-dimensional, and it is the quotient $\\OO/z\\OO$.",
+      "The module $k[z]/(z^2)$ is also supported at zero, but has length two, with basis $1,z$ and relation $z^2=0$. It remembers a thicker point than $k[z]/(z)$."
+    ]
+  },
+  {
+    "slug": "trace",
+    "term": "Trace",
+    "section": "sec:hitchin",
+    "definition": "The sum of the diagonal entries of a local Higgs-field matrix. It is unchanged by change of frame and glues to a section of $K_C$. It is the first characteristic invariant, up to the chosen polynomial sign convention.",
+    "examples": [
+      "For a Higgs line $(L,\\omega)$, the trace is simply $\\omega$. The rank-one Hitchin map records $-\\omega$ in the characteristic-coefficient convention, so it retains the field up to this fixed sign.",
+      "On $\\OO_C^2$, the diagonal field $\\operatorname{diag}(\\omega,-\\omega)$ has trace zero. When $\\omega\\ne0$ it is still a nonzero Higgs field, showing that trace-free does not mean zero."
+    ]
+  },
+  {
+    "slug": "twisted-higgs-bundle",
+    "term": "Twisted Higgs bundle",
+    "section": "sec:higgs",
+    "definition": "A vector bundle $E$ with a morphism $\\phi:E\\to E\\otimes D$ for a specified line bundle $D$. Ordinary Higgs bundles use $D=K_C$. Changing the twisting line changes the available fields and can change their stability behaviour.",
+    "examples": [
+      "Choosing $D=K_C$ recovers ordinary Higgs bundles. In rank one, the field is multiplication by a global one-form, so all pairs $(L,\\omega)$ are examples of this particular twist.",
+      "On $\\PP^1$, take $D=\\OO(2)$ and $E=\\OO(1)\\oplus\\OO(-1)$. A lower-left identity entry is allowed because $\\OO(-1)\\otimes D=\\OO(1)$. The ordinary twist $K_C=\\OO(-2)$ would forbid that entry."
+    ]
+  },
+  {
+    "slug": "underlying-bundle",
+    "term": "Underlying bundle",
+    "section": "sec:higgs-stability",
+    "definition": "The vector bundle $E$ obtained by forgetting the Higgs field in a pair $(E,\\phi)$. Its stability is tested against all subbundles, while the Higgs pair tests only invariant ones. Forgetting the field can therefore destroy stability.",
+    "examples": [
+      "All pairs $(L,\\omega)$ with a fixed line $L$ have the same underlying bundle. Different one-forms can give different Higgs-moduli points without changing that underlying line at all.",
+      "The stable rank-two pair $(S\\oplus S^{-1},\\phi_0)$ has unstable underlying bundle when $g\\ge2$: the summand $S$ has positive degree. Its Higgs field prevents this summand from being invariant."
+    ]
+  },
+  {
+    "slug": "vector-bundle",
+    "term": "Vector bundle",
+    "section": "sec:bundles",
+    "definition": "A locally free sheaf of finite rank, equivalently a family of vector spaces locally isomorphic to a product with a fixed vector space. Invertible transition matrices glue the local products into a global bundle.",
+    "examples": [
+      "The sheaf $\\OO_C^{\\oplus2}$ gives the trivial rank-two bundle, with global basis sections $e_1,e_2$. Every local vector is a pair of regular functions in this frame.",
+      "The line $\\OO_{\\PP^1}(1)$ is a rank-one vector bundle which is not globally trivial. It is trivial on each standard affine chart, and an invertible transition function glues those local descriptions."
+    ]
+  },
+  {
+    "slug": "zero-higgs-field",
+    "term": "Zero Higgs field",
+    "section": "sec:higgs",
+    "definition": "The zero morphism $\\phi:E\\to E\\otimes K_C$. Every subbundle is invariant under it. Consequently, the zero-field Higgs pair is stable or semistable exactly when its underlying vector bundle has the corresponding property.",
+    "examples": [
+      "For any line bundle $L$, the pair $(L,0)$ is a stable Higgs bundle. It gives the zero-form point over $L$ in the rank-one moduli space $\\Pic^d(C)\\times H^0(C,K_C)$.",
+      "On $\\PP^1$, the zero-field pair on $\\OO(1)\\oplus\\OO(-1)$ is unstable: its first summand is invariant and has slope one, greater than the slope zero of the whole pair."
+    ]
+  }
+]

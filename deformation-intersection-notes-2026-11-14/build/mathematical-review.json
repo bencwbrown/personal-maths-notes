@@ -1,0 +1,26 @@
+{
+  "scope": "Independent review of the explicit calculations, hypotheses, formulas used and worked solutions; not an independent proof audit of every cited general theorem.",
+  "reviewed": [
+    "All sixteen exercise solutions",
+    "Embedded first-order deformation construction and hypersurface T1 examples",
+    "Dual-number and PID flatness tests",
+    "Normal cones for regular, nonreduced Cartier and nodal examples",
+    "Extended Rees fibres, flatness and saturation",
+    "Tangency closure and cycle multiplicity",
+    "Open deformation versus full blow-up family",
+    "Projective-bundle and exceptional-divisor signs",
+    "Chow-group dimensions and nonproper pushforward caveats",
+    "Specialization, ordinary and refined Gysin maps",
+    "Segre convention, excess and self-intersection formulas",
+    "Weight filtration versus ideal-power filtration",
+    "All 64 glossary entries and their 128 examples, with the two halves cross-reviewed"
+  ],
+  "review_findings_incorporated": [
+    "Closed specialization equation environment",
+    "Restricted the codimension-one blow-up assertion to effective Cartier centres",
+    "Stated degree-one generation for the cone algebra in the Segre definition",
+    "Clarified conormal coordinate versus normal displacement",
+    "Said saturation removes components and parameter torsion"
+  ],
+  "remaining_mathematical_review_findings": []
+}

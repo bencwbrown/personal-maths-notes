@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}The route from familiar geometry to Higgs bundles}{3}{section.1}%
+\contentsline {section}{\numberline {2}The curve, its differentials, and a small toolkit}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The canonical line bundle}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}What we will use beyond Chapters I--II}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Vector bundles, subbundles, and degree}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Gluing matrices and bundle maps}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Degree through the determinant}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Why we use saturated subbundles}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Slope stability before introducing Higgs fields}{5}{section.4}%
+\contentsline {section}{\numberline {5}What a moduli space of bundles should do}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Families come before a parameter space}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Line bundles give the first moduli example}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Matrices show why isomorphism classes can be difficult}{7}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Extensions, associated gradeds, and S-equivalence}{7}{subsection.5.4}%
+\contentsline {section}{\numberline {6}The Higgs field: a matrix of one-forms}{8}{section.6}%
+\contentsline {section}{\numberline {7}Higgs stability tests only invariant subbundles}{9}{section.7}%
+\contentsline {section}{\numberline {8}Small models that separate the different notions}{10}{section.8}%
+\contentsline {subsection}{\numberline {8.1}An elliptic-curve Jordan example}{10}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}A stable pair with unstable underlying bundle}{10}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}The projective line and the twisting line}{11}{subsection.8.3}%
+\contentsline {section}{\numberline {9}The Hitchin map: global characteristic coefficients}{11}{section.9}%
+\contentsline {section}{\numberline {10}Spectral curves: turn a matrix into a line-bundle problem}{12}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Where the eigenvalue lives}{12}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}The smallest local calculation}{12}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Line bundles on a smooth spectral curve}{12}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Why a cotangent bundle appears}{13}{section.11}%
+\contentsline {section}{\numberline {12}Scaling, nilpotence, and semiprojective geometry}{14}{section.12}%
+\contentsline {subsection}{\numberline {12.1}The action and its weighted base}{14}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Why the limit need not be the same bundle with zero field}{14}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}The connection with algebraic cutting}{15}{subsection.12.3}%
+\contentsline {section}{\numberline {13}An optional outlook: connections and nonabelian Hodge theory}{15}{section.13}%
+\contentsline {section}{\numberline {14}Exercises with worked solutions}{16}{section.14}%
+\contentsline {section}{\numberline {15}A suggested second reading}{17}{section.15}%
+\contentsline {section}{\numberline {A}Tools used without proof and a route through the references}{18}{appendix.A}%
+\contentsline {section}{\numberline {B}Glossary of terms and notation}{20}{appendix.B}%
+\contentsline {section}{\numberline {C}Examples Glossary}{26}{appendix.C}%

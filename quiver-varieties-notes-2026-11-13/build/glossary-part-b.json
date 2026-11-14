@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "nakajima-quiver-variety",
+    "term": "Nakajima quiver variety",
+    "section": "sec:definition",
+    "definition": "A variety constructed by imposing moment-map equations on framed doubled-quiver data and then taking a GIT quotient by changes of basis in the vertex spaces. Dimension vectors and a character specify the problem; in the cyclic chamber the nonempty quotient is smooth.",
+    "examples": [
+      "For one vertex with no loops, vertex dimension one, and framing dimension two, cyclic stability gives $T^*\\PP^1$. Thus familiar cotangent geometry appears as the first framed quiver-variety example.",
+      "For the Jordan quiver with one-dimensional vertex and framing spaces, cyclic stability lets us set $i=1$ and forces $j=0$. The two loop coordinates remain free, giving $\\A^2$."
+    ]
+  },
+  {
+    "slug": "orbit",
+    "term": "Orbit",
+    "section": "sec:quotients",
+    "definition": "The set of points obtained from a representation by changing its bases. One orbit is one isomorphism class of representations with the fixed dimension vector. Different representatives in an orbit are different matrices describing the same underlying linear-map data.",
+    "examples": [
+      "For one arrow between one-dimensional spaces, every nonzero scalar map lies in the same orbit: rescaling the target changes any nonzero arrow value to $1$. The zero map forms another orbit.",
+      "For one loop, changing basis replaces a matrix $A$ by $gAg^{-1}$. Its orbit is its conjugacy class; for example, the identity matrix has a one-point orbit because every basis change commutes with it."
+    ]
+  },
+  {
+    "slug": "orbit-closure",
+    "term": "Orbit closure",
+    "section": "sec:quotients",
+    "definition": "The smallest Zariski-closed subset containing an orbit. It can contain other, smaller orbits, so an orbit need not be closed. Affine invariant quotients identify representations whose orbit closures have the same closed orbit.",
+    "examples": [
+      "The nonzero orbit for scalar multiplication on $\\A^1$ is $\\A^1\\setminus\\{0\\}$. Its closure contains zero. Consequently the orbit space has more points than the invariant affine quotient, which is a point.",
+      "For $J=\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)$, conjugation by $\\operatorname{diag}(t,1)$ gives $tJ$ for $t\\ne0$. Its limit at zero is the zero matrix, which is not conjugate to $J$."
+    ]
+  },
+  {
+    "slug": "path",
+    "term": "Path",
+    "section": "sec:quivers",
+    "definition": "A sequence of arrows whose successive heads and tails match, interpreted as a composite linear map in a representation. Each vertex also has a path of length zero, interpreted as the identity on its vertex space.",
+    "examples": [
+      "For arrows $a:1\\to2$ and $b:2\\to3$, the path from $1$ to $3$ acts as $B_bB_a$. The rightmost matrix acts first, in accordance with composition of the corresponding linear maps.",
+      "For the one-loop quiver, paths are $1,x,x^2,\\ldots$. In a representation given by an operator $X$, they act as $\\id,X,X^2,\\ldots$, so paths express repeated application of the loop."
+    ]
+  },
+  {
+    "slug": "path-algebra",
+    "term": "Path algebra",
+    "section": "sec:quivers",
+    "definition": "The vector space spanned by all paths in a quiver, with multiplication given by concatenation when endpoints match and zero otherwise. A representation turns paths into composite maps; imposing relations amounts to quotienting this algebra by those relations.",
+    "examples": [
+      "For one vertex and no arrows, the only path is the length-zero identity. The path algebra is $\\mathbb C$, and its finite-dimensional representations are simply complex vector spaces.",
+      "For one vertex and one loop $x$, every path is a power of $x$. The path algebra is $\\mathbb C[x]$, and choosing a representation is choosing the linear operator by which $x$ acts."
+    ]
+  },
+  {
+    "slug": "preprojective-relation",
+    "term": "Preprojective relation",
+    "section": "sec:moment",
+    "definition": "The moment-zero relation for a doubled quiver, expressed as the signed sum of an arrow followed by its reverse at each vertex. Without framing it defines the preprojective algebra; framing adds the term $i_i j_i$ to the equation.",
+    "examples": [
+      "For a one-loop original quiver, doubling gives operators $X,Y$. The unframed preprojective relation is $[X,Y]=0$, so representations are pairs of commuting matrices, not arbitrary pairs of matrices.",
+      "For one arrow $a:1\\to2$ and its reverse, write $A:V_1\\to V_2$ and $B:V_2\\to V_1$. The unframed relations are $BA=0$ at vertex $1$ and $AB=0$ at vertex $2$."
+    ]
+  },
+  {
+    "slug": "projective-morphism",
+    "term": "Projective morphism",
+    "section": "sec:definition",
+    "definition": "A morphism factoring as a closed immersion into a projective space over the target followed by projection. It is a relative property: the source need not be projective over the ground field, and the morphism need not be surjective.",
+    "examples": [
+      "The contraction $T^*\\PP^1\\to\\{uv=z^2\\}$ in the rank-one framed example is projective. Its source is not projective over $\\mathbb C$, since the cotangent fibres are affine lines.",
+      "For an isolated vertex with $v=w=2$, the cyclic variety is a point, whose image in the affine quotient is zero. Its projective map is not surjective: other moment-zero data can have the nonzero invariant $ji$."
+    ]
+  },
+  {
+    "slug": "quiver",
+    "term": "Quiver",
+    "section": "sec:quivers",
+    "definition": "A directed graph specified by vertices, arrows, and the head and tail of each arrow. Multiple arrows and loops are permitted. The graph tells us the shapes of linear-map data before we choose any vector spaces or matrices.",
+    "examples": [
+      "The quiver $1\\longrightarrow2$ asks for two vector spaces and a map from the first to the second. Choosing different dimensions changes the representation space while leaving this quiver unchanged.",
+      "The Jordan quiver has one vertex and one loop. A representation is one vector space with one operator; the loop permits repeated compositions, unlike a quiver with no oriented cycles."
+    ]
+  },
+  {
+    "slug": "quiver-representation",
+    "term": "Quiver representation",
+    "section": "sec:quivers",
+    "definition": "A choice of a vector space at every vertex and a linear map for every arrow, directed from its tail space to its head space. Its dimension vector records the vector-space dimensions; additional relations restrict the allowed maps.",
+    "examples": [
+      "For $1\\to2$, choose $V_1=V_2=\\mathbb C$ and let the arrow be multiplication by $3$. This is a representation of dimension vector $(1,1)$, with one scalar as its arrow data.",
+      "For two parallel arrows $1\\rightrightarrows2$ and the same spaces, a representation is a pair $(a,b)\\in\\mathbb C^2$. The two numbers specify two separate linear maps, even though their source and target agree."
+    ]
+  },
+  {
+    "slug": "quotient-stack",
+    "term": "Quotient stack",
+    "section": "sec:connections",
+    "definition": "The stack which retains families of objects and their change-of-basis isomorphisms when forming a quotient. A geometric point remembers its stabiliser, unlike an ordinary orbit-classifying space. In a framed free quotient the stack can instead be an ordinary variety.",
+    "examples": [
+      "For one vertex with no arrows and a one-dimensional space, there is only one representation, but it has scalar automorphisms. Its quotient stack is $B\\Gm$, whereas its affine invariant quotient is just a point.",
+      "For an isolated vertex with $v=w=1$, cyclic stability gives $i\\ne0$ and $j=0$. The gauge transformation setting $i=1$ is unique, so this quotient stack is an ordinary point with no remaining stabiliser."
+    ]
+  },
+  {
+    "slug": "rank-one-operator",
+    "term": "Rank-one operator",
+    "section": "sec:grassmannian",
+    "definition": "A linear map whose image is one-dimensional. It can be written $u\\otimes\\alpha$, sending $w$ to $\\alpha(w)u$. Rank one alone does not imply nilpotence; in moment-zero examples additional equations can force its square to vanish.",
+    "examples": [
+      "The matrix $\\left(\\begin{smallmatrix}1&0\\\\0&0\\end{smallmatrix}\\right)$ has rank one, with image the first coordinate line. Its square equals itself, so it illustrates that a rank-one operator need not be nilpotent.",
+      "Take $i=(1,0):\\mathbb C^2\\to\\mathbb C$ and $j=(0,1)^T$. Then $ij=0$, while $ji=\\left(\\begin{smallmatrix}0&0\\\\1&0\\end{smallmatrix}\\right)$ has rank one and square zero. This is the cotangent projective-line model."
+    ]
+  },
+  {
+    "slug": "relation",
+    "term": "Relation",
+    "section": "sec:quivers",
+    "definition": "An equation between linear combinations of paths with the same endpoints. A representation satisfies the relation when the resulting combination of composite maps is zero. Relations cut out closed algebraic subsets of a representation space by matrix-entry equations.",
+    "examples": [
+      "For a single loop $x$, the relation $x^2=0$ requires an operator $X$ with square zero. The nonzero Jordan matrix $\\left(\\begin{smallmatrix}0&1\\\\0&0\\end{smallmatrix}\\right)$ satisfies it, although $X$ itself is not zero.",
+      "For one vertex with two loops $x,y$, the relation $xy-yx=0$ requires $XY=YX$. Scalar one-dimensional representations always satisfy it, but arbitrary larger matrices need not commute."
+    ]
+  },
+  {
+    "slug": "representation-space",
+    "term": "Representation space",
+    "section": "sec:representations",
+    "definition": "The affine space of all arrow maps after fixing standard vector spaces at the vertices. Its coordinates are the matrix entries. The base-change group acts on it, and its orbits describe representations up to isomorphism.",
+    "examples": [
+      "For one arrow with dimensions two and three, the representation space is $\\Hom(\\mathbb C^2,\\mathbb C^3)\\simeq\\A^6$. There are six matrix entries before changing bases or imposing additional relations.",
+      "For the Jordan quiver and a two-dimensional vertex space, the representation space is $\\End(\\mathbb C^2)\\simeq\\A^4$. Its four coordinates are the entries of a single $2\\times2$ matrix."
+    ]
+  },
+  {
+    "slug": "resolution-of-singularities",
+    "term": "Resolution of singularities",
+    "section": "sec:grassmannian",
+    "definition": "A proper birational morphism from a smooth variety to a singular variety. Birational means an isomorphism on suitable dense open subsets. A projective map from a quiver variety is not automatically such a resolution; its image and birationality must be checked.",
+    "examples": [
+      "The isolated-vertex construction with $v=1,w=2$ gives $T^*\\PP^1\\to\\{uv=z^2\\}$. Away from the cone vertex it is an isomorphism; the vertex is replaced by the projective zero section.",
+      "The Hilbert--Chow map $\\Hilb^2(\\A^2)\\to\\Sym^2(\\A^2)$ is another resolution. Over two distinct points it changes nothing, while over a doubled point it retains a projective line of infinitesimal directions."
+    ]
+  },
+  {
+    "slug": "scalar-stabiliser",
+    "term": "Scalar stabiliser",
+    "section": "sec:stability",
+    "definition": "The common nonzero scalars acting on all vertex spaces of an unframed representation. They commute with every arrow map and therefore lie in every stabiliser. Keeping a framing fixed can eliminate them, which changes the quotient geometry substantially.",
+    "examples": [
+      "For a nonzero arrow between one-dimensional spaces, an automorphism satisfies $g_2a=ag_1$, hence $g_1=g_2=c$. The representation can be King-stable while retaining this entire scalar group.",
+      "For a framed one-dimensional vertex with $i\\ne0$, a stabilising scalar must satisfy $ci=i$. Thus $c=1$: the fixed framing removes the scalar automorphisms present in the unframed example."
+    ]
+  },
+  {
+    "slug": "semi-invariant",
+    "term": "Semi-invariant",
+    "section": "sec:git",
+    "definition": "A polynomial which transforms by a specified character rather than remaining unchanged: $f(gx)=\\chi(g)^n f(x)$. Its exponent gives its graded degree in the GIT ring. Nonvanishing positive-degree semi-invariants determine the semistable locus.",
+    "examples": [
+      "For an arrow value $a$ between one-dimensional spaces, $a$ transforms as $g_2ag_1^{-1}$. It is a semi-invariant for $\\chi(g_1,g_2)=g_2/g_1$; its nonvanishing selects the nonzero-arrow locus.",
+      "For an isolated framed vertex with $v=w=1$, the coordinate $i$ transforms as $gi$. It is a semi-invariant for $\\chi(g)=g$, while $j$ transforms by $g^{-1}$ and has the inverse character."
+    ]
+  },
+  {
+    "slug": "semiprojectivity",
+    "term": "Semiprojectivity",
+    "section": "sec:scaling",
+    "definition": "In the scaling discussion, smooth quasiprojective geometry with a multiplicative-group action whose fixed locus is proper and whose points all have limits as $t\\to0$. The smooth cyclic zero-level quiver varieties here have this property under full dilation; other scaling choices require separate checks.",
+    "examples": [
+      "The affine line with $t\\cdot z=tz$ has a proper fixed locus consisting of the origin. Every point tends to the origin, so this is a basic example of the stated action-based semiprojectivity.",
+      "In the isolated-vertex $T^*\\PP^1$ example, full quiver dilation fixes the base and scales cotangent fibres by $t^2$. Every point limits to the projective zero section, which is the proper fixed locus."
+    ]
+  },
+  {
+    "slug": "semisimple-representation",
+    "term": "Semisimple representation",
+    "section": "sec:quotients",
+    "definition": "A direct sum of simple representations. For a quiver with relations, simplicity and the summands are understood in the corresponding representation category. Closed orbits of the affine representation quotient are represented by semisimple objects, rather than arbitrary extensions.",
+    "examples": [
+      "For the one-loop quiver, a diagonal matrix $\\operatorname{diag}(a,b)$ is semisimple: it is the direct sum of the two one-dimensional operators with eigenvalues $a,b$. Repeated eigenvalues are allowed in this direct-sum description.",
+      "For $1\\to2$ with dimensions $(1,1)$, the zero arrow is the direct sum of the simple representations supported separately at the two vertices. A nonzero arrow instead joins those pieces into an extension."
+    ]
+  },
+  {
+    "slug": "semistable-representation",
+    "term": "Semistable representation",
+    "section": "sec:stability",
+    "definition": "For the chosen King weight $\\theta$ with $\\theta\\cdot\\mathbf v=0$, a representation for which every subrepresentation $S$ satisfies $\\theta\\cdot\\dim S\\ge0$. Equivalently it is detected by a nonvanishing semi-invariant for the corresponding character. Equality is allowed.",
+    "examples": [
+      "For one arrow of dimensions $(1,1)$ and $\\theta=(-1,1)$, every nonzero arrow is semistable and actually stable. The permanent target-only subrepresentation has weight $1$, so it satisfies the required inequality.",
+      "For $\\theta=0$, every representation is semistable. In particular, a nonzero nilpotent Jordan block is semistable, even though its orbit is not closed and its semisimplification is the zero operator."
+    ]
+  },
+  {
+    "slug": "s-equivalence",
+    "term": "S-equivalence",
+    "section": "sec:stability",
+    "definition": "The equivalence relation on semistable representations having isomorphic Jordan--Hölder graded objects. The stable factors are taken for the specified stability condition. A GIT moduli point can therefore identify nonisomorphic semistable representations whose extensions differ.",
+    "examples": [
+      "For the one-loop quiver with $\\theta=0$, the nonzero nilpotent $2\\times2$ Jordan block has two zero-eigenvalue one-dimensional factors. It is S-equivalent to the zero $2\\times2$ matrix, although they are not conjugate.",
+      "For the Kronecker quiver of dimensions $(1,1)$ and $\\theta=(-1,1)$, all nonzero arrow pairs are stable. Here S-equivalence is just isomorphism, and the moduli point is their ratio $[a:b]\\in\\PP^1$."
+    ]
+  },
+  {
+    "slug": "simple-representation",
+    "term": "Simple representation",
+    "section": "sec:representations",
+    "definition": "A nonzero representation with no nonzero proper subrepresentation. This is stronger than indecomposability and differs from King-stability for a nonzero weight. Simple representations are the building blocks of semisimple representations and of ordinary composition series.",
+    "examples": [
+      "For a one-dimensional representation of the one-loop quiver, the operator is a scalar $a$. The only vector subspaces are zero and the whole space, so the representation is simple for every $a$.",
+      "A nonzero arrow between one-dimensional spaces is not simple: the target-only spaces $(0,\\mathbb C)$ form a proper subrepresentation. Nevertheless it is stable for $\\theta=(-1,1)$, distinguishing the two definitions."
+    ]
+  },
+  {
+    "slug": "stabiliser",
+    "term": "Stabiliser",
+    "section": "sec:representations",
+    "definition": "The subgroup of base changes fixing a chosen representation. It is the automorphism group of that object. Stabiliser dimensions and any ineffective subgroup matter in forming quotients; cyclic framing makes this group trivial in the main Nakajima chamber.",
+    "examples": [
+      "For a nonzero arrow $a:\\mathbb C\\to\\mathbb C$, the stabiliser consists of pairs $(c,c)$ with $c\\ne0$. This common scalar changes the two bases compatibly and leaves the arrow unchanged.",
+      "For the Jordan example with vertex and framing dimension one, cyclic stability requires $i\\ne0$. A stabiliser must fix $i$, forcing its scalar to be $1$, regardless of the two loop-coordinate values."
+    ]
+  },
+  {
+    "slug": "stable-representation",
+    "term": "Stable representation",
+    "section": "sec:stability",
+    "definition": "A King-semistable representation for which every nonzero proper subrepresentation has strictly positive weight in the declared sign convention. Its automorphisms are scalars. This differs from framed cyclic stability, where the fixed framing removes those scalar automorphisms.",
+    "examples": [
+      "For the arrow $1\\to2$ of dimensions $(1,1)$ and $\\theta=(-1,1)$, a nonzero arrow is stable. The only nonzero proper subrepresentation is target-only, with positive weight $1$.",
+      "For two parallel arrows with the same dimensions and weight, a pair $(a,b)\\ne(0,0)$ is stable. A source-only subrepresentation would require both arrows to vanish; the stable quotient is $\\PP^1$."
+    ]
+  },
+  {
+    "slug": "subrepresentation",
+    "term": "Subrepresentation",
+    "section": "sec:quivers",
+    "definition": "A choice of subspace at each vertex preserved by every arrow map. Restricting the arrow maps gives another representation. The subspace condition concerns all arrows simultaneously and is the input to King and cyclic stability tests.",
+    "examples": [
+      "For a nonzero arrow $\\mathbb C\\to\\mathbb C$, the spaces $(0,\\mathbb C)$ give a subrepresentation. The spaces $(\\mathbb C,0)$ do not, because the arrow does not send the source into the chosen zero target.",
+      "For a nilpotent Jordan operator $J$ with $Je_2=e_1$ and $Je_1=0$, the line $\\mathbb C e_1$ is a subrepresentation. The line $\\mathbb C e_2$ is not preserved by the loop."
+    ]
+  },
+  {
+    "slug": "symmetric-product",
+    "term": "Symmetric product",
+    "section": "sec:hilbert-two",
+    "definition": "The quotient $\\Sym^n X=X^n/\\mathfrak S_n$, whose points are unordered collections of $n$ points, counted with multiplicity. It records a zero-cycle rather than a subscheme, so it forgets some infinitesimal information retained by a Hilbert scheme.",
+    "examples": [
+      "For $\\Sym^2\\A^1$, invariant coordinates are $s=x_1+x_2$ and $p=x_1x_2$. They determine the monic polynomial $T^2-sT+p$, so the symmetric product is an affine plane.",
+      "In $\\Sym^2(\\A^2)$, every length-two subscheme supported at the origin has the same cycle $2[0]$. The ideals $(x^2,y)$ and $(x,y^2)$ therefore have the same symmetric-product image but retain different directions."
+    ]
+  },
+  {
+    "slug": "symplectic-form",
+    "term": "Symplectic form",
+    "section": "sec:doubling",
+    "definition": "A closed nondegenerate algebraic two-form. Nondegeneracy pairs every tangent direction with another one, while closedness is the differential condition $d\\omega=0$. Doubling arrows provides opposite matrix directions which are naturally paired by such a form.",
+    "examples": [
+      "On $\\A^2_{x,y}$, the form $dx\\wedge dy$ pairs the two coordinate directions nondegenerately. It is closed because differentiating the coordinate one-forms gives zero.",
+      "On a pair of matrix spaces with coordinates $X,Y$, the form $\\tr(dX\\wedge dY)$ pairs the $ij$ entry of $X$ with the $ji$ entry of $Y$. This is the cotangent pairing behind doubled-quiver geometry."
+    ]
+  },
+  {
+    "slug": "symplectic-quotient",
+    "term": "Symplectic quotient",
+    "section": "sec:geometry",
+    "definition": "The quotient obtained by first imposing a moment-map level and then removing the group directions. At a smooth zero level with a free stable action, the restricted two-form descends to a nondegenerate form on the quotient.",
+    "examples": [
+      "For an isolated vertex with $v=1,w=2$, the equation is $ij=0$. Quotienting its cyclic locus $i\\ne0$ by $\\Gm$ produces $T^*\\PP^1$, with its cotangent symplectic form.",
+      "For the Jordan quiver with $v=w=1$, cyclic gauge fixing gives $i=1,j=0$. The remaining loop coordinates $x,y$ form $\\A^2$ with symplectic form $dx\\wedge dy$."
+    ]
+  },
+  {
+    "slug": "trace-pairing",
+    "term": "Trace pairing",
+    "section": "sec:moment",
+    "definition": "The bilinear pairing $(A,B)\\mapsto\\tr(AB)$ on an endomorphism space. It is nondegenerate and identifies that space with its linear dual. This permits the moment map to be written as matrices rather than abstract dual Lie-algebra elements.",
+    "examples": [
+      "For $1\\times1$ matrices, the trace pairing is ordinary multiplication $ab$. Specifying the pairing with every scalar $b$ determines $a$, illustrating the identification of this Lie algebra with its dual.",
+      "For matrix units, $\\tr(E_{12}E_{21})=1$. Thus the nonzero matrix $E_{12}$ can pair nontrivially even though its own trace is zero; nondegeneracy uses all partner matrices."
+    ]
+  },
+  {
+    "slug": "variation-of-stability",
+    "term": "Variation of stability",
+    "section": "sec:variation",
+    "definition": "Changing the character or King weight used to select semistable points and form a quotient. Different chambers can give different spaces or presentations, and a chamber can be empty. A map between two such quotients needs additional justification.",
+    "examples": [
+      "For one arrow of dimensions $(1,1)$, $\\theta=(-1,1)$ allows nonzero arrows. Reversing to $(1,-1)$ excludes every representation, because the unavoidable target-only subrepresentation now has weight $-1$.",
+      "For an isolated framed vertex with $v=1,w=2$, the character selecting $i\\ne0$ gives the quotient-Grassmannian presentation. The inverse character selects $j\\ne0$, giving the dual, subspace-Grassmannian presentation of a cotangent projective line."
+    ]
+  },
+  {
+    "slug": "vertex",
+    "term": "Vertex",
+    "section": "sec:quivers",
+    "definition": "An element of the quiver graph at which a vector space is placed. Vertices label separate vector spaces and separate factors of the base-change group. The head and tail of each arrow specify which spaces its linear map connects.",
+    "examples": [
+      "In the quiver $1\\to2$, vertex $1$ carries the source space and vertex $2$ the target space. Dimensions $(2,3)$ therefore specify a map from a two-dimensional to a three-dimensional space.",
+      "The Jordan quiver has one vertex even though it has a loop. Doubling adds another loop at that same vertex, not another vector space; both resulting maps are endomorphisms of the original space."
+    ]
+  },
+  {
+    "slug": "weight-of-a-scaling-action",
+    "term": "Weight of a scaling action",
+    "section": "sec:scaling",
+    "definition": "The integer describing how a coordinate or tensor transforms under $t\\in\\mathbb C^*$. A weight-$m$ coordinate transforms by $t^m$. Naming the scaling action matters, since full dilation and cotangent dilation assign different weights to the same data.",
+    "examples": [
+      "Under full dilation of the Jordan $v=w=1$ quiver variety $\\A^2_{x,y}$, both coordinates have weight $1$. The two-form $dx\\wedge dy$ consequently has weight $2$, reflecting its two differential factors.",
+      "Under cotangent dilation on the same plane, $(x,y)\\mapsto(x,ty)$. Now $x$ has weight $0$ and $y$ weight $1$; the fixed locus is the whole nonproper line $y=0$."
+    ]
+  },
+  {
+    "slug": "zero-moment-fibre",
+    "term": "Zero moment fibre",
+    "section": "sec:moment",
+    "definition": "The locus defined by all moment-map equations $\\mu_i=0$, before taking a quotient. It can be singular or have unstable components. Passing to the cyclic stable open and then quotienting is a separate operation essential to the smooth-variety construction.",
+    "examples": [
+      "For an isolated vertex with $v=w=1$, the equation is $ij=0$ in an affine plane. The zero fibre is the union of the two coordinate axes; cyclic stability keeps only $i\\ne0,j=0$.",
+      "For the Jordan quiver with $v=w=1$, scalar loops commute automatically. The zero fibre is $\\A^2_{x,y}\\times\\{ij=0\\}$. Quotienting its cyclic locus leaves the two free loop coordinates, hence $\\A^2$."
+    ]
+  }
+]

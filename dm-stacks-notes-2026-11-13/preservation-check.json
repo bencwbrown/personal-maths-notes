@@ -1,0 +1,568 @@
+{
+  "date": "2026-11-13",
+  "scope": "All pre-existing non-Git repository files",
+  "checked": 93,
+  "changed": [],
+  "missing": [],
+  "all_preexisting_files_unchanged": true,
+  "files": [
+    {
+      "path": ".DS_Store",
+      "sha256_before": "7da356e24c89639237c4090c59ea88b8c8f6eed8a43412779ee5351f29b2629d",
+      "sha256_after": "7da356e24c89639237c4090c59ea88b8c8f6eed8a43412779ee5351f29b2629d",
+      "unchanged": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256_before": "b3c531c61d65ef2efef9dcdfaebe58b681be580f3522c30a7d4606919615f83b",
+      "sha256_after": "b3c531c61d65ef2efef9dcdfaebe58b681be580f3522c30a7d4606919615f83b",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting-integrated-revision-notes.md",
+      "sha256_before": "f2bea4bedb7bde08bf8a86b79038db34cfc075f1932a824b5663ba6a3e9d6434",
+      "sha256_after": "f2bea4bedb7bde08bf8a86b79038db34cfc075f1932a824b5663ba6a3e9d6434",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting-integrated.pdf",
+      "sha256_before": "c71f4842c93025da2f825c742ebd7d7f5bee4fd5a30a67e9c59fdcffbadc0dfb",
+      "sha256_after": "c71f4842c93025da2f825c742ebd7d7f5bee4fd5a30a67e9c59fdcffbadc0dfb",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting-integrated.tex",
+      "sha256_before": "d5f0321d6c16d9f0ee1b1a1d22bfd4ea4e984c6c5f8519318820f8c039121104",
+      "sha256_after": "d5f0321d6c16d9f0ee1b1a1d22bfd4ea4e984c6c5f8519318820f8c039121104",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting-reconstruction.md",
+      "sha256_before": "05f0d64d4b894ebe6306147deab26c37d9bbba08ea1be70c0eba79dae6cdfc5d",
+      "sha256_after": "05f0d64d4b894ebe6306147deab26c37d9bbba08ea1be70c0eba79dae6cdfc5d",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting.pdf",
+      "sha256_before": "a6e3d2f6e3137695055d14ec44404c3ebd90751962b2d484f5b7ab58c39be0a2",
+      "sha256_after": "a6e3d2f6e3137695055d14ec44404c3ebd90751962b2d484f5b7ab58c39be0a2",
+      "unchanged": true
+    },
+    {
+      "path": "SemiprojectiveAlgebraicCutting.tex",
+      "sha256_before": "ddd04fb747527d6d4da86defa7c3261eaedf460ba33bc14a219f796691b9dfdc",
+      "sha256_after": "ddd04fb747527d6d4da86defa7c3261eaedf460ba33bc14a219f796691b9dfdc",
+      "unchanged": true
+    },
+    {
+      "path": "appendix.tex",
+      "sha256_before": "313eeecb6571485df631078aaeb3b22e7aaac516240a6b62407d1b3ad54d9733",
+      "sha256_after": "313eeecb6571485df631078aaeb3b22e7aaac516240a6b62407d1b3ad54d9733",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/comparison-theorem.pdf",
+      "sha256_before": "cb6677737003747dfa82281a6455738663a747c17f2f2ed9b204d0ca08643d37",
+      "sha256_after": "cb6677737003747dfa82281a6455738663a747c17f2f2ed9b204d0ca08643d37",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/comparison-theorem.tex",
+      "sha256_before": "83ec22228e7a40014bacde1097b11ad2f0a7ce2d611d4e6e18c1b09424c97161",
+      "sha256_after": "83ec22228e7a40014bacde1097b11ad2f0a7ce2d611d4e6e18c1b09424c97161",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/conventions.pdf",
+      "sha256_before": "f8fdf0caf75724ed2ce6ca88faf0eb2f62eb7bc7e64105eebfbe67ab3684bc31",
+      "sha256_after": "f8fdf0caf75724ed2ce6ca88faf0eb2f62eb7bc7e64105eebfbe67ab3684bc31",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/conventions.tex",
+      "sha256_before": "6db7f6914236fb07e48289e6d5df3bcb7b41a2993294aa0ae70e97ae9f8d1f79",
+      "sha256_after": "6db7f6914236fb07e48289e6d5df3bcb7b41a2993294aa0ae70e97ae9f8d1f79",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/novelty-check-algebraic-cutting.md",
+      "sha256_before": "0cf9ddf3097757cd6f32c43dd00c40a748c0fea06d040767c9e12b8677367853",
+      "sha256_after": "0cf9ddf3097757cd6f32c43dd00c40a748c0fea06d040767c9e12b8677367853",
+      "unchanged": true
+    },
+    {
+      "path": "claude-notes/paper-outline.md",
+      "sha256_before": "7921fd18f76642261f02e082913908e849240a70d5ce6cbf0ca17fd1fef47302",
+      "sha256_after": "7921fd18f76642261f02e082913908e849240a70d5ce6cbf0ca17fd1fef47302",
+      "unchanged": true
+    },
+    {
+      "path": "document.aux",
+      "sha256_before": "97adf0c2f27cb6dc2d4c5b2e68f61b9a34887fd0832d3e543c8933851a4f234b",
+      "sha256_after": "97adf0c2f27cb6dc2d4c5b2e68f61b9a34887fd0832d3e543c8933851a4f234b",
+      "unchanged": true
+    },
+    {
+      "path": "document.log",
+      "sha256_before": "b77fcd926204de507dea5e1ca40472b04936a1d538e3543f82cb6d181d94fe12",
+      "sha256_after": "b77fcd926204de507dea5e1ca40472b04936a1d538e3543f82cb6d181d94fe12",
+      "unchanged": true
+    },
+    {
+      "path": "document.out",
+      "sha256_before": "6227593a3771c5f02f59915a7a4cb3752f1f47544faad07ac0e82419d7b384f5",
+      "sha256_after": "6227593a3771c5f02f59915a7a4cb3752f1f47544faad07ac0e82419d7b384f5",
+      "unchanged": true
+    },
+    {
+      "path": "document.pdf",
+      "sha256_before": "51c0d047d15fd685b88199f15fc64bda4a135c1b7c65f14a731f5e5945820a65",
+      "sha256_after": "51c0d047d15fd685b88199f15fc64bda4a135c1b7c65f14a731f5e5945820a65",
+      "unchanged": true
+    },
+    {
+      "path": "document.synctex.gz",
+      "sha256_before": "d27a5ed9d1042a6063111ff9bb1654b78e74225eba383bb5488a289cbaeacdcf",
+      "sha256_after": "d27a5ed9d1042a6063111ff9bb1654b78e74225eba383bb5488a289cbaeacdcf",
+      "unchanged": true
+    },
+    {
+      "path": "document.tex",
+      "sha256_before": "c92248232b8bd30e094243bf0f99855fa1829500ab6edc94457f2e77ac890356",
+      "sha256_after": "c92248232b8bd30e094243bf0f99855fa1829500ab6edc94457f2e77ac890356",
+      "unchanged": true
+    },
+    {
+      "path": "macros.tex",
+      "sha256_before": "e3c306d5ec24c521674228ebddbba9ec13dd3523be096c0c304502e3ee9586a1",
+      "sha256_after": "e3c306d5ec24c521674228ebddbba9ec13dd3523be096c0c304502e3ee9586a1",
+      "unchanged": true
+    },
+    {
+      "path": "main.aux",
+      "sha256_before": "e62b22a67ba150586241674e3082e754d4f01e1bd38b1fe0e0ce92ee09d43666",
+      "sha256_after": "e62b22a67ba150586241674e3082e754d4f01e1bd38b1fe0e0ce92ee09d43666",
+      "unchanged": true
+    },
+    {
+      "path": "main.log",
+      "sha256_before": "c65d3f09d34f9c651ffcb057a4a28150f5f2da332529be89f9c410f4f70888d8",
+      "sha256_after": "c65d3f09d34f9c651ffcb057a4a28150f5f2da332529be89f9c410f4f70888d8",
+      "unchanged": true
+    },
+    {
+      "path": "main.out",
+      "sha256_before": "5a9a0662972cabf9f883340d676f82dcdf90399ea485e4ab7045f1041f346e02",
+      "sha256_after": "5a9a0662972cabf9f883340d676f82dcdf90399ea485e4ab7045f1041f346e02",
+      "unchanged": true
+    },
+    {
+      "path": "main.pdf",
+      "sha256_before": "8980c72e6b744624a79e2a79fb01b6a7de369a324dd087ae3863bd83a58d7cce",
+      "sha256_after": "8980c72e6b744624a79e2a79fb01b6a7de369a324dd087ae3863bd83a58d7cce",
+      "unchanged": true
+    },
+    {
+      "path": "main.synctex.gz",
+      "sha256_before": "4d2dcf1d5ad16527172a54e726570503d992a157956c7bcb5d4142aacb0ec0fd",
+      "sha256_after": "4d2dcf1d5ad16527172a54e726570503d992a157956c7bcb5d4142aacb0ec0fd",
+      "unchanged": true
+    },
+    {
+      "path": "main.tex",
+      "sha256_before": "2716d0aef5734179e8151d40e73557f54f5f660e86608cf4d713da13f1d4a182",
+      "sha256_after": "2716d0aef5734179e8151d40e73557f54f5f660e86608cf4d713da13f1d4a182",
+      "unchanged": true
+    },
+    {
+      "path": "references/Algebraic Geometry - Robin Hartshorne.pdf",
+      "sha256_before": "ed10e11d0be9db6416006ba55420b867930e2b7a7b920b8317ed57064c6abe91",
+      "sha256_after": "ed10e11d0be9db6416006ba55420b867930e2b7a7b920b8317ed57064c6abe91",
+      "unchanged": true
+    },
+    {
+      "path": "references/Alper et al. - 2020 - A Luna \u00e9tale slice theorem for algebraic stacks.pdf",
+      "sha256_before": "d85abef9c8519ecc2185a28bd9a8c5590061da90ea1406bc6c259bc3e8ac6400",
+      "sha256_after": "d85abef9c8519ecc2185a28bd9a8c5590061da90ea1406bc6c259bc3e8ac6400",
+      "unchanged": true
+    },
+    {
+      "path": "references/Behrend - 2014 - Introduction to algebraic stacks.pdf",
+      "sha256_before": "04e9a91ef4a1e5faccde3c9fb4463a6921a5abd1cd904fbddd01fda59d3cfc0e",
+      "sha256_after": "04e9a91ef4a1e5faccde3c9fb4463a6921a5abd1cd904fbddd01fda59d3cfc0e",
+      "unchanged": true
+    },
+    {
+      "path": "references/Bialynicki-Birula - 1973 - Some Theorems on Actions of Algebraic Groups.pdf",
+      "sha256_before": "08b5b31a076af6dd697465335a94412aa65f58c2def67a38422ab55fc96abda2",
+      "sha256_after": "08b5b31a076af6dd697465335a94412aa65f58c2def67a38422ab55fc96abda2",
+      "unchanged": true
+    },
+    {
+      "path": "references/Braverman - 1999 - Symplectic cutting of Ka\u0308hler manifolds.pdf",
+      "sha256_before": "0b1e92f79491da140a15dcdea397b8c515548586039bbe21c23159b86a2adaf8",
+      "sha256_after": "0b1e92f79491da140a15dcdea397b8c515548586039bbe21c23159b86a2adaf8",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brion - 2010 - Introduction to actions of algebraic groups.pdf",
+      "sha256_before": "f09097ab89aff2cf221ca5e070cfe03530c2ddf7253657c89163d5888464eb4c",
+      "sha256_after": "f09097ab89aff2cf221ca5e070cfe03530c2ddf7253657c89163d5888464eb4c",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brion - 2015 - On linearization of line bundles.pdf",
+      "sha256_before": "66a5b6f61c576dba7d280bf8c4aead1a1b4e2f52f50bbe482480e6e35d2f79a3",
+      "sha256_after": "66a5b6f61c576dba7d280bf8c4aead1a1b4e2f52f50bbe482480e6e35d2f79a3",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brion - Linearization of algebraic group actions.pdf",
+      "sha256_before": "0aa7921566389db55faf09cf09ae562aafb92be253b1991d270b653914991bd7",
+      "sha256_after": "0aa7921566389db55faf09cf09ae562aafb92be253b1991d270b653914991bd7",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brion and Procesi - 1990 - Action d'un tore dans une vari\u00e9t\u00e9 projective.pdf",
+      "sha256_before": "d3a214169fcfc408011b9745c4912e879da18a51667f27e733c60325c13ca651",
+      "sha256_after": "d3a214169fcfc408011b9745c4912e879da18a51667f27e733c60325c13ca651",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brion et al. - Luna\u2019s Slice Theorem and Applications.pdf",
+      "sha256_before": "da5a44e20e3523fd7df23bc90402bd7e51f93e41c4b80677cea978f5ea73a8de",
+      "sha256_after": "da5a44e20e3523fd7df23bc90402bd7e51f93e41c4b80677cea978f5ea73a8de",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brown - Semistability and Stability Lemma-1.pdf",
+      "sha256_before": "683ac93cb908f15d001a3a7a9f5aa790278b22cedd3bdebcee94f00f0d317fac",
+      "sha256_after": "683ac93cb908f15d001a3a7a9f5aa790278b22cedd3bdebcee94f00f0d317fac",
+      "unchanged": true
+    },
+    {
+      "path": "references/Brown - Semistability and Stability Lemma.pdf",
+      "sha256_before": "0f5dc1c9f17cd977877175bd2285ba720859cf51b1585fbac1ee1a3c6471489b",
+      "sha256_after": "0f5dc1c9f17cd977877175bd2285ba720859cf51b1585fbac1ee1a3c6471489b",
+      "unchanged": true
+    },
+    {
+      "path": "references/B\u00e9rczi et al. - 2016 - Constructing quotients of algebraic varieties by linear algebraic group actions.pdf",
+      "sha256_before": "e3d9e47037f1599335517ed52d95e098cc8346bc11a7644ac406ff425628249c",
+      "sha256_after": "e3d9e47037f1599335517ed52d95e098cc8346bc11a7644ac406ff425628249c",
+      "unchanged": true
+    },
+    {
+      "path": "references/Chen et al. - 2015 - Gluing principle for orbifold stratified spaces.pdf",
+      "sha256_before": "20c9e6a52da4c66a6e3c69f50b89b03573d5fb74c4dd50281f9e2c4f38cecd7d",
+      "sha256_after": "20c9e6a52da4c66a6e3c69f50b89b03573d5fb74c4dd50281f9e2c4f38cecd7d",
+      "unchanged": true
+    },
+    {
+      "path": "references/Dolgachev and Hu - 1998 - Variation of geometric invariant theory quotients.pdf",
+      "sha256_before": "2feb132773a5f306017504d00e97f69ff6d2d2fdf399fb6a7b0808af5c2b9718",
+      "sha256_after": "2feb132773a5f306017504d00e97f69ff6d2d2fdf399fb6a7b0808af5c2b9718",
+      "unchanged": true
+    },
+    {
+      "path": "references/Doran and Kirwan - 2007 - Towards non-reductive geometric invariant theory.pdf",
+      "sha256_before": "9883f1a9e94561e5d4377cf3406b11e111ccd56f784df01628bb17b4c0d960cd",
+      "sha256_after": "9883f1a9e94561e5d4377cf3406b11e111ccd56f784df01628bb17b4c0d960cd",
+      "unchanged": true
+    },
+    {
+      "path": "references/Drezet and Narasimhan - 1989 - Groupe de Picard des vari\u00e9t\u00e9s de modules de fibr\u00e9s semi-stables sur les courbes alg\u00e9briques.pdf",
+      "sha256_before": "50bb2a18997ed6a0e63cb6c773bf5d608400c84e5423eac6d4e79572a3bcf95e",
+      "sha256_after": "50bb2a18997ed6a0e63cb6c773bf5d608400c84e5423eac6d4e79572a3bcf95e",
+      "unchanged": true
+    },
+    {
+      "path": "references/Dr\u00e9zet - Luna's slice theorem and applications.pdf",
+      "sha256_before": "aa72a705689de2e873b97ac705e94b247eab491744c67b8bd3e5e956e32cda8e",
+      "sha256_after": "aa72a705689de2e873b97ac705e94b247eab491744c67b8bd3e5e956e32cda8e",
+      "unchanged": true
+    },
+    {
+      "path": "references/Edidin and Graham - 1996 - Algebraic Cuts.pdf",
+      "sha256_before": "e327cf07f772409467df24d59556e09b1804bcbcbf8d02980a99cf75eafdad7f",
+      "sha256_after": "e327cf07f772409467df24d59556e09b1804bcbcbf8d02980a99cf75eafdad7f",
+      "unchanged": true
+    },
+    {
+      "path": "references/Fantechi et al. - 2009 - Smooth toric DM stacks.pdf",
+      "sha256_before": "5fe50570e3f91105b7b61efddfaa3ef3cac519bb97db439812f29e5d01a75610",
+      "sha256_after": "5fe50570e3f91105b7b61efddfaa3ef3cac519bb97db439812f29e5d01a75610",
+      "unchanged": true
+    },
+    {
+      "path": "references/Gemini-German Math Article Translation and Explanation.pdf",
+      "sha256_before": "8c7dbb4be4e4b50fbf2b28eb743252066599835a2c59cfc50874346bca20f01f",
+      "sha256_after": "8c7dbb4be4e4b50fbf2b28eb743252066599835a2c59cfc50874346bca20f01f",
+      "unchanged": true
+    },
+    {
+      "path": "references/Gillard - 2022 - Real Torus Actions on Real Affine Algebraic Varieties.pdf",
+      "sha256_before": "2904c38606962ddebeb9d2687121d7d7f44cd9c53c52c6f7e9c5e6e5047fac9f",
+      "sha256_after": "2904c38606962ddebeb9d2687121d7d7f44cd9c53c52c6f7e9c5e6e5047fac9f",
+      "unchanged": true
+    },
+    {
+      "path": "references/Grothendieck - 1967 - \u00c9l\u00e9ments de g\u00e9om\u00e9trie alg\u00e9brique  IV. \u00c9tude locale des sch\u00e9mas et des morphismes de sch\u00e9mas, Quatri.pdf",
+      "sha256_before": "75ab7aa30abcdb513a09c0983d48fb8dd5c0e2744bf2ecff7376e393aa17089d",
+      "sha256_after": "75ab7aa30abcdb513a09c0983d48fb8dd5c0e2744bf2ecff7376e393aa17089d",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hain - LECTURES ON MODULI SPACES OF ELLIPTIC CURVES.pdf",
+      "sha256_before": "a69a6cd1142d9af1b7229f7f1586560d409d288fa7b506f37d514e2623d21dd0",
+      "sha256_after": "a69a6cd1142d9af1b7229f7f1586560d409d288fa7b506f37d514e2623d21dd0",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hausel and Rodriguez-Villegas - 2008 - Mixed Hodge polynomials of character varieties.pdf",
+      "sha256_before": "9252b59d7bf9d58fde137da17994c36a441bb56ae2906b3f973efcf6412113a7",
+      "sha256_after": "9252b59d7bf9d58fde137da17994c36a441bb56ae2906b3f973efcf6412113a7",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hausel and Villegas - 2013 - Cohomology of large semiprojective hyperkaehler varieties.pdf",
+      "sha256_before": "7c0abf709790d1b72f71c66456d7030ebec2f4f6d8e3ccf5727ea5d2c889d134",
+      "sha256_after": "7c0abf709790d1b72f71c66456d7030ebec2f4f6d8e3ccf5727ea5d2c889d134",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hilbert - 1893 - Ueber die vollen Invariantensysteme.pdf",
+      "sha256_before": "5780908489cf47200e66d074b9a0246c3f91cc9a744488227144cab477c4f890",
+      "sha256_after": "5780908489cf47200e66d074b9a0246c3f91cc9a744488227144cab477c4f890",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hoskins - 2023 - Moduli spaces and geometric invariant theory old and new perspectives.pdf",
+      "sha256_before": "4c67a1dc7526d43494ca231cc066f9a9ec40ab18c65b2106b30a0e87e8863196",
+      "sha256_after": "4c67a1dc7526d43494ca231cc066f9a9ec40ab18c65b2106b30a0e87e8863196",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hoskins - Geometric Invariant Theory and Symplectic Quotients.pdf",
+      "sha256_before": "3b36564bdc7332edca31342217f87c47d67501ae3351282b44eb72e9cb937236",
+      "sha256_after": "3b36564bdc7332edca31342217f87c47d67501ae3351282b44eb72e9cb937236",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hoskins - MODULI PROBLEMS AND GEOMETRIC INVARIANT THEORY.pdf",
+      "sha256_before": "2d1d9607417f9ea010d5c601cdc43a6c6673be1ddc165c4776c2312b88210f90",
+      "sha256_after": "2d1d9607417f9ea010d5c601cdc43a6c6673be1ddc165c4776c2312b88210f90",
+      "unchanged": true
+    },
+    {
+      "path": "references/Hoskins - THE KEMPF\u2013NESS THEOREM.pdf",
+      "sha256_before": "a8ea9a408fe8604ee5bacbf8c19a815bca2e5ff11dc8dd656ed86503ab14f3ca",
+      "sha256_after": "a8ea9a408fe8604ee5bacbf8c19a815bca2e5ff11dc8dd656ed86503ab14f3ca",
+      "unchanged": true
+    },
+    {
+      "path": "references/Illusie - Grothendieck's existence theorem in formal geometry.pdf",
+      "sha256_before": "52535d081abb0b8cd8849f09fab7c2748e4e8450f32756b3833925b100a96382",
+      "sha256_after": "52535d081abb0b8cd8849f09fab7c2748e4e8450f32756b3833925b100a96382",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kempf - 1978 - Instability in Invariant Theory.pdf",
+      "sha256_before": "6b80ec59ae2ed64e4cd45e2a9e453d1c68fa3148b2e635243b495508b33a0c3a",
+      "sha256_after": "6b80ec59ae2ed64e4cd45e2a9e453d1c68fa3148b2e635243b495508b33a0c3a",
+      "unchanged": true
+    },
+    {
+      "path": "references/King - 1994 - MODULI OF REPRESENTATIONS OF FINITE DIMENSIONAL ALGEBRAS.pdf",
+      "sha256_before": "ec76060625c6f6ba6fbd9e888aa73e199d5d8462719f67da6308c519ff857579",
+      "sha256_after": "ec76060625c6f6ba6fbd9e888aa73e199d5d8462719f67da6308c519ff857579",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kirwan - 1998 - Momentum maps and reduction in algebraic geometry.pdf",
+      "sha256_before": "51e193d844375fe097442603fd1673522803280f301a60fa7d3faca1bc50616e",
+      "sha256_after": "51e193d844375fe097442603fd1673522803280f301a60fa7d3faca1bc50616e",
+      "unchanged": true
+    },
+    {
+      "path": "references/Knop - 1993 - \u00dcber Bewertungen, welche unter einer reduktiven Gruppe invariant sind.pdf",
+      "sha256_before": "4278e92c1269609ef1f320ed2486f471294413c81fac830c9b79f0441c4251bf",
+      "sha256_after": "4278e92c1269609ef1f320ed2486f471294413c81fac830c9b79f0441c4251bf",
+      "unchanged": true
+    },
+    {
+      "path": "references/Knop et al. - 1989 - Local Properties of Algebraic Group Actions.pdf",
+      "sha256_before": "55c9f354a4e9df28e21266c89ffc9892dcc504671bc6eff75ae66ce95679e59a",
+      "sha256_after": "55c9f354a4e9df28e21266c89ffc9892dcc504671bc6eff75ae66ce95679e59a",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kraft - 1984 - Darstellungstheorie und die Methode der U-Invarianten.pdf",
+      "sha256_before": "419c930116e06edb8e567b36e97ffdb92a816bd9c61505c6b383073f4ad36e1f",
+      "sha256_after": "419c930116e06edb8e567b36e97ffdb92a816bd9c61505c6b383073f4ad36e1f",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kraft - 1989 - Algebraic Automorphisms of Affine Space.pdf",
+      "sha256_before": "357f659a9e6e5c4523bd493b0050dd8c51642908b448f92fba93c761f0cfa474",
+      "sha256_after": "357f659a9e6e5c4523bd493b0050dd8c51642908b448f92fba93c761f0cfa474",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kraft - Fiber Bundles, Slice Theorem and Applications.pdf",
+      "sha256_before": "f3afe967ec831c132c69f5a3079ea1075a4258366bd8beebb86c022eb74ffecb",
+      "sha256_after": "f3afe967ec831c132c69f5a3079ea1075a4258366bd8beebb86c022eb74ffecb",
+      "unchanged": true
+    },
+    {
+      "path": "references/Kraft and Wallach - 2006 - On the nullcone of representations of reductive groups.pdf",
+      "sha256_before": "2007f52302a7bbd9b32f412aa964e4300634689826d0e5eefd407e2aae62022e",
+      "sha256_after": "2007f52302a7bbd9b32f412aa964e4300634689826d0e5eefd407e2aae62022e",
+      "unchanged": true
+    },
+    {
+      "path": "references/Laza - 2012 - GIT and moduli with a twist.pdf",
+      "sha256_before": "a12529546810dceed5e1ec75850424a6b5a6b9cbc8762cbed412b0addd81f7a4",
+      "sha256_after": "a12529546810dceed5e1ec75850424a6b5a6b9cbc8762cbed412b0addd81f7a4",
+      "unchanged": true
+    },
+    {
+      "path": "references/Lerman - 1995 - Symplectic cuts.pdf",
+      "sha256_before": "184b6ed081a87c195c930bc98409fb43d6964a6ef9671082b05c1b982aa07f7b",
+      "sha256_after": "184b6ed081a87c195c930bc98409fb43d6964a6ef9671082b05c1b982aa07f7b",
+      "unchanged": true
+    },
+    {
+      "path": "references/Luna - 1973 - Slices \u00e9tales.pdf",
+      "sha256_before": "e2424b7178fb8b944178451d6f376dec4e9d47b6acc2982955b4a39bcdb20733",
+      "sha256_after": "e2424b7178fb8b944178451d6f376dec4e9d47b6acc2982955b4a39bcdb20733",
+      "unchanged": true
+    },
+    {
+      "path": "references/Luna - 1975 - Adh\u00e9rence d'orbite et invariants..pdf",
+      "sha256_before": "9ba8758ac007b112a643ec0680e3cd2e6c88992295d506e5abdfcc8c3d9782b3",
+      "sha256_after": "9ba8758ac007b112a643ec0680e3cd2e6c88992295d506e5abdfcc8c3d9782b3",
+      "unchanged": true
+    },
+    {
+      "path": "references/Melman-Rogers - Luna\u2019s \u00c9tale Slice Theorem.pdf",
+      "sha256_before": "b9c886b9f6bab2320196ee155cf4d4f6aa3ede29c9a3f2980c0046bfda9a3aed",
+      "sha256_after": "b9c886b9f6bab2320196ee155cf4d4f6aa3ede29c9a3f2980c0046bfda9a3aed",
+      "unchanged": true
+    },
+    {
+      "path": "references/Ness and Mumford - 1984 - A Stratification of the Null Cone Via the Moment Map.pdf",
+      "sha256_before": "f688fd29e1d36517b9f66d94f5b9815a19c75bf934a631a53d38bc8155452dc6",
+      "sha256_after": "f688fd29e1d36517b9f66d94f5b9815a19c75bf934a631a53d38bc8155452dc6",
+      "unchanged": true
+    },
+    {
+      "path": "references/Proudfoot - Lectures on Toric Varieties.pdf",
+      "sha256_before": "fb7a749a4c1e52df951f2a0311d19b85114b8bf4054bb6b2ee91e79d666ced32",
+      "sha256_after": "fb7a749a4c1e52df951f2a0311d19b85114b8bf4054bb6b2ee91e79d666ced32",
+      "unchanged": true
+    },
+    {
+      "path": "references/Robbin and Salamon - 2006 - A construction of the Deligne-Mumford orbifold.pdf",
+      "sha256_before": "8c2707bf754df01936c6ec8cd40fd4ed447b6cf8ced38ce0abb3a06f9dcd0e27",
+      "sha256_after": "8c2707bf754df01936c6ec8cd40fd4ed447b6cf8ced38ce0abb3a06f9dcd0e27",
+      "unchanged": true
+    },
+    {
+      "path": "references/Seshadri_1972_Quotient Spaces Modulo Reductive Algebraic Groups.pdf",
+      "sha256_before": "f08acbfb6289d6ecc9ac17f347619723e2d9592b5dd075083b4bfb98f08594a3",
+      "sha256_after": "f08acbfb6289d6ecc9ac17f347619723e2d9592b5dd075083b4bfb98f08594a3",
+      "unchanged": true
+    },
+    {
+      "path": "references/Sjamaar_Lerman_1991_Stratified Symplectic Spaces and Reduction.pdf",
+      "sha256_before": "1eb043cb10ed4511c2d225e681d1cc5c3eb8b53d327a0cd9ff4cb1437fa0344c",
+      "sha256_after": "1eb043cb10ed4511c2d225e681d1cc5c3eb8b53d327a0cd9ff4cb1437fa0344c",
+      "unchanged": true
+    },
+    {
+      "path": "references/Slodowy - 1989 - Der Scheibensatz f\u00fcr Algebraische Transformationsgruppen.pdf",
+      "sha256_before": "cbad7e1fc2dd974ccad8b768573b2db66f86bedb74ecb9db7f6f59da096b8638",
+      "sha256_after": "cbad7e1fc2dd974ccad8b768573b2db66f86bedb74ecb9db7f6f59da096b8638",
+      "unchanged": true
+    },
+    {
+      "path": "references/Strickland - 2000 - Formal schemes and formal groups.pdf",
+      "sha256_before": "8499eea49181039f99ea75f0b7695841960678db5eaa7396e3dea130dcd81372",
+      "sha256_after": "8499eea49181039f99ea75f0b7695841960678db5eaa7396e3dea130dcd81372",
+      "unchanged": true
+    },
+    {
+      "path": "references/Sumihiro - 1974 - Equivariant completion.pdf",
+      "sha256_before": "d20a54998ccda0956b87f3753101ddb56f634dd2201098f6ce0e5cbe8697e7bf",
+      "sha256_after": "d20a54998ccda0956b87f3753101ddb56f634dd2201098f6ce0e5cbe8697e7bf",
+      "unchanged": true
+    },
+    {
+      "path": "references/Sumihiro - 1975 - Equivariant completion II.pdf",
+      "sha256_before": "9c47b52d69ffca2c43a3a553fefe659de20411bd33d0128655d778904343434b",
+      "sha256_after": "9c47b52d69ffca2c43a3a553fefe659de20411bd33d0128655d778904343434b",
+      "unchanged": true
+    },
+    {
+      "path": "references/Thaddeus - Toric Quotients and Flips.pdf",
+      "sha256_before": "aba72060f8614acfa6ec2a2c4565b8b8a8e2975eccc7a43664873c1e7b3b3598",
+      "sha256_after": "aba72060f8614acfa6ec2a2c4565b8b8a8e2975eccc7a43664873c1e7b3b3598",
+      "unchanged": true
+    },
+    {
+      "path": "references/Thomas - 2006 - Notes on GIT and symplectic reduction for bundles and varieties.pdf",
+      "sha256_before": "36299e036751ae4dd62564659c8f39128052844f917e54a69254ef8046943bb5",
+      "sha256_after": "36299e036751ae4dd62564659c8f39128052844f917e54a69254ef8046943bb5",
+      "unchanged": true
+    },
+    {
+      "path": "references/Woodward - 2011 - Moment maps and geometric invariant theory.pdf",
+      "sha256_before": "c0b93daaa6bca9058df73cd658605eefa1959db45dc1da3f3026125232d3bcdb",
+      "sha256_after": "c0b93daaa6bca9058df73cd658605eefa1959db45dc1da3f3026125232d3bcdb",
+      "unchanged": true
+    },
+    {
+      "path": "sample.bib",
+      "sha256_before": "8749e6a3009dbbdc5886644c8de1eb8ad98c993cb0613ee349b7b31e83750dd1",
+      "sha256_after": "8749e6a3009dbbdc5886644c8de1eb8ad98c993cb0613ee349b7b31e83750dd1",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.aux",
+      "sha256_before": "10bedfc6d9f74ca286e374b038e403091610aff7701bd882f39a2e225ca8d9ad",
+      "sha256_after": "10bedfc6d9f74ca286e374b038e403091610aff7701bd882f39a2e225ca8d9ad",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.log",
+      "sha256_before": "79efcf47b17c21b03058ab2c8286370b5aa8279e9fe72c31ac6f13b1b45eb848",
+      "sha256_after": "79efcf47b17c21b03058ab2c8286370b5aa8279e9fe72c31ac6f13b1b45eb848",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.out",
+      "sha256_before": "00e28f3b1185ee1fc2073c978c0ee02348b224c88ccb3ef215bab3d17884d92d",
+      "sha256_after": "00e28f3b1185ee1fc2073c978c0ee02348b224c88ccb3ef215bab3d17884d92d",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.pdf",
+      "sha256_before": "a73b30334a0b728cf3395eaee6190881cb3bf538b0948ee1230faed8f9f10c8c",
+      "sha256_after": "a73b30334a0b728cf3395eaee6190881cb3bf538b0948ee1230faed8f9f10c8c",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.synctex.gz",
+      "sha256_before": "53db3206debe1515b5a613971c8b67502a20cf12c03386355cddc07a0dbfdf30",
+      "sha256_after": "53db3206debe1515b5a613971c8b67502a20cf12c03386355cddc07a0dbfdf30",
+      "unchanged": true
+    },
+    {
+      "path": "updated-document.tex",
+      "sha256_before": "16370574def6dc231a5646391c6408881e18016fa8f1a951ffda4056efed801b",
+      "sha256_after": "16370574def6dc231a5646391c6408881e18016fa8f1a951ffda4056efed801b",
+      "unchanged": true
+    }
+  ]
+}

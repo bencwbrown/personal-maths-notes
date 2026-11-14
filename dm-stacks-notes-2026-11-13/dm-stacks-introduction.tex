@@ -1,0 +1,2790 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,enumitem}
+\usepackage{needspace}
+\usepackage{tikz-cd}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{bookmark}
+\hypersetup{pdftitle={A first introduction to Deligne--Mumford stacks},pdfauthor={Notes prepared for the AlgebraicCutting project}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=3pt,topsep=5pt}
+\numberwithin{equation}{section}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{example}[proposition]{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{remark}[proposition]{Remark}
+\newcommand{\A}{\mathbb A}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Gm}{\mathbb G_m}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Isom}{\operatorname{Isom}}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\sst}{\mathrm{ss}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\normal}{\mathcal N}
+\newcommand{\charline}[1]{k_{#1}}
+\newcommand{\reading}[1]{\par\smallskip\textit{Reading checkpoint.} #1\par}
+\newcommand{\source}[1]{\par\smallskip{\small\textit{Reference.} #1}\par}
+\title{A first introduction to Deligne--Mumford stacks\\[5pt]
+\large Quotients, families, line bundles, and algebraic cutting}
+\author{Notes prepared for the AlgebraicCutting project}
+\date{13 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+These notes start from schemes, gluing, and line bundles, at the level of
+Hartshorne, Chapters I--II. They explain why quotient spaces can lose geometric
+information, how groupoids and descent retain it, and what the definition of a
+Deligne--Mumford stack says. A small collection of examples is developed repeatedly:
+the classifying stack $B\mu_n$, the quotient $[\A^1/\mu_n]$, a quadratic cone,
+and the weighted projective line $\PP(n,1)$. The last example is also an explicit
+algebraic cut. It makes the distinction between a stack line bundle, its
+pushforward to the coarse space, and a line bundle descended to that space visible
+in elementary calculations. Definitions and worked arguments are separated from
+general theorems used without proof.
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{How to read these notes}
+\label{sec:reading}
+
+We work over an algebraically closed field $k$ of characteristic zero; taking
+$k=\mathbb C$ throughout is entirely sufficient. Schemes and group actions in the
+examples are of finite type. The group $\Gm$ is $\Spec k[t,t^{-1}]$, and
+$\mu_n\subset\Gm$ is the group of $n$th roots of unity. Here $n\geq2$ unless
+otherwise stated.
+
+You should be comfortable with affine schemes, fibre products, sheaves, line
+bundles, divisors, and $\Proj$. No knowledge of Hartshorne, Chapter III, is assumed.
+Some ingredients that are not developed systematically in Chapters I--II---
+\emph{étale morphisms}, \emph{torsors}, and \emph{algebraic spaces}---are introduced
+when they are first needed. Their general theory is unnecessary for the worked
+examples. Higher categories, derived geometry, intersection theory on stacks, and
+the construction of moduli of curves are not prerequisites.
+
+The main route is
+\[
+\begin{gathered}
+\text{quotient rings}\longrightarrow\text{objects and their isomorphisms}
+\longrightarrow\text{families and gluing}\\
+\longrightarrow\text{quotient stacks}\longrightarrow\text{DM stacks}
+\longrightarrow\text{line bundles and cuts}.
+\end{gathered}
+\]
+Sections~\ref{sec:quotients}--\ref{sec:dm} give the foundations.
+Sections~\ref{sec:coarse}--\ref{sec:roots} work out the geometry and sheaves.
+Sections~\ref{sec:cutting}--\ref{sec:toycut} connect them to semiprojective
+algebraic cutting. The exercises in Section~\ref{sec:exercises} have solutions.
+An alphabetical glossary of terms, definitions, and notation is provided
+in Appendix~\ref{sec:glossary}. Its companion Examples Glossary,
+Appendix~\ref{sec:examples-glossary}, gives simple examples for every entry.
+
+The notes use calligraphic letters for stacks and roman letters for their coarse
+spaces. The notation $[X/G]$ always denotes a \emph{quotient stack}; an affine
+invariant quotient is written $\Spec A^G$. These are different constructions.
+
+\paragraph{A useful question to keep asking.}
+When replacing an object by its isomorphism class, what have we forgotten about
+its automorphisms, its families, or its line bundles? Each example below supplies
+a concrete answer.
+
+\section{What an invariant quotient forgets}
+\label{sec:quotients}
+
+\subsection{A quotient whose coarse space is smooth}
+Let $\mu_n$ act on $\A^1_z$ by $z\mapsto\zeta z$. A polynomial is invariant
+exactly when its monomials have degrees divisible by $n$, so
+\[
+ k[z]^{\mu_n}=k[z^n]=k[u],\qquad u=z^n.
+\]
+The usual affine quotient is another affine line,
+\[
+ q:\A^1_z\longrightarrow\A^1_u,\qquad z\longmapsto z^n.
+\]
+Over a nonzero geometric point $u$, the $n$ roots form one orbit and the action
+on that orbit is free. At $z=0$, the orbit contains one point, but every
+$\zeta\in\mu_n$ fixes it. Thus
+\[
+ \Stab(z)=\begin{cases}\{1\},&z\ne0,\\ \mu_n,&z=0.\end{cases}
+\]
+The coordinate ring of the quotient records invariant functions. It does not,
+by itself, record this jump in stabilisers. In particular, smoothness of the
+quotient $\A^1_u$ does not imply that the action was free.
+
+One might try to decorate $u=0$ with the label $\mu_n$. That is a useful first
+picture, but it is incomplete: we also need to say how the group acts on nearby
+directions and on fibres of sheaves, and how such objects vary in families.
+
+\subsection{A quotient whose coarse space is singular}
+Let $\mu_2$ act on $\A^2_{x,y}$ by
+\[
+ (x,y)\longmapsto(-x,-y).
+\]
+An invariant monomial has even total degree. Hence
+\[
+ k[x,y]^{\mu_2}=k[a,b,c]/(ac-b^2),\qquad
+ a=x^2,\quad b=xy,\quad c=y^2.
+\]
+For example, every even monomial is a product of $x^2,xy,y^2$, and the displayed
+relation gives the familiar quadratic cone. The derivatives of $ac-b^2$ are
+$c,-2b,a$, all zero at the vertex. The quotient is singular there, although
+$\A^2$ is smooth.
+
+We will obtain a smooth stack $[\A^2/\mu_2]$ with this cone as coarse space.
+Its origin retains the sign action on the two-dimensional tangent space. The
+previous example will give a smooth stack with a smooth coarse space. Taken
+together, the examples show that the singularities of the coarse space do not
+provide a complete test for the presence of stack structure.
+
+\subsection{Retain arrows as well as orbits}
+For a group $G$ acting on a set $S$, form a category with objects $x\in S$ and
+arrows
+\[
+ \Hom(x,x')=\{g\in G:g\cdot x=x'\}.
+\]
+Composition is multiplication in $G$. Every arrow is invertible; a category with
+this property is a \emph{groupoid}. The isomorphism classes are the orbits, while
+$\Aut(x)=\Stab_G(x)$. Thus a groupoid keeps both the quotient points and their
+symmetries.
+
+There is an important scheme-level distinction. For the sign action on $\A^1$,
+the action groupoid has arrow scheme $\mu_2\times\A^1$, which is two disjoint
+affine lines. The relation obtained by comparing images in the coarse quotient
+has scheme
+\[
+ \A^1\times_{\A^1_u}\A^1
+ =\Spec k[z,z']/(z^2-z'^2).
+\]
+This is two lines meeting at the origin. The action groupoid has two distinct
+arrows from $0$ to itself: the identity and the sign. The coarse relation has
+lost their distinction. Replacing a groupoid by a relation is already a loss of
+scheme-theoretic information.
+
+\reading{Compute the stabilisers in both examples. Why could neither coarse
+coordinate ring tell you which character occurs on an extra line over the origin?}
+
+\section{From points to families: why a stack is groupoid-valued}
+\label{sec:families}
+
+\subsection{The functor-of-points viewpoint}
+A scheme $X$ determines a contravariant functor
+\[
+ T\longmapsto X(T)=\Hom(T,X).
+\]
+A morphism $T'\to T$ pulls a $T$-point back to a $T'$-point. The Yoneda principle
+says that the functor, with its behaviour on morphisms, determines $X$. One must
+test on general schemes $T$, including nonreduced schemes, rather than just on
+$\Spec k$.
+
+For a moduli problem, a $T$-point is usually a \emph{family over $T$}. Two
+families can be isomorphic in more than one way. The natural value of the moduli
+problem is therefore a groupoid, not merely a set of isomorphism classes.
+
+For example, let $\mathcal B(T)$ be the groupoid of line bundles on $T$, with
+line-bundle isomorphisms as arrows. A map $f:T'\to T$ gives pullback
+$L\mapsto f^*L$. Over $\Spec k$, all line bundles are isomorphic, but the
+automorphism group of a one-dimensional vector space is $k^*$. Over $\PP^1$,
+the objects include all $\OO_{\PP^1}(d)$. A single isomorphism class over a point
+does not make this moduli problem the one-point scheme.
+
+\subsection{Gluing must retain the chosen isomorphisms}
+Recall how line bundles glue. For an open cover $\{T_i\}$ of $T$, choose line
+bundles $L_i$ and isomorphisms
+\[
+ \alpha_{ij}:L_j|_{T_i\cap T_j}\xrightarrow{\sim}
+                 L_i|_{T_i\cap T_j}.
+\]
+On triple overlaps require
+\[
+ \alpha_{ij}\alpha_{jk}=\alpha_{ik}.
+\]
+Then the $L_i$ glue to a line bundle on $T$, unique up to an isomorphism
+compatible with the gluing data. Isomorphisms between two glued bundles also glue.
+This is the model for the two stack axioms:
+\begin{enumerate}
+\item isomorphisms form a sheaf;
+\item objects equipped with compatible gluing isomorphisms can be glued.
+\end{enumerate}
+The second assertion is called \emph{effective descent for objects}. Uniqueness
+means uniqueness up to compatible isomorphism; it does not mean that all
+automorphism groups vanish.
+
+\begin{definition}[Stack, in working language]
+A stack in groupoids assigns to every test scheme $T$ a groupoid $\cX(T)$,
+with pullback functors for maps of test schemes, such that isomorphisms and
+objects satisfy the two descent conditions above for the chosen topology.
+Pullback along a composite agrees with successive pullback through specified
+canonical isomorphisms satisfying a compatibility condition.
+\end{definition}
+
+The last sentence is the reason textbooks use \emph{categories fibred in
+groupoids}. It formalises the fact that $(fg)^*L$ and $g^*f^*L$ are canonically
+isomorphic, rather than insisting that they be literally the same set-theoretic
+object. No further category theory will be needed for our calculations.
+
+\subsection{Why étale covers enter}
+An étale morphism is the algebraic analogue of a map that is locally an
+isomorphism without introducing ramification. Formally, it is a flat,
+unramified morphism locally of finite presentation. Open immersions are étale,
+but there are many other examples.
+
+A model calculation is
+\[
+ \Spec A[s]/(s^n-a)\longrightarrow\Spec A.
+\]
+If $a$ is a unit and $n$ is invertible in $A$, then $s$ is a unit upstairs and
+the derivative $ns^{n-1}$ is invertible. This is a finite étale cover. It adjoins
+an $n$th root of a unit, which generally cannot be chosen on any Zariski open
+cover. An étale cover is a jointly surjective family of étale morphisms;
+overlaps are fibre products $T_i\times_T T_j$.
+
+In a full definition we can use the fppf topology: covers are jointly
+surjective flat morphisms locally of finite presentation. It includes étale
+covers. The stacks in these notes satisfy fppf descent. For our smooth groups,
+their torsors can be trivialised étale locally, so thinking in terms of étale
+covers suffices for the examples. The standard definitions of algebraic and DM
+stacks used below are the fppf versions.
+
+\subsection{The simplest twisted family}
+Set $T=\Spec k[t,t^{-1}]$ and
+\[
+ P=\Spec k[s,s^{-1}],\qquad t=s^n.
+\]
+The group $\mu_n$ acts by $s\mapsto\zeta s$. Every geometric fibre is a free
+transitive $\mu_n$-set. This is a \emph{$\mu_n$-torsor}. It is not the trivial
+torsor: a section would give an $n$th root of $t$ in $k[t,t^{-1}]$. There is
+not even such a root in $k(t)$, as the valuation at $t=0$ would give
+$n\operatorname{ord}_0(s)=1$. The same argument excludes a section on any
+nonempty Zariski open subset of $T$.
+
+Nevertheless, after the étale base change $P\to T$, the torsor becomes trivial.
+This is a concrete reason to enlarge the topology beyond Zariski covers.
+It also demonstrates that algebraic closedness of $k$ does not trivialise
+torsors over a parameter scheme.
+
+Consider the presheaf sending $T$ to \emph{isomorphism classes} of
+$\mu_n$-torsors. The torsor $P$ and the trivial torsor are distinct globally,
+but become isomorphic on the cover $P\to T$. Hence that presheaf is not even a
+sheaf: distinct sections can become equal on a cover. The groupoid remembers
+the gluing isomorphisms that distinguish these families.
+
+\source{For descent and the stack axioms, see Casalaina-Martin--Wise
+\cite[\S\S2--3, especially Definition 3.31]{CMW} and Vistoli \cite[Chapters 3--4]{Vistoli}.}
+
+\section{Quotient stacks and classifying stacks}
+\label{sec:quotientstacks}
+
+\subsection{A torsor is a family of copies of a group}
+A left $G$-torsor $P\to T$ is a scheme with a left $G$-action which is locally
+isomorphic, in the chosen topology, to $G\times T$ with translation on $G$.
+Equivalently, it is locally nonempty and the map
+\[
+ G\times P\longrightarrow P\times_T P,\qquad(g,p)\longmapsto(gp,p)
+\]
+is an isomorphism. In the cases at hand the torsor map is faithfully flat and
+locally of finite presentation. A torsor has no preferred identity section;
+choosing a section trivialises it.
+
+For $G=\Gm$, torsors are equivalent to line bundles: remove the zero section
+from a line bundle, or form the associated line from a torsor. Thus torsors are
+already familiar objects with the choice of a local frame left unspecified.
+
+\subsection{Definition of the quotient stack}
+\begin{definition}
+Suppose $G$ acts on a scheme $X$ on the left. An object of $[X/G](T)$ is a
+left $G$-torsor $P\to T$ together with a $G$-equivariant map
+\[
+ f:P\longrightarrow X,\qquad f(gp)=g f(p).
+\]
+An arrow is a $G$-equivariant torsor isomorphism commuting with the maps to $X$.
+Pullback is obtained by base change.
+\end{definition}
+
+One can instead use right torsors and require $f(pg)=g^{-1}f(p)$. Both
+conventions give the same stack. We use left torsors here so that all displayed
+actions have the same direction.
+
+Why include the torsor? After trivialising it on $T_i$, an object gives maps
+$x_i:T_i\to X$. Different trivialisations are related by maps
+$g_{ij}:T_i\times_T T_j\to G$, with
+\[
+ x_i=g_{ij}x_j,\qquad g_{ij}g_{jk}=g_{ik}.
+\]
+The torsor packages exactly these transition functions. Retaining only global
+maps $T\to X$ modulo $G(T)$ would miss the objects with nontrivial transition
+functions. The quotient stack is what results from allowing these local
+presentations to glue.
+
+Over an algebraically closed field, the torsors for the groups used here are
+trivial, so the geometric-point groupoid really is the action groupoid:
+\[
+ \Aut_{[X/G]}(x)=\Stab_G(x).
+\]
+This formula is an excellent first calculation, but is not a substitute for
+the definition over general $T$.
+
+\begin{example}[The classifying stack]
+Take $X=\Spec k$ with trivial $G$-action. Then
+\[
+ BG=[\Spec k/G],\qquad BG(T)=\{G\text{-torsors over }T\}.
+\]
+For $G=\mu_n$, there is one geometric isomorphism class, with automorphism
+group $\mu_n$. The coarse space will be a point. A family over $T$ still
+remembers its torsor, including the nontrivial example of the preceding section.
+
+Equivalently, $B\mu_n(T)$ is the groupoid of pairs
+$(N,\phi:N^{\otimes n}\xrightarrow{\sim}\OO_T)$.
+The isomorphism $\phi$ is part of the data. Keeping just a line bundle whose
+$n$th power happens to be trivial would lose information.
+\end{example}
+
+\begin{example}[A free action]
+If $X\to Y$ is a $G$-torsor, then $[X/G]\simeq Y$. Indeed, a map $T\to Y$
+pulls $X$ back to a torsor over $T$ with an equivariant map to $X$. Conversely,
+such a pair descends to a map to $Y$. Thus stacks include ordinary free
+quotients. For example,
+\[
+ [\Gm/\mu_n]\simeq\Gm,\qquad z\longmapsto z^n.
+\]
+\end{example}
+
+\subsection{Atlases and the first stack fibre product}
+There is a natural map $p:X\to[X/G]$, given by the trivial torsor. If
+$T\to[X/G]$ corresponds to $(P,f)$, then
+\begin{equation}\label{eq:atlasbasechange}
+ T\times_{[X/G]}X\simeq P.
+\end{equation}
+The extra data in this fibre product is a trivialisation of the pulled-back
+object, equivalently a point of its torsor. This explains why $p$ is
+surjective locally even when an object over $T$ has no global lift to $X$.
+
+If $G$ is smooth, $p$ is a smooth cover. If $G$ is finite étale, $p$ is an
+étale cover. These assertions follow directly from
+\eqref{eq:atlasbasechange}, since they hold for $P\to T$.
+
+In particular, $\A^1\to[\A^1/\mu_n]$ is étale \emph{at the origin as well}.
+Its composite with the coarse map is $z\mapsto z^n$, which is ramified there.
+The atlas map and the coarse map have different targets, so there is no
+contradiction.
+
+A fibre product of stacks is a \emph{2-fibre product}: an object of
+$\cX\times_{\cY}\cZ$ consists of $x$, $z$, and a specified isomorphism between
+their images in $\cY$. This is the only extra ingredient beyond the fibre
+products of schemes. For the atlas above it gives
+\[
+ X\times_{[X/G]}X\simeq G\times X.
+\]
+The two projections are source and target, $x$ and $gx$. The arrows, their
+composition, and the object scheme form a \emph{groupoid presentation} of
+the stack.
+The atlas calculation is a 2-Cartesian square:
+\[
+\begin{tikzcd}
+ P \arrow[r,"f"] \arrow[d] & X \arrow[d,"p"]\\
+ T \arrow[r,"{(P,f)}"'] & {[X/G]}.
+\end{tikzcd}
+\]
+The square includes the isomorphism identifying the two induced objects
+on $P$. For $T=X$, the square recovers the arrow space $G\times X$.
+
+\source{The torsor construction and its equivalence with the quotient-groupoid
+construction are given in the Stacks Project, \href{https://stacks.math.columbia.edu/tag/04UV}{Tag 04UV}.
+The algebraicity of smooth groupoid quotients is \href{https://stacks.math.columbia.edu/tag/04TK}{Tag 04TK}.}
+
+\section{The definition of a Deligne--Mumford stack}
+\label{sec:dm}
+
+\subsection{A short bridge through algebraic spaces}
+An \emph{algebraic space} is a sheaf of sets on the étale site which has a
+representable diagonal and an étale surjective cover by a scheme. Here
+representability of the diagonal is by schemes. An algebraic space is thus
+étale locally a scheme, with ordinary set-valued points rather than groupoid-valued
+points. Every scheme gives an algebraic space. The converse is false in general.
+
+This enlargement lets quotients exist in situations where Zariski gluing of
+schemes is too restrictive. We do not need an explicit nonschematic algebraic
+space in these notes: every displayed coarse space is a scheme. The phrase
+``algebraic space'' in the formal definitions prevents an unnecessary
+restriction on the general theory.
+
+\subsection{Representability and the diagonal}
+A morphism $\cX\to\cY$ is \emph{representable by algebraic spaces} if, after
+every map $T\to\cY$ from a scheme, the fibre product $T\times_{\cY}\cX$ is
+an algebraic space. A representable morphism is called étale, smooth, finite,
+and so on when its base changes to schemes have that property.
+
+The diagonal
+\[
+ \Delta_{\cX}:\cX\longrightarrow\cX\times\cX
+\]
+organises isomorphisms. Given two objects $\xi,\eta\in\cX(T)$, its pullback
+along $(\xi,\eta):T\to\cX\times\cX$ is
+\[
+ \underline{\Isom}_T(\xi,\eta).
+\]
+Over a map $T'\to T$, this sheaf gives isomorphisms between the pulled-back
+families. When $\xi=\eta$, it is the automorphism group space of the family.
+Thus representability of the diagonal means that isomorphisms between
+families themselves form algebraic spaces.
+
+For quotient objects represented by maps $x,x':T\to X$, this is the
+transporter
+\[
+ \{g\in G_T:g x=x'\}.
+\]
+For the sign action at $x=x'=0$, it is $\mu_2\times T$. For a scheme
+considered as a stack, there are only identity arrows: the diagonal expresses
+equality, rather than a nontrivial space of isomorphisms.
+
+\begin{definition}[Algebraic stack and DM stack]
+An \emph{algebraic stack} is an fppf stack in groupoids whose diagonal is
+representable by algebraic spaces and which admits a representable smooth
+surjective morphism $U\to\cX$ from a scheme. Such a map is called a smooth atlas.
+
+An algebraic stack is \emph{Deligne--Mumford}, or \emph{DM}, if it admits a
+representable étale surjective morphism $U\to\cX$ from a scheme. Such a map
+is an étale atlas.
+\end{definition}
+
+An étale atlas provides scheme charts with no continuous choices remaining
+in each fibre. The stack can still have finite automorphism groups because
+different chart identifications are retained as arrows.
+
+We follow the Stacks Project definition. Some books build quasi-compactness
+or separatedness conditions on the diagonal into the terminology. Here those
+conditions are stated separately. In applications to coarse spaces and descent
+below, we impose finite type and separatedness.
+
+\begin{theorem}[Standard criterion; used without proof]\label{thm:dmcriterion}
+An algebraic stack is DM if and only if its diagonal is unramified.
+In the finite-type quotient situations considered here, over characteristic
+zero, $[X/G]$ for a smooth algebraic group $G$ is DM if and only if every
+geometric stabiliser is finite.
+\end{theorem}
+
+The diagonal formulation says that automorphisms have no infinitesimal motion.
+In our finite-type quotient examples, or for the separated finite-type
+stacks used below, the stabilisers are finite and reduced. With the broad
+Stacks Project convention, DM alone does not impose quasi-compactness
+of the diagonal; finiteness requires the additional hypotheses just stated. Over
+characteristic zero, finite subgroup schemes of our algebraic groups are
+reduced. Outside characteristic zero one must retain the reduced/unramified
+condition: a finite group scheme such as $\mu_p$ in characteristic $p$ is
+not enough.
+
+\subsection{Examples, nonexamples, and what the definition does not assert}
+\begin{enumerate}
+\item Every scheme and every algebraic space is a DM stack, with discrete
+groupoids of points. An algebraic stack with trivial geometric stabilisers is
+an algebraic space; it need not be a scheme.
+\item For a finite group $H$ over $k$, the map $X\to[X/H]$ is an étale atlas.
+Thus $B\mu_n$, $[\A^1/\mu_n]$, and $[\A^2/\mu_2]$ are DM. The last two
+are smooth because they have smooth étale atlases.
+\item $B\Gm$ is algebraic, but not DM. Its geometric object has automorphism
+group $\Gm$. It is the stack of line bundles introduced earlier.
+\item $[\A^1/\Gm]$ for the scaling action is not DM: the origin has stabiliser
+$\Gm$, although the nonzero locus has trivial stabiliser.
+\item A quotient by a positive-dimensional group can be DM. For example,
+$[(\A^2\setminus0)/\Gm]$ with positive weights $(n,1)$ has only finite
+stabilisers. Its obvious atlas is smooth of relative dimension one, rather
+than étale. Other étale charts exist; we construct them in
+Section~\ref{sec:weighted}.
+\end{enumerate}
+
+The DM condition does not imply smoothness: take any singular scheme. It
+does not imply separatedness: take any nonseparated scheme. Nor does it assert
+that a given quotient presentation is by a finite group. It is a local
+condition on a stack with an algebraic presentation.
+
+\paragraph{Separatedness.}
+A stack is separated over $k$ if its diagonal is proper. For a finite-type
+DM stack the diagonal is already unramified and locally quasi-finite; if it is proper
+it is finite. This explains why finite stabilisers and well-behaved finite
+quotient charts occur together in separated DM geometry. Closed orbits and
+separation questions must still be checked in a GIT application; finite
+stabilisers alone are not a general substitute for those checks.
+
+\paragraph{Dimension and smoothness.}
+For a smooth group $G$ acting on $X$, the smooth atlas has relative dimension
+$\dim G$, so $\dim[X/G]=\dim X-\dim G$ in the equidimensional examples.
+The quotient stack is smooth over $k$ when $X$ is smooth: smoothness can be
+checked on a smooth atlas. Thus $\PP(n,1)$ is a smooth curve, while
+$[\A^2/\mu_2]$ is a smooth surface.
+
+\paragraph{Relation to orbifolds.}
+Over $\mathbb C$, a smooth separated DM stack behaves locally like a complex
+manifold modulo a finite group. This is the useful orbifold picture. Some
+definitions of orbifold require every local group to act faithfully. DM
+stacks allow ineffective actions: $B\mu_n$ is a simple example, since its
+tangent space is zero. A singular DM stack is also outside the smooth
+orbifold picture. We will therefore use the algebraic definition rather than
+identify the two terms without qualifications.
+
+\source{Definitions: Stacks Project, \href{https://stacks.math.columbia.edu/tag/026N}{Tag 026N}.
+The diagonal criterion is \href{https://stacks.math.columbia.edu/tag/06N3}{Tag 06N3}.
+For the diagonal as an isomorphism sheaf, see \cite[Example 4.6]{CMW}.}
+
+\section{Coarse spaces and local finite quotients}
+\label{sec:coarse}
+
+\begin{definition}[Coarse moduli space]
+A morphism $\pi:\cX\to X$ to an algebraic space is a coarse moduli space if:
+\begin{enumerate}
+\item for every algebraically closed extension $\Omega/k$, it induces a
+bijection between isomorphism classes in $\cX(\Omega)$ and $X(\Omega)$;
+\item it is universal for morphisms from $\cX$ to algebraic spaces: every
+such morphism factors uniquely through $X$.
+\end{enumerate}
+\end{definition}
+
+Both clauses matter. The first says that geometric isomorphism classes are
+preserved as points. The second controls morphisms and functions. Neither
+says that families over general schemes are preserved.
+
+For a finite group $H$ acting on an affine scheme $\Spec A$, the coarse space
+of $[\Spec A/H]$ is $\Spec A^H$. A morphism from the stack to a scheme is
+the same as an $H$-invariant morphism from the atlas, so the invariant-ring
+calculation is consistent with the universal property. The universality for
+general algebraic-space targets is part of the quotient theorem.
+
+\begin{theorem}[Coarse spaces and local structure; used without proof]
+A separated finite-type DM stack over $k$ admits a coarse moduli space,
+which is an algebraic space. Étale locally on this coarse space it has
+finite-group quotient presentations. At a chosen geometric point, a chart
+can be chosen with the stabiliser of that point as the local finite group.
+\end{theorem}
+
+This gives a way to learn the general theory through finite quotient
+calculations. It is not a statement that every stack has one global
+presentation by a finite group, nor that its coarse space must be a scheme.
+
+\subsection{A coarse map preserves points but changes families}
+The coarse space of $B\mu_n$ is $\Spec k$. There is one geometric
+isomorphism class on each side. But a map $T\to B\mu_n$ carries a torsor,
+whereas a map $T\to\Spec k$ carries no such data. The nontrivial torsor
+$s^n=t$ and the trivial torsor are sent to the same map to the coarse point.
+
+The coarse space of $[\A^1/\mu_n]$ is $\A^1_u$. Its nontrivial stabiliser
+is invisible in that smooth line. In the quadratic-cone example, the coarse
+space instead has a singularity. Thus the implication
+``smooth stack $\Rightarrow$ smooth coarse space'' is false, and
+``smooth coarse space $\Rightarrow$ no stack structure'' is also false.
+
+\subsection{Good moduli spaces are a different notion}
+For a reductive GIT quotient with strictly semistable points, different
+orbits can have closures meeting the same closed orbit. The GIT quotient
+identifies them. Such a quotient need not be a coarse moduli space of the
+whole semistable quotient stack.
+
+The smallest example is $[\A^1/\Gm]$ for scaling. It has two geometric
+isomorphism classes: the zero orbit and the nonzero orbit. Its affine
+invariant quotient is $\Spec k$, since $k[z]^{\Gm}=k$. That point is
+\emph{not} its coarse moduli space: it fails the bijection in the definition.
+
+This quotient is a \emph{good moduli space}. For our purposes its defining
+properties are that the pushforward on quasi-coherent sheaves is exact and
+$\OO_X\simeq\pi_*\OO_{\cX}$; the morphism is also required to be
+quasi-compact. These conditions extend the behaviour of invariant rings and
+invariant modules to stacks. We will use the term only to distinguish the
+quotients at critical cutting levels from the coarse quotients at regular ones.
+
+\source{Coarse-space existence is discussed in the Stacks Project,
+\href{https://stacks.math.columbia.edu/tag/04UX}{Tag 04UX}; local structure is
+discussed in \cite[\S3.4]{Behrend}. For good moduli spaces see
+\cite[Definition 4.1 and \S13]{Alper}.}
+
+\section{Sheaves and line bundles retain stabiliser representations}
+\label{sec:sheaves}
+
+\subsection{Equivariant sheaves are sheaves on the quotient stack}
+A vector bundle on $[X/G]$ is equivalent to a $G$-equivariant vector bundle
+on $X$. An equivariant structure says how $g$ identifies the fibre at $x$
+with the fibre at $gx$, compatibly with multiplication in $G$. This is the
+descent datum on the atlas and its arrow space $G\times X$.
+
+At a point fixed by $g$, the equivariant structure is an action on the same
+fibre. Hence a vector bundle on a stack gives a representation of every
+stabiliser. In rank one this representation is a \emph{character}.
+These characters are additional geometric data, even if the underlying
+bundle on the atlas is trivial.
+
+\begin{example}[All line bundles on $B\mu_n$]
+A vector bundle on $B\mu_n$ is a representation of $\mu_n$. Its line bundles
+are the one-dimensional representations
+\[
+ \chi^c:\mu_n\to\Gm,\qquad\zeta\longmapsto\zeta^c,
+ \qquad c\in\mathbb Z/n\mathbb Z.
+\]
+Thus $\Pic(B\mu_n)\simeq\mathbb Z/n\mathbb Z$, while the coarse point has
+trivial Picard group. The global sections of the character line are its
+invariant vectors: $k$ for $c=0$, and zero for $c\ne0$.
+\end{example}
+
+\subsection{Character conventions and invariant sections}
+On $[\A^1_z/\mu_n]$, let $\cL_c$ be the trivial line upstairs with the
+\emph{geometric fibre action}
+\[
+ (z,v)\longmapsto(\zeta z,\zeta^c v).
+\]
+A section descends to the stack if it is equivariant. Writing it as the
+function $f(z)$ in this trivialisation gives
+\begin{equation}\label{eq:equivsection}
+ f(\zeta z)=\zeta^c f(z).
+\end{equation}
+Thus the allowable monomials are $z^j$ with $j\equiv c\pmod n$.
+
+This equation avoids an ambiguity about representations on functions. With
+the inverse-pullback convention $g\cdot f=f\circ g^{-1}$, the coordinate $z$
+has weight $-1$. With the direct-pullback convention $f\mapsto f\circ g$ for
+our abelian groups, it has weight $+1$. The \emph{geometric tangent action}
+$z\mapsto\zeta z$ is fixed throughout. Always state which action defines a
+weight before comparing formulas.
+
+\subsection{Pushforward is not descent}
+Let $\pi:[\A^1/\mu_n]\to\A^1_u$, $u=z^n$. Choose $r$ with
+$0\leq r<n$ and $r\equiv c\pmod n$. Equation~\eqref{eq:equivsection} gives
+\begin{equation}\label{eq:rankonepush}
+ \Gamma(\A^1_u,\pi_*\cL_c)=z^r k[u].
+\end{equation}
+As a $k[u]$-module this is free of rank one. Therefore the pushforward is an
+ordinary line bundle, even when $c\not\equiv0\pmod n$.
+
+Nevertheless $\cL_c$ does not descend from the coarse space when
+$c\not\equiv0\pmod n$.
+If $\cL_c\simeq\pi^*L$, the stabiliser at $z=0$ would act trivially on its
+fibre: the coarse point has no nontrivial automorphisms that could act on $L$.
+But that fibre has character $c$. The natural comparison
+\[
+ \pi^*\pi_*\cL_c\longrightarrow\cL_c
+\]
+is locally given by multiplication by $z^r$ in the displayed trivialisation.
+For $r>0$ it vanishes at $0$, so it is not an isomorphism.
+
+There are therefore three different operations or questions:
+\begin{enumerate}
+\item the original line bundle $\cL$ on the stack;
+\item its sheaf $\pi_*\cL$ on the coarse space;
+\item whether $\cL$ is isomorphic to the pullback of a line bundle there.
+\end{enumerate}
+Even an invertible pushforward does not answer the third question.
+
+\begin{theorem}[Descent criterion in our setting; used without proof]
+Let $\pi:\cX\to X$ be the coarse map of a separated finite-type DM stack
+over $k$. A vector bundle $E$ on $\cX$ is pulled back from a vector bundle
+on $X$ if and only if every geometric stabiliser acts trivially on its fibre.
+In particular this applies to line bundles.
+\end{theorem}
+
+Characteristic zero makes the finite stabilisers linearly reductive, so these
+coarse maps are tame good moduli spaces. The necessity of the criterion was
+proved above. The sufficiency is a general descent theorem, rather than a
+consequence of counting sections. In a finite quotient presentation it says
+that equivariant gluing with trivial fibre actions is ordinary quotient
+gluing. See Alper's vector-bundle descent theorem \cite[Theorem 10.3]{Alper}.
+
+\subsection{An invariant module which is not a line bundle}
+Return to $\cX=[\A^2_{x,y}/\mu_2]$ with simultaneous sign action, and give a
+trivial line upstairs the sign fibre character. Set
+\[
+ A=k[x^2,xy,y^2],\qquad
+ M=\{f\in k[x,y]:f(-x,-y)=-f(x,y)\}.
+\]
+The pushforward is the coherent sheaf associated to the $A$-module $M$.
+It is generated by $x,y$. At the cone vertex $\mathfrak m=(x^2,xy,y^2)$,
+the vector space $M/\mathfrak m M$ has dimension two: the classes of $x,y$
+remain independent. On the other hand $M$ has rank one over the fraction
+field of $A$, because $y=(xy/x^2)x$ generically. A free rank-one module at
+the vertex would have a one-dimensional quotient modulo $\mathfrak m$.
+Thus $M$ is not locally free there.
+
+This is a concrete model for why the pushforward of an honest stack line
+bundle can fail to be invertible on the coarse space. It complements
+\eqref{eq:rankonepush}, where the pushforward is invertible but descent
+still fails.
+
+\paragraph{Why invariants behave well here.}
+For a finite group $H$ in characteristic zero, averaging
+$v\mapsto |H|^{-1}\sum_{h\in H}h v$ projects onto invariant vectors.
+Consequently taking invariants is exact. On affine finite-quotient charts,
+pushforward is the corresponding invariant-module operation. Exactness is
+very useful, but it does not make pushforward preserve tensor products, as
+the next example will show.
+
+\source{Equivariant sheaves and invariant sections are explained in
+\cite[\S3.5, especially Exercise 3.56]{Behrend}.}
+
+\section{A weighted projective line, worked out in charts}
+\label{sec:weighted}
+
+Let $\Gm$ act on $U=\A^2_{x,y}\setminus\{0\}$ by
+\begin{equation}\label{eq:weightedaction}
+ t\cdot(x,y)=(t^n x,t y).
+\end{equation}
+Define
+\[
+ \cP=\PP(n,1):=[U/\Gm].
+\]
+This is the same weighted projective line often written $\PP(1,n)$ after
+interchanging the coordinates. We retain the order $(x,y)$ to match the cut
+in Section~\ref{sec:toycut}.
+
+If $y\ne0$, a stabilising $t$ satisfies $t=1$. At $(x,0)$ with $x\ne0$,
+it satisfies $t^n=1$. All stabilisers are finite, so $\cP$ is DM. It is
+smooth because $U$ is smooth.
+
+\subsection{The two charts}
+On $y\ne0$, there is a unique way to set $y=1$: choose $t=y^{-1}$. The
+remaining coordinate is
+\[
+ z=\frac{x}{y^n}.
+\]
+Thus this open substack is an ordinary affine line $\A^1_z$.
+
+On $x\ne0$, setting $x=1$ requires a choice $t^n=x^{-1}$. Such a choice
+exists étale locally, but has a $\mu_n$ ambiguity. The remaining coordinate
+$s$ transforms by $s\mapsto\zeta s$. Consequently this chart is
+\[
+ [\A^1_s/\mu_n].
+\]
+Its coarse coordinate is
+\[
+ u=s^n=\frac{y^n}{x}.
+\]
+On the overlap $zu=1$. The two coarse affine lines therefore glue to
+$\PP^1$. The coarse map is
+\begin{equation}\label{eq:coarseweighted}
+ \pi:\cP\longrightarrow\PP^1,\qquad [x:y]\longmapsto[x:y^n].
+\end{equation}
+The expression on the right is unchanged as a projective point when
+$(x,y)$ is replaced by $(t^n x,ty)$.
+
+Taking the ordinary affine line atlas of the second quotient chart and the
+first affine chart gives an étale atlas of $\cP$. This constructs the atlas
+whose existence was asserted by the DM criterion. It is different from
+the smooth $\Gm$-torsor atlas $U\to\cP$.
+
+\subsection{A description in families}
+An object of $\cP(T)$ can be described as
+\[
+ (N,\,x\in\Gamma(T,N^{\otimes n}),\,
+        y\in\Gamma(T,N)),
+\]
+where the two sections do not vanish simultaneously at any geometric point.
+An isomorphism of line bundles must carry the displayed sections to the
+corresponding sections. This is the family version of weighted coordinates.
+In the left-torsor convention above, the corresponding torsor is
+$P=(N^\vee)^\times$: a nonzero covector evaluates the sections to give
+the coordinates. Scaling that covector by $t$ multiplies those
+coordinates by $t^n$ and $t$, as required.
+
+For example, where $y$ is nonzero it trivialises $N$, leaving the ordinary
+function $x/y^n$. Where $x$ is nonzero it trivialises $N^{\otimes n}$,
+leaving an $n$th-root choice for $N$. Thus the chart calculation reflects
+actual families, rather than merely orbit notation.
+
+\subsection{The boundary and the line bundles}
+Let $\cD=\{y=0\}\subset\cP$. It is
+\[
+ \cD=[\Gm/\Gm]\simeq B\mu_n,
+\]
+where the action on the first $\Gm$ is $t\cdot x=t^n x$. Its coarse space
+is the point $D=[1:0]\in\PP^1$.
+
+Define $\OO_{\cP}(c)$ using the geometric fibre action
+\[
+ (x,y,v)\longmapsto(t^n x,ty,t^c v).
+\]
+Its global sections are weighted homogeneous polynomials of degree $c$.
+The coordinate $y$ is an equivariant section of $\OO_{\cP}(1)$ and vanishes
+simply along $\cD$. Hence
+\begin{equation}\label{eq:weightlines}
+ \OO_{\cP}(1)\simeq\OO_{\cP}(\cD),\qquad
+ \pi^*\OO_{\PP^1}(1)\simeq\OO_{\cP}(n).
+\end{equation}
+The second identity can also be read directly from the two degree-$n$
+sections $x,y^n$ defining the coarse map.
+
+At $\cD$, the stabiliser acts on $\OO_{\cP}(c)$ by $\zeta^c$.
+It follows that
+\begin{equation}\label{eq:weighteddescent}
+ \OO_{\cP}(c)\text{ descends to }\PP^1
+ \quad\Longleftrightarrow\quad n\mid c.
+\end{equation}
+Sufficiency follows already from \eqref{eq:weightlines}; necessity follows
+from the fibre character. We have therefore verified this case of the
+descent theorem without using its general proof.
+
+\subsection{Counting sections and computing pushforward}
+For $m\ge0$, the monomials of degree $m$ are
+\[
+ x^a y^{m-na},\qquad 0\leq a\leq\lfloor m/n\rfloor.
+\]
+Consequently
+\begin{equation}\label{eq:weightedh0}
+ \dim H^0(\cP,\OO_{\cP}(m))=\lfloor m/n\rfloor+1.
+\end{equation}
+No higher-cohomology machinery is needed: this just counts equivariant
+polynomials on $U$. A regular function on $\A^2\setminus0$ extends to
+$\A^2$; explicitly, $k[x,y,y^{-1}]\cap k[x,y,x^{-1}]=k[x,y]$ in $k(x,y)$.
+
+More precisely, for every $m\in\mathbb Z$,
+\begin{equation}\label{eq:weightedpush}
+ \pi_*\OO_{\cP}(m\cD)
+ \simeq\OO_{\PP^1}\bigl(\lfloor m/n\rfloor D\bigr).
+\end{equation}
+To see this locally near $D$, use a root coordinate $s$ with $u=s^n$.
+The divisor sheaf upstairs is $s^{-m}k[s]$, and its invariant rational
+monomials are $s^{nj}=u^j$ with $nj\ge-m$. Thus
+\[
+ (s^{-m}k[s])^{\mu_n}=u^{-\lfloor m/n\rfloor}k[u].
+\]
+Off $D$ both divisor sheaves are canonically trivial. This proves the formula
+by gluing and includes negative $m$.
+
+When $0<m<n$, the pushforward in \eqref{eq:weightedpush} is $\OO_{\PP^1}$,
+but the stack line does not descend. In particular,
+\[
+ (\pi_*\OO_{\cP}(1))^{\otimes n}\simeq\OO_{\PP^1},\qquad
+ \pi_*(\OO_{\cP}(1)^{\otimes n})\simeq\OO_{\PP^1}(1).
+\]
+Pushforward has forgotten stabiliser characters, and it does not commute
+with this tensor product.
+
+\reading{For $n=3$, write down the sections of $\OO(m)$ for $0\le m\le6$.
+Which powers descend? Can the dimensions of sections alone recover the
+character at the boundary?}
+
+\section{Root stacks, divisors, and normal lines}
+\label{sec:roots}
+
+\subsection{Making the root of a divisor into geometric data}
+Let $D\subset X$ be an effective Cartier divisor. Its line bundle $\OO_X(D)$
+has a canonical section $s_D$ with zero divisor $D$. An $n$th root of this
+pair should be a line bundle $N$ with a section $s$ and an isomorphism
+$N^{\otimes n}\simeq\OO_X(D)$ carrying $s^n$ to $s_D$. Such a pair
+need not exist on $X$. Rather than choose one, we parameterise all choices.
+
+\begin{definition}[Divisor root stack]
+An object of $\sqrt[n]{(X,D)}$ over a scheme $T$ is a map $f:T\to X$ and
+data
+\[
+ (N,s,\phi),\qquad
+ \phi:N^{\otimes n}\xrightarrow{\sim}f^*\OO_X(D),\qquad
+ \phi(s^{\otimes n})=f^*s_D.
+\]
+Arrows are line-bundle isomorphisms compatible with $s$ and $\phi$.
+\end{definition}
+
+If $D$ has equation $a\in A$ on $\Spec A$, its local presentation is
+\begin{equation}\label{eq:rootchart}
+ \sqrt[n]{(\Spec A,D)}
+ \simeq\left[\Spec A[z]/(z^n-a)\,/\mu_n\right],\qquad
+ \zeta\cdot z=\zeta z.
+\end{equation}
+Changing a trivialisation changes the root coordinate and glues these
+quotient charts. Since $n$ is invertible, this is a DM stack. If $X$ and
+$D$ are smooth, it is smooth: locally $a$ is a regular coordinate and the
+equation $a=z^n$ replaces it by the smooth coordinate $z$. For singular
+$D$, smoothness is not automatic.
+
+Away from $D$, the section $s$ is nonzero and trivialises $N$, so the root
+stack is just $X\setminus D$. Over $D$, scaling the root by $\zeta$ preserves
+its $n$th power. The stabiliser is $\mu_n$. Locally the invariant ring in
+\eqref{eq:rootchart} is $A$, so the coarse space is $X$.
+
+Our weighted line is the example
+\[
+ \PP(n,1)\simeq\sqrt[n]{(\PP^1,D)},\qquad D=[1:0].
+\]
+Its two charts are exactly the ordinary chart away from $D$ and
+$[\A^1_s/\mu_n]$ near $D$.
+
+\subsection{The reduced root divisor and the scheme-theoretic fibre}
+The universal root section vanishes along a Cartier substack $\cD$ with
+\[
+ \pi^*D=n\cD,\qquad
+ \OO(n\cD)\simeq\pi^*\OO_X(D).
+\]
+If $D$ is smooth, this $\cD$ is the reduced substack over $D$. Its local
+description is $[D/\mu_n]$ with trivial action on $D$. Globally it can be
+a nontrivial $\mu_n$-gerbe: an object over $T\to D$ is an $n$th root of
+$\OO_X(D)|_T$. This is locally $D\times B\mu_n$, but a global product
+would require a compatible global root. When $D$ is the single $k$-point
+in our weighted-line example, $\cD\simeq B\mu_n$.
+
+There is a useful scheme-theoretic subtlety. For $[\A^1_z/\mu_n]\to\A^1_u$
+with $u=z^n$, the actual fibre over $u=0$ is
+\[
+ \left[\Spec k[z]/(z^n)\,/\mu_n\right].
+\]
+It is a nonreduced thickening of $B\mu_n$, rather than just $B\mu_n$.
+The reduced residual gerbe, cut out by $z=0$, is $B\mu_n$.
+The distinction is invisible on algebraically closed field-valued points
+but visible on nonreduced test schemes. It is another reason to retain
+the full functor of points.
+
+\subsection{Normal and conormal characters}
+At the origin of the chart $\A^1_z$, a normal vector transforms as
+$v\mapsto\zeta v$. The normal line of $B\mu_n$ in $[\A^1/\mu_n]$
+therefore has character $+1$. The conormal line is its dual and has
+character $-1$. This statement concerns the geometric action on vectors
+and covectors, independently of which convention is used to write an
+action on functions.
+
+If $i:\cD\hookrightarrow\cX$ is a Cartier divisor, its normal line is
+\[
+ \normal_{\cD/\cX}\simeq\OO_{\cX}(\cD)|_{\cD}.
+\]
+For the weighted line this is the character-$1$ line on $B\mu_n$.
+The coarse divisor $D\subset\PP^1$ also has an ordinary normal line.
+Its pullback to $B\mu_n$ has trivial stabiliser character, so it is not
+the stack normal line. Instead,
+\begin{equation}\label{eq:normalroot}
+ \normal_{\cD/\cX}^{\otimes n}
+ \simeq (\pi|_{\cD})^*\normal_{D/X}.
+\end{equation}
+This follows by restricting $\OO(n\cD)=\pi^*\OO(D)$.
+Thus even when both spaces and their coarse divisors are smooth, the
+normal line on the stack can carry information lost by the coarse pair.
+
+The line $\OO(\cD)$ is sometimes thought of as the line of the
+``fractional divisor'' $D/n$. It is an honest line bundle on the stack.
+The fractional notation on the coarse space is a way of remembering the
+root, not an assertion that $D/n$ is an integral Cartier divisor there.
+
+\paragraph{Root stacks versus root gerbes.}
+If one asks only for $N^{\otimes n}\simeq L$ and does not include a
+section, the resulting root \emph{gerbe} has $\mu_n$ stabiliser everywhere.
+The divisor root stack includes a section and has trivial stabiliser off
+its zero locus. For instance, the root gerbe of the trivial line on $X$
+is $X\times B\mu_n$, whereas $\sqrt[n]{(\A^1,0)}$ has stabiliser only
+at the origin. Here $0$ in the latter notation means the origin divisor.
+
+\source{The divisor root construction is due to Cadman \cite[\S2]{Cadman}.
+For the concrete curve description and divisor pushforward formula, see
+\cite[\S3.6, Definition 3.62 and Theorem 3.64]{Behrend}.}
+
+\section{Where these ideas enter algebraic cutting}
+\label{sec:cutting}
+
+\subsection{The setting and the chosen sign convention}
+Suppose $M$ is a smooth variety with a $\Gm$-action and an ample
+$\Gm$-linearised line bundle $L$. A linearisation specifies maps on fibres
+$t_L:L_p\to L_{tp}$ compatible with the group action. The section ring is
+\[
+ R=\bigoplus_{m\ge0}H^0(M,L^{\otimes m}),\qquad
+ R_{m,w}=H^0(M,L^{\otimes m})_w.
+\]
+The index $m$ is a tensor or projective degree, while $w$ is a group weight.
+They are independent. For semiprojective examples the degree-zero ring
+$R_0=H^0(M,\OO_M)$ can be nonconstant.
+
+For this discussion assume $R$ is finitely generated, $M\simeq\Proj R$,
+and the affinisation $M\to\Spec R_0$ is projective. A contracting action
+is an additional condition, not a consequence of being projective over an
+affine base. Our toy model $M=\A^1$ has both properties.
+
+We use the convention in the repository's
+\path{claude-notes/conventions.tex}, dated 12 November 2026. For sections,
+\[
+ (t\cdot s)(p)=t_L^{-1}s(tp).
+\]
+For functions this is direct pullback, $f(p)\mapsto f(tp)$. Because our
+group is abelian, these operators form a representation. A fixed component
+$F$ has section weight $\Phi(F)$, so the \emph{geometric fibre weight}
+of $L|_F$ is $-\Phi(F)$.
+
+Introduce an auxiliary coordinate $y$ with point action
+$y\mapsto t^\epsilon y$, where $\epsilon\in\{+1,-1\}$. Twist by a trivial
+line with geometric fibre weight $d\in\mathbb Z$, whose constant section
+$\one_d$ has section weight $-d$. On
+$X_\epsilon=M\times\A^1_y$, the section
+\[
+ r\,y^\ell\one_d^m,\qquad r\in R_{m,w},
+\]
+is invariant exactly when
+\begin{equation}\label{eq:cutinvariance}
+ w+\epsilon\ell-md=0,\qquad \ell\ge0.
+\end{equation}
+It follows that the invariant section algebra is
+\begin{align}
+ B^+_m&=\bigoplus_{w\le md}R_{m,w}y^{md-w}\one_d^m,\label{eq:cutplus}\\
+ B^-_m&=\bigoplus_{w\ge md}R_{m,w}y^{w-md}\one_d^m.\label{eq:cutminus}
+\end{align}
+These equations, rather than an unstated moment-map sign, determine the
+two directions in this note.
+
+\subsection{Stack cut, coarse cut, and boundary}
+Let $X^{\sst}_\epsilon(d)$ be the locus on which some invariant section
+of positive tensor degree is nonzero. The \emph{stack cut} and its GIT
+quotient are
+\[
+ \cM^{\leq d}=[X^{\sst}_+(d)/\Gm],\quad
+ M^{\leq d}=\Proj B^+,
+\]
+and similarly $\cM^{\geq d}$ and $M^{\geq d}$ using $\epsilon=-1$.
+At regular levels in the setting below, the GIT quotients are coarse
+spaces. At a general level they are good moduli spaces.
+
+Putting $y=0$ in \eqref{eq:cutinvariance} leaves $w=md$. The common
+boundary is therefore described by
+\[
+ \cM_d=[M^{\sst}(d)/\Gm],\qquad
+ M_d=\Proj\bigoplus_mR_{m,md}.
+\]
+The stack cut carries the line bundle $\cL$ defined by the product
+linearisation. The corresponding graded sheaf $\widetilde{B^\epsilon(m)}$
+on the quotient is its pushforward in this setting. It need not be
+invertible, and invertibility alone would still not prove that the stack
+line descends. Section~\ref{sec:sheaves} gives both kinds of example.
+
+\subsection{Why the stabilisers are concentrated on the boundary}
+A point $(p,y)$ is fixed by $t$ only if
+\[
+ tp=p,\qquad t^\epsilon y=y.
+\]
+If $y\ne0$ and $\epsilon=\pm1$, the second equation forces $t=1$.
+If $y=0$, the stabiliser is $\Stab_{\Gm}(p)$. Thus
+\begin{equation}\label{eq:cutstabs}
+ \Stab(p,y)=
+ \begin{cases}
+ \{1\},&y\ne0,\\
+ \Stab_{\Gm}(p),&y=0.
+ \end{cases}
+\end{equation}
+Closed algebraic subgroups of $\Gm$ over $k$ are $\Gm$ itself or finite
+cyclic groups $\mu_r$ (including the trivial group).
+
+In the current repository setting, a level is called regular when
+$d\ne\Phi(F)$ for all fixed components. Then the semistable locus has
+finite stabilisers and closed orbits within that locus. Its quotient stack
+is smooth DM and has a geometric coarse quotient. Regularity permits
+finite cyclic stabilisers on the boundary; it does not mean that the action
+is free. At a critical level, fixed points can remain semistable and yield
+$\Gm$ stabilisers. The resulting quotient stack is then algebraic but
+not DM along those points.
+
+One can already see the critical equality from section weights. At a fixed
+point $p\in F$, a nonvanishing section of $L^{\otimes m}$ has weight
+$m\Phi(F)$. At $y=0$, invariance demands $m\Phi(F)=md$. Thus fixed
+points can survive on the boundary exactly at the critical weight.
+
+\subsection{Normal character versus polarisation character}
+On the regular boundary the auxiliary normal direction transforms by
+$t^\epsilon$. The stack normal line is the associated line
+\begin{equation}\label{eq:cutnormal}
+ \normal_{\cM_d/\cM^{\leq_\epsilon d}}
+ =[(M^{\sst}(d)\times\charline{\epsilon})/\Gm].
+\end{equation}
+Here $\leq_\epsilon$ means $\leq$ for $\epsilon=+1$ and $\geq$ for
+$\epsilon=-1$. Formula~\eqref{eq:cutnormal} follows by taking the normal
+bundle of $y=0$ before quotienting. It does not require a global
+identification of a whole boundary neighbourhood with a normal bundle.
+
+If the boundary stabiliser is $\mu_r$, the two normal characters are
+$\zeta$ and $\zeta^{-1}$. They are dual lines. The polarisation is instead
+determined by $L$ and the level twist. There is no general reason for it
+to equal the normal line. The ordinary coarse normal sheaf is a third
+object; the root example already proves that pulling it back need not
+give the stack normal line.
+
+\paragraph{A distinction from residual symmetry.}
+The stabiliser in \eqref{eq:cutstabs} belongs to the group being
+\emph{quotiented}. A separate residual torus can act on the resulting cut.
+A fixed point of that residual action is not automatically an additional
+automorphism of the object in the stack. Isotropy of the quotient stack
+and fixed loci of a residual action are different data.
+
+\section{One complete cutting toy model}
+\label{sec:toycut}
+
+Let
+\[
+ M=\A^1_x,\qquad t\cdot x=t^n x,\qquad L=\OO_M
+\]
+with trivial geometric fibre action on $L$. This is an affine example:
+its affinisation is the identity morphism and is therefore projective.
+The trivial bundle is ample on
+the affine scheme. The action contracts to $0$. The only fixed component
+is $0$, with $\Phi(0)=0$; the level $d=1$ is regular.
+
+If $h$ denotes the constant degree-one section of $L$, then
+$R=k[x,h]$ with tensor degrees $\deg x=0,\deg h=1$ and section weights
+$\operatorname{wt}x=n,\operatorname{wt}h=0$. In particular, this is an
+example where the degree-zero ring is nonconstant. Suppressing $h$ and
+retaining the twist symbol, invariant sections of tensor degree $m$ have
+the form $x^a y^b\one_1^m$ with
+\begin{equation}\label{eq:toyinvariance}
+ na+\epsilon b=m,\qquad a,b\ge0.
+\end{equation}
+
+\subsection{The lower cut is the weighted projective line}
+For $\epsilon=+1$, the invariant sections are nonzero somewhere whenever
+$(x,y)\ne(0,0)$: if $y\ne0$ use $y\one_1$; if $x\ne0$ use
+$x\one_1^n$. All positive-degree sections vanish at the origin. Hence
+\[
+ X^{\sst}_+(1)=\A^2\setminus0,
+ \qquad\cM^{\le1}=\PP(n,1).
+\]
+The invariant algebra is a polynomial ring in
+\[
+ A=x\one_1^n,\qquad B=y\one_1,
+ \qquad \deg_m A=n,\quad\deg_m B=1.
+\]
+Its $n$th Veronese is $k[A,B^n]$; after regrading, both generators have
+degree one. Therefore
+\[
+ M^{\le1}=\Proj k[A,B]\simeq\PP^1.
+\]
+This computes the stack cut, coarse cut, and grading in the same example.
+
+Where $y\ne0$ the quotient has coordinate $x/y^n$ and is $\A^1$.
+The added boundary is $B\mu_n$, with coarse point $[1:0]$. Its normal
+character is $+1$. The cut polarisation has fibre character $+1$ as well
+in this particular example, so it is $\OO_{\PP(n,1)}(1)$ and does not
+descend when $n>1$. Its $n$th power does descend.
+
+\subsection{The upper cut is an affine root stack}
+For $\epsilon=-1$, equation~\eqref{eq:toyinvariance} is $na-b=m$.
+Positive tensor degree forces $a>0$, so $x=0$ is unstable. Conversely,
+if $x\ne0$, the section $x\one_1^n$ is nonzero. Thus
+\[
+ X^{\sst}_-(1)=\mathbb G_{m,x}\times\A^1_y,
+ \qquad
+ \cM^{\ge1}=[(\Gm\times\A^1)/\Gm],
+\]
+where $t\cdot(x,y)=(t^n x,t^{-1}y)$. Setting $x=1$ étale locally
+leaves $\mu_n$ acting on the normal coordinate by $y\mapsto\zeta^{-1}y$:
+\[
+ \cM^{\ge1}\simeq[\A^1_y/\mu_n],\qquad
+ M^{\ge1}\simeq\A^1_v,\quad v=xy^n.
+\]
+For a ring check, the $n$th Veronese of $B^-$ is generated over $k[v]$
+by $A=x\one_1^n$ in regraded degree one. Indeed a monomial in degree
+$nr$ is $x^{r+j}y^{nj}\one_1^{nr}=A^r v^j$.
+Hence its projective spectrum is $\Spec k[v]$.
+
+The interior $y\ne0$ is $\mathbb G_{m,v}$, while the boundary is again $B\mu_n$
+at $v=0$. This upper cut is not proper over $k$. Its stack normal line
+has character $-1$, the dual of the lower-cut normal line. The same
+polarisation twist has character $+1$ on both boundary stacks. Thus on
+the upper cut it is the dual of the boundary normal line.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & Lower cut & Upper cut\\
+\midrule
+Semistable locus & $\A^2\setminus0$ & $\Gm\times\A^1$\\
+Stack & $\PP(n,1)$ & $[\A^1/\mu_n]$\\
+Coarse space & $\PP^1$ & $\A^1$\\
+Interior & $\A^1$ & $\Gm$\\
+Boundary stack & $B\mu_n$ & $B\mu_n$\\
+Normal character & $+1$ & $-1$\\
+Boundary polarisation character & $+1$ & $+1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The boundary identifications use the same subgroup $\mu_n\subset\Gm$.
+Keeping this identification is what makes the two normal characters
+meaningfully opposite.
+
+\subsection{Weights, sections, and the boundary contribution}
+On $M$, the monomial $x^a$ has weight $na$. The lower-cut degree-$m$
+sections are those with $na\le m$:
+\[
+ H^0(\cM^{\le1},\cL^{\otimes m})
+ \simeq\operatorname{span}_k\{1,x,\ldots,x^{\lfloor m/n\rfloor}\}
+ \quad(m\ge0).
+\]
+Explicitly $x^a$ on the right corresponds to
+$x^a y^{m-na}\one_1^m$ on the left. The displayed isomorphism is the
+polynomial identification of these vector spaces; it keeps the original
+residual weights $na$ if the residual action scales $x$ alone.
+
+On the boundary, $\cL^{\otimes m}$ has character $m\bmod n$, so
+\begin{equation}\label{eq:boundarysections}
+ H^0(B\mu_n,\cL^{\otimes m}|_{B\mu_n})
+ =\begin{cases}k,&n\mid m,\\0,&n\nmid m.\end{cases}
+\end{equation}
+For $n=2$, this gives the table
+\[
+\begin{array}{c|rrrrrrr}
+ m&0&1&2&3&4&5&6\\\hline
+ \dim H^0(\cM^{\le1},\cL^m)&1&1&2&2&3&3&4\\
+ \dim H^0(B\mu_2,\cL^m)&1&0&1&0&1&0&1.
+\end{array}
+\]
+For $m\ge1$, multiplication by $y$ embeds the degree-$(m-1)$
+polynomials into the degree-$m$ polynomials. The quotient has a monomial
+with $y$-exponent zero exactly when $n\mid m$, namely $x^{m/n}$.
+This proves the boundary contribution directly, without invoking any
+cohomological vanishing theorem. On sheaves the underlying divisor
+sequence is
+\[
+ 0\to\OO_{\cP}(m-1)\xrightarrow{\ y\ }
+ \OO_{\cP}(m)\to\OO_{\cD}(m)\to0.
+\]
+
+Replacing the boundary stack by its coarse point and replacing its
+character line by an ordinary one-dimensional fibre would incorrectly
+give one boundary section for \emph{every} $m$. The periodic behaviour in
+\eqref{eq:boundarysections} is a first elementary trace of the
+representation data relevant to orbifold index calculations.
+
+\subsection{What changes at the critical level}
+Keep the same $M,L$, take $d=0$, and choose $\epsilon=+1$. Invariance is
+$na+b=0$, so the only invariant sections are constant in $x,y$.
+Their positive tensor powers are nonzero everywhere. Therefore
+\[
+ X^{\sst}_+(0)=\A^2,\qquad
+ \cM^{\le0}=[\A^2/\Gm],\qquad M^{\le0}=\Spec k.
+\]
+The origin has stabiliser $\Gm$, so this stack is not DM. It also has
+many distinct geometric orbits mapping to the same point. Thus the point
+is a good moduli space, not a coarse moduli space of the whole quotient
+stack. This calculation isolates the two changes at a wall: continuous
+stabilisers can appear, and the GIT quotient can cease to classify
+geometric isomorphism classes.
+
+\section{Exercises with solutions}
+\label{sec:exercises}
+
+\begin{exercise}\label{ex:trivial}
+Compare $[\A^1/\mu_n]$ for the trivial action and for scalar multiplication.
+Find their coarse spaces, stabilisers, and the open substacks away from zero.
+\end{exercise}
+\begin{exercise}\label{ex:torsor}
+Show that $[\Gm/\mu_n]\simeq\Gm$ for scalar multiplication, and explain why
+this does not extend to an isomorphism $[\A^1/\mu_n]\simeq\A^1$.
+\end{exercise}
+\begin{exercise}\label{ex:bline}
+List the line bundles on $B\mu_3$, compute their global sections, and determine
+which descend to the coarse point. What are their tensor cubes?
+\end{exercise}
+\begin{exercise}\label{ex:weightcount}
+On $\PP(3,1)$, list the monomials in degrees $2,3,4,6$. Compute the
+pushforwards of $\OO(2),\OO(3),\OO(-1)$. Which of these stack lines descend?
+\end{exercise}
+\begin{exercise}\label{ex:fibre}
+For $[\A^1_z/\mu_n]\to\A^1_u$, calculate the scheme-theoretic fibre over
+$u=0$ and its reduction. Calculate the normal and conormal characters of
+the reduced origin substack $B\mu_n$ inside the ambient stack
+$[\A^1_z/\mu_n]$.
+\end{exercise}
+\begin{exercise}\label{ex:generic}
+Let $\Gm$ act on $\A^2\setminus0$ with weights $(n,n)$. Show that the
+quotient is DM but has stabiliser $\mu_n$ at every geometric point. Why
+does this differ from $\PP(n,1)$? Does the coarse space detect the difference?
+\end{exercise}
+\begin{exercise}\label{ex:push}
+In the quadratic-cone example, verify explicitly that the odd module $M$
+is generated by $x,y$, has generic rank one, and is not locally free at
+the cone vertex. Explain why a stack line with this pushforward cannot
+be the pullback of a line bundle on the cone.
+\end{exercise}
+\begin{exercise}\label{ex:inertia}
+The \emph{inertia stack} $I\cX$ parameterises pairs $(\xi,\alpha)$ with
+$\alpha\in\Aut(\xi)$. Compute $I[\A^1/\mu_n]$ for scalar multiplication.
+Which components come from the nonidentity automorphisms?
+\end{exercise}
+\begin{exercise}\label{ex:twist}
+In the lower-cut toy model replace $d=1$ by a positive integer $d$.
+Determine the semistable locus, the stack, its polarisation, and the
+criterion for that polarisation to descend. What changes when $n=1$?
+\end{exercise}
+\begin{exercise}\label{ex:twonormals}
+For $n=3$, restrict the two stack normal lines and the two polarisation
+lines in the cutting toy model to the common boundary $B\mu_3$.
+Write their characters. Which have nonzero invariant vectors?
+\end{exercise}
+
+\subsection*{Solutions}
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*]
+\item For Exercise~\ref{ex:trivial}, the trivial-action stack is
+$\A^1\times B\mu_n$ with coarse $\A^1$ and stabiliser $\mu_n$
+everywhere. Its restriction to $\Gm$ is $\Gm\times B\mu_n$.
+For scalar multiplication, the invariant ring is $k[z^n]$; the coarse
+space is again $\A^1$, but only the origin has stabiliser $\mu_n$.
+The nonzero open is the ordinary scheme $\Gm$.
+
+\item In Exercise~\ref{ex:torsor}, $z\mapsto z^n$ is a $\mu_n$-torsor on
+$\Gm$, so the free-quotient calculation gives the isomorphism.
+At zero there are $n$ automorphisms in the quotient stack, whereas a
+scheme point has only the identity. Equivalence of stacks preserves
+automorphism groups, so the proposed extension is impossible.
+
+\item In Exercise~\ref{ex:bline}, the characters are $0,1,2$ modulo $3$.
+Their section spaces are $k,0,0$, and only character $0$ descends.
+All three tensor cubes are trivial. A torsion line on a stack can thus
+be nontrivial even when its coarse space is a point.
+
+\item In Exercise~\ref{ex:weightcount}, the bases are
+\[
+ \begin{array}{c|l}
+ 2&y^2\\
+ 3&y^3,x\\
+ 4&y^4,xy\\
+ 6&y^6,xy^3,x^2.
+ \end{array}
+\]
+Formula~\eqref{eq:weightedpush} gives $\OO$, $\OO(1)$, and
+$\OO(-1)$ on the coarse $\PP^1$. Of the three stack lines listed,
+only $\OO(3)$ descends. In particular, the invertible pushforward of
+$\OO(-1)$ is not proof of descent.
+
+\item In Exercise~\ref{ex:fibre}, the fibre is
+$[\Spec k[z]/(z^n)/\mu_n]$ and the reduction is $B\mu_n$.
+The normal character is $+1$ and the conormal character is $-1$.
+The nilpotent thickening records the multiplicity $n$ in
+$\pi^*(0)=n\cD$.
+
+\item In Exercise~\ref{ex:generic}, any nonzero coordinate forces
+$t^n=1$, so every stabiliser is $\mu_n$. The coarse space is $\PP^1$,
+as follows from the invariant ratio on each chart or regrading the
+homogeneous coordinate ring. The difference from $\PP(n,1)$ is generic
+isotropy. This quotient is a $\mu_n$-gerbe over $\PP^1$; this description
+does not assert a product $\PP^1\times B\mu_n$. A global product
+would require a trivialisation of the gerbe.
+
+\item For Exercise~\ref{ex:push}, an odd monomial of positive $x$-exponent
+is $x$ times an even monomial; if its $x$-exponent is zero, it is $y$
+times an even monomial. Thus $M=Ax+Ay$. Generically,
+$y=(xy/x^2)x$, so the rank is one. Modulo the vertex ideal the two
+degree-one generators remain independent. Hence the module is not
+locally free of rank one there. Moreover its fibre character at the
+stack origin is sign, which directly obstructs descent. If it were
+pulled back from a coarse line, its pushforward would recover that line
+and be locally free, giving a second contradiction.
+
+\item In Exercise~\ref{ex:inertia}, a geometric pair is $(z,\zeta)$ with
+$\zeta z=z$. Since $\mu_n$ is abelian, quotienting each fixed locus
+does not permute the labels $\zeta$. Thus
+\[
+ I[\A^1/\mu_n]
+ \simeq[\A^1/\mu_n]\ \sqcup\!
+ \coprod_{\zeta\ne1}B\mu_n.
+\]
+The identity component is the original stack; each other automorphism
+has fixed locus $0$ and supplies a separate $B\mu_n$ component. This
+is a first example of the extra sectors used in orbifold formulas.
+
+\item In Exercise~\ref{ex:twist}, invariance is $na+b=md$. For any
+$d>0$, both axes away from the origin have some nonvanishing invariant
+positive-degree section, while the origin does not. Hence the
+semistable locus and stack remain $\A^2\setminus0$ and $\PP(n,1)$.
+The polarisation is now $\OO_{\PP(n,1)}(d)$; it descends exactly when
+$n\mid d$. The coarse space remains $\PP^1$. When $n=1$ the action
+on $\A^2\setminus0$ is free, the stack is $\PP^1$, and every such
+polarisation is the ordinary $\OO_{\PP^1}(d)$.
+
+\item In Exercise~\ref{ex:twonormals}, the lower normal has character
+$1$, the upper normal has character $-1=2$ modulo $3$, and both
+polarisations have character $1$. None of these four boundary lines
+has a nonzero invariant vector. Their cubes are all trivial character
+lines and each has a one-dimensional invariant space.
+\end{enumerate}
+
+\section{A reading plan}
+\label{sec:dictionary}
+
+For a second pass, work through the sections in the following order.
+\begin{enumerate}
+\item Recompute the two affine invariant rings in Section~\ref{sec:quotients}.
+Then explain the torsor $s^n=t$ to yourself as a family that cannot be
+described by a global root. These are the two independent reasons for
+retaining stabilisers and descent.
+\item Read the quotient-stack definition alongside the atlas identity
+$T\times_{[X/G]}X=P$. This identity explains most of the formal vocabulary.
+Use the diagonal-as-isomorphisms description to understand the DM criterion.
+\item Work out $\PP(3,1)$ on both charts, including the characters of
+$\OO(1)$ and the normal line. Verify the floor in the pushforward formula
+and the failure of tensor compatibility.
+\item Return to the cut. Keep separate the tensor degree $m$, the group
+weight $w$, the stabiliser character modulo its order, and any residual
+weight. Derive \eqref{eq:cutinvariance} before using an inequality.
+\end{enumerate}
+
+For further reading, Casalaina-Martin--Wise \cite[\S\S2--6]{CMW} develops
+the categorical language with many examples. Behrend
+\cite[\S\S3.3--3.6]{Behrend} is particularly useful for the quotient,
+bundle, and root-stack geometry used here. Vistoli \cite{Vistoli}
+provides a more systematic treatment of descent. The Stacks Project
+provides precise definitions and theorem statements; its tag references
+are more stable than section numbering. Alper \cite{Alper} is the next
+step when critical GIT levels and vector-bundle descent become central.
+Cadman \cite{Cadman} is the original source for the divisor root construction.
+
+\appendix
+\section{Relation to the repository and source conventions}
+
+These notes are a separate introductory document, not proposed manuscript
+edits. They use the repository as motivation and as a source of notation.
+The mathematical definitions are stated independently, and the examples
+are worked out in the text. General existence, local-structure, and
+descent theorems have been identified as such rather than claimed to
+have elementary proofs here.
+
+The project-specific points of contact are:
+\begin{itemize}
+\item \path{claude-notes/conventions.tex}, especially its section on
+cutting data and names, supplies the convention
+$w+\epsilon\ell-md=0$, calligraphic stack notation, and the names of
+the two cuts.
+\item \path{claude-notes/comparison-theorem.tex}, particularly the
+regular/critical-level remarks and the boundary discussion, supplies
+the context in which finite boundary stabilisers and polarisation
+pushforward matter. The general comparison theorem is not needed for
+the elementary toy calculation.
+\item \path{SemiprojectiveAlgebraicCutting-integrated.tex} discusses
+stack normal lines, finite quotient slices, and possible failure of
+coarse polarisation descent. The examples here explain those phenomena
+from the beginning.
+\end{itemize}
+
+The older integrated manuscript uses a different sign convention for
+section weights and the auxiliary direction. The current convention
+note records the translation $w_{\mathrm{old}}=-w$ and
+$\epsilon_{\mathrm{old}}=-\epsilon$; its old $Y_-$ corresponds to the
+current $M^{\le d}$. Thus a cut label or inequality from that older text
+must be translated before comparing it with these notes. The invariant
+equation in Section~\ref{sec:cutting} is the convention used throughout
+this document.
+
+The meaning of ``semiprojective'' also varies in the literature. The
+projective-affinisation hypothesis used here is stated separately from
+the existence of a contracting action. Nothing in the definition of a
+DM stack depends on either property.
+
+\begin{thebibliography}{99}
+\bibitem{CMW}
+S.~Casalaina-Martin and J.~Wise,
+\emph{An introduction to moduli stacks, with a view towards Higgs bundles
+on algebraic curves}, arXiv:1708.08124.
+\url{https://arxiv.org/abs/1708.08124}.
+The saved 147-page PDF in the local Zotero library was consulted;
+section and page locators refer to that version.
+
+\bibitem{Behrend}
+K.~Behrend, \emph{Introduction to algebraic stacks}, lecture notes,
+local Zotero record dated 2014, 127-page version.
+\url{https://personal.math.ubc.ca/~behrend/math615A/stacksintro.pdf}.
+Relevant material: \S\S3.3--3.6, pp.~110--125. We use the modern coarse
+moduli definition given in Section~\ref{sec:coarse}; older conventions
+for this terminology differ.
+
+\bibitem{Vistoli}
+A.~Vistoli, \emph{Notes on Grothendieck topologies, fibered categories
+and descent theory}, arXiv:math/0412512; also in
+\emph{Fundamental Algebraic Geometry}, Mathematical Surveys and
+Monographs 123, American Mathematical Society, 2005.
+\url{https://arxiv.org/abs/math/0412512}.
+
+\bibitem{Stacks}
+The Stacks Project Authors, \emph{The Stacks Project}.
+\url{https://stacks.math.columbia.edu/}.
+Tags used here: 026N (definitions), 04UV (quotient stacks),
+04TK (groupoid quotients), 06N3 (DM criterion), and 04UX (coarse-space
+literature). Consulted 13 November 2026.
+
+\bibitem{Alper}
+J.~Alper, \emph{Good moduli spaces for Artin stacks},
+Annales de l'Institut Fourier \textbf{63} (2013), 2349--2402.
+\url{https://aif.centre-mersenne.org/articles/10.5802/aif.2833/}.
+For vector-bundle descent see Theorem~10.3, journal p.~2386.
+
+\bibitem{Cadman}
+C.~Cadman, \emph{Using stacks to impose tangency conditions on curves},
+American Journal of Mathematics \textbf{129} (2007), 405--427;
+arXiv:math/0312349.
+\url{https://arxiv.org/abs/math/0312349}.
+For the root construction see \S2.
+\end{thebibliography}
+
+\clearpage
+\section{Glossary of terms and notation}
+\label{sec:glossary}
+
+The entries are alphabetical. They use the same characteristic-zero base
+field and conventions as the main text; section references lead to fuller
+explanations and worked examples. A notation table follows the definitions. Each entry links to its examples
+in Appendix~\ref{sec:examples-glossary}, which in turn links back here.
+Closely related terms have separate entries when confusing them would
+change a geometric statement.
+
+\newcommand{\glossentry}[3][]{%
+  \par\smallskip\phantomsection\label{gloss:#1}%
+  \noindent\textbf{#2.}\ #3\ %
+  \textit{\hyperref[examples:#1]{Examples (Appendix~\ref*{sec:examples-glossary}).}}\par}
+
+\subsection*{A--C}
+
+\glossentry[affine-invariant-quotient]{Affine invariant quotient}{For an affine scheme $\Spec A$
+with a group action, the scheme $\Spec A^G$ defined by invariant functions.
+It can identify different orbits, so it need not classify geometric
+isomorphism classes of the quotient stack. See
+Sections~\ref{sec:quotients} and~\ref{sec:coarse}.}
+
+\glossentry[affinisation]{Affinisation}{The canonical map
+$M\to\Spec\Gamma(M,\OO_M)$, which gathers all global regular functions
+on $M$ into one morphism to an affine scheme. Projectivity of this map
+is the semiprojectivity condition used here; it is not the same as
+projectivity of $M$ over $k$. See Section~\ref{sec:cutting}.}
+
+\glossentry[algebraic-space]{Algebraic space}{A sheaf of sets for the étale topology with
+diagonal representable by schemes and an étale surjective cover by a
+scheme. It generalises a scheme without introducing nontrivial
+automorphisms of its objects. Every scheme is an algebraic space, but
+not every algebraic space is a scheme. See Section~\ref{sec:dm}.}
+
+\glossentry[algebraic-stack]{Algebraic stack}{A stack in groupoids whose diagonal is
+representable by algebraic spaces and which has a representable smooth
+surjective atlas from a scheme. The diagonal condition makes
+isomorphisms between families algebraic objects; the atlas gives
+scheme charts. See Section~\ref{sec:dm}.}
+
+\glossentry[ample-line-bundle]{Ample line bundle}{A line bundle whose positive tensor powers
+provide sufficiently many sections to describe the scheme by affine
+nonvanishing loci; on a projective scheme, a sufficiently high power
+gives a projective embedding. In these notes ampleness is used on the
+scheme before taking the GIT quotient. The trivial line bundle on an
+affine scheme is ample.}
+
+\glossentry[artin-stack]{Artin stack}{The term commonly used for an algebraic stack
+defined using a smooth atlas. It allows positive-dimensional stabilisers,
+as in $B\Gm$, and includes DM stacks as a subclass. It does not mean
+that every stabiliser must be positive-dimensional. See Section~\ref{sec:dm}.}
+
+\glossentry[atlas]{Atlas}{A representable smooth surjective morphism
+$U\to\cX$ from a scheme. An étale atlas is one which is étale, and
+exists precisely for DM stacks. Surjectivity permits local lifts of
+families; it does not guarantee a global lift of every family to $U$.
+See Sections~\ref{sec:quotientstacks} and~\ref{sec:dm}.}
+
+\glossentry[automorphism]{Automorphism}{An isomorphism of an object with itself.
+The automorphisms of an object form a group. For a geometric object of
+a quotient stack represented by $x\in X$, this is the stabiliser
+$\{g\in G:gx=x\}$.}
+
+\glossentry[boundary-stack-and-coarse-boundary]{Boundary stack and coarse boundary}{At a regular cutting
+level, the boundary
+stack is the closed substack $y=0$ before forgetting stabilisers;
+its coarse boundary is the corresponding quotient space. In the running
+example they are $B\mu_n$ and a single ordinary point. At critical
+levels, the quotient need only be a good moduli space. See
+Sections~\ref{sec:cutting} and~\ref{sec:toycut}.}
+
+\glossentry[cartier-divisor]{Cartier divisor}{An effective Cartier divisor is a closed
+subscheme locally defined by one non-zero-divisor. It has an associated
+line bundle $\OO(D)$ and a canonical section whose zero divisor is $D$.
+The same definition is made on a stack by checking it on scheme charts.
+See Section~\ref{sec:roots}.}
+
+\glossentry[character]{Character}{A homomorphism of algebraic groups $G\to\Gm$,
+equivalently a one-dimensional representation. Characters of $\mu_n$
+are $\zeta\mapsto\zeta^c$, indexed by $c$ modulo $n$. Characters of
+$\Gm$ are $t\mapsto t^c$, indexed by integers. See Section~\ref{sec:sheaves}.}
+
+\glossentry[classifying-stack]{Classifying stack}{The stack $BG=[\Spec k/G]$ assigning to
+$T$ the groupoid of $G$-torsors over $T$. In particular, $B\Gm$
+classifies line bundles and $B\mu_n$ classifies pairs
+$(N,N^{\otimes n}\simeq\OO_T)$. See Section~\ref{sec:quotientstacks}.}
+
+\glossentry[coarse-moduli-space]{Coarse moduli space}{A map $\pi:\cX\to X$ to an algebraic
+space which is universal for maps to algebraic spaces and gives a
+bijection between geometric isomorphism classes and geometric points
+of $X$, over every algebraically closed extension. It forgets
+automorphisms and need not preserve families over general schemes.
+See Section~\ref{sec:coarse}.}
+
+\glossentry[cocycle-condition]{Cocycle condition}{The identity
+$\alpha_{ij}\alpha_{jk}=\alpha_{ik}$ on triple overlaps for chosen gluing
+isomorphisms. For transition functions of a torsor it reads
+$g_{ij}g_{jk}=g_{ik}$. It is the compatibility needed to glue local
+objects. See Section~\ref{sec:families}.}
+
+\glossentry[conormal-line]{Conormal line}{For a Cartier divisor with ideal sheaf
+$\mathcal I$, the line bundle $\mathcal I/\mathcal I^2$ on the divisor.
+It is dual to the normal line. Thus if a stabiliser acts on a normal
+vector by $\zeta$, it acts on a conormal covector by $\zeta^{-1}$.
+See Section~\ref{sec:roots}.}
+
+\glossentry[contracting-action]{Contracting action}{In the sense relevant here, a
+$\Gm$-action for which $\lim_{t\to0}t\cdot p$ exists in $M$ for every
+geometric point $p$. The limits lie in the fixed locus. Existence of
+these limits is an extra hypothesis, distinct from projectivity of
+the affinisation. See Section~\ref{sec:cutting}.}
+
+\glossentry[critical-cutting-level]{Critical cutting level}{A level $d$ equal to $\Phi(F)$ for
+some fixed component $F$, where $\Phi(F)$ is its section weight.
+At such a level fixed points can survive semistability and give
+$\Gm$ stabilisers, so the quotient stack can fail to be DM.
+See Sections~\ref{sec:cutting} and~\ref{sec:toycut}.}
+
+\subsection*{D--F}
+
+\glossentry[deligne-mumford-stack]{Deligne--Mumford stack}{An algebraic stack admitting a
+representable étale surjective atlas from a scheme; equivalently, its
+diagonal is unramified. The separated finite-type stacks and finite-type
+quotient examples used here have finite reduced stabilisers. With the
+broad Stacks Project convention, DM alone does not impose
+quasi-compactness of the diagonal or finiteness of every stabiliser.
+See Section~\ref{sec:dm}.}
+
+\glossentry[descent-datum]{Descent datum}{Objects on a cover, with specified
+isomorphisms on overlaps satisfying a cocycle condition. Such a datum
+is effective when it comes from an object on the base. A stack
+requires both effectiveness for objects and sheaf-like gluing for
+isomorphisms. See Section~\ref{sec:families}.}
+
+\glossentry[descent-of-a-line-bundle-to-the-coarse-space]{Descent of a line bundle to the coarse space}{The existence
+of a line bundle $L$ on $X$ and an isomorphism $\cL\simeq\pi^*L$.
+In the separated finite-type DM setting here, this holds exactly when
+all stabilisers act trivially on the fibres of $\cL$. It is stronger
+than invertibility of $\pi_*\cL$. See Section~\ref{sec:sheaves}.}
+
+\glossentry[diagonal]{Diagonal}{The morphism
+$\Delta_{\cX}:\cX\to\cX\times\cX$. Its pullback along a pair of
+families is their sheaf of isomorphisms. Properties of the diagonal
+therefore control isomorphisms, automorphisms, and separation.
+See Section~\ref{sec:dm}.}
+
+\glossentry[dimension-of-a-quotient-stack]{Dimension of a quotient stack}{For the equidimensional
+examples with a smooth group, $\dim[X/G]=\dim X-\dim G$.
+Thus $\PP(n,1)$ has dimension one although its standard atlas is
+two-dimensional. The dimensions of stabilisers need not equal the
+dimension of the group used in a presentation. See Section~\ref{sec:dm}.}
+
+\glossentry[effective-descent]{Effective descent}{The assertion that compatible local
+objects with specified gluing isomorphisms arise from a global object.
+For a stack, the global object is unique up to an isomorphism compatible
+with the gluing data. This does not remove its automorphisms.
+See Section~\ref{sec:families}.}
+
+\glossentry[equivariant-map]{Equivariant map}{A map commuting with the declared group
+actions. With left actions, $f(gp)=g f(p)$. Quotient-stack objects
+are torsors equipped with such maps; changing to right torsors requires
+the corresponding inverse convention. See Section~\ref{sec:quotientstacks}.}
+
+\glossentry[equivariant-vector-bundle]{Equivariant vector bundle}{A vector bundle with a compatible
+lift of the group action, linear on the fibres. It is equivalently a
+vector bundle on the quotient stack. At a fixed point its fibre is a
+representation of the stabiliser. In rank one the lift is a
+linearisation and its fibre representation is a character.
+See Section~\ref{sec:sheaves}.}
+
+\glossentry[etale-cover]{Étale cover}{A jointly surjective family of étale morphisms.
+Its overlaps are fibre products over the base. Such a cover can permit
+choices, such as roots of units, which are unavailable on any Zariski
+open cover. See Section~\ref{sec:families}.}
+
+\glossentry[etale-morphism]{Étale morphism}{A flat, unramified morphism locally of
+finite presentation. It is the algebraic model for a local isomorphism
+without branching. For example, adjoining an $n$th root of a unit
+is finite étale when $n$ is invertible. See Section~\ref{sec:families}.}
+
+\glossentry[family]{Family}{An object parameterised by a test scheme $T$;
+in stack language it is an object of $\cX(T)$, or a morphism
+$T\to\cX$. Its pullback along $T'\to T$ is the family with changed
+base. Testing only over $\Spec k$ loses information about families.
+See Section~\ref{sec:families}.}
+
+\glossentry[fibre-product-of-stacks]{Fibre product of stacks}{A 2-fibre product: its objects are
+two objects together with a specified isomorphism between their images
+in the common target. This extra isomorphism is why
+$X\times_{[X/G]}X\simeq G\times X$. See
+Section~\ref{sec:quotientstacks}.}
+
+\glossentry[flat-and-faithfully-flat]{Flat and faithfully flat}{A morphism of schemes is flat if
+each local-ring map makes the target local ring a flat module: tensoring
+with that module preserves exact sequences. A flat morphism which is
+surjective is faithfully flat. Flatness is part of the definitions of
+étale and fppf covers.}
+
+\glossentry[fppf-topology]{Fppf topology}{The topology whose covers are jointly
+surjective families of flat morphisms locally of finite presentation.
+The abbreviation comes from the French for faithfully flat and of
+finite presentation. It contains the étale topology. The stacks in
+these notes satisfy descent in this topology. See
+Section~\ref{sec:families}.}
+
+\glossentry[free-action]{Free action}{An action with trivial stabilisers; for the
+finite-type smooth-group actions over characteristic zero considered
+here, this can be checked on geometric points. If $X\to Y$ is a
+$G$-torsor, then $[X/G]\simeq Y$. Freeness is stronger than the finite
+stabiliser condition used in GIT stability. See
+Section~\ref{sec:quotientstacks}.}
+
+\glossentry[functor-of-points]{Functor of points}{The functor
+$T\mapsto\Hom(T,X)$, together with pullback along maps of test schemes.
+It determines a scheme $X$. For a stack, the analogous construction
+has groupoids as values, so it retains isomorphisms as well as objects.
+See Section~\ref{sec:families}.}
+
+\subsection*{G--L}
+
+\glossentry[geometric-fibre-weight]{Geometric fibre weight}{The integer $c$ describing an
+actual action on a line fibre by $v\mapsto t^c v$. For $\mu_n$ only
+its residue modulo $n$ matters. Under the section-action convention
+here, the fibre weight of $L$ at a fixed component is $-\Phi(F)$,
+while the nonvanishing section weight is $\Phi(F)$.
+See Sections~\ref{sec:sheaves} and~\ref{sec:cutting}.}
+
+\glossentry[geometric-point]{Geometric point}{A morphism $\Spec\Omega\to X$ where
+$\Omega$ is an algebraically closed field. For a stack this is an
+object over $\Omega$ and can have nontrivial automorphisms. Passing
+to its geometric isomorphism class is the step used in defining a
+coarse moduli space. See Section~\ref{sec:coarse}.}
+
+\glossentry[git-quotient]{GIT quotient}{The quotient determined by a chosen
+linearisation and its invariant sections. In the projective or relative
+construction here it is $\Proj B$ in tensor degree. At a regular
+level it is the coarse space of the semistable quotient stack; at a
+critical level it can identify distinct geometric orbit classes.
+See Sections~\ref{sec:coarse} and~\ref{sec:cutting}.}
+
+\glossentry[good-moduli-space]{Good moduli space}{A quasi-compact map
+$\pi:\cX\to X$ to an algebraic space such that pushforward on
+quasi-coherent sheaves is exact and
+$\OO_X\simeq\pi_*\OO_{\cX}$. It can identify distinct geometric
+isomorphism classes, unlike a coarse moduli space. The map
+$[\A^1/\Gm]\to\Spec k$ for scaling is an example.
+See Section~\ref{sec:coarse}.}
+
+\glossentry[groupoid]{Groupoid}{A category in which every arrow is invertible.
+The action groupoid has objects $x\in X$ and arrows $g:x\to gx$.
+Its isomorphism classes are orbits, while its automorphism groups are
+stabilisers. See Section~\ref{sec:quotients}.}
+
+\glossentry[groupoid-presentation]{Groupoid presentation}{An atlas $U\to\cX$ together with
+the arrow space $R=U\times_{\cX}U$, source and target maps, and
+composition. The stack is recovered by allowing this groupoid to
+describe families locally and then glue. For $[X/G]$, the arrow space
+is $G\times X$. See Section~\ref{sec:quotientstacks}.}
+
+\glossentry[inertia-stack]{Inertia stack}{The stack $I\cX$ of pairs $(\xi,\alpha)$,
+where $\xi$ is an object and $\alpha$ is an automorphism of it.
+It records stabilisers in families. For the scalar cyclic quotient,
+$I[\A^1/\mu_n]$ has the identity component $[\A^1/\mu_n]$
+and one extra $B\mu_n$ component for each nonidentity root of unity.
+See Exercise~\ref{ex:inertia}.}
+
+\glossentry[invariant-function-or-section]{Invariant function or section}{A function unchanged by
+the action, or a section fixed by the action induced by a
+linearisation. For a line with geometric fibre character $\chi$,
+equivariance of a section means $f(gx)=\chi(g) f(x)$; invariance does
+not require the coefficient function itself to have weight zero.
+See Sections~\ref{sec:sheaves} and~\ref{sec:cutting}.}
+
+\glossentry[isomorphism-sheaf]{Isomorphism sheaf}{For two families $\xi,\eta$ over $T$,
+the sheaf assigning to $T'\to T$ the isomorphisms between their
+pullbacks to $T'$. It is denoted
+$\underline{\Isom}_T(\xi,\eta)$ and is a pullback of the diagonal.
+When the two families coincide it is their automorphism group sheaf.
+See Section~\ref{sec:dm}.}
+
+\glossentry[line-bundle]{Line bundle}{A locally free sheaf of rank one, or the
+corresponding geometric bundle with one-dimensional vector-space
+fibres. A line bundle on a stack also records how automorphisms act
+on those fibres. These fibre characters can obstruct descent to a
+coarse space. See Section~\ref{sec:sheaves}.}
+
+\glossentry[linearisation]{Linearisation}{A lift of a group action to a line bundle,
+linear on its fibres and compatible with group multiplication. It
+specifies an action on sections and hence the invariant sections used
+to form a GIT quotient. Different linearisations on the same
+underlying bundle can give different stability conditions.
+See Section~\ref{sec:cutting}.}
+
+\glossentry[linearly-reductive-group]{Linearly reductive group}{A group for which taking
+invariant vectors is an exact operation on representations. Finite
+groups in characteristic zero have this property by averaging over
+the group. This exactness explains the good behaviour of invariant
+modules and tame coarse pushforward here. See Section~\ref{sec:sheaves}.}
+
+\glossentry[locally-free-sheaf]{Locally free sheaf}{A sheaf which is isomorphic locally
+to a finite direct sum of copies of the structure sheaf. Rank-one
+locally free sheaves are line bundles. A coherent sheaf of generic
+rank one need not be locally free at singular points, as the odd
+module on the quadratic cone demonstrates. See Section~\ref{sec:sheaves}.}
+
+\subsection*{N--R}
+
+\glossentry[normal-line]{Normal line}{For a Cartier divisor
+$\cD\subset\cX$, the line bundle
+$\normal_{\cD/\cX}=(\mathcal I/\mathcal I^2)^\vee
+\simeq\OO_{\cX}(\cD)|_{\cD}$. It includes the action of every
+stabiliser on the normal direction. It need not be the pullback of
+the normal line of the coarse divisor. See Section~\ref{sec:roots}.}
+
+\glossentry[orbit]{Orbit}{The points obtained from $x$ by acting with the
+group. In a quotient stack an orbit gives one geometric isomorphism
+class, with automorphism group $\Stab(x)$. An orbit can fail to be
+closed, which matters when comparing a GIT quotient with a coarse
+moduli space. See Sections~\ref{sec:quotients} and~\ref{sec:coarse}.}
+
+\glossentry[polarisation]{Polarisation}{The chosen ample linearised line bundle
+used in the quotient construction, or the associated line on the
+quotient stack. Its pushforward to the coarse space can fail to be
+invertible, and even an invertible pushforward need not be a
+descended polarisation. It is also distinct from the boundary normal
+line. See Sections~\ref{sec:sheaves} and~\ref{sec:cutting}.}
+
+\glossentry[projective-degree]{Projective degree}{The tensor degree $m$ in a section
+ring $R=\bigoplus_{m\ge0}H^0(M,L^{\otimes m})$. The operation
+$\Proj$ in these notes uses this grading, not the group-weight
+grading. Degree-zero functions need not be constant.
+See Section~\ref{sec:cutting}.}
+
+\glossentry[pullback]{Pullback}{The operation taking a sheaf or family to a new
+base along a morphism. For a line bundle $L$ on a coarse space,
+$\pi^*L$ is a line on the stack with trivial stabiliser actions.
+Pullback is the operation used in the definition of line-bundle
+descent. See Section~\ref{sec:sheaves}.}
+
+\glossentry[pushforward]{Pushforward}{The sheaf whose sections downstairs are
+sections upstairs over the inverse image. On affine finite-group
+quotient charts it is computed by taking invariant modules.
+It can lose stabiliser characters, fail to preserve local freeness,
+and fail to commute with tensor products.
+See Sections~\ref{sec:sheaves} and~\ref{sec:weighted}.}
+
+\glossentry[quasi-coherent-sheaf]{Quasi-coherent sheaf}{A sheaf of modules which, on affine
+charts $\Spec A$, is associated to an $A$-module, with compatible
+restriction maps. On a stack this condition is checked on an atlas
+with descent data. Vector bundles give quasi-coherent sheaves;
+the category also includes invariant modules which are not locally
+free. See Section~\ref{sec:sheaves}.}
+
+\glossentry[quotient-stack]{Quotient stack}{The stack $[X/G]$ whose objects over $T$
+are $G$-torsors $P\to T$ with equivariant maps $P\to X$.
+Arrows are torsor isomorphisms compatible with those maps. The torsor
+retains the transition functions needed to glue a family, rather
+than requiring one global map $T\to X$. See
+Section~\ref{sec:quotientstacks}.}
+
+\glossentry[regular-cutting-level]{Regular cutting level}{A level $d$ unequal to
+$\Phi(F)$ for every fixed component $F$. Under the hypotheses
+of the cutting discussion, the semistable locus then has closed
+orbits within it and finite stabilisers, and the quotient stack is
+smooth DM. Regularity does not imply freeness.
+See Section~\ref{sec:cutting}.}
+
+\glossentry[representable-morphism]{Representable morphism}{A morphism
+$\cX\to\cY$ representable by algebraic spaces is one whose base
+change by every scheme $T\to\cY$ is an algebraic space. If every
+such base change is a scheme, it is representable by schemes.
+Properties such as étaleness of a representable map are tested on
+these base changes. See Section~\ref{sec:dm}.}
+
+\glossentry[residual-action]{Residual action}{An additional action that commutes with
+the group being quotiented and therefore induces an action on the
+quotient. Its fixed points describe an external symmetry of the
+resulting stack; they are different data from automorphisms of
+objects in that stack. See Section~\ref{sec:cutting}.}
+
+\glossentry[residual-gerbe-at-a-closed-point]{Residual gerbe at a closed point}{The substack retaining
+the point and its automorphisms. For a closed point with stabiliser
+$H$ over the algebraically closed field here it is $BH$.
+In $[\A^1/\mu_n]$ the reduced origin substack is $B\mu_n$,
+whereas the scheme-theoretic fibre of the coarse map is thicker.
+See Section~\ref{sec:roots}.}
+
+\glossentry[root-divisor]{Root divisor}{The Cartier substack $\cD$ where the
+universal section of a divisor root stack vanishes. It satisfies
+$\pi^*D=n\cD$. For smooth $D$, it is the reduced substack over
+$D$ and is locally $D\times B\mu_n$, although a global product
+need not exist. See Section~\ref{sec:roots}.}
+
+\glossentry[root-gerbe]{Root gerbe}{The stack of $n$th roots of a line bundle
+$L$, with no section specified: its objects have an isomorphism
+$N^{\otimes n}\simeq f^*L$. It has $\mu_n$ stabiliser everywhere.
+For $L=\OO_X$ it is $X\times B\mu_n$.
+See Section~\ref{sec:roots}.}
+
+\glossentry[root-stack-of-a-divisor]{Root stack of a divisor}{The stack
+$\sqrt[n]{(X,D)}$ of data $(f:T\to X,N,s,\phi)$ with
+$\phi:N^{\otimes n}\simeq f^*\OO_X(D)$ carrying $s^n$
+to the canonical divisor section. It is $X$ away from $D$
+and has $\mu_n$ stabilisers over $D$. Its local chart is
+$[\Spec A[z]/(z^n-a)/\mu_n]$ if $D=(a)$.
+See Section~\ref{sec:roots}.}
+
+\subsection*{S--Z}
+
+\glossentry[scheme-theoretic-fibre]{Scheme-theoretic fibre}{A fibre defined by base change,
+including its equations and nilpotents. For the coarse map
+$[\A^1_z/\mu_n]\to\A^1_u$ with $u=z^n$, the fibre over
+zero is $[\Spec k[z]/(z^n)/\mu_n]$. Its reduction is
+$B\mu_n$, but the two are not the same stack.
+See Section~\ref{sec:roots}.}
+
+\glossentry[section-ring]{Section ring}{The graded algebra
+$R=\bigoplus_{m\ge0}H^0(M,L^{\otimes m})$, with multiplication
+given by tensoring sections. A linearisation gives a second,
+independent decomposition by group weights $R_{m,w}$.
+The finite-generation and $M\simeq\Proj R$ hypotheses are stated
+explicitly in the cutting discussion. See Section~\ref{sec:cutting}.}
+
+\glossentry[section-weight]{Section weight}{The integer $w$ in $t\cdot s=t^w s$.
+These notes use $(t\cdot s)(p)=t_L^{-1}s(tp)$, so at a fixed
+component the weight of a nonvanishing section is the negative
+of its geometric fibre weight. Invariant cut sections satisfy
+$w+\epsilon\ell-md=0$. See Section~\ref{sec:cutting}.}
+
+\glossentry[semiprojective]{Semiprojective}{In the projective-affinisation sense
+used here, a variety whose global-function algebra is finitely
+generated and whose affinisation morphism is projective.
+Some authors impose additional conditions on a $\Gm$-action,
+including existence of contracting limits and properness of the
+fixed locus. Those conditions are not silently included here.
+See Section~\ref{sec:cutting} and Appendix~A.}
+
+\glossentry[semistable-point]{Semistable point}{For the chosen ample linearisation,
+a point where some invariant section of positive tensor degree
+does not vanish. The positive-degree requirement matters when
+$R_0$ is nonconstant. Semistability depends on the linearisation
+and does not by itself imply a finite stabiliser.
+See Section~\ref{sec:cutting}.}
+
+\glossentry[separated-stack]{Separated stack}{A stack whose diagonal is proper.
+For a DM stack this makes its unramified diagonal finite.
+It is a further condition, not part of the broad DM definition
+used here. See Section~\ref{sec:dm}.}
+
+\glossentry[smooth-stack]{Smooth stack}{An algebraic stack smooth over the base
+field. Smoothness can be checked on a smooth atlas.
+Thus $[\A^2/\mu_2]$ for the sign action is smooth even though
+its coarse quadratic cone is singular. A DM stack need not
+be smooth. See Section~\ref{sec:dm}.}
+
+\glossentry[stabiliser-or-isotropy-group]{Stabiliser or isotropy group}{The automorphism group
+of a geometric object. In $[X/G]$, an object represented by
+$x$ has stabiliser $G_x=\{g:gx=x\}$. Its representations on
+tangent spaces and line fibres are part of stack geometry.
+See Sections~\ref{sec:quotients} and~\ref{sec:sheaves}.}
+
+\glossentry[stable-point]{Stable point}{In the standard GIT setting used here,
+a semistable point whose orbit is closed within the semistable
+locus and whose stabiliser is finite. Stability is weaker than
+freeness. Finite stabiliser alone does not ensure that the orbit
+is closed. See Section~\ref{sec:cutting}.}
+
+\glossentry[stack]{Stack}{A groupoid-valued moduli problem with pullback,
+in which isomorphisms form sheaves and descent data for objects
+are effective. Objects glue up to specified compatible
+isomorphisms, without discarding their automorphisms.
+See Section~\ref{sec:families}.}
+
+\glossentry[tame-stack]{Tame stack}{In the finite-inertia setting, meaning
+that $I\cX\to\cX$ is a finite morphism, a stack
+whose coarse-space pushforward on quasi-coherent sheaves is exact.
+Finite stabilisers are linearly reductive in the characteristic-zero
+examples here, so the separated finite-type DM stacks used for
+descent are tame. This explains why invariants are exact; it does
+not imply descent of every line bundle. See Section~\ref{sec:sheaves}.}
+
+\glossentry[tensor-degree]{Tensor degree}{Another name for the projective degree
+$m$, counting powers $L^{\otimes m}$. It is independent of the
+group weight $w$ and of any degeneration parameter.
+See Section~\ref{sec:cutting}.}
+
+\glossentry[topology-in-descent-theory]{Topology, in descent theory}{A specification of which
+families of maps count as covers and hence where objects and
+arrows must glue. Zariski, étale, and fppf covers give the
+three topologies used here. This is additional cover data on
+test schemes, rather than just the usual topology on one
+underlying space. See Section~\ref{sec:families}.}
+
+\glossentry[torsor]{Torsor}{A family locally isomorphic to $G\times T$
+with the group acting by translation, with no preferred identity
+section. A section trivialises the torsor. In our left-action
+convention the map $G\times P\to P\times_T P$, $(g,p)\mapsto(gp,p)$,
+is an isomorphism. See Section~\ref{sec:quotientstacks}.}
+
+\glossentry[torus]{Torus}{An algebraic group isomorphic over the
+algebraically closed field to $(\Gm)^r$. The cutting group is
+the one-dimensional torus $\Gm$. Its finite stabilisers are
+cyclic groups $\mu_n$; these finite groups are not themselves
+positive-dimensional tori. See Section~\ref{sec:cutting}.}
+
+\glossentry[transporter]{Transporter}{For two points or families $x,x'$ in an
+action presentation, the space $\{g\in G:gx=x'\}$ of arrows
+between them. When $x=x'$ it is the stabiliser. It is a concrete
+description of a pullback of the quotient-stack diagonal.
+See Section~\ref{sec:dm}.}
+
+\glossentry[unramified-morphism]{Unramified morphism}{For schemes, a morphism locally
+of finite type whose relative differential sheaf $\Omega_{X/Y}$
+vanishes; geometrically, it has no infinitesimal motion in its
+fibres. For algebraic spaces the condition is checked étale
+locally. An unramified diagonal characterises DM stacks.
+See Section~\ref{sec:dm}.}
+
+\glossentry[vector-bundle]{Vector bundle}{A locally free sheaf of finite rank,
+or its associated family of vector spaces. On $[X/G]$, it is
+a $G$-equivariant vector bundle on $X$. Its stabiliser
+representations must be trivial if it is to descend to the
+coarse space in the setting here. See Section~\ref{sec:sheaves}.}
+
+\glossentry[veronese-subring]{Veronese subring}{For a nonnegatively graded ring $B$,
+the ring $B^{(N)}=\bigoplus_{r\ge0}B_{Nr}$, regraded so that
+$B_{Nr}$ has degree $r$. Its projective spectrum agrees with
+$\Proj B$. In the toy lower cut, taking the $n$th Veronese
+turns $k[A,B]$ of degrees $(n,1)$ into $k[A,B^n]$
+with both generators of regraded degree one.
+See Section~\ref{sec:toycut}.}
+
+\glossentry[weight]{Weight}{An integer indexing a character of $\Gm$,
+or a character's residue modulo $n$ for $\mu_n$.
+One must specify the representation: a section weight,
+geometric fibre weight, tangent weight, and residual weight
+need not be the same. See Sections~\ref{sec:sheaves}
+and~\ref{sec:cutting}.}
+
+\glossentry[weighted-projective-stack]{Weighted projective stack}{The quotient
+$[(\A^{r+1}\setminus0)/\Gm]$ for a positive weighted action.
+In these notes $\PP(n,1)$ means the stack with action
+$(x,y)\mapsto(t^n x,ty)$, whose coarse space is $\PP^1$.
+It has a $\mu_n$ stabiliser at $y=0$ and trivial stabilisers
+elsewhere. See Section~\ref{sec:weighted}.}
+
+\glossentry[weight-space]{Weight space}{The subspace on which the group acts
+by one fixed character. For example, $R_{m,w}$ consists of
+sections of $L^{\otimes m}$ with section weight $w$.
+Taking invariants selects the weight-zero part of the
+declared representation. See Section~\ref{sec:cutting}.}
+
+\glossentry[zariski-versus-etale-local]{Zariski versus étale local}{Zariski local means after
+restricting to open subsets. Étale local allows étale covers,
+including maps adjoining roots of units. A choice can exist
+étale locally without existing on any nonempty Zariski open,
+as in the torsor $s^n=t$ on $\Gm$.
+See Section~\ref{sec:families}.}
+
+\subsection*{Notation at a glance}
+
+\begin{longtable}{@{}p{0.29\textwidth}p{0.65\textwidth}@{}}
+\toprule
+Symbol & Meaning\\
+\midrule
+\endhead
+$k$ & An algebraically closed field of characteristic zero.\\
+$\Gm$, $\mu_n$ & The multiplicative group and its subgroup of $n$th roots of unity.\\
+$\cX$, $X$ & A stack and, when specified, its coarse space.\\
+$[X/G]$, $BG$ & A quotient stack and the classifying stack $[\Spec k/G]$.\\
+$\pi$ & Usually the map from a stack to its coarse or good moduli space.\\
+$\pi^*$, $\pi_*$ & Pullback and pushforward of sheaves.\\
+$G_x$, $I\cX$ & The stabiliser at a geometric point and the inertia stack.\\
+$\cL$, $L$ & A line bundle on a stack or scheme, respectively, as specified.\\
+$\cD$, $D$ & A stack divisor and its coarse divisor.\\
+$\normal_{\cD/\cX}$ & The stack normal line of a Cartier divisor.\\
+$\sqrt[n]{(X,D)}$ & The $n$th root stack of the divisor pair.\\
+$\PP(n,1)$ & The weighted projective stack for point weights $(n,1)$.\\
+$\OO_{\PP(n,1)}(c)$ & The line defined by geometric fibre character $t^c$.\\
+$m$, $w$ & Tensor degree and original section weight, kept independent.\\
+$R_{m,w}$ & The weight-$w$ part of $H^0(M,L^{\otimes m})$.\\
+$\Phi(F)$ & The nonvanishing section weight on a fixed component; the geometric fibre weight is $-\Phi(F)$.\\
+$\epsilon$, $d$ & Auxiliary point weight $\epsilon=\pm1$ and integral cutting level $d$.\\
+$y$, $\one_d$ & Auxiliary coordinate of section weight $\epsilon$ and twist section of weight $-d$.\\
+$B^\epsilon$, $D$ & In the cutting algebra, the invariant section ring and threshold ring $\bigoplus_mR_{m,md}$. This use of $D$ is separate from divisor notation.\\
+$\cM^{\le d}$, $\cM^{\ge d}$ & The lower and upper cut stacks; roman $M$ denotes their quotients.\\
+$\cM_d$, $M_d$ & The common boundary stack and its quotient.\\
+\bottomrule
+\end{longtable}
+
+For sign calculations, the defining invariant equation is always
+\[
+ w+\epsilon\ell-md=0,\qquad \ell\ge0.
+\]
+For descent to a coarse space, the decisive datum is the stabiliser
+character on a line fibre, not just the appearance of its pushforward.
+
+\clearpage
+\section{Examples Glossary}
+\label{sec:examples-glossary}
+
+This appendix gives two small examples for each definition in
+Appendix~\ref{sec:glossary}, in the same alphabetical order. Each heading
+links to its definition, and each definition links back to its examples.
+When one item is a contrasting case, the text states which condition
+fails. The examples repeatedly use the same basic spaces so that the
+terminology can be learned without a succession of new constructions.
+
+As before, $k$ is algebraically closed of characteristic zero. The
+notation $[X/G]$ denotes a stack, and $\PP(2,1)$ denotes the weighted
+projective stack, whose coarse space is $\PP^1$. On coordinates,
+$t\cdot z=t^a z$ has direct-pullback section weight $a$; a geometric
+line fibre acted on by $t^c$ has constant section weight $-c$.
+
+\newcommand{\examplegloss}[3]{%
+  \par\medskip\Needspace{5\baselineskip}%
+  \phantomsection\label{examples:#1}%
+  \noindent\textbf{#2.}\quad
+  \hyperref[gloss:#1]{\textit{Glossary entry (Appendix~\ref*{sec:glossary}).}}\par
+  #3\par}
+
+\subsection*{A--C}
+
+\examplegloss{affine-invariant-quotient}{Affine invariant quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Let $\mu_2$ act on $\A^1_z$ by $z\mapsto-z$. The invariant polynomials are the even ones, so the quotient is $\Spec k[z^2]\simeq\A^1_u$, with $u=z^2$. The points $z$ and $-z$ have the same image.
+\item Let $\Gm$ scale $\A^1_z$. Only constant polynomials are invariant, so the affine invariant quotient is a point. It identifies the zero orbit and the nonzero orbit, although those are distinct geometric isomorphism classes.
+\end{enumerate}}
+
+\examplegloss{affinisation}{Affinisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\A^1$, the global-function ring is $k[x]$. Its affinisation $\A^1\to\Spec k[x]$ is the identity. This morphism is projective even though $\A^1$ is not projective over $k$.
+\item Every global regular function on $\PP^1$ is constant. Its affinisation is therefore $\PP^1\to\Spec k$, the map to a point. This morphism is projective because $\PP^1$ itself is projective over $k$.
+\end{enumerate}}
+
+\examplegloss{algebraic-space}{Algebraic space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The affine line is an algebraic space: its identity map is an étale atlas, and its diagonal in $\A^1\times\A^1$ is the ordinary closed subscheme $x=x'$. Its points have no nonidentity arrows.
+\item The projective line is also an algebraic space. Its two standard affine charts give an étale surjective atlas $\A^1\sqcup\A^1\to\PP^1$. Both examples happen to be schemes; the definition of algebraic space also allows more general étale gluing.
+\end{enumerate}}
+
+\examplegloss{algebraic-stack}{Algebraic stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The quotient $[\A^1/\mu_2]$ has atlas $\A^1\to[\A^1/\mu_2]$. The atlas is étale, and its arrow scheme is $\mu_2\times\A^1$. The fixed origin retains two automorphisms.
+\item The stack $B\Gm$ has smooth atlas $\Spec k\to B\Gm$. Base-changing this atlas by a line bundle $N$ on $T$ gives the torsor $(N^\vee)^\times$ of nonzero dual frames, with our chosen convention. Thus this atlas has one-dimensional fibres, although its source is a point.
+\end{enumerate}}
+
+\examplegloss{ample-line-bundle}{Ample line bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP^1$, the bundle $\OO(1)$ is ample: its coordinate sections $X_0,X_1$ give the usual projective embedding. The nonvanishing loci of these sections are the two affine charts.
+\item On $\A^1$, the trivial bundle $\OO$ is ample. Its sections are polynomials, and their nonvanishing loci are principal affine opens. This differs from $\OO$ on $\PP^1$, whose only global sections are constants and which is not ample there.
+\end{enumerate}}
+
+\examplegloss{artin-stack}{Artin stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $B\Gm$ is Artin: the point is a smooth atlas, and its geometric object has automorphism group $\Gm$. That positive-dimensional group prevents an étale atlas.
+\item The scaling quotient $[\A^1/\Gm]$ is Artin. At zero its stabiliser is $\Gm$, but on the nonzero open the action is free and the quotient stack is a point. One Artin stack can therefore contain both continuous-stabiliser and trivial-stabiliser regions.
+\end{enumerate}}
+
+\examplegloss{atlas}{Atlas}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The map $\A^1_z\to[\A^1_z/\mu_2]$ is an étale atlas, including at $z=0$. Its base change by a family is the corresponding $\mu_2$-torsor. Its composite to the coarse line, $z\mapsto z^2$, is instead ramified at zero.
+\item For $\PP(2,1)$, the map $\A^2\setminus0\to\PP(2,1)$ is a smooth atlas of relative dimension one. The stack is DM, but this particular atlas is not étale; the scheme covers of its smaller quotient charts provide an étale atlas.
+\end{enumerate}}
+
+\examplegloss{automorphism}{Automorphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A one-dimensional vector space has automorphisms $v\mapsto\lambda v$ for every $\lambda\in k^*$. This explains the automorphism group $\Gm$ of the geometric object of $B\Gm$.
+\item In $[\A^1/\mu_2]$, the origin has two automorphisms, represented by $1$ and $-1$. A nonzero point has only the identity automorphism, because $-z=z$ would force $z=0$ in characteristic zero.
+\end{enumerate}}
+
+\examplegloss{boundary-stack-and-coarse-boundary}{Boundary stack and coarse boundary}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the weight-one affine-line cut at level $1$, the lower cut is the ordinary $\PP^1$. The boundary $y=0$ is the point $[1:0]$, with no nontrivial stabiliser, so its stack and coarse descriptions agree.
+\item For the weight-two cut, the lower stack is $\PP(2,1)$. Its boundary is $B\mu_2$, while the coarse boundary is still one point of $\PP^1$. The extra sign automorphism acts on the stack normal line.
+\end{enumerate}}
+
+\examplegloss{cartier-divisor}{Cartier divisor}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The origin in $\A^1_z$ is an effective Cartier divisor, since $z$ is a non-zero-divisor in $k[z]$. Its ideal is $(z)$ and its divisor line is generated locally by $z^{-1}$.
+\item The substack $\{z=0\}\subset[\A^1_z/\mu_2]$ is also Cartier: its pullback to the atlas is the same divisor $(z)$. Its ideal line has an equivariant structure, so taking the quotient does not discard the stabiliser character.
+\end{enumerate}}
+
+\examplegloss{character}{Character}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The formula $t\mapsto t^2$ is a character of $\Gm$. A line with this character has geometric action $v\mapsto t^2v$. Tensoring two such lines gives character $t^4$.
+\item On $\mu_3$, the characters $\zeta\mapsto\zeta$ and $\zeta\mapsto\zeta^4$ are equal because $\zeta^3=1$. Their common tensor cube is the trivial character. Thus finite stabiliser characters are indexed modulo the group order.
+\end{enumerate}}
+
+\examplegloss{classifying-stack}{Classifying stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $B\mu_2$ has one geometric isomorphism class with automorphism group $\mu_2$. Over $T=\mathbb G_{m,t}$, it also has the nontrivial family given by the torsor $s^2=t$.
+\item A map $\PP^1\to B\Gm$ can specify the line bundle $\OO_{\PP^1}(1)$. The trivial bundle specifies a different map, although the fibres of both bundles over each geometric point are one-dimensional vector spaces. The classifying stack remembers the global gluing.
+\end{enumerate}}
+
+\examplegloss{coarse-moduli-space}{Coarse moduli space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The coarse space of $B\mu_2$ is $\Spec k$: there is one geometric isomorphism class. The coarse point forgets the two automorphisms and the different torsor families over parameter schemes.
+\item The coarse map $[\A^1_z/\mu_2]\to\A^1_u$ is $u=z^2$. Each nonzero $u$ corresponds to the single orbit of its two square roots, while $u=0$ corresponds to the origin orbit. Both have one coarse point, despite their different stabilisers.
+\end{enumerate}}
+
+\examplegloss{cocycle-condition}{Cocycle condition}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On any three-open cover, choose identity identifications between copies of the trivial line. Then $\alpha_{ij}\alpha_{jk}=\id\,\id=\id=\alpha_{ik}$, so the local bundles glue to the trivial bundle.
+\item On a triple overlap, transition functions $g_{12}=2$ and $g_{23}=3$ require $g_{13}=6$. Choosing $g_{13}=5$ would make transporting a vector directly from chart $3$ to chart $1$ disagree with transporting it through chart $2$.
+\end{enumerate}}
+
+\examplegloss{conormal-line}{Conormal line}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item At the origin of $\A^1_z$, the conormal is $(z)/(z^2)$, a one-dimensional vector space spanned by the class of $z$. Its dual is the usual tangent, or normal, line at that point.
+\item For the origin substack in $[\A^1_z/\mu_3]$, a normal vector has geometric character $\zeta$. The conormal covector has the inverse geometric character $\zeta^{-1}=\zeta^2$. Their tensor product has trivial character, as expected for a line and its dual.
+\end{enumerate}}
+
+\examplegloss{contracting-action}{Contracting action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $t\cdot x=tx$ on $\A^1$, every point has limit $0$ as $t\to0$. Algebraically the formula extends to $(t,x)\mapsto tx$ on $\A^1_t\times\A^1_x$.
+\item For $t\cdot(x,y)=(tx,t^2y)$ on $\A^2$, every point again limits to the origin. Both coordinates have positive weights, so both vanish in the limit. The fixed locus is the origin in each example.
+\end{enumerate}}
+
+\examplegloss{critical-cutting-level}{Critical cutting level}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $M=\A^1$ with $t\cdot x=t^2x$ and the trivial fibre action on $L=\OO$, the fixed origin has $\Phi(0)=0$. Thus $d=0$ is critical. In the lower cut every point is semistable, and the product origin has stabiliser $\Gm$.
+\item Let $M=\Spec k$ and give its line $L$ geometric fibre weight $-1$. Its nonzero section has weight $\Phi=1$, so $d=1$ is critical. The level twist cancels that fibre action, and the auxiliary origin again survives with stabiliser $\Gm$.
+\end{enumerate}}
+
+\subsection*{D--F}
+
+\examplegloss{deligne-mumford-stack}{Deligne--Mumford stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The classifying stack $B\mu_2$ is DM because the map $\Spec k\to B\mu_2$ is an étale atlas. Its geometric object has two automorphisms, showing that DM does not mean absence of automorphisms.
+\item The stack $[\A^1/\mu_2]$ is DM with étale atlas $\A^1$. It is a scheme away from the origin, but the origin retains $\mu_2$. Thus an étale atlas can coexist with stabilisers that vary from point to point.
+\end{enumerate}}
+
+\examplegloss{descent-datum}{Descent datum}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $T=U\cup V$, take trivial lines on $U,V$ and identify them by the constant multiplier $1$ on $U\cap V$. Together with the inverse identification, this is descent data for the trivial line on $T$.
+\item On the standard charts $U_0,U_1$ of $\PP^1$, the overlap coordinate $z=X_1/X_0$ is invertible. Multiplication by $z$ glues the two trivial lines into a line bundle. The transition isomorphism, rather than only the two local isomorphism classes, is essential data.
+\end{enumerate}}
+
+\examplegloss{descent-of-a-line-bundle-to-the-coarse-space}{Descent of a line bundle to the coarse space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $B\mu_2$, the trivial-character line is the pullback of the ordinary one-dimensional line on its coarse point. The stabiliser acts trivially, so descent is explicit.
+\item The sign-character line on $B\mu_2$ does not descend: the coarse point has no automorphism that could induce the sign action. Its tensor square does descend, because the square of the sign character is trivial. The obstruction is the fibre representation.
+\end{enumerate}}
+
+\examplegloss{diagonal}{Diagonal}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $\A^1$, the diagonal is the closed line $x=x'$ in $\A^2$. Pulling it back along two functions $f,g$ on $T$ gives their equality locus $f-g=0$.
+\item Pull back the diagonal of $B\mu_2$ along its geometric object paired with itself. The resulting isomorphism space is $\mu_2$, with two points, because that object has two automorphisms. A stack diagonal therefore records more than equality of underlying coarse points.
+\end{enumerate}}
+
+\examplegloss{dimension-of-a-quotient-stack}{Dimension of a quotient stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $[\A^1/\mu_2]$ has dimension $1-0=1$. A finite group has dimension zero, so passing to this finite quotient stack does not lower the dimension of the atlas.
+\item The weighted line $\PP(2,1)$ has dimension $2-1=1$, because its atlas is $\A^2\setminus0$ and its presentation group is $\Gm$. Its finite boundary stabiliser does not change the subtraction by the dimension of that presentation group.
+\end{enumerate}}
+
+\examplegloss{effective-descent}{Effective descent}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Glue two trivial lines on an open cover by identity maps. The resulting global line is the trivial bundle; restricting it to the cover recovers exactly the original bundles and their identifications. This is effective descent.
+\item The nontrivial torsor $s^2=t$ over $\mathbb G_{m,t}$ becomes trivial on its own étale cover. Its trivial local copies, equipped with the transition signs inherited from the torsor, glue back to that nontrivial torsor. Effectiveness allows the global object to be nontrivial even when every local object is trivial.
+\end{enumerate}}
+
+\examplegloss{equivariant-map}{Equivariant map}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Give the source $\A^1_z$ weight $1$ and the target $\A^1_w$ weight $2$. The map $w=z^2$ is equivariant, since $(tz)^2=t^2z^2$: applying the group before or after the map agrees.
+\item The constant map from any $G$-scheme to a fixed point is equivariant. For example, $\A^1\to\{0\}\subset\A^1$ is equivariant for scaling. The same constant map to the nonfixed point $1$ is not equivariant.
+\end{enumerate}}
+
+\examplegloss{equivariant-vector-bundle}{Equivariant vector bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Over the sign action on $\A^1_z$, give the trivial line the action $(z,v)\mapsto(-z,v)$. Its fibre at the origin is the trivial representation, and the corresponding stack line descends to the coarse line.
+\item On the same underlying trivial line, use $(z,v)\mapsto(-z,-v)$. Now the origin fibre is the sign representation and descent fails. The underlying nonequivariant bundle has not changed; the equivariant structure has.
+\end{enumerate}}
+
+\examplegloss{etale-cover}{Étale cover}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The two standard opens $\A^1\sqcup\A^1\to\PP^1$ form an étale cover: open immersions are étale, and the two images cover the projective line.
+\item The map $\mathbb G_{m,s}\to\mathbb G_{m,t}$, $t=s^2$, is a single finite étale cover. The derivative $2s$ is invertible, and every geometric $t\ne0$ has a square root. This cover supplies roots that cannot be chosen on any nonempty Zariski open of $\mathbb G_{m,t}$.
+\end{enumerate}}
+
+\examplegloss{etale-morphism}{Étale morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The open immersion $\A^1\setminus\{0\}\hookrightarrow\A^1$ is étale. It introduces no equations or branching locally, although it is not surjective and therefore is not by itself a cover of $\A^1$.
+\item The squaring map on $\Gm$ is étale because its derivative is invertible there. The same formula on $\A^1$ is not étale at zero: the derivative $2s$ vanishes. Restricting away from the branch point changes the answer.
+\end{enumerate}}
+
+\examplegloss{family}{Family}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Take $T=\A^1_a$ and the map $T\to\A^1_x$ defined by $x=a$. This is a family of affine-line points; its fibre at $a=c$ is the point $x=c$. A map $T'\to T$ changes the parameter by substitution.
+\item The line bundle $\OO_{\PP^1}(1)$ is a family of one-dimensional vector spaces over $\PP^1$, hence a map $\PP^1\to B\Gm$. Every geometric fibre is a line, but the family is globally nontrivial: its transition $z=X_1/X_0$ cannot be removed by changing the two local frames. The units on either affine chart are constants.
+\end{enumerate}}
+
+\examplegloss{fibre-product-of-stacks}{Fibre product of stacks}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For ordinary schemes, $\A^1\times_{\Spec k}\Spec k=\A^1$.
+There are no extra isomorphism choices, because scheme-valued objects
+have only identity arrows.
+\item For the atlas $\Spec k\to B\mu_2$, the fibre product
+$\Spec k\times_{B\mu_2}\Spec k$ is $\mu_2$, consisting of two points.
+The two points are the two isomorphisms between the trivial torsor and itself.
+\end{enumerate}}
+
+\examplegloss{flat-and-faithfully-flat}{Flat and faithfully flat}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The map $\A^1_z\to\A^1_u$, $u=z^2$, is faithfully flat.
+Indeed, $k[z]$ is a free $k[u]$-module with basis $1,z$, and the
+map is surjective, including over $u=0$.
+\item The open immersion $\Gm\hookrightarrow\A^1$ is flat because
+its ring map is localisation $k[z]\to k[z,z^{-1}]$. It is not
+faithfully flat: its image omits the origin.
+\end{enumerate}}
+
+\examplegloss{fppf-topology}{Fppf topology}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The single map $\A^1_z\to\A^1_u$, $u=z^2$, is an fppf cover:
+it is finite, flat, and surjective. It is not an étale cover, since
+it is ramified at zero.
+\item Restricting to $\Gm$ gives $s\mapsto s^2$, which is both
+étale and fppf. Over this cover the unit $t$ on the base has the
+chosen square root $s$.
+\end{enumerate}}
+
+\examplegloss{free-action}{Free action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Multiplication of $\Gm$ on itself is free: $tx=x$ with
+$x\ne0$ forces $t=1$. The quotient stack $[\Gm/\Gm]$ is
+the ordinary one-point scheme.
+\item The sign action of $\mu_2$ on $\Gm$ is free, since
+$-z=z$ is impossible for $z\ne0$ in characteristic zero.
+The same action on $\A^1$ is not free: zero has stabiliser $\mu_2$.
+\end{enumerate}}
+
+\examplegloss{functor-of-points}{Functor of points}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A morphism $T\to\A^1$ is exactly a global regular function
+on $T$. Thus $\A^1(T)=\Gamma(T,\OO_T)$; pulling back a point
+means pulling back that function.
+\item For $T=\Spec k[\varepsilon]/(\varepsilon^2)$, the functions
+$0$ and $\varepsilon$ give different $T$-points of $\A^1$.
+Both restrict to the origin over $\Spec k$, so ordinary geometric
+points alone do not distinguish them.
+\end{enumerate}}
+
+\subsection*{G--L}
+
+\examplegloss{geometric-fibre-weight}{Geometric fibre weight}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On a line over a fixed point, the action $t\cdot v=t^2v$
+has geometric fibre weight $2$. In the notes' section convention,
+a nonzero constant section of this line has weight $-2$.
+\item The sign line on $B\mu_2$ has action $v\mapsto-v$.
+Its fibre character is $1$ modulo $2$; its tensor square has
+trivial character, although the original line does not.
+\end{enumerate}}
+
+\examplegloss{geometric-point}{Geometric point}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The assignment $z\mapsto3$ defines a geometric point
+$\Spec k\to\A^1_z$. Its only automorphism as a point of
+the scheme is the identity.
+\item The origin defines a geometric object of $[\A^1/\mu_2]$
+for the sign action. It has two automorphisms, $1$ and $-1$.
+Its image in the coarse line is an ordinary point without these arrows.
+\end{enumerate}}
+
+\examplegloss{git-quotient}{GIT quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the weight-$(1,1)$ action on $\A^2$, with geometric
+fibre character $+1$ on the trivial linearised line, the semistable locus is $\A^2\setminus0$ and
+the quotient is $\Proj k[x,y]=\PP^1$. Here both variables
+have tensor degree one.
+\item For weights $(2,1)$ the quotient stack is $\PP(2,1)$,
+while the GIT quotient is $\Proj k[A,B]$ with degrees $(2,1)$.
+Its second Veronese is $k[A,B^2]$, giving coarse space $\PP^1$.
+\end{enumerate}}
+
+\examplegloss{good-moduli-space}{Good moduli space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The coarse map $[\A^1/\mu_2]\to\A^1_u$, $u=z^2$,
+is also a good moduli space. Functions downstairs are the even
+polynomials, and taking invariants is exact by averaging.
+\item For scaling, $[\A^1/\Gm]\to\Spec k$ is good: functions
+of weight zero are constants, and taking weight-zero parts is exact.
+It identifies zero and the nonzero orbit, so it is not coarse.
+\end{enumerate}}
+
+\examplegloss{groupoid}{Groupoid}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A set $\{a,b\}$ becomes a groupoid by giving each object
+only its identity arrow. It remembers two objects and no nontrivial
+symmetries; this is a discrete groupoid.
+\item A one-object groupoid with automorphism group $\mu_2$
+has two arrows, identity and sign, with sign composed with itself
+equal to identity. It has just one isomorphism class but retains a symmetry.
+\end{enumerate}}
+
+\examplegloss{groupoid-presentation}{Groupoid presentation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Using the identity atlas of $\A^1$, the arrow space is
+$\A^1\times_{\A^1}\A^1=\A^1$ and both projections are
+identity. There is only one arrow at each object.
+\item For $B\mu_2$, take object scheme $\Spec k$ and arrow
+scheme $\mu_2$. Both source and target go to the one object,
+and arrow composition is multiplication in $\mu_2$.
+\end{enumerate}}
+
+\examplegloss{inertia-stack}{Inertia stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the scheme $\A^1$, every object has only the identity
+automorphism. Consequently $I\A^1\simeq\A^1$: choosing an
+automorphism adds no data.
+\item For the sign quotient, the identity automorphism is available
+everywhere, while sign fixes only zero. Hence
+$I[\A^1/\mu_2]\simeq[\A^1/\mu_2]\sqcup B\mu_2$.
+The second component records the extra automorphism at the origin.
+\end{enumerate}}
+
+\examplegloss{invariant-function-or-section}{Invariant function or section}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Under $z\mapsto-z$, the function $z^2$ is invariant:
+$(-z)^2=z^2$. The function $z$ is not invariant, since it
+changes sign.
+\item Give the trivial line over $\A^1$ sign action on its fibre.
+Then $f(z)=z$ is an equivariant section because $f(-z)=-f(z)$.
+It defines a section of the line on the quotient stack despite
+its coefficient function being noninvariant.
+\end{enumerate}}
+
+\examplegloss{isomorphism-sheaf}{Isomorphism sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Automorphisms of the trivial line on $T$ are multiplication
+by invertible functions. Its isomorphism sheaf with itself is
+$\Gm\times T$, rather than the additive line $\A^1\times T$:
+zero multiplication is not invertible.
+\item The trivial $\mu_2$-torsor over $T$ has automorphism sheaf
+$\mu_2\times T$. It is the pullback of the diagonal of
+$B\mu_2$ along the corresponding pair of identical families.
+\end{enumerate}}
+
+\examplegloss{line-bundle}{Line bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The trivial line $\OO_{\A^1}$ has sections $k[z]$ and
+one-dimensional fibres. Its nowhere-zero section $1$ gives a
+global trivialisation.
+\item The sign character defines a line on $B\mu_2$. Its pullback
+to the atlas $\Spec k$ is an ordinary one-dimensional vector space,
+but the retained sign action makes it a nontrivial stack line.
+Its tensor square is trivial.
+\end{enumerate}}
+
+\examplegloss{linearisation}{Linearisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\A^1$ with $t\cdot z=tz$, lift the action to a trivial
+line by $(z,v)\mapsto(tz,v)$. An invariant polynomial section
+satisfies $f(tz)=f(z)$, so it is constant.
+\item On the same underlying line use $(z,v)\mapsto(tz,tv)$.
+Invariance now requires $f(tz)=t f(z)$, giving the multiples
+of $z$. The bundle is unchanged, but its linearisation changes the sections.
+\end{enumerate}}
+
+\examplegloss{linearly-reductive-group}{Linearly reductive group}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a $\mu_2$-representation with sign operator $\sigma$,
+the map $v\mapsto(v+\sigma v)/2$ projects onto the invariant
+vectors. Applying this averaging to a lift of an invariant vector
+proves exactness of invariants.
+\item A rational $\Gm$-representation splits into weight spaces
+$V=\bigoplus_jV_j$. Its invariant space is the direct summand
+$V_0$; an equivariant surjection is surjective on this summand.
+\end{enumerate}}
+
+\examplegloss{locally-free-sheaf}{Locally free sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The sheaf $\OO_{\A^1}^{\oplus2}$ is locally free of rank
+two; the two constant basis sections trivialise it everywhere.
+Its fibre at every $k$-point is $k^2$.
+\item The line $\OO_{\PP^1}(1)$ is locally free of rank one:
+each standard affine chart has a local generator, and the generators
+are related by an invertible transition function. A global trivialisation
+is not required for local freeness.
+\end{enumerate}}
+
+\subsection*{N--R}
+
+\examplegloss{normal-line}{Normal line}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the origin in $\A^1_z$, the conormal is $(z)/(z^2)$
+and its dual is the normal line. It is an ordinary one-dimensional
+vector space over $k$.
+\item For $B\mu_2\subset[\A^1_z/\mu_2]$, the normal vector
+changes sign. This normal line has sign character, whereas the
+pullback of the coarse origin's ordinary normal line has trivial character.
+\end{enumerate}}
+
+\examplegloss{orbit}{Orbit}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Under sign on $\A^1$, the orbit of $1$ is $\{1,-1\}$,
+while the orbit of zero is $\{0\}$. The first has trivial
+stabiliser and the second has stabiliser $\mu_2$.
+\item Under scaling by $\Gm$, all nonzero points form one orbit.
+Its closure is the whole affine line and contains the separate
+zero orbit. The invariant affine quotient identifies the two orbits.
+\end{enumerate}}
+
+\examplegloss{polarisation}{Polarisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP^1$, both $\OO(1)$ and $\OO(2)$ are ample
+polarisations. Their spaces of sections have dimensions two and
+three, respectively, although the underlying curve is the same.
+\item On the lower-cut stack $\PP(2,1)$, the level-one polarisation
+is $\OO(1)$ with sign character at the boundary. It does not
+descend; its square $\OO(2)$ is the pullback of coarse $\OO_{\PP^1}(1)$.
+\end{enumerate}}
+
+\examplegloss{projective-degree}{Projective degree}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\A^1_x$ and $L=\OO_M$, write the section ring
+as $k[x,h]$, where $\deg_m x=0$ and $\deg_m h=1$.
+The function $x$ is a degree-zero element even though it is nonconstant.
+\item If $x$ has group weight two and $h$ has weight zero,
+then $xh$ has tensor degree one and group weight two;
+$h^2$ has tensor degree two and group weight zero.
+\end{enumerate}}
+
+\examplegloss{pullback}{Pullback}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For any map $f:T\to\A^1$, the pullback
+$f^*\OO_{\A^1}$ is $\OO_T$. The constant generator $1$
+pulls back to the constant generator $1$.
+\item For the coarse map $\pi:\PP(2,1)\to\PP^1$,
+$\pi^*\OO_{\PP^1}(1)=\OO_{\PP(2,1)}(2)$.
+Its boundary stabiliser acts trivially, because the fibre character
+is $2=0$ modulo $2$.
+\end{enumerate}}
+
+\examplegloss{pushforward}{Pushforward}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $\pi:[\A^1_z/\mu_2]\to\A^1_u$, $u=z^2$,
+the structure-sheaf pushforward corresponds to the invariant module
+$k[z]^{\mu_2}=k[u]$.
+\item The sign line has pushforward module $z k[u]$, the odd
+polynomials. This module is free of rank one over $k[u]$,
+but the original stack line does not descend: its origin fibre
+still has sign character.
+\end{enumerate}}
+
+\examplegloss{quasi-coherent-sheaf}{Quasi-coherent sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The module $k[z]$ gives the quasi-coherent sheaf
+$\OO_{\A^1}$. On the open set $z\ne0$, its module of sections
+is the localisation $k[z,z^{-1}]$.
+\item The module $k[z]/(z)$ gives a quasi-coherent sheaf supported
+at zero. Its fibre has dimension one at zero and zero away
+from zero, so it is not a locally free sheaf on $\A^1$.
+\end{enumerate}}
+
+\examplegloss{quotient-stack}{Quotient stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For multiplication on $\Gm$, the quotient
+$[\Gm/\Gm]\simeq\Spec k$. The torsor description recovers
+an ordinary quotient because the action is free and transitive.
+\item For the trivial action of $\mu_2$ on a point, the quotient
+is $B\mu_2$. Over a test scheme it remembers a $\mu_2$-torsor;
+over $k$ its one isomorphism class retains two automorphisms.
+\end{enumerate}}
+
+\examplegloss{regular-cutting-level}{Regular cutting level}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $M=\A^1$ with point weight one and trivially
+linearised $L=\OO_M$, the only fixed-component section weight
+is zero. Thus $d=1$ is regular, and the lower cut is the
+ordinary projective line.
+\item Replace the point weight by two. The same $d=1$ is
+still regular, but the lower cut is $\PP(2,1)$ with boundary
+stabiliser $\mu_2$. Regularity allows this finite stabiliser.
+\end{enumerate}}
+
+\examplegloss{representable-morphism}{Representable morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The atlas $\A^1\to[\A^1/\mu_2]$ is representable.
+After a base change $T\to[\A^1/\mu_2]$, it becomes the
+torsor $P\to T$, which is a finite étale morphism of schemes.
+\item In contrast, $B\mu_2\to\Spec k$ is not representable:
+base changing by $\Spec k$ leaves $B\mu_2$, whose nontrivial
+automorphisms prevent it from being an algebraic space.
+\end{enumerate}}
+
+\examplegloss{residual-action}{Residual action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP(2,1)$ the action $r\cdot[x:y]=[rx:y]$ commutes with the cutting action. On the interior coordinate $z=x/y^2$ it becomes $z\mapsto rz$. The point $z=0$ is fixed by this residual action, but has trivial stack stabiliser.
+\item The boundary $[1:0]$ is also fixed as an isomorphism class under the residual action. Its stack stabiliser is $\mu_2$, coming from $t^2=1$ in the cutting group. These automorphisms and the residual symmetry are different data.
+\end{enumerate}}
+
+\examplegloss{residual-gerbe-at-a-closed-point}{Residual gerbe at a closed point}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item At the origin of $[\A^1_z/\mu_2]$, the reduced closed substack is $B\mu_2$: it retains one point together with its identity and sign automorphisms. This is the residual gerbe of the origin.
+\item At a nonzero coarse point of the same quotient, the scalar action is free. The residual gerbe is an ordinary $\Spec k$. The two cases differ through their automorphisms, although both coarse points are ordinary points of $\A^1$.
+\end{enumerate}}
+
+\examplegloss{root-divisor}{Root divisor}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\sqrt[2]{(\A^1_u,\{0\})}=[\A^1_z/\mu_2]$, the root divisor is cut out by $z=0$, so it is $B\mu_2$. Since $u=z^2$, the pullback of the ordinary origin divisor is twice this divisor.
+\item On $\PP(2,1)$, the section $y$ vanishes simply along the root divisor $\cD=\{y=0\}$. The coarse boundary point has local parameter $y^2/x$, which vanishes to order two upstairs. Thus again $\pi^*D=2\cD$.
+\end{enumerate}}
+
+\examplegloss{root-gerbe}{Root gerbe}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Square roots of the trivial line on $\Spec k$ form $B\mu_2$. The root is a line with a specified square trivialisation. Multiplication by $-1$ preserves that trivialisation, giving a nonidentity automorphism.
+\item Square roots of $\OO_{\A^1}$ form $\A^1\times B\mu_2$. Every geometric point, including nonzero points, has a $\mu_2$ stabiliser. This illustrates why omitting a root section leaves stabilisers everywhere, rather than only over a divisor.
+\end{enumerate}}
+
+\examplegloss{root-stack-of-a-divisor}{Root stack of a divisor}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Taking the square root of the origin divisor in $\A^1_u$ gives $[\A^1_z/\mu_2]$ with $u=z^2$. Away from zero the root section is nonzero and removes all automorphisms; at zero its sign ambiguity remains.
+\item Taking the square root of one point $D\subset\PP^1$ gives $\PP(2,1)$. Its ordinary affine chart away from $D$ and cyclic quotient chart near $D$ show explicitly how a root stack modifies just the chosen divisor.
+\end{enumerate}}
+
+\subsection*{S--Z}
+
+\examplegloss{scheme-theoretic-fibre}{Scheme-theoretic fibre}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the scheme map $\A^1_z\to\A^1_u$, $u=z^2$, the fibre over zero is $\Spec k[z]/(z^2)$. It has one underlying point but retains the nonzero nilpotent class of $z$.
+\item For the stack coarse map $[\A^1_z/\mu_2]\to\A^1_u$, base change gives $[\Spec k[z]/(z^2)/\mu_2]$. Its reduction is $B\mu_2$. Merely listing its geometric objects would miss the thickening.
+\end{enumerate}}
+
+\examplegloss{section-ring}{Section ring}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\PP^1$ and $L=\OO(1)$, sections of $L^m$ are degree-$m$ homogeneous polynomials in $X_0,X_1$. Thus the section ring is $k[X_0,X_1]$, with both variables in degree one.
+\item For $M=\A^1_x$ and $L=\OO_M$, introduce its constant degree-one section $h$. Then $R=k[x,h]$, with $\deg x=0$ and $\deg h=1$. The nonconstant function $x$ belongs to the degree-zero algebra.
+\end{enumerate}}
+
+\examplegloss{section-weight}{Section weight}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item If $t\cdot x=t^2x$ on $\A^1$ and $L=\OO$ has trivial fibre action, direct pullback gives $x(tp)=t^2x(p)$. The section $x$ has weight $2$, and $x^3$ has weight $6$.
+\item Over a fixed point, give a line geometric fibre action $v\mapsto tv$. The section action includes the inverse fibre map, so its constant nonzero section has weight $-1$. This is the sign used for the level-one twist.
+\end{enumerate}}
+
+\examplegloss{semiprojective}{Semiprojective}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\A^1$, the affinisation is the identity $\A^1\to\Spec k[x]$. An isomorphism is projective, so $\A^1$ is semiprojective in the convention here, although it is not proper over $k$.
+\item For $M=\PP^1$, all global regular functions are constant. Its affinisation is therefore the projective morphism $\PP^1\to\Spec k$. These two examples show how the convention includes both affine and projective varieties.
+\end{enumerate}}
+
+\examplegloss{semistable-point}{Semistable point}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item In the lower cut with point weights $(2,1)$ and level $1$, $(0,1)$ is semistable because $y\one_1$ is nonzero there. The point $(1,0)$ is semistable because $x\one_1^2$ is nonzero there.
+\item At level $0$, the constant twist section has positive tensor degree and weight zero, so it is nonzero even at $(0,0)$. That point is semistable although its stabiliser is the full group $\Gm$.
+\end{enumerate}}
+
+\examplegloss{separated-stack}{Separated stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The scheme $\A^1$, viewed as a stack, is separated: its diagonal in $\A^1\times\A^1$ is the closed subscheme $x=y$. A closed immersion is proper.
+\item The stack $B\mu_2$ is also separated. After trivialising two torsors, its isomorphism sheaf is a copy of the finite group $\mu_2$. Its diagonal is finite and therefore proper, despite its nontrivial automorphisms.
+\end{enumerate}}
+
+\examplegloss{smooth-stack}{Smooth stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The stack $[\A^1/\mu_2]$ is smooth because $\A^1$ is a smooth étale atlas. Its coarse space is also a smooth affine line, with coordinate $z^2$.
+\item The stack $[\A^2/\mu_2]$ for simultaneous sign change is smooth for the same atlas reason. Its coarse space is the singular surface $ac=b^2$, with $a=x^2$, $b=xy$, $c=y^2$. Smoothness of the stack does not force smoothness of its coarse space.
+\end{enumerate}}
+
+\examplegloss{stabiliser-or-isotropy-group}{Stabiliser or isotropy group}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item At $z=0$ in $[\A^1_z/\mu_2]$, both $1$ and $-1$ fix the representative. The stabiliser is $\mu_2$, and it acts by sign on the tangent direction.
+\item At any point of $\PP(2,1)$ with $y\ne0$, a stabilising $t$ must satisfy $ty=y$, hence $t=1$. Its stabiliser is trivial even though the group used in the quotient presentation is one-dimensional.
+\end{enumerate}}
+
+\examplegloss{stable-point}{Stable point}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For scalar multiplication, use the trivial line of geometric fibre character $+1$, whose semistable locus is $\A^2\setminus0$. Each orbit is a line with the origin removed. It is closed within this punctured plane and has trivial stabiliser. These points give the usual stable presentation of $\PP^1$.
+\item For weights $(2,1)$ with the same fibre character $+1$, the orbit of $(1,0)$ is the nonzero $x$-axis. It is closed in $\A^2\setminus0$ and has stabiliser $\mu_2$. Thus this point is stable, although the action there is not free.
+\end{enumerate}}
+
+\examplegloss{stack}{Stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The scheme $\A^1$ gives a stack whose objects over $T$ are regular functions on $T$ and whose only arrows are identities. Compatible local functions glue, so ordinary schemes fit the stack axioms.
+\item The stack $B\mu_2$ instead assigns to $T$ its groupoid of $\mu_2$-torsors. These torsors and their isomorphisms glue, while geometric objects retain sign automorphisms. The same gluing principle accommodates nontrivial symmetries.
+\end{enumerate}}
+
+\examplegloss{tame-stack}{Tame stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $B\mu_2$, a vector space with involution $\sigma$ is pushed to its invariant part. The averaging operator $v\mapsto(v+\sigma v)/2$ makes taking invariants exact. This exhibits tameness over the coarse point.
+\item On $[\A^1/\mu_2]$, the same averaging works for equivariant modules over $k[z]$. Their invariant modules form the coarse pushforward over $k[z^2]$, and exact sequences remain exact. Tameness does not remove the sign characters on stack line fibres.
+\end{enumerate}}
+
+\examplegloss{tensor-degree}{Tensor degree}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP^1$, the monomial $X_0^2$ is a section of $\OO(1)^{\otimes2}=\OO(2)$, so its tensor degree is $2$. This degree counts powers of the line bundle.
+\item On the affine-line example with $t\cdot x=t^2x$, the element $x^7h^3$ lies in $H^0(\A^1,\OO^{\otimes3})$. Its tensor degree is $3$, while its group weight is $14$. These are independent indices.
+\end{enumerate}}
+
+\examplegloss{topology-in-descent-theory}{Topology, in descent theory}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The two standard affine charts of $\PP^1$ form a Zariski cover. A line bundle can be described by trivial lines on these charts and a transition function on their overlap.
+\item The squaring map $\Gm\to\Gm$ is an étale cover. It allows a square root of the target coordinate after base change, although no such root exists on a nonempty Zariski open. Changing the topology changes which local choices are available for gluing.
+\end{enumerate}}
+
+\examplegloss{torsor}{Torsor}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The product $\Gm\times T\to T$, with multiplication on the first factor, is a trivial $\Gm$-torsor. Its identity section gives the chosen trivialisation; multiplying that section by a unit gives another one.
+\item The map $\Spec k[s,s^{-1}]\to\Spec k[t,t^{-1}]$, $t=s^2$, is a $\mu_2$-torsor. It has no global section because $t$ has no square root in $k[t,t^{-1}]$, but it becomes trivial after pulling back along itself.
+\end{enumerate}}
+
+\examplegloss{torus}{Torus}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The group $\Gm$ is a one-dimensional torus. It acts on $\A^1$ by scalar multiplication, or by the weighted formula $x\mapsto t^2x$. Its characters are indexed by integers.
+\item The product $\Gm\times\Gm$ is a two-dimensional torus, acting on $\A^2$ by $(t_1,t_2)\cdot(x,y)=(t_1x,t_2y)$. A character has the form $t_1^a t_2^b$, indexed by the pair $(a,b)\in\mathbb Z^2$.
+\end{enumerate}}
+
+\examplegloss{transporter}{Transporter}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the sign action on $\A^1$, the transporter from $1$ to $-1$ is $\{-1\}$. It is the space of arrows between these two representatives of the same quotient object.
+\item The transporter from $0$ to itself is all of $\mu_2$, because both group elements fix zero. Thus the same transporter construction gives isomorphisms between different representatives and automorphisms when the representatives coincide.
+\end{enumerate}}
+
+\examplegloss{unramified-morphism}{Unramified morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The map $\mathbb G_{m,s}\to\mathbb G_{m,t}$, $t=s^2$, is unramified: the relative differential relation $2s\,ds=0$ forces $ds=0$ because $2s$ is invertible. This map is also flat, hence étale.
+\item The closed inclusion $\{0\}\hookrightarrow\A^1$ is unramified, since a point has no relative differentials over $\A^1$. It is not flat and is not étale. Thus unramified alone does not mean that a morphism is an étale chart.
+\end{enumerate}}
+
+\examplegloss{vector-bundle}{Vector bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The sheaf $\OO_{\A^1}^{\oplus2}$ is the trivial rank-two vector bundle. Its fibre at every $k$-point is $k^2$, and its two standard basis sections give a global frame.
+\item On $B\mu_2$, take the representation $\sigma(v_1,v_2)=(v_1,-v_2)$. It gives a rank-two vector bundle with one trivial and one sign summand. Its nontrivial fibre action prevents descent to a vector bundle on the coarse point.
+\end{enumerate}}
+
+\examplegloss{veronese-subring}{Veronese subring}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $k[u,v]$ with both variables in degree one, the second Veronese is generated by $u^2,uv,v^2$. After regrading these have degree one and satisfy $(uv)^2=u^2v^2$. Its projective spectrum is still $\PP^1$.
+\item For $k[A,B]$ with degrees $(2,1)$, every even-degree monomial is a product of $A$ and $B^2$. The second Veronese is therefore $k[A,B^2]$, with both generators in regraded degree one, giving the coarse projective line of the toy cut.
+\end{enumerate}}
+
+\examplegloss{weight}{Weight}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The point action $x\mapsto t^2x$ gives tangent weight $2$ at the origin. With the direct-pullback action used here, the coordinate function $x$ also has weight $2$.
+\item Give a line over a fixed point the geometric fibre action $v\mapsto t^3v$. Its fibre weight is $3$, but its constant section has weight $-3$ under the declared section convention. Naming the representation is essential when stating a weight.
+\end{enumerate}}
+
+\examplegloss{weighted-projective-stack}{Weighted projective stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item With weights $(1,1)$ on $\A^2\setminus0$, the action is free and the quotient stack $\PP(1,1)$ is the ordinary projective line. Either nonzero coordinate can be normalised without a finite ambiguity.
+\item With weights $(2,1)$, the quotient is $\PP(2,1)$. The chart $y\ne0$ is $\A^1$, while the boundary has stabiliser $\mu_2$. Its coarse space is again $\PP^1$, so the weights change stack geometry without changing this coarse curve.
+\end{enumerate}}
+
+\examplegloss{weight-space}{Weight space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $k[x]$ with $x\mapsto t^2x$ under direct pullback, the weight-$2a$ space is $k x^a$ for $a\ge0$. Every odd-weight space is zero. The invariant part is the weight-zero space $k$.
+\item For the $\mu_2$-representation $k^2$ with action $(v_1,v_2)\mapsto(v_1,-v_2)$, the two coordinate axes are the trivial and sign weight spaces. Here the weight labels are residues modulo $2$.
+\end{enumerate}}
+
+\examplegloss{zariski-versus-etale-local}{Zariski versus étale local}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\mathbb G_{m,t}$, an equation $s^2=t$ has no solution on any nonempty Zariski open: it has no solution even in $k(t)$. Pulling back by the étale squaring cover supplies exactly such a root.
+\item On the chart $x\ne0$ of $\PP(2,1)$, setting $x=1$ requires choosing $t$ with $t^2=x^{-1}$, which is possible étale locally and leaves a sign ambiguity. On $y\ne0$, setting $y=1$ instead uses the unique regular choice $t=y^{-1}$.
+\end{enumerate}}
+
+\end{document}

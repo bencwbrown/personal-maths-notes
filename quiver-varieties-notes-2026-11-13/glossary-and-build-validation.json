@@ -1,0 +1,658 @@
+{
+  "counts": {
+    "pages": 37,
+    "glossary_definitions": 64,
+    "examples_glossary_entries": 64,
+    "examples_in_examples_glossary": 128,
+    "exercises": 14,
+    "resolved_internal_link_annotations": 276,
+    "external_link_annotations": 6
+  },
+  "tex_log_issues": [],
+  "unresolved_internal_links": [],
+  "qpdf_check_exit_code": 0,
+  "pdf_sha256": "bd4aa5fd39503d941620ffb89079f90a287c8f6d6fc3c212881bcd3049902f1f",
+  "glossary_entries": [
+    {
+      "term": "Affine quotient",
+      "slug": "affine-quotient",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 26,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Arrow",
+      "slug": "arrow",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 26,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Automorphism",
+      "slug": "automorphism",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 26,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Base-change group",
+      "slug": "base-change-group",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 26,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Character",
+      "slug": "character",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 26,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Commutator",
+      "slug": "commutator",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cotangent bundle",
+      "slug": "cotangent-bundle",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cyclic stability",
+      "slug": "cyclic-stability",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cyclic vector",
+      "slug": "cyclic-vector",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Deformed moment level",
+      "slug": "deformed-moment-level",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Dimension vector",
+      "slug": "dimension-vector",
+      "gloss_page": 19,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 27,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Direct sum",
+      "slug": "direct-sum",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Doubled quiver",
+      "slug": "doubled-quiver",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Effective group action",
+      "slug": "effective-group-action",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Euler form",
+      "slug": "euler-form",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Family of representations",
+      "slug": "family-of-representations",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Framing",
+      "slug": "framing",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 28,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Gauge fixing",
+      "slug": "gauge-fixing",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Geometric quotient",
+      "slug": "geometric-quotient",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "GIT quotient",
+      "slug": "git-quotient",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Grassmannian",
+      "slug": "grassmannian",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Hamiltonian reduction",
+      "slug": "hamiltonian-reduction",
+      "gloss_page": 20,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Hilbert--Chow morphism",
+      "slug": "hilbert-chow-morphism",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 29,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Hilbert scheme of points",
+      "slug": "hilbert-scheme-of-points",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Indecomposable representation",
+      "slug": "indecomposable-representation",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Invariant function",
+      "slug": "invariant-function",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Isomorphism of representations",
+      "slug": "isomorphism-of-representations",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Jordan quiver",
+      "slug": "jordan-quiver",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "King stability",
+      "slug": "king-stability",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Kronecker quiver",
+      "slug": "kronecker-quiver",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Lie algebra",
+      "slug": "lie-algebra",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Moment map",
+      "slug": "moment-map",
+      "gloss_page": 21,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Nakajima quiver variety",
+      "slug": "nakajima-quiver-variety",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Orbit",
+      "slug": "orbit",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Orbit closure",
+      "slug": "orbit-closure",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Path",
+      "slug": "path",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Path algebra",
+      "slug": "path-algebra",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Preprojective relation",
+      "slug": "preprojective-relation",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Projective morphism",
+      "slug": "projective-morphism",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Quiver",
+      "slug": "quiver",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Quiver representation",
+      "slug": "quiver-representation",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Quotient stack",
+      "slug": "quotient-stack",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Rank-one operator",
+      "slug": "rank-one-operator",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Relation",
+      "slug": "relation",
+      "gloss_page": 22,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Representation space",
+      "slug": "representation-space",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Resolution of singularities",
+      "slug": "resolution-of-singularities",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Scalar stabiliser",
+      "slug": "scalar-stabiliser",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Semi-invariant",
+      "slug": "semi-invariant",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Semiprojectivity",
+      "slug": "semiprojectivity",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Semisimple representation",
+      "slug": "semisimple-representation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Semistable representation",
+      "slug": "semistable-representation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "S-equivalence",
+      "slug": "s-equivalence",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Simple representation",
+      "slug": "simple-representation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Stabiliser",
+      "slug": "stabiliser",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Stable representation",
+      "slug": "stable-representation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Subrepresentation",
+      "slug": "subrepresentation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Symmetric product",
+      "slug": "symmetric-product",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Symplectic form",
+      "slug": "symplectic-form",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Symplectic quotient",
+      "slug": "symplectic-quotient",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Trace pairing",
+      "slug": "trace-pairing",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Variation of stability",
+      "slug": "variation-of-stability",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Vertex",
+      "slug": "vertex",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Weight of a scaling action",
+      "slug": "weight-of-a-scaling-action",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Zero moment fibre",
+      "slug": "zero-moment-fibre",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    }
+  ],
+  "scope": "Checks compilation, PDF structure and link targets; mathematical review is described separately."
+}

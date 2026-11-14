@@ -1,0 +1,290 @@
+\examplegloss{fibre-product-of-stacks}{Fibre product of stacks}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For ordinary schemes, $\A^1\times_{\Spec k}\Spec k=\A^1$.
+There are no extra isomorphism choices, because scheme-valued objects
+have only identity arrows.
+\item For the atlas $\Spec k\to B\mu_2$, the fibre product
+$\Spec k\times_{B\mu_2}\Spec k$ is $\mu_2$, consisting of two points.
+The two points are the two isomorphisms between the trivial torsor and itself.
+\end{enumerate}}
+
+\examplegloss{flat-and-faithfully-flat}{Flat and faithfully flat}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The map $\A^1_z\to\A^1_u$, $u=z^2$, is faithfully flat.
+Indeed, $k[z]$ is a free $k[u]$-module with basis $1,z$, and the
+map is surjective, including over $u=0$.
+\item The open immersion $\Gm\hookrightarrow\A^1$ is flat because
+its ring map is localisation $k[z]\to k[z,z^{-1}]$. It is not
+faithfully flat: its image omits the origin.
+\end{enumerate}}
+
+\examplegloss{fppf-topology}{Fppf topology}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The single map $\A^1_z\to\A^1_u$, $u=z^2$, is an fppf cover:
+it is finite, flat, and surjective. It is not an étale cover, since
+it is ramified at zero.
+\item Restricting to $\Gm$ gives $s\mapsto s^2$, which is both
+étale and fppf. Over this cover the unit $t$ on the base has the
+chosen square root $s$.
+\end{enumerate}}
+
+\examplegloss{free-action}{Free action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Multiplication of $\Gm$ on itself is free: $tx=x$ with
+$x\ne0$ forces $t=1$. The quotient stack $[\Gm/\Gm]$ is
+the ordinary one-point scheme.
+\item The sign action of $\mu_2$ on $\Gm$ is free, since
+$-z=z$ is impossible for $z\ne0$ in characteristic zero.
+The same action on $\A^1$ is not free: zero has stabiliser $\mu_2$.
+\end{enumerate}}
+
+\examplegloss{functor-of-points}{Functor of points}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A morphism $T\to\A^1$ is exactly a global regular function
+on $T$. Thus $\A^1(T)=\Gamma(T,\OO_T)$; pulling back a point
+means pulling back that function.
+\item For $T=\Spec k[\varepsilon]/(\varepsilon^2)$, the functions
+$0$ and $\varepsilon$ give different $T$-points of $\A^1$.
+Both restrict to the origin over $\Spec k$, so ordinary geometric
+points alone do not distinguish them.
+\end{enumerate}}
+
+\examplegloss{geometric-fibre-weight}{Geometric fibre weight}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On a line over a fixed point, the action $t\cdot v=t^2v$
+has geometric fibre weight $2$. In the notes' section convention,
+a nonzero constant section of this line has weight $-2$.
+\item The sign line on $B\mu_2$ has action $v\mapsto-v$.
+Its fibre character is $1$ modulo $2$; its tensor square has
+trivial character, although the original line does not.
+\end{enumerate}}
+
+\examplegloss{geometric-point}{Geometric point}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The assignment $z\mapsto3$ defines a geometric point
+$\Spec k\to\A^1_z$. Its only automorphism as a point of
+the scheme is the identity.
+\item The origin defines a geometric object of $[\A^1/\mu_2]$
+for the sign action. It has two automorphisms, $1$ and $-1$.
+Its image in the coarse line is an ordinary point without these arrows.
+\end{enumerate}}
+
+\examplegloss{git-quotient}{GIT quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the weight-$(1,1)$ action on $\A^2$, with positive
+linearisation, the semistable locus is $\A^2\setminus0$ and
+the quotient is $\Proj k[x,y]=\PP^1$. Here both variables
+have tensor degree one.
+\item For weights $(2,1)$ the quotient stack is $\PP(2,1)$,
+while the GIT quotient is $\Proj k[A,B]$ with degrees $(2,1)$.
+Its second Veronese is $k[A,B^2]$, giving coarse space $\PP^1$.
+\end{enumerate}}
+
+\examplegloss{good-moduli-space}{Good moduli space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The coarse map $[\A^1/\mu_2]\to\A^1_u$, $u=z^2$,
+is also a good moduli space. Functions downstairs are the even
+polynomials, and taking invariants is exact by averaging.
+\item For scaling, $[\A^1/\Gm]\to\Spec k$ is good: functions
+of weight zero are constants, and taking weight-zero parts is exact.
+It identifies zero and the nonzero orbit, so it is not coarse.
+\end{enumerate}}
+
+\examplegloss{groupoid}{Groupoid}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A set $\{a,b\}$ becomes a groupoid by giving each object
+only its identity arrow. It remembers two objects and no nontrivial
+symmetries; this is a discrete groupoid.
+\item A one-object groupoid with automorphism group $\mu_2$
+has two arrows, identity and sign, with sign composed with itself
+equal to identity. It has just one isomorphism class but retains a symmetry.
+\end{enumerate}}
+
+\examplegloss{groupoid-presentation}{Groupoid presentation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Using the identity atlas of $\A^1$, the arrow space is
+$\A^1\times_{\A^1}\A^1=\A^1$ and both projections are
+identity. There is only one arrow at each object.
+\item For $B\mu_2$, take object scheme $\Spec k$ and arrow
+scheme $\mu_2$. Both source and target go to the one object,
+and arrow composition is multiplication in $\mu_2$.
+\end{enumerate}}
+
+\examplegloss{inertia-stack}{Inertia stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the scheme $\A^1$, every object has only the identity
+automorphism. Consequently $I\A^1\simeq\A^1$: choosing an
+automorphism adds no data.
+\item For the sign quotient, the identity automorphism is available
+everywhere, while sign fixes only zero. Hence
+$I[\A^1/\mu_2]\simeq[\A^1/\mu_2]\sqcup B\mu_2$.
+The second component records the extra automorphism at the origin.
+\end{enumerate}}
+
+\examplegloss{invariant-function-or-section}{Invariant function or section}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Under $z\mapsto-z$, the function $z^2$ is invariant:
+$(-z)^2=z^2$. The function $z$ is not invariant, since it
+changes sign.
+\item Give the trivial line over $\A^1$ sign action on its fibre.
+Then $f(z)=z$ is an equivariant section because $f(-z)=-f(z)$.
+It defines a section of the line on the quotient stack despite
+its coefficient function being noninvariant.
+\end{enumerate}}
+
+\examplegloss{isomorphism-sheaf}{Isomorphism sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Automorphisms of the trivial line on $T$ are multiplication
+by invertible functions. Its isomorphism sheaf with itself is
+$\Gm\times T$, rather than the additive line $\A^1\times T$:
+zero multiplication is not invertible.
+\item The trivial $\mu_2$-torsor over $T$ has automorphism sheaf
+$\mu_2\times T$. It is the pullback of the diagonal of
+$B\mu_2$ along the corresponding pair of identical families.
+\end{enumerate}}
+
+\examplegloss{line-bundle}{Line bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The trivial line $\OO_{\A^1}$ has sections $k[z]$ and
+one-dimensional fibres. Its nowhere-zero section $1$ gives a
+global trivialisation.
+\item The sign character defines a line on $B\mu_2$. Its pullback
+to the atlas $\Spec k$ is an ordinary one-dimensional vector space,
+but the retained sign action makes it a nontrivial stack line.
+Its tensor square is trivial.
+\end{enumerate}}
+
+\examplegloss{linearisation}{Linearisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\A^1$ with $t\cdot z=tz$, lift the action to a trivial
+line by $(z,v)\mapsto(tz,v)$. An invariant polynomial section
+satisfies $f(tz)=f(z)$, so it is constant.
+\item On the same underlying line use $(z,v)\mapsto(tz,tv)$.
+Invariance now requires $f(tz)=t f(z)$, giving the multiples
+of $z$. The bundle is unchanged, but its linearisation changes the sections.
+\end{enumerate}}
+
+\examplegloss{linearly-reductive-group}{Linearly reductive group}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a $\mu_2$-representation with sign operator $\sigma$,
+the map $v\mapsto(v+\sigma v)/2$ projects onto the invariant
+vectors. Applying this averaging to a lift of an invariant vector
+proves exactness of invariants.
+\item A rational $\Gm$-representation splits into weight spaces
+$V=\bigoplus_jV_j$. Its invariant space is the direct summand
+$V_0$; an equivariant surjection is surjective on this summand.
+\end{enumerate}}
+
+\examplegloss{locally-free-sheaf}{Locally free sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The sheaf $\OO_{\A^1}^{\oplus2}$ is locally free of rank
+two; the two constant basis sections trivialise it everywhere.
+Its fibre at every point is $k^2$.
+\item The line $\OO_{\PP^1}(1)$ is locally free of rank one:
+each standard affine chart has a local generator, and the generators
+are related by an invertible transition function. A global trivialisation
+is not required for local freeness.
+\end{enumerate}}
+
+\examplegloss{normal-line}{Normal line}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the origin in $\A^1_z$, the conormal is $(z)/(z^2)$
+and its dual is the normal line. It is an ordinary one-dimensional
+vector space over $k$.
+\item For $B\mu_2\subset[\A^1_z/\mu_2]$, the normal vector
+changes sign. This normal line has sign character, whereas the
+pullback of the coarse origin's ordinary normal line has trivial character.
+\end{enumerate}}
+
+\examplegloss{orbit}{Orbit}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Under sign on $\A^1$, the orbit of $1$ is $\{1,-1\}$,
+while the orbit of zero is $\{0\}$. The first has trivial
+stabiliser and the second has stabiliser $\mu_2$.
+\item Under scaling by $\Gm$, all nonzero points form one orbit.
+Its closure is the whole affine line and contains the separate
+zero orbit. The invariant affine quotient identifies the two orbits.
+\end{enumerate}}
+
+\examplegloss{polarisation}{Polarisation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\PP^1$, both $\OO(1)$ and $\OO(2)$ are ample
+polarisations. Their spaces of sections have dimensions two and
+three, respectively, although the underlying curve is the same.
+\item On the lower-cut stack $\PP(2,1)$, the level-one polarisation
+is $\OO(1)$ with sign character at the boundary. It does not
+descend; its square $\OO(2)$ is the pullback of coarse $\OO_{\PP^1}(1)$.
+\end{enumerate}}
+
+\examplegloss{projective-degree}{Projective degree}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $M=\A^1_x$ and $L=\OO_M$, write the section ring
+as $k[x,h]$, where $\deg_m x=0$ and $\deg_m h=1$.
+The function $x$ is a degree-zero element even though it is nonconstant.
+\item If $x$ has group weight two and $h$ has weight zero,
+then $xh$ has tensor degree one and group weight two;
+$h^2$ has tensor degree two and group weight zero.
+\end{enumerate}}
+
+\examplegloss{pullback}{Pullback}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For any map $f:T\to\A^1$, the pullback
+$f^*\OO_{\A^1}$ is $\OO_T$. The constant generator $1$
+pulls back to the constant generator $1$.
+\item For the coarse map $\pi:\PP(2,1)\to\PP^1$,
+$\pi^*\OO_{\PP^1}(1)=\OO_{\PP(2,1)}(2)$.
+Its boundary stabiliser acts trivially, because the fibre character
+is $2=0$ modulo $2$.
+\end{enumerate}}
+
+\examplegloss{pushforward}{Pushforward}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $\pi:[\A^1_z/\mu_2]\to\A^1_u$, $u=z^2$,
+the structure-sheaf pushforward corresponds to the invariant module
+$k[z]^{\mu_2}=k[u]$.
+\item The sign line has pushforward module $z k[u]$, the odd
+polynomials. This module is free of rank one over $k[u]$,
+but the original stack line does not descend: its origin fibre
+still has sign character.
+\end{enumerate}}
+
+\examplegloss{quasi-coherent-sheaf}{Quasi-coherent sheaf}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The module $k[z]$ gives the quasi-coherent sheaf
+$\OO_{\A^1}$. On the open set $z\ne0$, its module of sections
+is the localisation $k[z,z^{-1}]$.
+\item The module $k[z]/(z)$ gives a quasi-coherent sheaf supported
+at zero. Its fibre has dimension one at zero and zero away
+from zero, so it is not a locally free sheaf on $\A^1$.
+\end{enumerate}}
+
+\examplegloss{quotient-stack}{Quotient stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For multiplication on $\Gm$, the quotient
+$[\Gm/\Gm]\simeq\Spec k$. The torsor description recovers
+an ordinary quotient because the action is free and transitive.
+\item For the trivial action of $\mu_2$ on a point, the quotient
+is $B\mu_2$. Over a test scheme it remembers a $\mu_2$-torsor;
+over $k$ its one isomorphism class retains two automorphisms.
+\end{enumerate}}
+
+\examplegloss{regular-cutting-level}{Regular cutting level}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $M=\A^1$ with point weight one and trivially
+linearised $L=\OO_M$, the only fixed-component section weight
+is zero. Thus $d=1$ is regular, and the lower cut is the
+ordinary projective line.
+\item Replace the point weight by two. The same $d=1$ is
+still regular, but the lower cut is $\PP(2,1)$ with boundary
+stabiliser $\mu_2$. Regularity allows this finite stabiliser.
+\end{enumerate}}
+
+\examplegloss{representable-morphism}{Representable morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The atlas $\A^1\to[\A^1/\mu_2]$ is representable.
+After a base change $T\to[\A^1/\mu_2]$, it becomes the
+torsor $P\to T$, which is a finite étale morphism of schemes.
+\item In contrast, $B\mu_2\to\Spec k$ is not representable:
+base changing by $\Spec k$ leaves $B\mu_2$, whose nontrivial
+automorphisms prevent it from being an algebraic space.
+\end{enumerate}}

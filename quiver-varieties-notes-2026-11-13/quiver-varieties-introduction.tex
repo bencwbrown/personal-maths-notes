@@ -1,0 +1,1779 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array,enumitem,needspace}
+\usepackage{tikz-cd,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{bookmark}
+\hypersetup{pdftitle={A first introduction to quiver varieties},pdfauthor={Notes prepared for the AlgebraicCutting project}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=3pt,topsep=5pt}
+\numberwithin{equation}{section}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{example}[definition]{Example}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{exercise}{Exercise}
+\newcommand{\A}{\mathbb A}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Gm}{\mathbb G_m}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\Rep}{\operatorname{Rep}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Mat}{\operatorname{Mat}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\M}{\mathfrak M}
+\newcommand{\vv}{\mathbf v}
+\newcommand{\ww}{\mathbf w}
+\newcommand{\reading}[1]{\par\smallskip\textit{Reading checkpoint.} #1\par}
+\newcommand{\source}[1]{\par\smallskip{\small\textit{Reference.} #1}\par}
+\title{A first introduction to quiver varieties\\[5pt]
+\large Linear maps, stability, moment maps, and elementary resolutions}
+\author{Notes prepared for the AlgebraicCutting project}
+\date{13 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+These notes assume Hartshorne, Chapters I--II, and elementary linear
+algebra. No previous representation theory, geometric invariant theory,
+or symplectic geometry is required. Starting with diagrams of vector
+spaces, we explain changes of basis, orbit closures, stability, and
+framing. Doubling the arrows introduces a cotangent space, an explicit
+symplectic form, and the moment-map equations defining Nakajima quiver
+varieties. The main examples are projective spaces, cotangent
+Grassmannians, the resolution of a quadratic cone by $T^*\PP^1$, and
+small Hilbert schemes of points on the plane. We distinguish projectivity
+from resolution, unframed scalar automorphisms from framed freeness,
+and two different scaling actions. Worked calculations, exercises with
+solutions, a glossary, and a linked Examples Glossary accompany the
+definitions.
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{The route through the construction}
+\label{sec:roadmap}
+
+We work over $\mathbb C$. A quiver is a finite directed graph, and a
+representation puts a vector space at each vertex and a linear map on
+each arrow. Fixing bases turns the maps into a point of an affine
+space. Forgetting the bases becomes a quotient problem.
+
+This already gives a supply of moduli questions involving familiar
+matrices. The Nakajima construction adds three features: reverse
+arrows, fixed framing spaces, and moment-map equations. A stability
+condition then selects the points to quotient. The route is
+\[
+\begin{gathered}
+\text{diagrams of linear maps}\longrightarrow\text{changes of basis}
+\longrightarrow\text{invariants and stability}\\
+\longrightarrow\text{framing and doubling}\longrightarrow
+\text{moment-map equations}\longrightarrow\text{quiver varieties}.
+\end{gathered}
+\]
+We develop each step before using it. The phrase \emph{quiver variety}
+is sometimes used broadly for moduli of quiver representations. Here
+our main destination is the \emph{Nakajima} construction, defined in
+Section~\ref{sec:definition}. The earlier representation quotients
+are preparation for that construction.
+
+The elementary calculations use affine schemes, $\Proj$, tangent and
+cotangent spaces, and linear algebra. The invariant-theoretic existence
+results and the general Hilbert-scheme theorem are cited tools, not
+hidden prerequisites. The real/hyperkähler viewpoint is optional.
+Appendix~\ref{app:tools} lists the general results used without proof
+and gives a reading route through books in the Literature folder.
+
+The glossary in Appendix~\ref{app:glossary} and its Examples Glossary
+in Appendix~\ref{app:examples-glossary} are linked in both directions.
+The earlier stack and Higgs notes are useful companions, but are not
+assumed here.
+
+\section{Quivers and their representations}
+\label{sec:quivers}
+
+\begin{definition}
+A quiver $Q$ consists of a finite vertex set $Q_0$, a finite arrow set
+$Q_1$, and tail and head maps $t,h:Q_1\to Q_0$. A representation is
+a collection of finite-dimensional vector spaces $V_k$ and maps
+$B_a:V_{t(a)}\to V_{h(a)}$. Its dimension vector is
+$\vv=(v_k)_{k\in Q_0}$, with $v_k=\dim V_k$.
+\end{definition}
+
+Multiple arrows and loops are allowed. Our notation keeps the head and
+tail visible because their order determines matrix products later.
+For example,
+\[
+\begin{tikzcd}
+ 1\arrow[r,"a"] &2
+\end{tikzcd}
+\qquad\leadsto\qquad
+\begin{tikzcd}
+ \mathbb C^{v_1}\arrow[r,"B_a"]&\mathbb C^{v_2}.
+\end{tikzcd}
+\]
+For one vertex and one loop, a representation is one endomorphism.
+For two arrows $1\rightrightarrows2$, it is a pair of maps with the
+same source and target, not necessarily a pair of endomorphisms.
+
+\begin{definition}
+A subrepresentation consists of subspaces $S_k\subset V_k$ with
+$B_a(S_{t(a)})\subset S_{h(a)}$ for every arrow. A path is a sequence
+of composable arrows; its map is their composition, with the first
+arrow acting first. A relation is a linear combination of paths with
+the same endpoints required to act as zero.
+\end{definition}
+
+For a single nonzero map $\mathbb C\to\mathbb C$, the collection
+$(0,\mathbb C)$ is a subrepresentation, while $(\mathbb C,0)$ is not.
+For a loop, subrepresentations are invariant subspaces. Thus ordinary
+invariant-subspace questions are already quiver questions.
+
+\subsection{A short algebra translation}
+The path algebra $\mathbb C Q$ has paths as a vector-space basis,
+including a length-zero path $e_k$ at each vertex. Multiplication is
+composition when endpoints match and zero otherwise. A representation
+is equivalently a module on $\bigoplus_kV_k$, with the $e_k$ projecting
+to its vertex spaces and arrows acting by the declared maps.
+
+This algebra need not be commutative. One loop gives $\mathbb C[x]$;
+two loops give the free associative algebra $\mathbb C\langle x,y\rangle$.
+Imposing $xy-yx=0$ gives $\mathbb C[x,y]$. The latter translation
+will turn commuting matrices into ideals of points on the plane.
+
+The path algebra and the coordinate ring of a representation space
+play different roles. The path algebra describes the maps and their
+compositions. The coordinate ring is the commutative polynomial ring
+in the entries of those maps, describing the parameter space.
+
+\source{Kirillov \cite[Chapter 1]{Kir} and Crawley-Boevey
+\cite[\S1]{CB} develop this representation language from the beginning.}
+
+\section{Representation spaces and forgetting the bases}
+\label{sec:representations}
+
+Choose $V_k=\mathbb C^{v_k}$. The affine representation space and
+base-change group are
+\[
+ \Rep(Q,\vv)=\bigoplus_{a\in Q_1}\Hom(V_{t(a)},V_{h(a)}),\qquad
+ G_{\vv}=\prod_{k\in Q_0}\GL(V_k).
+\]
+Factors with $v_k=0$ are omitted. The action is
+\begin{equation}\label{eq:basechange}
+ (g\cdot B)_a=g_{h(a)}B_ag_{t(a)}^{-1}.
+\end{equation}
+Its orbits are exactly the isomorphism classes of representations
+with that dimension vector. An isomorphism is a collection of
+invertible maps commuting with all the arrows.
+
+\begin{example}[One arrow]
+For $v_1=v_2=1$, the representation space is $\A^1$ and
+$(g_1,g_2)\cdot a=(g_2/g_1)a$. There are two orbits, zero and
+nonzero. For general dimensions, one arrow is classified by matrix
+rank: row and column operations are independent changes of basis.
+\end{example}
+
+\begin{example}[One loop]
+For a loop on $V=\mathbb C^2$, the action is conjugation. The
+matrices $\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$
+and zero have the same trace and determinant but are not conjugate.
+The distinction between independent base changes and conjugation
+comes from the endpoints of the arrow.
+\end{example}
+
+A direct sum is taken at each vertex, with block-diagonal arrow maps.
+A nonzero representation is simple if it has no nonzero proper
+subrepresentation, indecomposable if it is not a direct sum of two
+nonzero representations, and semisimple if it is a direct sum of
+simple representations. These conditions are different. The nonzero
+one-arrow representation of dimension $(1,1)$ is indecomposable,
+but has the proper subrepresentation $(0,\mathbb C)$ and is not simple.
+
+The stabiliser of $B$ is its automorphism group. The common scalar
+$g_k=c\id_{V_k}$ always fixes every arrow in the unframed problem.
+The original group can therefore act ineffectively. Framing will
+remove this particular ambiguity in the stable construction.
+
+A family over a parameter scheme $T$ allows vertex vector bundles
+$\mathcal V_k$ on $T$, rather than globally fixed bases, and maps
+between them. Fixed vector spaces describe its local trivialisations;
+the base-change group encodes how those trivialisations glue.
+
+\section{Why affine invariant quotients can lose information}
+\label{sec:quotients}
+
+For an affine $G$-scheme $X=\Spec A$, its affine invariant quotient is
+$X/\!/G=\Spec A^G$. Invariant functions cannot distinguish points
+whose orbit closures meet. For reductive groups over $\mathbb C$, a
+standard quotient theorem says that a quotient point corresponds to
+the unique closed orbit in the appropriate closure-equivalence class.
+The quotient need not list all orbits separately.
+
+For the one-arrow $(1,1)$ example, every invariant polynomial on
+$\A^1_a$ is constant. The quotient is a point, although there are
+two orbits. The nonzero orbit has zero in its closure. For a loop,
+conjugating the nonzero nilpotent matrix $J$ by $\operatorname{diag}(t,1)$
+gives $tJ$, which tends to zero. Trace and determinant consequently
+cannot distinguish these two orbit classes.
+
+For quiver representations, closed orbits correspond to semisimple
+representations, a standard representation-theoretic quotient theorem.
+The affine quotient retains the semisimplification, rather than all
+extension data. In the single-arrow example both orbits have the
+vertex-simple factors of dimensions $(1,0)$ and $(0,1)$.
+
+If the quiver has no oriented cycles, choose integer heights $r_k$
+with $r_{h(a)}>r_{t(a)}$ for every arrow. Acting by
+$g_k(t)=t^{r_k}\id$ takes every arrow to zero as $t\to0$.
+Thus every orbit closure contains the zero-arrow representation and
+the invariant quotient for a fixed dimension vector is a point.
+This gives a particularly direct reason to add a stability condition.
+
+\reading{Why does an affine quotient classify two distinct eigenvalues
+in a diagonal matrix but fail to distinguish a Jordan block from
+its semisimplification when the eigenvalues coincide?}
+
+\source{See Kirillov \cite[Chapter 2]{Kir} and Ginzburg
+\cite[\S\S2.1--2.3]{Gin}. The quotient theorem is used without proof.}
+
+\section{Characters, semi-invariants, and relative Proj}
+\label{sec:git}
+
+A character is an algebraic homomorphism $\chi:G\to\Gm$.
+We fix the following convention throughout:
+\begin{equation}\label{eq:semiinvariant}
+ A^{G,\chi^n}=\{f\in A:f(gx)=\chi(g)^n f(x)\}.
+\end{equation}
+Such functions are semi-invariants. They form the graded ring
+\[
+ R_\chi=\bigoplus_{n\ge0}A^{G,\chi^n},\qquad
+ (R_\chi)_0=A^G.
+\]
+An element occurring in several degrees is recorded in each graded
+copy. This matters, for example, for the trivial character.
+
+A point is $\chi$-semistable if some semi-invariant of positive
+degree is nonzero there. The GIT quotient is
+\begin{equation}\label{eq:git}
+ X/\!/_\chi G=\Proj R_\chi
+ \longrightarrow\Spec A^G.
+\end{equation}
+This uses $\Proj$ over the affine degree-zero base, as in Hartshorne.
+Finite generation and the quotient interpretation are standard GIT
+theorems for the reductive groups used here. A sufficiently high
+Veronese gives a degree-one-generated presentation, proving that
+the displayed morphism is projective. The source need not be
+projective over $\mathbb C$ if the affine base is nonconstant.
+
+For $G=\Gm$ acting by simultaneous scaling on $\A^m$, take
+$\chi(t)=t$. The degree-$n$ semi-invariants are ordinary homogeneous
+polynomials of degree $n$. The semistable locus is $\A^m\setminus0$,
+and \eqref{eq:git} is $\PP^{m-1}\to\Spec\mathbb C$.
+Thus projective space is already an affine character quotient.
+
+The grading $n$ in $R_\chi$ is a character degree. It is not
+automatically the polynomial degree or the weight of an additional
+scaling action. We keep these three notions separate.
+
+\source{Ginzburg \cite[\S2.2]{Gin} and Kirillov
+\cite[\S9.3]{Kir} give the relative invariant-ring construction.}
+
+\section{King stability and the Kronecker example}
+\label{sec:stability}
+
+For an unframed representation of dimension $\vv$, choose integers
+$\theta_k$ with $\theta\cdot\vv=0$ and put
+$\chi_\theta(g)=\prod_k\det(g_k)^{\theta_k}$.
+
+\begin{definition}[Our sign convention]
+A representation is $\theta$-semistable if
+$\theta\cdot\dim S\ge0$ for every subrepresentation $S$.
+It is $\theta$-stable if the inequality is strict for every nonzero
+proper subrepresentation. The equality $\theta\cdot\vv=0$ is
+part of the unframed setup.
+\end{definition}
+
+King's theorem identifies this semistability with
+\eqref{eq:semiinvariant} for $\chi_\theta$. We use his subobject
+inequality direction. Some references replace $\theta$ by $-\theta$
+and reverse both the character exponent and the inequality.
+Appendix~\ref{app:tools} records the translation.
+
+\begin{example}[The $m$-arrow Kronecker quiver]
+Let $m$ parallel arrows run from $1$ to $2$, with dimension vector
+$(1,1)$ and $\theta=(-1,1)$. A representation is a tuple
+$(a_1,\ldots,a_m)$. A nonzero tuple has the proper nonzero
+subrepresentation $(0,\mathbb C)$, with weight $1$; it has no
+subrepresentation $(\mathbb C,0)$. Hence it is stable.
+The zero tuple has the latter subrepresentation of weight $-1$
+and is not semistable.
+
+The character is $g_2/g_1$, and the semi-invariant ring is
+$\mathbb C[a_1,\ldots,a_m]$ with its ordinary grading. The quotient
+is $\PP^{m-1}$. For $m=2$ this produces a projective line of
+nonisomorphic representations, although the affine invariant
+quotient of the entire representation space was just a point.
+\end{example}
+
+There is a stabiliser qualification. The diagonal $\Gm$ in
+$\GL_1\times\GL_1$ acts trivially. A stable tuple has scalar
+automorphisms in the full group. The free scaling action used to
+form $\PP^{m-1}$ is the action of the effective quotient group.
+Thus representation-theoretic stability is not a claim of finite
+stabilisers in the original unframed group. More generally stable
+quiver representations have scalar endomorphisms, a standard
+simplicity theorem.
+
+Semistable objects have stable factors of the same zero
+$\theta$-weight. Their associated graded is independent of the
+chosen Jordan--Hölder filtration up to isomorphism. S-equivalence
+identifies objects with isomorphic associated gradeds. This is
+the equivalence encoded by the semistable GIT quotient; on the
+stable locus it reduces to isomorphism. It is the same distinction
+encountered in vector-bundle and Higgs moduli, now with dimensions
+and linear maps replacing bundle degrees and fields.
+
+\source{King \cite[Definition 1.1, Proposition 3.1]{King};
+Kirillov \cite[\S10.1]{Kir}.}
+
+\section{Framing fixes some external linear data}
+\label{sec:framing}
+
+At each vertex choose an additional fixed vector space $W_k$ of
+dimension $w_k$. Introduce maps
+\[
+ i_k:W_k\to V_k,\qquad j_k:V_k\to W_k.
+\]
+The group being quotiented remains $G_\vv$; bases of the framing
+spaces are not quotiented. Its action is
+\begin{equation}\label{eq:frameaction}
+ i_k\longmapsto g_k i_k,\qquad
+ j_k\longmapsto j_k g_k^{-1}.
+\end{equation}
+A scalar which fixes a nonzero framing map can no longer act
+arbitrarily on its image. When framing vectors generate all the
+vertex spaces, this removes all automorphisms of the data.
+
+For a single vertex with no arrows and $V=\mathbb C$, the map
+$i:W\to\mathbb C$ is a covector. Requiring $i\ne0$ and quotienting
+by $\GL_1$ gives the projective space of one-dimensional quotients
+of $W$. The return map $j$ will become a cotangent coordinate
+after the moment equation is imposed.
+
+Framing is not the same as increasing the dimensions $v_k$.
+It marks external input/output spaces which are kept fixed during
+the quotient. Their own linear transformations can induce
+additional symmetries of the resulting variety.
+
+\section{Doubling produces a cotangent space}
+\label{sec:doubling}
+
+For each original arrow $a$, add $a^*$ in the reverse direction.
+The original framed vector space and its cotangent space are
+\begin{align*}
+ R&=\bigoplus_{a\in Q_1}\Hom(V_{t(a)},V_{h(a)})
+       \oplus\bigoplus_k\Hom(W_k,V_k),\\
+ T^*R&=\bigoplus_{a\in Q_1}
+ \bigl(\Hom(V_{t(a)},V_{h(a)})\oplus\Hom(V_{h(a)},V_{t(a)})\bigr)\\
+ &\hspace{20mm}\oplus\bigoplus_k
+ \bigl(\Hom(W_k,V_k)\oplus\Hom(V_k,W_k)\bigr).
+\end{align*}
+Trace identifies the dual of each matrix space with the opposite
+matrix space. A point of $T^*R$ is denoted $(B_a,B_{a^*},i,j)$.
+No metric or adjoint is involved: $a^*$ labels an independent
+reverse arrow, not the complex conjugate transpose of $B_a$.
+
+A symplectic form is a closed two-form which is nondegenerate
+at every point. On $T^*\A^1$ with coordinates $(x,p)$, the
+standard example is $dx\wedge dp$. On our matrix cotangent space,
+fix
+\begin{equation}\label{eq:omega}
+ \omega=\sum_{a\in Q_1}\tr(dB_a\wedge dB_{a^*})
+              +\sum_k\tr(di_k\wedge dj_k).
+\end{equation}
+In coordinates this is a sum of independent $dx\wedge dp$
+terms, so it is closed and nondegenerate. The trace pairs the
+original matrix entries with their cotangent partners.
+
+Reversing the chosen orientation of an original arrow is
+implemented by $(B_a,B_{a^*})\mapsto(B_{a^*},-B_a)$.
+The minus sign preserves \eqref{eq:omega}. This explains why
+one may change an orientation without identifying the two
+independent matrices literally or silently dropping a sign.
+
+\section{The moment map and its equations}
+\label{sec:moment}
+
+The Lie algebra of $G_\vv$ is $\bigoplus_k\End(V_k)$.
+An element $\xi=(\xi_k)$ gives the infinitesimal change
+$\delta B_a=\xi_{h(a)}B_a-B_a\xi_{t(a)}$,
+$\delta i_k=\xi_ki_k$, and $\delta j_k=-j_k\xi_k$.
+The trace pairing identifies the dual Lie algebra with the
+same matrix spaces.
+
+\begin{definition}[Moment map, with fixed signs]
+The moment map is the polynomial map with components
+\begin{equation}\label{eq:moment}
+ \mu_k=\sum_{h(a)=k}B_aB_{a^*}
+       -\sum_{t(a)=k}B_{a^*}B_a+i_kj_k\in\End(V_k).
+\end{equation}
+It satisfies
+$d\langle\mu,\xi\rangle=\iota_{\xi^\#}\omega$,
+where $\xi^\#$ is the infinitesimal-action vector field and
+contraction inserts that field into the first slot of the two-form.
+\end{definition}
+
+This identity can be checked entry by entry. For the framing part,
+inserting $(\xi i,-j\xi)$ into $\tr(di\wedge dj)$ gives
+$\tr\xi(i\,\delta j+\delta i\,j)$, which is the derivative
+of $\tr(\xi ij)$. An original arrow contributes $B_aB_{a^*}$
+at its head and $-B_{a^*}B_a$ at its tail. The displayed signs
+therefore follow from the declared symplectic form.
+
+The zero moment fibre is the affine scheme $Z_0=\mu^{-1}(0)$,
+cut out by these matrix equations. The whole fibre can be
+singular. More generally, choose scalars $\lambda_k$ and set
+\[
+ Z_\lambda=\{\mu_k=\lambda_k\id_{V_k}\text{ for all }k\}.
+\]
+Centrality of the right-hand side makes this fibre $G_\vv$-invariant.
+
+For an isolated vertex there are no arrow terms, giving $ij=0$.
+For one vertex with one loop, the two arrow matrices $X,Y$
+give
+\begin{equation}\label{eq:adhm}
+ [X,Y]+ij=0,\qquad [X,Y]=XY-YX.
+\end{equation}
+The unframed relations $\sum BB^*-\sum B^*B=\lambda$ are
+called deformed preprojective relations. The framed version
+adds $ij$.
+
+Tracing all components cancels the arrow contributions.
+Without framing, nonemptiness of $Z_\lambda$ requires
+$\sum_k\lambda_kv_k=0$. With framing the trace identity is
+instead $\sum_k\lambda_kv_k=\sum_k\tr(i_kj_k)$, so that
+unframed restriction must not be imposed universally.
+
+\source{Nakajima \cite[\S2]{NakIntro} and Ginzburg
+\cite[\S\S3--5]{Gin}. Nakajima's Hilbert-scheme book
+\cite[Theorem 2.1]{NakHilb} uses the $+ij$ convention in
+\eqref{eq:adhm}. Kirillov's $-ij$ is translated by $j\mapsto-j$.}
+
+\section{Cyclic stability and why it removes automorphisms}
+\label{sec:cyclic}
+
+We now fix the character
+\begin{equation}\label{eq:cycliccharacter}
+ \chi_{\mathrm{cyc}}(g)=\prod_k\det(g_k).
+\end{equation}
+There is no condition $\sum_kv_k=0$: the balance condition of the
+unframed King setup does not apply to these framed data.
+
+\begin{definition}
+The framed doubled representation is cyclic if no proper collection
+of subspaces $S_k\subset V_k$ is invariant under all doubled arrows
+and contains all the framing images $\im i_k$. Equivalently, the
+vectors obtained by applying paths to framing vectors span every $V_k$.
+\end{definition}
+
+For the semi-invariant convention \eqref{eq:semiinvariant}, this is
+exactly $\chi_{\mathrm{cyc}}$-semistability on $Z_\lambda$.
+Here is a concrete explanation of both directions.
+At a cyclic point choose bases at all vertices from path-applied
+framing vectors. Form the matrices having those vectors as columns.
+Their determinant product is a polynomial which transforms by
+$\prod_k\det(g_k)$ and is nonzero at that point. Thus a positive-degree
+semi-invariant is nonzero.
+
+Conversely, suppose a proper invariant $S$ contains the framing
+images. Choose complements $V_k=S_k\oplus T_k$, and act by identity
+on $S_k$ and $t^{-1}$ on $T_k$. Every transformed matrix has a limit
+at $t=0$: invariance makes the potentially divergent lower-left
+blocks zero, and the remaining off-diagonal blocks tend to zero.
+The same holds for $i,j$. But the character of this transformation is
+$t^{-\sum_k\dim T_k}$. If a positive-character semi-invariant had
+nonzero value, its value along this family would have a pole at zero,
+contradicting polynomial regularity. Hence such a point is not semistable.
+
+\begin{proposition}\label{prop:free}
+The full group $G_\vv$ has trivial stabiliser at a cyclic point.
+\end{proposition}
+\begin{proof}
+An automorphism commutes with every arrow and fixes every $i_k$.
+It therefore fixes every path-applied framing vector. These span
+the vertex spaces, so the automorphism is identity everywhere.
+\end{proof}
+
+At cyclic points semistability is stability for this framed chamber:
+orbits are closed within the semistable locus and the quotient is
+geometric. One can see the local quotient by using a chosen cyclic
+basis to normalise those column matrices to identity. These basis
+choices give local products with $G_\vv$. This is the framed
+quotient theorem in an explicit coordinate form.
+
+If all framing spaces are zero and $\vv\ne0$, the smallest generated
+subrepresentation is zero, so the cyclic locus is empty. Framing
+and stability are genuine extra choices, not redundant decorations.
+
+\source{Ginzburg \cite[Proposition 5.1.5 and Corollary 5.1.9]{Gin}.
+His cyclic chamber has negative $\theta$ and character
+$\prod\det g_k$, the character fixed here.}
+
+\section{The definition of the Nakajima quiver variety}
+\label{sec:definition}
+
+For a character $\chi$, the algebraic construction is
+\begin{align}
+ \M_{\lambda,\chi}(\vv,\ww)
+ &=\Proj\bigoplus_{n\ge0}\mathbb C[Z_\lambda]^{G_\vv,\chi^n},
+ \label{eq:nakajima}\\
+ \M_{\lambda,0}(\vv,\ww)
+ &=\Spec\mathbb C[Z_\lambda]^{G_\vv}.
+\end{align}
+The second subscript $0$ denotes the trivial character. There is a
+projective morphism
+\begin{equation}\label{eq:pi}
+ \pi:\M_{\lambda,\chi}(\vv,\ww)\longrightarrow
+           \M_{\lambda,0}(\vv,\ww).
+\end{equation}
+At $\lambda=0$ and $\chi=\chi_{\mathrm{cyc}}$, abbreviate the source
+to $\M(\vv,\ww)$ and the affine target to $\M_0(\vv,\ww)$.
+When other moment levels or characters appear, we retain both indices.
+
+For the cyclic chamber the source is the quotient of cyclic solutions
+by changes of basis, with no remaining stabilisers. The affine target
+uses all solutions and invariant functions. It can collapse a whole
+projective family in the source to one point. It can also contain
+points which are not in the image of $\pi$.
+
+An affine base does not make the source affine, and a projective
+morphism does not make it projective over $\mathbb C$. The basic
+example below is $T^*\PP^1$, projective over an affine cone but
+nonproper over $\mathbb C$.
+
+The construction has several independent inputs: the quiver, the
+dimension vectors $\vv,\ww$, the moment level $\lambda$, and the
+character $\chi$. In particular, changing a moment equation and
+changing a stability condition are different operations.
+
+\section{Smoothness, dimension, and the descended two-form}
+\label{sec:geometry}
+
+We explain why the cyclic quotient is smooth symplectic when nonempty.
+At a cyclic point the infinitesimal stabiliser is zero, by the same
+generation argument as Proposition~\ref{prop:free}. The moment-map
+identity makes the dual of $d\mu$ the infinitesimal-action map,
+after identifying tangent and cotangent spaces using $\omega$.
+Thus $d\mu$ is surjective there. The matrix equations cut a smooth
+fibre of codimension $\dim G_\vv$ at those points.
+
+Quotienting the smooth cyclic locus by its free action subtracts
+another $\dim G_\vv$. Hence
+\begin{equation}\label{eq:dimension}
+ \dim\M_{\lambda,\chi_{\mathrm{cyc}}}
+ =2\sum_{a\in Q_1}v_{t(a)}v_{h(a)}
+  +2\sum_kv_kw_k-2\sum_kv_k^2,
+\end{equation}
+provided the cyclic locus is nonempty. This is not a claim that the
+entire moment fibre is smooth, nor a sufficient test for nonemptiness.
+
+The Euler form is
+\[
+ \langle\mathbf u,\mathbf v\rangle
+ =\sum_ku_kv_k-\sum_{a\in Q_1}u_{t(a)}v_{h(a)}.
+\]
+Thus \eqref{eq:dimension} is often written
+$2\vv\cdot\ww-2\langle\vv,\vv\rangle$. We need only this
+numerical interpretation, not its further homological meaning.
+
+On the moment fibre, inserting an orbit tangent vector into the
+restricted two-form gives zero, since $d\mu$ vanishes on fibre
+tangent vectors. Invariance then lets the form descend to the
+geometric quotient. Its kernel before quotienting is precisely
+the orbit tangent space, so the descended form is nondegenerate.
+This is Hamiltonian, or symplectic, reduction in this setting.
+The regularity and quotient facts used in this argument are the
+standard smooth-reduction theorem, with freeness verified above.
+
+\source{Nakajima \cite[Proposition 8 and Theorem 9]{NakIntro};
+Ginzburg \cite[Theorem 5.2.2]{Gin}.}
+
+\section{An isolated vertex gives a cotangent Grassmannian}
+\label{sec:grassmannian}
+
+Take one vertex and no arrows, with $\dim V=v$, $\dim W=w$.
+The equations and action are
+\[
+ ij=0,\qquad (i,j)\mapsto(gi,jg^{-1}).
+\]
+Cyclic stability says that $i:W\to V$ is surjective. Put $K=\ker i$.
+Then $V$ is identified, up to its changing basis, with $W/K$.
+The equation says that $j$ has image in $K$, so it is exactly a map
+\[
+ W/K\longrightarrow K.
+\]
+The base is the Grassmannian of dimension-$v$ quotients of $W$,
+denoted $\Gr_{\mathrm{quot}}(v,W)$. Its tangent space at $K$ is
+$\Hom(K,W/K)$, obtained by deforming the kernel as a graph.
+Trace duality makes its cotangent space $\Hom(W/K,K)$.
+Consequently the quotient is
+\begin{equation}\label{eq:grass}
+ \M(v,w)\simeq T^*\Gr_{\mathrm{quot}}(v,W),\qquad
+ \dim\M(v,w)=2v(w-v).
+\end{equation}
+It is empty for $v>w$. This computation identifies both the
+quotient points and their local bundle coordinates.
+
+\subsection{The two charts of the smallest surface}
+Let $v=1,w=2$. Write $i=(a,b)$ and $j=(c,d)^T$, with
+$ac+bd=0$ and $(a,b)\ne0$. On $a\ne0$, use the group action
+to normalise $a=1$. The data become
+\[
+ i=(1,r),\qquad j=(-rp,p)^T.
+\]
+On $b\ne0$, they become $i=(s,1)$ and $j=(q,-sq)^T$.
+On their overlap,
+\begin{equation}\label{eq:cotangenttransition}
+ s=r^{-1},\qquad q=-r^2p,\qquad q\,ds=p\,dr.
+\end{equation}
+This is the cotangent transition rule on $\PP^1$. In the first
+chart the reduced form is $dr\wedge dp$, as also follows from
+\eqref{eq:omega}. The zero section $p=0$ glues to $q=0$,
+giving an ordinary projective line inside $T^*\PP^1$.
+
+\subsection{The affine target is a quadratic cone}
+The invariant operator on $W$ is $A=ji$. It is unchanged by
+the action on $V$, and satisfies
+$\tr A=0$, $A^2=0$, and $\rk A\le1$. The products of an entry
+of $i$ with an entry of $j$ generate the invariant ring in this
+one-dimensional-group example. Put
+\[
+ u=cb,\qquad v=-da,\qquad z=ca.
+\]
+The equation $ac+bd=0$ gives $uv=z^2$, and the rank-one and
+trace relations give the full invariant-ring presentation
+\[
+ \M_0(1,2)=\Spec\mathbb C[u,v,z]/(uv-z^2).
+\]
+This cone is singular only at its vertex, by the derivative test.
+
+Over $A=0$, surjectivity of $i$ forces $j=0$, so the fibre of
+$\pi$ is the zero section $\PP^1$. For $A\ne0$, the line
+$\ker A=\im A$ uniquely determines $K$, and $A$ determines
+the induced map $W/K\to K$. This recovers the unique preimage.
+The projective morphism
+\[
+ T^*\PP^1\longrightarrow\{uv=z^2\}
+\]
+is therefore an isomorphism off the vertex and is a resolution
+of this surface singularity. The smooth source retains a
+projective family of limiting directions over that vertex.
+
+\subsection{Why the same claim cannot be made for every dimension}
+For $v=w=2$, cyclicity makes $i$ invertible, and $ij=0$ forces
+$j=0$. Thus the stable quotient is a point, with invariant
+$ji=0$. But the full moment-zero locus contains
+\[
+ i=\begin{pmatrix}1&0\\0&0\end{pmatrix},\qquad
+ j=\begin{pmatrix}0&0\\1&0\end{pmatrix}.
+\]
+Here $ij=0$ but $ji\ne0$. The invariant matrix $ji$ gives an
+affine-quotient point different from zero, outside the image of
+the stable quotient. This explicit example proves that projectivity
+does not imply surjectivity onto the whole affine quotient.
+A resolution assertion must specify the image and check birationality.
+
+\source{Kirillov \cite[Theorem 10.43 and Example 10.45]{Kir};
+Nakajima \cite[Example 10]{NakIntro}. The chart and counterexample
+are calculated explicitly above.}
+
+\section{The Jordan quiver and ideals of points on the plane}
+\label{sec:jordan}
+
+The Jordan quiver has one vertex and one loop. Doubling gives
+two endomorphisms $X,Y$ of $V=\mathbb C^n$. Choose $W=\mathbb C$,
+so $i$ is a vector and $j$ a covector. The equation is
+\[
+ [X,Y]+ij=0,
+\]
+and cyclicity says that words in $X,Y$ applied to $i$ span $V$.
+For $n=1$, commutators vanish and cyclicity gives $i\ne0$.
+Then $j=0$, and normalising $i=1$ leaves two free scalar
+coordinates $X,Y$. Thus $\M(1,1)\simeq\A^2$.
+
+\begin{theorem}[Rank-one framing; used without proof in general]
+At the zero moment level, cyclic Jordan data with $\dim W=1$
+satisfy $j=0$ and $[X,Y]=0$. Their quotient is
+$\Hilb^n(\A^2)$, the Hilbert scheme of length-$n$ subschemes
+of the plane. The affine quotient is $\Sym^n(\A^2)$.
+\end{theorem}
+
+The first assertion is a nontrivial theorem; it should not be
+deduced from $\tr(ij)=0$ alone. For $n=2$ there is a short proof.
+Tracing the equation and its products with $X$ and $Y$ gives
+\[
+ ji=0,\qquad jXi=0,\qquad jYi=0.
+\]
+The trace of $X[X,Y]$ and of $Y[X,Y]$ is zero by cyclicity
+of matrix trace. Since $V$ has dimension two, cyclicity forces
+$i$ and at least one of $Xi,Yi$ to span $V$; otherwise
+$\mathbb Ci$ would be invariant. Hence $j=0$ and the matrices commute.
+
+\subsection{The commuting-matrix to ideal correspondence}
+For commuting $X,Y$ and a cyclic $i$, the map
+\[
+ \mathbb C[x,y]\longrightarrow V,\qquad f\longmapsto f(X,Y)i
+\]
+is surjective. Its kernel $I$ is an ideal and
+$\dim\mathbb C[x,y]/I=n$. Conversely an ideal of colength $n$
+gives $V=\mathbb C[x,y]/I$, the multiplication operators $X,Y$,
+and $i=1$. Choosing a vector-space basis changes only the
+representative of the same quotient point.
+
+This explains the ideal description without constructing the
+general Hilbert scheme. A family is a quotient whose underlying
+module over the parameter base is locally free of rank $n$.
+The Hilbert-scheme representability theorem makes these families
+into a scheme. Our next calculation constructs an actual affine
+chart of it directly.
+
+\source{Nakajima \cite[Theorem 1.9, Theorem 2.1,
+Proposition 2.8 and Lemma 2.9]{NakHilb}; Ginzburg
+\cite[\S5.6]{Gin}. The commuting/Hilbert description here is
+specific to the zero moment level. At a nonzero scalar level,
+trace gives $ji=n\lambda$, so $j=0$ cannot hold.}
+
+\section{A four-coordinate chart of the two-point Hilbert scheme}
+\label{sec:hilbert-two}
+
+Consider the ideals for which $1,x$ form a basis of the
+two-dimensional quotient. Necessarily
+\begin{equation}\label{eq:hilbtwo}
+ I=(x^2-ax-b,\ y-c-dx),\qquad (a,b,c,d)\in\A^4.
+\end{equation}
+Every parameter tuple gives a quotient free on $1,x$, so this
+is an affine four-dimensional chart, including families over
+parameter schemes. In that basis,
+\[
+ X=\begin{pmatrix}0&b\\1&a\end{pmatrix},\qquad
+ Y=c\id+dX,\qquad i=\begin{pmatrix}1\\0\end{pmatrix},\qquad j=0.
+\]
+These matrices commute and are cyclic, directly verifying the
+quiver equations and stability.
+
+The roots of $x^2-ax-b$ give the two $x$-coordinates, and
+$y=c+dx$ gives their $y$-coordinates. Distinct roots describe
+two distinct points. Repeated roots give a length-two scheme
+at one point, retaining a direction of collision.
+
+The symmetric product $\Sym^2(\A^2)$ records unordered pairs
+with multiplicity. The projective Hilbert--Chow morphism sends
+a finite subscheme to the cycle of its support points weighted
+by their lengths. It forgets this infinitesimal direction.
+
+Above the double origin, \eqref{eq:hilbtwo} has $a=b=c=0$ and
+is $I=(x^2,y-dx)$. The parameter $d$ is the slope of the
+tangent direction. The other chart, with basis $1,y$, describes
+the missing vertical direction. On the overlap the slopes are
+$d'=1/d$. These two affine lines glue to the fibre $\PP^1$.
+The two charts cover the two-point Hilbert scheme: if both $x$
+and $y$ were scalar multiples of $1$ in a length-two quotient,
+they could not generate its algebra.
+
+Thus $\Hilb^2(\A^2)$ is smooth of dimension four in these
+charts, and its double-origin fibre is one-dimensional. The
+existence of a projective exceptional fibre alone does not give
+a general half-dimension formula. In particular this example
+should not inherit Lagrangian-fibre conclusions that require
+additional hypotheses on a quiver and its scaling action.
+
+\source{Kirillov \cite[Example 11.4 and Theorem 11.5]{Kir};
+Nakajima \cite[\S1.2]{NakHilb}.}
+
+\section{Changing stability and changing the moment level}
+\label{sec:variation}
+
+For the isolated-vertex surface, the positive character
+$\chi(t)=t$ selects $i\ne0$, while $\chi^{-1}$ selects $j\ne0$.
+Both produce cotangent projective lines, with the roles of the
+quotient data exchanged. The trivial character gives the affine
+cone. This is the simplest example of variation of stability.
+In larger examples the parameter space is divided into chambers
+and walls, but wall crossing need not always be a smooth
+birational equivalence; its hypotheses must be checked.
+
+Changing the moment level instead gives $ij=\lambda$.
+For $v=1,w=2$ and $\lambda\ne0$, both $i,j$ are nonzero.
+The invariant $A=ji$ has trace $\lambda$ and determinant zero.
+Writing $A=\left(\begin{smallmatrix}z&u\\v&\lambda-z\end{smallmatrix}\right)$,
+the affine equation is
+\[
+ uv=z(\lambda-z).
+\]
+It is smooth when $\lambda\ne0$, by the derivative test.
+Every such matrix factors as $ji$ uniquely up to the scalar
+change of basis, and all the corresponding orbits are closed.
+This gives the affine deformation of the cone. At $\lambda=0$
+the equation is the same quadratic cone as before, after a
+harmless coordinate sign change. Choosing a stable quotient
+over the singular level and deforming the level are two
+different geometric operations.
+
+\section{Scaling and the connection with semiprojective cutting}
+\label{sec:scaling}
+
+At the zero moment level, simultaneous dilation is
+\begin{equation}\label{eq:fullscaling}
+ t\cdot(B_a,B_{a^*},i,j)=(tB_a,tB_{a^*},ti,tj).
+\end{equation}
+It preserves cyclicity for $t\ne0$, and
+$\mu(tx)=t^2\mu(x)$, $t^*\omega=t^2\omega$.
+The affine invariant ring is positively graded by polynomial
+degree, with degree-zero part $\mathbb C$, so this action
+contracts the affine quotient to its origin. The map $\pi$
+is equivariant and projective.
+
+Properness of $\pi$, via the valuative criterion, then gives
+the limit $\lim_{t\to0}t\cdot x$ for each point of the stable
+quotient. The limit is fixed. Every fixed point lies over the
+affine origin, so the fixed locus is a closed subset of the
+projective fibre $\pi^{-1}(0)$ and is proper. Thus the smooth
+cyclic zero-level varieties here are semiprojective in the
+action-based sense: they are smooth quasiprojective, have
+proper fixed locus, and admit all these limits.
+
+The source need not contract to a single point. On $T^*\PP^1$,
+normalising $i$ after full dilation shows that the base point
+stays fixed while the cotangent coordinate scales by $t^2$.
+The limit is its point on the zero section. On the Jordan
+$n=1$ variety $\A^2$, full dilation scales both coordinates,
+and the limit is the origin.
+
+\subsection{A different action has different fixed loci}
+Cotangent dilation instead fixes the original coordinates and
+scales their partners:
+\begin{equation}\label{eq:halfscaling}
+ (B_a,B_{a^*},i,j)\longmapsto(B_a,tB_{a^*},i,tj).
+\end{equation}
+Its moment and symplectic weights are one. With loops it need
+not be semiprojective: Jordan $n=w=1$ gives
+$(X,Y)\mapsto(X,tY)$, fixing the nonproper line $Y=0$.
+The two actions must not be interchanged in a fixed-locus
+or cutting argument. Neither contracting formula preserves a
+fixed nonzero moment level in general: full dilation takes
+$\lambda$ to $t^2\lambda$, and cotangent dilation to $t\lambda$.
+
+\subsection{What this supplies for the project}
+The quiver variety has a natural projective morphism to an
+affine scheme, and the full scaling action supplies a useful
+semiprojective structure. The explicit small models give
+affine invariant algebras, stable open sets, fixed loci, and
+weights to calculate. An actual cut additionally requires
+choosing its ample linearisation and normalising the relevant
+weights. The affine target of $\pi$ is not automatically the
+affinisation of the source: the $v=w=2$ point example already
+shows why these targets must be distinguished.
+
+\source{Ginzburg \cite[\S5.2]{Gin} records both scaling actions.
+Kirillov's \S10.9 uses an acyclic-orientation hypothesis and a
+particular weight-one action; its extra conclusions are not
+assumed for the loop examples here. The full-dilation argument
+above uses positive grading and projectivity directly.}
+
+\section{Connections with stacks, Higgs fields, and real reduction}
+\label{sec:connections}
+
+\subsection{Quotient stacks and residual symmetries}
+The quotient stack $[X/G]$ keeps families with their
+automorphisms: an object over $T$ is a $G$-torsor with an
+equivariant map to $X$. Unframed stable representations can
+still have scalar automorphisms, as in the Kronecker example.
+For cyclic framed data the full stabiliser is trivial, and
+the geometric quotient stack is represented by the smooth
+variety just constructed.
+
+The free presentation also gives actual tautological vector
+bundles on the quotient. At vertex $k$, take the quotient of
+$Z_\lambda^{\mathrm{cyc}}\times V_k$ by
+$(x,v)\mapsto(gx,g_kv)$. Framing and arrow maps descend to
+maps of these bundles. This is a concrete way that a matrix
+moduli problem produces bundles over its parameter space.
+
+An additional group acting on the framing spaces, or a scaling
+torus, acts on the quotient. Its fixed points are not
+automorphisms of the represented object. For example,
+$T^*\PP^1$ has many points fixed by full dilation on its zero
+section, while the cyclic data at all those points have
+trivial $G_\vv$-stabiliser.
+
+\subsection{A finite-dimensional cousin of the Higgs construction}
+Higgs fields and loop matrices both involve endomorphisms and
+invariant subobjects, but their stability tests are different.
+King stability uses a weight on vertex dimensions. Bundle
+stability uses degree divided by rank. Neither definition is
+obtained by simply reusing the other's numerical parameter.
+The Jordan example at $j=0$ gives commuting operators and a
+module over $\mathbb C[x,y]$, explaining why point schemes
+arise. Its cotangent and moment-map structure supplies a
+finite-dimensional algebraic model for several features of
+the richer moduli constructions.
+
+When all $V_k$ have dimension one, the base-change group is
+a torus and the construction becomes a reduction of a
+symplectic vector space by a torus. This is a useful point
+of contact with hypertoric geometry. Identifying a specified
+hypertoric variety still requires matching the actual torus
+weights and stability parameters.
+
+\subsection{An optional real-equation picture}
+In the isolated-vertex $v=1,w=2$ example, choose Hermitian
+norms and impose, in addition to $ij=0$,
+\[
+ \|i\|^2-\|j\|^2=\zeta>0,
+\]
+then quotient by the unit circle. In a complex scaling orbit
+with $i\ne0$, real scaling by $r>0$ changes the left side to
+$r^2\|i\|^2-r^{-2}\|j\|^2$. This is strictly increasing
+and attains the chosen positive value exactly once. Quotienting
+the remaining phase gives a bijection with the complex-orbit
+quotient of the cyclic locus. Identifying the induced complex
+structures uses the reduction theorem. This elementary
+balancing calculation explains the simplest relation between
+a complex stability condition and a real moment-map level.
+
+The general analytic statement is part of the
+Kempf--Ness/hyperkähler quotient theory, used only as an
+outlook here. Its metric and three-complex-structure theory
+are not prerequisites for any preceding definition or
+matrix calculation.
+
+\section{Exercises with worked solutions}
+\label{sec:exercises}
+
+\begin{exercise}\label{ex:subrep}
+List the subrepresentations of the one-arrow $(1,1)$
+representation when its arrow is nonzero, and when it is zero.
+\end{exercise}
+\begin{exercise}\label{ex:rank}
+For one map $\mathbb C^2\to\mathbb C^3$, describe its orbits
+under the two base changes. Why is one common scalar always
+an automorphism of the representation?
+\end{exercise}
+\begin{exercise}\label{ex:degeneration}
+Conjugate $J=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$
+by $\operatorname{diag}(t,1)$ and find the limit. Explain why
+an invariant polynomial takes the same value at $J$ and zero.
+\end{exercise}
+\begin{exercise}\label{ex:kronecker}
+For two arrows and dimension $(1,1)$, derive the semistable
+locus and quotient for $\theta=(-1,1)$. Compute the full
+stabiliser of a selected point.
+\end{exercise}
+\begin{exercise}\label{ex:unionaxes}
+Double one arrow with dimension vector $(1,1)$ and no framing.
+Write the zero moment fibre and its affine invariant quotient.
+Is its cyclic framed locus nonempty with these zero framings?
+\end{exercise}
+\begin{exercise}\label{ex:free}
+For a loop representation generated by a framing vector $i$,
+show that an automorphism commuting with all loops and fixing
+$i$ is identity.
+\end{exercise}
+\begin{exercise}\label{ex:grasschart}
+Derive the overlap \eqref{eq:cotangenttransition} from the
+two choices of normalisation. Verify $q\,ds=p\,dr$.
+\end{exercise}
+\begin{exercise}\label{ex:cone}
+For $i=(a,b)$, $j=(c,d)^T$, $ac+bd=0$, verify
+$u=cb,v=-da,z=ca$ obey $uv=z^2$. Find the singular locus
+of the resulting cone.
+\end{exercise}
+\begin{exercise}\label{ex:nonsurj}
+Compute $ij$ and $ji$ for the $2\times2$ matrices in the
+non-surjectivity example. Why can that quotient point not
+come from cyclic data of dimension $v=w=2$?
+\end{exercise}
+\begin{exercise}\label{ex:dimensions}
+Compute the stable dimensions for an isolated vertex with
+$(v,w)=(1,3)$ and for the Jordan quiver with $(v,w)=(2,1)$.
+What happens to cyclicity for an isolated vertex with $(v,w)=(2,1)$?
+\end{exercise}
+\begin{exercise}\label{ex:ideal}
+For $I=(x^2,y-dx)$, compute the quotient algebra, its support,
+and its length. Explain the geometric role of $d$.
+\end{exercise}
+\begin{exercise}\label{ex:jordanone}
+Derive $\M(1,1)=\A^2$ for the Jordan quiver directly, including
+the framing maps and the gauge fixing.
+\end{exercise}
+\begin{exercise}\label{ex:scaling}
+On this $\A^2$, compare full dilation and cotangent dilation.
+Compute their fixed loci and decide which is proper.
+\end{exercise}
+\begin{exercise}\label{ex:deform}
+For $uv=z(\lambda-z)$, verify smoothness at $\lambda\ne0$.
+Does changing $\lambda$ preserve the full-dilation action
+on a fixed fibre of the family?
+\end{exercise}
+
+\subsection*{Solutions}
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=*]
+\item For a nonzero arrow the choices are zero, the whole
+representation, and $(0,\mathbb C)$. For the zero arrow,
+$(\mathbb C,0)$ is also allowed. Each vertex space has
+only the zero and whole subspace.
+\item The rank can be $0,1,2$, and row/column operations
+give exactly these three orbit classes. The maps
+$g_1=c\id$, $g_2=c\id$ satisfy $g_2Bg_1^{-1}=B$.
+\item The result is $tJ$, with limit zero. Invariance makes
+the polynomial constant on the nonzero-parameter family;
+regularity makes its value at zero the same.
+\item The nonzero tuples are stable and the zero tuple fails
+the negative-weight subrepresentation test. The effective
+group scales both entries, giving $\PP^1$. In the full
+group the stabiliser is the diagonal $\Gm$.
+\item With arrow coordinates $x,y$, the two equations are
+$-yx=0$ and $xy=0$, giving the union of axes.
+The invariant ring is generated by $xy$, which is zero
+on this fibre, so the affine quotient is a point.
+No nonzero vertex space is generated by zero framing,
+so the cyclic locus is empty.
+\item Every path-applied vector $P i$ is fixed:
+$g(Pi)=P(gi)=Pi$. They span the whole space, so $g=\id$.
+The same argument works vertex by vertex.
+\item Starting with $i=(1,r)$, normalise its second entry
+by the scalar $r^{-1}$. Then $i=(r^{-1},1)$ and
+$j=(-r^2p,rp)^T$, so $s=r^{-1}$ and $q=-r^2p$.
+Since $ds=-r^{-2}dr$, the cotangent expressions agree.
+\item Multiplying gives
+$uv=-cbda=-(ca)(bd)=(ca)^2=z^2$.
+The derivatives of $uv-z^2$ vanish exactly when
+$u=v=z=0$, so only the vertex is singular.
+\item The first product is zero and the second is
+$\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)$.
+For cyclic $v=w=2$, $i$ is invertible and $j=0$,
+so its invariant $ji$ must be zero.
+\item The isolated-vertex dimension is $2(3-1)=4$.
+For the Jordan quiver the original-loop term cancels
+the gauge-dimension term, leaving $2vw=4$.
+For isolated $(2,1)$, a map $\mathbb C\to\mathbb C^2$
+cannot be surjective, so the cyclic locus is empty.
+\item The quotient is $\mathbb C[x]/(x^2)$ with
+$y=dx$. It has basis $1,x$, length two, and support
+only at the origin. The line $y=dx$ is its tangent
+direction. The other chart adds the vertical direction.
+\item The loop matrices are scalars $X,Y$. Cyclicity
+requires $i\ne0$, and the moment equation $ij=0$
+forces $j=0$. A unique scalar change normalises
+$i=1$, leaving the two free coordinates $X,Y$.
+\item Full dilation is $(X,Y)\mapsto(tX,tY)$ and
+fixes only the origin, which is proper. Cotangent
+dilation is $(X,Y)\mapsto(X,tY)$ and fixes the
+affine line $Y=0$, which is not proper.
+\item The gradient of $uv-z(\lambda-z)$ can vanish
+only at $u=v=0,z=\lambda/2$, but that point does
+not satisfy the equation when $\lambda\ne0$.
+Full dilation multiplies the moment level by $t^2$;
+it therefore acts on the family while moving a
+nonzero level, not on each such fibre separately.
+\end{enumerate}
+
+\appendix
+\section{Conventions, tools used without proof, and a reading route}
+\label{app:tools}
+
+The conventions to compare with the references are:
+\begin{itemize}
+\item Arrow maps run from tail to head. Reverse arrows
+are independent maps, not adjoints.
+\item Semi-invariants satisfy $f(gx)=\chi(g)^n f(x)$.
+Unframed King stability uses $\theta\cdot\vv=0$,
+$\chi_\theta=\prod\det^{\theta_k}$ and
+$\theta\cdot\dim S\ge0$.
+\item Cyclic framing uses $\chi_{\mathrm{cyc}}=\prod\det$.
+Kirillov and Ginzburg use an opposite $\theta$ convention,
+so their cyclic chamber is negative $\theta$.
+\item The moment map has $+ij$. Kirillov's $-ij$ is
+translated by replacing $j$ with $-j$.
+\item Our Grassmannian parameterises dimension-$v$
+quotients of $W$, or equivalently dimension-$(w-v)$
+kernels. This fixes which vector spaces appear in its
+tangent and cotangent descriptions.
+\item Full dilation scales all original and reverse
+arrows and both framings. A separate weight-one
+action must be specified before using its fixed loci.
+\end{itemize}
+
+The main tools used without a general proof are reductive
+invariant-ring finite generation and affine quotient theory;
+the GIT interpretation of relative $\Proj$ and King's
+subrepresentation criterion; the smooth free-reduction
+theorem; and general Hilbert-scheme representability and
+the rank-one Jordan theorem. The nilpotent/Grassmannian
+surface and the two-point Hilbert chart are worked out
+directly. Singular affine moment fibres are not assumed
+smooth or reduced by a dimension count on their cyclic locus.
+
+Kirillov's Chapters 1--2 are the most direct textbook
+companion for the early definitions and orbit examples.
+Then read \S\S9.2--9.4 for invariant quotients and
+characters, \S10.1 for stability, and \S\S10.3--10.7
+for framing, moment maps, and cotangent examples.
+Sections 11.1--11.2 lead to the Hilbert-scheme examples.
+His later scaling discussion has additional orientation
+hypotheses, as explained in Section~\ref{sec:scaling}.
+
+Nakajima's Hilbert-scheme book, \S1.2 and \S2.2,
+is a useful companion for commuting matrices, cyclic
+vectors, and the $j=0$ theorem. The monad and full
+hyperkähler constructions can be left for later.
+For the copies read in the Literature folder, PDF page
+equals printed page plus 13 in both books. The source
+record gives exact files and checked locators.
+
+The representation-theory applications involving
+Kac--Moody algebras, geometric correspondences, or
+homology are further destinations, not prerequisites
+for understanding the varieties constructed here.
+
+\begin{thebibliography}{99}
+\bibitem{Kir} A.~Kirillov Jr., \emph{Quiver Representations
+and Quiver Varieties}, Graduate Studies in Mathematics 174,
+American Mathematical Society, 2016. The saved 310-page
+copy in the Literature folder was consulted directly.
+\bibitem{NakHilb} H.~Nakajima, \emph{Lectures on Hilbert
+Schemes of Points on Surfaces}, University Lecture Series 18,
+American Mathematical Society, 1999. The saved 146-page
+Literature copy was consulted directly.
+\bibitem{Gin} V.~Ginzburg, \emph{Lectures on Nakajima's
+Quiver Varieties}, arXiv:0905.0686.
+\url{https://arxiv.org/abs/0905.0686}.
+Locators refer to the saved 43-page HAL PDF, with three
+preliminary PDF pages before printed page 1.
+\bibitem{NakIntro} H.~Nakajima, \emph{Introduction to quiver
+varieties---for ring and representation theorists},
+arXiv:1611.10000.
+\url{https://arxiv.org/abs/1611.10000}.
+Locators refer to the saved 19-page PDF.
+\bibitem{King} A.~D.~King, \emph{Moduli of representations
+of finite dimensional algebras}, Quarterly Journal of
+Mathematics \textbf{45} (1994), 515--530.
+\url{https://doi.org/10.1093/qmath/45.4.515}.
+\bibitem{CB} W.~Crawley-Boevey, \emph{Lectures on
+Representations of Quivers}, lecture notes.
+\url{https://www.math.uni-bielefeld.de/~wcrawley/quivlecs.pdf}.
+The saved 38-page PDF was consulted for the introductory
+representation-theory route.
+\end{thebibliography}
+
+
+\clearpage
+\section{Glossary of terms and notation}
+\label{app:glossary}
+
+The entries are alphabetical and link to the relevant explanatory
+sections. Each definition also links to its two examples in
+Appendix~\ref{app:examples-glossary}. In polynomial-ring examples,
+$k$ denotes $\mathbb C$. Stability and moment-map signs always follow
+Appendix~\ref{app:tools}.
+
+\newcommand{\glossentry}[4]{%
+  \par\smallskip\phantomsection\label{gloss:#1}%
+  \noindent\textbf{#2.}\ #3\ %
+  \hyperref[#4]{\textit{Section~\ref*{#4}.}}\ %
+  \hyperref[examples:#1]{\textit{Examples (Appendix~\ref*{app:examples-glossary}).}}\par}
+
+\subsection*{A--C}
+
+\glossentry{affine-quotient}{Affine quotient}{For an affine variety with coordinate ring $A$ and a group action, the scheme $\Spec A^G$ defined by invariant functions. Its points correspond to closed orbits in the reductive examples here, rather than to every orbit.}{sec:quotients}
+
+\glossentry{arrow}{Arrow}{A directed edge of a quiver, with a specified tail and head. A representation assigns it a linear map from the vector space at its tail to the vector space at its head; loops are allowed.}{sec:quivers}
+
+\glossentry{automorphism}{Automorphism}{An isomorphism from a representation to itself, given by invertible maps at the vertices commuting with all arrow maps. For framed data the maps must also preserve the framing maps, while the framing spaces remain fixed.}{sec:representations}
+
+\glossentry{base-change-group}{Base-change group}{The product $G_v=\prod_k\GL(V_k)$ of general linear groups at the internal vertices. It acts by changing bases independently at those vertices; an arrow map transforms as $B_a\mapsto g_{h(a)}B_ag_{t(a)}^{-1}$. Framing bases are not quotiented.}{sec:representations}
+
+\glossentry{character}{Character}{An algebraic-group homomorphism $\chi:G\to\mathbb C^*$. Choosing a character specifies which semi-invariant functions enter the graded algebra defining a GIT quotient. Products of integer powers of determinants give the characters used for quiver representations.}{sec:git}
+
+\glossentry{commutator}{Commutator}{For two endomorphisms of the same vector space, the operator $[X,Y]=XY-YX$. It measures failure to commute. A loop and its reverse contribute such a term to the complex moment-map equation for the doubled quiver.}{sec:moment}
+
+\glossentry{cotangent-bundle}{Cotangent bundle}{The vector bundle whose fibre at a smooth point is the dual of its tangent space. A linear representation space has a cotangent space obtained by adding dual linear coordinates; reversing quiver arrows supplies precisely these dual directions.}{sec:doubling}
+
+\glossentry{cyclic-stability}{Cyclic stability}{The framed stability condition that no proper collection of invariant subspaces contains the images of all framing maps $i_k$. Equivalently, applying paths in the doubled quiver to those images generates every internal vertex space. It uses the character $\prod_k\det g_k$ here.}{sec:cyclic}
+
+\glossentry{cyclic-vector}{Cyclic vector}{A vector whose images under the algebra's operators span the whole representation. For commuting Jordan operators $X,Y$, this means $\mathbb C[X,Y]v=V$. A cyclic vector identifies the module with a quotient of a polynomial ring.}{sec:jordan}
+
+\subsection*{D--H}
+
+\glossentry{deformed-moment-level}{Deformed moment level}{A moment-map equation $\mu_k=\lambda_k\id_{V_k}$ with specified scalars $\lambda_k$, replacing the zero equations. These central values are preserved by base change. A scaling can move the value, so preservation of a fixed level requires checking.}{sec:moment}
+
+\glossentry{dimension-vector}{Dimension vector}{The list $v=(v_k)$ recording the dimensions of the vector spaces at the vertices. Fixing this list turns the collection of all arrow maps into an affine representation space. Framed constructions additionally specify a separate framing dimension vector $w$.}{sec:quivers}
+
+\glossentry{direct-sum}{Direct sum}{The representation obtained by taking direct sums of the vertex spaces and block-diagonal sums of every arrow map. It combines smaller representations without introducing maps between the summands. A decomposition must hold simultaneously for every arrow.}{sec:representations}
+
+\glossentry{doubled-quiver}{Doubled quiver}{The quiver obtained by adding a reverse arrow $a^*$ for every original arrow $a$. A loop gains a second loop. The trace pairing identifies maps on the added arrows with dual coordinates, making the doubled representation space a cotangent space.}{sec:doubling}
+
+\glossentry{effective-group-action}{Effective group action}{A group action whose common kernel is trivial: only the identity acts as the identity on the whole space. It need not have trivial point stabilisers. Removing an ineffective scalar subgroup is important in unframed quiver GIT stability.}{sec:stability}
+
+\glossentry{euler-form}{Euler form}{The bilinear form $\langle u,v\rangle=\sum_k u_kv_k-\sum_a u_{t(a)}v_{h(a)}$ determined by an oriented quiver. Its self-pairing appears in the dimension formula $2(v\cdot w-\langle v,v\rangle)$ for nonempty smooth framed quiver varieties in the stated chamber.}{sec:geometry}
+
+\glossentry{family-of-representations}{Family of representations}{Representations whose vector spaces and arrow maps vary over a parameter scheme. The vertex spaces become vector bundles on that scheme, and arrows become bundle maps. Restricting to a parameter point recovers an ordinary representation and its isomorphism class.}{sec:representations}
+
+\glossentry{framing}{Framing}{Auxiliary fixed vector spaces $W_k$ with maps $i_k:W_k\to V_k$ and $j_k:V_k\to W_k$. Only internal bases are changed. The framing records how representations interact with fixed external data and can eliminate scalar automorphisms through stability.}{sec:framing}
+
+\glossentry{gauge-fixing}{Gauge fixing}{Choosing a representative of a group orbit by normalising some coordinates. Such a choice is usually valid only on a chart and may leave residual symmetries. It is a concrete way to compute quotient coordinates, not an additional moduli condition.}{sec:grassmannian}
+
+\glossentry{geometric-quotient}{Geometric quotient}{A quotient whose geometric points correspond to actual group orbits, with invariant functions furnishing the quotient's structure sheaf. Stable loci in the examples have such quotients after the appropriate effective action is used; arbitrary affine invariant quotients can identify orbit closures instead.}{sec:git}
+
+\glossentry{git-quotient}{GIT quotient}{The quotient built as $\Proj\bigoplus_{n\ge0}\mathbb C[X]^{G,\chi^n}$ for a chosen character. Nonvanishing positive-degree semi-invariants defines semistability. The resulting space is projective over the affine invariant quotient and classifies the appropriate equivalence classes.}{sec:git}
+
+\glossentry{grassmannian}{Grassmannian}{The projective variety parameterising vector-space quotients of a fixed space $W$ with specified dimension $v$, modulo isomorphism of the quotient. Equivalently it records their kernels of dimension $\dim W-v$. Its cotangent bundle is the isolated-vertex quiver model.}{sec:grassmannian}
+
+\glossentry{hamiltonian-reduction}{Hamiltonian reduction}{The construction that first imposes a moment-map level and then takes a group quotient, using a character when an algebraic GIT quotient is required. Under the stated regularity and stability hypotheses, the quotient inherits a nondegenerate symplectic form.}{sec:moment}
+
+\glossentry{hilbert-chow-morphism}{Hilbert--Chow morphism}{The morphism from a Hilbert scheme of points to the symmetric product, sending a finite subscheme to its support with multiplicities. It forgets infinitesimal information retained by the ideal. For the plane it is projective and resolves the symmetric-product singularities.}{sec:hilbert-two}
+
+\glossentry{hilbert-scheme-of-points}{Hilbert scheme of points}{The parameter space of finite subschemes of specified length. For an affine variety with ring $A$, its points are ideals $I$ with $\dim_{\mathbb C}(A/I)=n$. Families require flat finite quotients, so this space records collisions as well as distinct points.}{sec:jordan}
+
+\subsection*{I--M}
+
+\glossentry{indecomposable-representation}{Indecomposable representation}{A nonzero representation that cannot be expressed as a direct sum of two nonzero representations. This is weaker than simplicity: an indecomposable object may still contain proper nonzero subrepresentations, provided they do not admit a compatible complementary summand.}{sec:representations}
+
+\glossentry{invariant-function}{Invariant function}{A regular function unchanged by every group element. Invariant functions descend to the affine quotient, but they can fail to distinguish distinct nonclosed orbits. Traces of products around oriented cycles are basic invariant functions on quiver representation spaces.}{sec:quotients}
+
+\glossentry{isomorphism-of-representations}{Isomorphism of representations}{A collection of invertible maps at the vertices intertwining every arrow map. Thus representations are isomorphic precisely when their matrices differ by the corresponding base-change action. For framed representations the isomorphisms must also commute with the fixed framing maps.}{sec:representations}
+
+\glossentry{jordan-quiver}{Jordan quiver}{The quiver with one vertex and one loop. Its representations are vector spaces with one endomorphism. Doubling gives two endomorphisms; adding one-dimensional framing and cyclic stability at zero moment level leads to the Hilbert scheme of points on the plane.}{sec:jordan}
+
+\glossentry{king-stability}{King stability}{For an unframed dimension vector $v$ and integral $\theta$ with $\theta\cdot v=0$, the condition $\theta\cdot\dim S\ge0$ for every subrepresentation; stability requires strict inequality for proper nonzero $S$. Here the matching character is $\prod_k\det(g_k)^{\theta_k}$.}{sec:stability}
+
+\glossentry{kronecker-quiver}{Kronecker quiver}{The quiver with two vertices and two parallel arrows from the first to the second. It provides a simple representation problem with a continuous parameter: dimension vector $(1,1)$ and the chosen nonzero-arrow stability condition yield a projective-line quotient.}{sec:stability}
+
+\glossentry{lie-algebra}{Lie algebra}{The vector space of infinitesimal group transformations, equipped with a bracket. For $\GL(V)$ it is $\End(V)$ with bracket $[A,B]=AB-BA$. Its dual is the target of the moment map, identified with matrices using the trace pairing.}{sec:moment}
+
+\glossentry{moment-map}{Moment map}{A map from a symplectic representation space to the dual Lie algebra recording infinitesimal symmetry. In these notes its components are explicit matrix polynomials: incoming products minus outgoing products plus $i_kj_k$. The zero fibre supplies the equations before quotienting.}{sec:moment}
+
+\subsection*{N--S}
+
+\glossentry{nakajima-quiver-variety}{Nakajima quiver variety}{A variety constructed by imposing moment-map equations on framed doubled-quiver data and then taking a GIT quotient by changes of basis in the vertex spaces. Dimension vectors and a character specify the problem; in the cyclic chamber the nonempty quotient is smooth.}{sec:definition}
+
+\glossentry{orbit}{Orbit}{The set of points obtained from a representation by changing its bases. One orbit is one isomorphism class of representations with the fixed dimension vector. Different representatives in an orbit are different matrices describing the same underlying linear-map data.}{sec:quotients}
+
+\glossentry{orbit-closure}{Orbit closure}{The smallest Zariski-closed subset containing an orbit. It can contain other, smaller orbits, so an orbit need not be closed. Affine invariant quotients identify representations whose orbit closures have the same closed orbit.}{sec:quotients}
+
+\glossentry{path}{Path}{A sequence of arrows whose successive heads and tails match, interpreted as a composite linear map in a representation. Each vertex also has a path of length zero, interpreted as the identity on its vertex space.}{sec:quivers}
+
+\glossentry{path-algebra}{Path algebra}{The vector space spanned by all paths in a quiver, with multiplication given by concatenation when endpoints match and zero otherwise. A representation turns paths into composite maps; imposing relations amounts to quotienting this algebra by those relations.}{sec:quivers}
+
+\glossentry{preprojective-relation}{Preprojective relation}{The moment-zero relation for a doubled quiver, expressed as the signed sum of an arrow followed by its reverse at each vertex. Without framing it defines the preprojective algebra; framing adds the term $i_i j_i$ to the equation.}{sec:moment}
+
+\glossentry{projective-morphism}{Projective morphism}{A morphism factoring as a closed immersion into a projective space over the target followed by projection. It is a relative property: the source need not be projective over the ground field, and the morphism need not be surjective.}{sec:definition}
+
+\glossentry{quiver}{Quiver}{A directed graph specified by vertices, arrows, and the head and tail of each arrow. Multiple arrows and loops are permitted. The graph tells us the shapes of linear-map data before we choose any vector spaces or matrices.}{sec:quivers}
+
+\glossentry{quiver-representation}{Quiver representation}{A choice of a vector space at every vertex and a linear map for every arrow, directed from its tail space to its head space. Its dimension vector records the vector-space dimensions; additional relations restrict the allowed maps.}{sec:quivers}
+
+\glossentry{quotient-stack}{Quotient stack}{The stack which retains families of objects and their change-of-basis isomorphisms when forming a quotient. A geometric point remembers its stabiliser, unlike an ordinary orbit-classifying space. In a framed free quotient the stack can instead be an ordinary variety.}{sec:connections}
+
+\glossentry{rank-one-operator}{Rank-one operator}{A linear map whose image is one-dimensional. It can be written $u\otimes\alpha$, sending $w$ to $\alpha(w)u$. Rank one alone does not imply nilpotence; in moment-zero examples additional equations can force its square to vanish.}{sec:grassmannian}
+
+\glossentry{relation}{Relation}{An equation between linear combinations of paths with the same endpoints. A representation satisfies the relation when the resulting combination of composite maps is zero. Relations cut out closed algebraic subsets of a representation space by matrix-entry equations.}{sec:quivers}
+
+\glossentry{representation-space}{Representation space}{The affine space of all arrow maps after fixing standard vector spaces at the vertices. Its coordinates are the matrix entries. The base-change group acts on it, and its orbits describe representations up to isomorphism.}{sec:representations}
+
+\glossentry{resolution-of-singularities}{Resolution of singularities}{A proper birational morphism from a smooth variety to a singular variety. Birational means an isomorphism on suitable dense open subsets. A projective map from a quiver variety is not automatically such a resolution; its image and birationality must be checked.}{sec:grassmannian}
+
+\glossentry{scalar-stabiliser}{Scalar stabiliser}{The common nonzero scalars acting on all vertex spaces of an unframed representation. They commute with every arrow map and therefore lie in every stabiliser. Keeping a framing fixed can eliminate them, which changes the quotient geometry substantially.}{sec:stability}
+
+\glossentry{semi-invariant}{Semi-invariant}{A polynomial which transforms by a specified character rather than remaining unchanged: $f(gx)=\chi(g)^n f(x)$. Its exponent gives its graded degree in the GIT ring. Nonvanishing positive-degree semi-invariants determine the semistable locus.}{sec:git}
+
+\glossentry{semiprojectivity}{Semiprojectivity}{In the scaling discussion, smooth quasiprojective geometry with a multiplicative-group action whose fixed locus is proper and whose points all have limits as $t\to0$. The smooth cyclic zero-level quiver varieties here have this property under full dilation; other scaling choices require separate checks.}{sec:scaling}
+
+\glossentry{semisimple-representation}{Semisimple representation}{A direct sum of simple representations. For a quiver with relations, simplicity and the summands are understood in the corresponding representation category. Closed orbits of the affine representation quotient are represented by semisimple objects, rather than arbitrary extensions.}{sec:quotients}
+
+\glossentry{semistable-representation}{Semistable representation}{For the chosen King weight $\theta$ with $\theta\cdot\mathbf v=0$, a representation for which every subrepresentation $S$ satisfies $\theta\cdot\dim S\ge0$. Equivalently it is detected by a nonvanishing semi-invariant for the corresponding character. Equality is allowed.}{sec:stability}
+
+\glossentry{s-equivalence}{S-equivalence}{The equivalence relation on semistable representations having isomorphic Jordan--Hölder graded objects. The stable factors are taken for the specified stability condition. A GIT moduli point can therefore identify nonisomorphic semistable representations whose extensions differ.}{sec:stability}
+
+\glossentry{simple-representation}{Simple representation}{A nonzero representation with no nonzero proper subrepresentation. This is stronger than indecomposability and differs from King-stability for a nonzero weight. Simple representations are the building blocks of semisimple representations and of ordinary composition series.}{sec:representations}
+
+\glossentry{stabiliser}{Stabiliser}{The subgroup of base changes fixing a chosen representation. It is the automorphism group of that object. Stabiliser dimensions and any ineffective subgroup matter in forming quotients; cyclic framing makes this group trivial in the main Nakajima chamber.}{sec:representations}
+
+\glossentry{stable-representation}{Stable representation}{A King-semistable representation for which every nonzero proper subrepresentation has strictly positive weight in the declared sign convention. Its automorphisms are scalars. This differs from framed cyclic stability, where the fixed framing removes those scalar automorphisms.}{sec:stability}
+
+\glossentry{subrepresentation}{Subrepresentation}{A choice of subspace at each vertex preserved by every arrow map. Restricting the arrow maps gives another representation. The subspace condition concerns all arrows simultaneously and is the input to King and cyclic stability tests.}{sec:quivers}
+
+\glossentry{symmetric-product}{Symmetric product}{The quotient $\Sym^n X=X^n/\mathfrak S_n$, whose points are unordered collections of $n$ points, counted with multiplicity. It records a zero-cycle rather than a subscheme, so it forgets some infinitesimal information retained by a Hilbert scheme.}{sec:hilbert-two}
+
+\glossentry{symplectic-form}{Symplectic form}{A closed nondegenerate algebraic two-form. Nondegeneracy pairs every tangent direction with another one, while closedness is the differential condition $d\omega=0$. Doubling arrows provides opposite matrix directions which are naturally paired by such a form.}{sec:doubling}
+
+\glossentry{symplectic-quotient}{Symplectic quotient}{The quotient obtained by first imposing a moment-map level and then removing the group directions. At a smooth zero level with a free stable action, the restricted two-form descends to a nondegenerate form on the quotient.}{sec:geometry}
+
+\subsection*{T--Z}
+
+\glossentry{trace-pairing}{Trace pairing}{The bilinear pairing $(A,B)\mapsto\tr(AB)$ on an endomorphism space. It is nondegenerate and identifies that space with its linear dual. This permits the moment map to be written as matrices rather than abstract dual Lie-algebra elements.}{sec:moment}
+
+\glossentry{variation-of-stability}{Variation of stability}{Changing the character or King weight used to select semistable points and form a quotient. Different chambers can give different spaces or presentations, and a chamber can be empty. A map between two such quotients needs additional justification.}{sec:variation}
+
+\glossentry{vertex}{Vertex}{An element of the quiver graph at which a vector space is placed. Vertices label separate vector spaces and separate factors of the base-change group. The head and tail of each arrow specify which spaces its linear map connects.}{sec:quivers}
+
+\glossentry{weight-of-a-scaling-action}{Weight of a scaling action}{The integer describing how a coordinate or tensor transforms under $t\in\mathbb C^*$. A weight-$m$ coordinate transforms by $t^m$. Naming the scaling action matters, since full dilation and cotangent dilation assign different weights to the same data.}{sec:scaling}
+
+\glossentry{zero-moment-fibre}{Zero moment fibre}{The locus defined by all moment-map equations $\mu_i=0$, before taking a quotient. It can be singular or have unstable components. Passing to the cyclic stable open and then quotienting is a separate operation essential to the smooth-variety construction.}{sec:moment}
+
+
+\subsection*{Notation at a glance}
+\begin{longtable}{@{}p{0.3\textwidth}p{0.64\textwidth}@{}}
+\toprule Symbol & Meaning\\\midrule\endhead
+$Q_0$, $Q_1$, $t(a)$, $h(a)$ & Vertices, original arrows, tail, and head.\\
+$V_k$, $W_k$ & Internal vertex spaces and fixed framing spaces.\\
+$\vv$, $\ww$ & Their dimension vectors.\\
+$G_\vv=\prod_k\GL(V_k)$ & The group whose changes of basis are quotiented.\\
+$B_a$, $B_{a^*}$ & Independent original and reverse arrow maps.\\
+$i_k$, $j_k$ & Framing maps $W_k\to V_k$ and $V_k\to W_k$.\\
+$\omega$, $\mu$ & The declared symplectic form and complex moment map.\\
+$Z_\lambda$ & The affine moment fibre $\mu_k=\lambda_k\id_{V_k}$.\\
+$\chi$, $\theta$ & A character; unframed integer vertex weights with $\theta\cdot\vv=0$.\\
+$R_\chi$ & The ring graded by $n$ of functions with $f(gx)=\chi(g)^nf(x)$.\\
+$\M_{\lambda,\chi}$ & The character quotient of the moment fibre.\\
+$\M_{\lambda,0}$ & Its full affine invariant quotient, with trivial character.\\
+$\M(\vv,\ww)$, $\M_0(\vv,\ww)$ & At zero moment level: cyclic stable variety and full affine quotient.\\
+$\pi$ & The natural projective map from stable to affine quotient; it need not be surjective.\\
+$\Gr_{\rm quot}(v,W)$ & The Grassmannian of dimension-$v$ quotients of $W$.\\
+$\Hilb^n(\A^2)$, $\Sym^n(\A^2)$ & Length-$n$ plane subschemes and unordered point cycles with multiplicity.\\
+$\langle\mathbf u,\mathbf v\rangle$ & The Euler form $\sum_ku_kv_k-\sum_a u_{t(a)}v_{h(a)}$.\\
+\bottomrule
+\end{longtable}
+
+\clearpage
+\section{Examples Glossary}
+\label{app:examples-glossary}
+
+Each term has two elementary examples, in the same order as
+Appendix~\ref{app:glossary}. The links return to the exact definition,
+and the definitions link forward to these examples. Quiver dimensions
+and framing maps are stated when they affect the answer. A contrasting
+case explains which condition fails. The scalar group $\mathbb C^*$
+is the complex-point group of $\Gm$.
+
+\newcommand{\examplegloss}[3]{%
+  \par\medskip\Needspace{5\baselineskip}\phantomsection\label{examples:#1}%
+  \noindent\textbf{#2.}\quad
+  \hyperref[gloss:#1]{\textit{Glossary entry (Appendix~\ref*{app:glossary}).}}\par
+  #3\par}
+
+\subsection*{A--C}
+
+\examplegloss{affine-quotient}{Affine quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For scalar multiplication on $\A^1$, the invariant polynomials are constants. The affine quotient is a point, identifying the zero orbit with the distinct nonzero orbit whose closure contains zero.
+\item For one loop on a one-dimensional vector space, the base-change action is trivial. Every scalar loop value is invariant, so the affine quotient remains the affine line of possible values.
+\end{enumerate}}
+
+\examplegloss{arrow}{Arrow}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item An arrow $1\to2$ with vertex spaces $\mathbb C$ and $\mathbb C^2$ can carry the map $z\mapsto(z,0)$. The arrow specifies the direction of this map, not its numerical entries.
+\item A loop starts and ends at the same vertex. If its vertex space is $\mathbb C^2$, its assigned map is an endomorphism, such as the nonzero nilpotent matrix $\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$.
+\end{enumerate}}
+
+\examplegloss{automorphism}{Automorphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A one-dimensional representation of the Jordan quiver has scalar loop map. Every nonzero scalar change of basis commutes with it, so its automorphism group is $\mathbb C^*$, independently of the loop value.
+\item With $V=W=\mathbb C$, no arrows, and framing $i=1$, an automorphism satisfies $g i=i$. This forces $g=1$: fixing the framing removes the scalar automorphisms of this example.
+\end{enumerate}}
+
+\examplegloss{base-change-group}{Base-change group}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow with dimensions $(1,1)$, the group is $\mathbb C^*\times\mathbb C^*$. Its action on an arrow value $x$ is $x\mapsto(g_2/g_1)x$, showing why the diagonal subgroup acts trivially.
+\item For one framed vertex with $V=\mathbb C^2$ and $W=\mathbb C^3$, only $\GL_2$ is the base-change group. It changes the target basis of $i:W\to V$; the chosen framing space stays fixed.
+\end{enumerate}}
+
+\examplegloss{character}{Character}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The determinant $\det:\GL_2\to\mathbb C^*$ is a character, since $\det(gh)=\det(g)\det(h)$. Its inverse is another character; choosing the inverse can change which points are semistable.
+\item For the two-vertex dimension vector $(1,1)$ and $\theta=(-1,1)$, the character is $\chi_\theta(g_1,g_2)=g_1^{-1}g_2$. Both Kronecker arrow coordinates transform by this character, so they are degree-one semi-invariants.
+\end{enumerate}}
+
+\examplegloss{commutator}{Commutator}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Two scalar endomorphisms of $\mathbb C$ always commute, so their commutator is zero. Thus the unframed one-dimensional Jordan zero-moment equation imposes no restriction on its two scalar variables.
+\item Take $X=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$ and $Y=\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)$. Then $[X,Y]=\operatorname{diag}(1,-1)$, so this pair does not satisfy the unframed zero-moment equation. Its two nonzero diagonal entries explicitly display the failure to commute.
+\end{enumerate}}
+
+\examplegloss{cotangent-bundle}{Cotangent bundle}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The cotangent bundle of $\A^1_x$ is $\A^2_{x,p}$: a point consists of a position $x$ and a covector $p\,dx$. The second coordinate adds a dual direction, rather than another position.
+\item The cotangent bundle of $\PP^1$ is the total space of $\OO(-2)$. This same surface appears as the quiver variety for one internal dimension and two framing dimensions, with cyclic stability.
+\end{enumerate}}
+
+\examplegloss{cyclic-stability}{Cyclic stability}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item With one vertex and no arrows, generation means that $i:W\to V$ is surjective. For $V=\mathbb C$ and $W=\mathbb C^2$, this simply requires a nonzero row $(i_1,i_2)$.
+\item For the Jordan quiver, let $V=\mathbb C^2$, $W=\mathbb C$, $j=0$, $i(1)=e_1$, $Xe_1=e_2$, $Xe_2=0$, and $Y=0$. The framing generates both basis vectors, so these commuting data are cyclically stable.
+\end{enumerate}}
+
+\examplegloss{cyclic-vector}{Cyclic vector}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $V=\mathbb C^2$, choose $Xe_1=e_2$, $Xe_2=0$, and $Y=0$. The vector $e_1$ is cyclic because $e_1,Xe_1$ span $V$; its polynomial-module relation is $X^2=0$.
+\item If both operators are zero on $\mathbb C^2$, no single vector is cyclic. Every polynomial in the operators acts by a scalar, so the span generated from one vector stays one-dimensional.
+\end{enumerate}}
+
+\subsection*{D--H}
+
+\examplegloss{deformed-moment-level}{Deformed moment level}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one internal and one framing dimension, with no arrows, the equation is $ij=\lambda$. At $\lambda=1$ it is a hyperbola; scaling both coordinates by $t$ changes the equation's value to $t^2$.
+\item For an unframed one-dimensional Jordan representation, $[X,Y]=0$ for every pair of scalars. The deformed equation $[X,Y]=1$ is therefore impossible: changing the moment level can make a variety empty.
+\end{enumerate}}
+
+\examplegloss{dimension-vector}{Dimension vector}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the quiver $1\to2$ and dimension vector $(1,2)$, an arrow map is a $2\times1$ matrix. The representation space is therefore $\Hom(\mathbb C,\mathbb C^2)\simeq\A^2$.
+\item For the Jordan quiver, dimension vector $v=1$ assigns a one-dimensional space to its single vertex. Loop values zero and two give different representations with exactly the same dimension vector.
+\end{enumerate}}
+
+\examplegloss{direct-sum}{Direct sum}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a single arrow, take one-dimensional arrow maps $1$ and $2$. Their direct sum has vertex dimensions $(2,2)$ and arrow matrix $\operatorname{diag}(1,2)$, displaying both original maps as separate blocks.
+\item For one loop, the matrix $\operatorname{diag}(\lambda,\nu)$ is the direct sum of two one-dimensional loop representations. The two coordinate lines are preserved, so the block decomposition is a decomposition of representations.
+\end{enumerate}}
+
+\examplegloss{doubled-quiver}{Doubled quiver}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Doubling $1\to2$ adds the arrow $2\to1$. With one-dimensional vertex spaces, the two maps are scalar coordinates $x,y$, so the doubled representation space is an affine plane.
+\item Doubling the one-loop Jordan quiver produces two loops. A representation now has two endomorphisms $X,Y$ on the same vector space; imposing the moment equation can require these endomorphisms to commute.
+\end{enumerate}}
+
+\examplegloss{effective-group-action}{Effective group action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The scaling action of $\mathbb C^*$ on $\A^1$ is effective: a scalar fixing every point must equal one. Nevertheless, the origin is fixed by the entire group, so effectiveness does not imply freeness.
+\item For Kronecker dimension vector $(1,1)$, diagonal pairs $(g,g)$ act trivially on both arrows. Dividing $(\mathbb C^*)^2$ by this diagonal gives the effective group $\mathbb C^*$ acting by their ratio.
+\end{enumerate}}
+
+\examplegloss{euler-form}{Euler form}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one vertex without arrows, $\langle v,v\rangle=v^2$. With $v=1,w=2$, the dimension formula gives $2(2-1)=2$, agreeing with the cotangent surface $T^*\PP^1$.
+\item For one vertex with one loop, the vertex term $v^2$ cancels the loop term $v^2$. Thus $\langle v,v\rangle=0$, and framing dimension one gives dimension $2v$, as for the plane Hilbert scheme.
+\end{enumerate}}
+
+\examplegloss{family-of-representations}{Family of representations}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $T=\A^1_t$, put trivial lines at both ends of one arrow and use multiplication by $t$. Every nonzero fibre has a nonzero arrow, while the fibre at zero has the zero arrow.
+\item For the Jordan quiver over $\A^1_t$, the matrix $\left(\begin{smallmatrix}0&t\\0&0\end{smallmatrix}\right)$ is a family of loop operators. Nonzero fibres are conjugate to one nonzero Jordan block, while the zero fibre is split.
+\end{enumerate}}
+
+\examplegloss{framing}{Framing}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item At one vertex with $V=W=\mathbb C$, choose $i=1,j=0$. Preserving $i$ forces the internal scalar change of basis to be one, so this framing removes the automorphisms of the unframed vertex.
+\item With $V=\mathbb C$ and $W=\mathbb C^2$, the map $i$ is a row $(i_1,i_2)$ and $j$ is a column. Changing the internal basis rescales them oppositely, but does not change the framing basis.
+\end{enumerate}}
+
+\examplegloss{gauge-fixing}{Gauge fixing}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a nonzero row $i=(a,b)$ with $a\ne0$, the scalar base change $g=a^{-1}$ normalises it to $(1,b/a)$. The ratio $b/a$ is then a coordinate on a projective-line chart.
+\item For the Jordan example with $V=W=\mathbb C$, cyclic stability requires $i\ne0$. Normalise $i=1$; the moment equation then forces $j=0$. The two remaining scalar loop values give the quotient coordinates of $\A^2$.
+\end{enumerate}}
+
+\examplegloss{geometric-quotient}{Geometric quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Scalar multiplication on $\A^2\setminus\{0\}$ has geometric quotient $\PP^1$. Each point $[x:y]$ represents one nonzero line orbit, and the ratios on the two standard charts are invariant coordinates.
+\item For multiplication of $\mathbb C^*$ on itself, every point belongs to one orbit and every stabiliser is trivial. The geometric quotient is a point; no additional nonclosed orbit is present in this space.
+\end{enumerate}}
+
+\examplegloss{git-quotient}{GIT quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Let $\mathbb C^*$ scale $(x,y)$ and take $\chi(t)=t$. Degree-$n$ semi-invariants are homogeneous polynomials of degree $n$. Their graded ring is $\mathbb C[x,y]$, giving the quotient $\PP^1$.
+\item With the trivial character on the same affine plane, the quotient is the affine invariant quotient, a point. Changing the character therefore changes the semistable locus and the quotient, even though the original group action is unchanged.
+\end{enumerate}}
+
+\examplegloss{grassmannian}{Grassmannian}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A one-dimensional quotient of $\mathbb C^2$ is a nonzero row $(a,b)$ up to common rescaling. Its parameter space is $\PP^1$, with affine chart coordinate $b/a$ when $a\ne0$.
+\item A two-dimensional quotient of $\mathbb C^3$ is determined by its one-dimensional kernel. Those kernels form $\PP^2$. This illustrates how quotient and subspace descriptions of a Grassmannian encode the same data.
+\end{enumerate}}
+
+\examplegloss{hamiltonian-reduction}{Hamiltonian reduction}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one vertex with no arrows and $v=w=1$, the zero moment equation is $ij=0$. In the cyclic chamber $i\ne0$, so $j=0$; normalising $i=1$ leaves a single quotient point.
+\item For one internal dimension and two framing dimensions, impose $i_1j_1+i_2j_2=0$, require $i\ne0$, and divide by internal rescaling. Four coordinates minus one equation minus one group dimension leave the surface $T^*\PP^1$.
+\end{enumerate}}
+
+\examplegloss{hilbert-chow-morphism}{Hilbert--Chow morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a single point, the ideal $(x-a,y-b)$ maps to the cycle $(a,b)$. Here the Hilbert--Chow morphism is the identity identification between the length-one plane Hilbert scheme and the affine plane.
+\item The distinct ideals $(x^2,y)$ and $(x,y^2)$ both have length two and map to the doubled origin. Their different tangent directions are visible in the ideals but are forgotten by the cycle.
+\end{enumerate}}
+
+\examplegloss{hilbert-scheme-of-points}{Hilbert scheme of points}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For length one on $\A^2$, each ideal is $(x-a,y-b)$. The quotient ring is one-dimensional, and the two scalars $a,b$ identify this Hilbert scheme with $\A^2$ itself.
+\item The ideal $(x^2,y)$ defines a length-two subscheme supported at the origin. Its quotient has basis $1,x$ and relation $x^2=0$, illustrating why a subscheme can have length two without two distinct support points.
+\end{enumerate}}
+
+\subsection*{I--M}
+
+\examplegloss{indecomposable-representation}{Indecomposable representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow between one-dimensional spaces, the map $1$ gives an indecomposable representation. A decomposition into the two vertex representations would have zero arrow, so cannot be isomorphic to this nonzero-arrow object.
+\item A nonzero nilpotent Jordan block on $\mathbb C^2$ is indecomposable. A decomposition into two one-dimensional blocks would make the nilpotent operator zero; nevertheless, its kernel is a proper invariant line, so it is not simple.
+\end{enumerate}}
+
+\examplegloss{invariant-function}{Invariant function}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a one-dimensional arrow value $x$, base change acts by $x\mapsto(g_2/g_1)x$. Only constant polynomials are invariant, so the affine quotient cannot distinguish the zero arrow from the nonzero orbit.
+\item For a loop represented by a $2\times2$ matrix $X$, both $\tr X$ and $\det X$ are invariant under conjugation. They record its characteristic polynomial, but do not distinguish a nonzero nilpotent Jordan block from zero.
+\end{enumerate}}
+
+\examplegloss{isomorphism-of-representations}{Isomorphism of representations}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one-dimensional spaces on an arrow $1\to2$, arrow values $1$ and $2$ are isomorphic: use $g_1=1,g_2=2$. The zero arrow is not isomorphic to either, since invertible maps preserve rank.
+\item For the Jordan quiver, the zero operator and a nonzero nilpotent block on $\mathbb C^2$ are not isomorphic representations. Their matrices have different ranks, although they have the same characteristic polynomial.
+\end{enumerate}}
+
+\examplegloss{jordan-quiver}{Jordan quiver}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item A one-dimensional Jordan representation is a scalar $\lambda$. Conjugation has no effect, so different scalars give different representations. Their parameter space is the affine line, not a discrete list.
+\item After doubling, take $V=\mathbb C$, framing $i=1$, and $j=0$. Both loop operators are arbitrary scalars $x,y$, their commutator vanishes, and these data give the point $(x,y)$ of the plane Hilbert scheme.
+\end{enumerate}}
+
+\examplegloss{king-stability}{King stability}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For two Kronecker arrows and $v=(1,1)$, choose $\theta=(-1,1)$. If an arrow is nonzero, the only proper nonzero subrepresentation has vector $(0,1)$ and positive weight, so the representation is stable.
+\item For the same dimensions and parameter, the representation with both arrows zero has a subrepresentation of dimension $(1,0)$. Its weight is $-1$, violating semistability. This shows how the inequality removes a degenerate representation.
+\end{enumerate}}
+
+\examplegloss{kronecker-quiver}{Kronecker quiver}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item With dimensions $(1,1)$, a representation is a pair of scalars $(a,b)$. Nonzero pairs up to common rescaling give $[a:b]\in\PP^1$, so the stable moduli has a familiar geometric parameter.
+\item The stable pairs $(1,0)$ and $(0,1)$ give different points of that projective line. No base change can exchange the two arrow labels, since an isomorphism changes vertex bases rather than permuting arrows.
+\end{enumerate}}
+
+\examplegloss{lie-algebra}{Lie algebra}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The Lie algebra of $\mathbb C^*$ is one-dimensional. Differentiating the scaling action on a vector gives the infinitesimal action $v\mapsto\alpha v$ for a scalar $\alpha$, illustrating a tangent direction at the identity.
+\item The Lie algebra of $\GL_2$ consists of all $2\times2$ matrices. The matrices $E_{12}$ and $E_{21}$ have bracket $\operatorname{diag}(1,-1)$, so this Lie algebra has a nonzero bracket.
+\end{enumerate}}
+
+\examplegloss{moment-map}{Moment map}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the unframed doubled Jordan quiver, the moment map is $\mu(X,Y)=[X,Y]$. The zero fibre consists of commuting pairs, so the abstract moment-map condition becomes a familiar matrix equation.
+\item With one internal dimension, two framing dimensions, and no arrows, the moment map is the scalar $i_1j_1+i_2j_2$. Its zero equation says that the framing row annihilates the framing column.
+\end{enumerate}}
+
+\subsection*{N--S}
+
+\examplegloss{nakajima-quiver-variety}{Nakajima quiver variety}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one vertex with no loops, vertex dimension one, and framing dimension two, cyclic stability gives $T^*\PP^1$. Thus familiar cotangent geometry appears as the first framed quiver-variety example.
+\item For the Jordan quiver with one-dimensional vertex and framing spaces, cyclic stability lets us set $i=1$ and forces $j=0$. The two loop coordinates remain free, giving $\A^2$.
+\end{enumerate}}
+
+\examplegloss{orbit}{Orbit}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow between one-dimensional spaces, every nonzero scalar map lies in the same orbit: rescaling the target changes any nonzero arrow value to $1$. The zero map forms another orbit.
+\item For one loop, changing basis replaces a matrix $A$ by $gAg^{-1}$. Its orbit is its conjugacy class; for example, the identity matrix has a one-point orbit because every basis change commutes with it.
+\end{enumerate}}
+
+\examplegloss{orbit-closure}{Orbit closure}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The nonzero orbit for scalar multiplication on $\A^1$ is $\A^1\setminus\{0\}$. Its closure contains zero. Consequently the orbit space has more points than the invariant affine quotient, which is a point.
+\item For $J=\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$, conjugation by $\operatorname{diag}(t,1)$ gives $tJ$ for $t\ne0$. Its limit at zero is the zero matrix, which is not conjugate to $J$.
+\end{enumerate}}
+
+\examplegloss{path}{Path}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For arrows $a:1\to2$ and $b:2\to3$, the path from $1$ to $3$ acts as $B_bB_a$. The rightmost matrix acts first, in accordance with composition of the corresponding linear maps.
+\item For the one-loop quiver, paths are $1,x,x^2,\ldots$. In a representation given by an operator $X$, they act as $\id,X,X^2,\ldots$, so paths express repeated application of the loop.
+\end{enumerate}}
+
+\examplegloss{path-algebra}{Path algebra}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one vertex and no arrows, the only path is the length-zero identity. The path algebra is $\mathbb C$, and its finite-dimensional representations are simply complex vector spaces.
+\item For one vertex and one loop $x$, every path is a power of $x$. The path algebra is $\mathbb C[x]$, and choosing a representation is choosing the linear operator by which $x$ acts.
+\end{enumerate}}
+
+\examplegloss{preprojective-relation}{Preprojective relation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a one-loop original quiver, doubling gives operators $X,Y$. The unframed preprojective relation is $[X,Y]=0$, so representations are pairs of commuting matrices, not arbitrary pairs of matrices.
+\item For one arrow $a:1\to2$ and its reverse, write $A:V_1\to V_2$ and $B:V_2\to V_1$. The unframed relations are $BA=0$ at vertex $1$ and $AB=0$ at vertex $2$.
+\end{enumerate}}
+
+\examplegloss{projective-morphism}{Projective morphism}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The contraction $T^*\PP^1\to\{uv=z^2\}$ in the rank-one framed example is projective. Its source is not projective over $\mathbb C$, since the cotangent fibres are affine lines.
+\item For an isolated vertex with $v=w=2$, the cyclic variety is a point, whose image in the affine quotient is zero. Its projective map is not surjective: other moment-zero data can have the nonzero invariant $ji$.
+\end{enumerate}}
+
+\examplegloss{quiver}{Quiver}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The quiver $1\longrightarrow2$ asks for two vector spaces and a map from the first to the second. Choosing different dimensions changes the representation space while leaving this quiver unchanged.
+\item The Jordan quiver has one vertex and one loop. A representation is one vector space with one operator; the loop permits repeated compositions, unlike a quiver with no oriented cycles.
+\end{enumerate}}
+
+\examplegloss{quiver-representation}{Quiver representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $1\to2$, choose $V_1=V_2=\mathbb C$ and let the arrow be multiplication by $3$. This is a representation of dimension vector $(1,1)$, with one scalar as its arrow data.
+\item For two parallel arrows $1\rightrightarrows2$ and the same spaces, a representation is a pair $(a,b)\in\mathbb C^2$. The two numbers specify two separate linear maps, even though their source and target agree.
+\end{enumerate}}
+
+\examplegloss{quotient-stack}{Quotient stack}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one vertex with no arrows and a one-dimensional space, there is only one representation, but it has scalar automorphisms. Its quotient stack is $B\Gm$, whereas its affine invariant quotient is just a point.
+\item For an isolated vertex with $v=w=1$, cyclic stability gives $i\ne0$ and $j=0$. The gauge transformation setting $i=1$ is unique, so this quotient stack is an ordinary point with no remaining stabiliser.
+\end{enumerate}}
+
+\examplegloss{rank-one-operator}{Rank-one operator}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The matrix $\left(\begin{smallmatrix}1&0\\0&0\end{smallmatrix}\right)$ has rank one, with image the first coordinate line. Its square equals itself, so it illustrates that a rank-one operator need not be nilpotent.
+\item Take $i=(1,0):\mathbb C^2\to\mathbb C$ and $j=(0,1)^T$. Then $ij=0$, while $ji=\left(\begin{smallmatrix}0&0\\1&0\end{smallmatrix}\right)$ has rank one and square zero. This is the cotangent projective-line model.
+\end{enumerate}}
+
+\examplegloss{relation}{Relation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a single loop $x$, the relation $x^2=0$ requires an operator $X$ with square zero. The nonzero Jordan matrix $\left(\begin{smallmatrix}0&1\\0&0\end{smallmatrix}\right)$ satisfies it, although $X$ itself is not zero.
+\item For one vertex with two loops $x,y$, the relation $xy-yx=0$ requires $XY=YX$. Scalar one-dimensional representations always satisfy it, but arbitrary larger matrices need not commute.
+\end{enumerate}}
+
+\examplegloss{representation-space}{Representation space}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow with dimensions two and three, the representation space is $\Hom(\mathbb C^2,\mathbb C^3)\simeq\A^6$. There are six matrix entries before changing bases or imposing additional relations.
+\item For the Jordan quiver and a two-dimensional vertex space, the representation space is $\End(\mathbb C^2)\simeq\A^4$. Its four coordinates are the entries of a single $2\times2$ matrix.
+\end{enumerate}}
+
+\examplegloss{resolution-of-singularities}{Resolution of singularities}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The isolated-vertex construction with $v=1,w=2$ gives $T^*\PP^1\to\{uv=z^2\}$. Away from the cone vertex it is an isomorphism; the vertex is replaced by the projective zero section.
+\item The Hilbert--Chow map $\Hilb^2(\A^2)\to\Sym^2(\A^2)$ is another resolution. Over two distinct points it changes nothing, while over a doubled point it retains a projective line of infinitesimal directions.
+\end{enumerate}}
+
+\examplegloss{scalar-stabiliser}{Scalar stabiliser}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a nonzero arrow between one-dimensional spaces, an automorphism satisfies $g_2a=ag_1$, hence $g_1=g_2=c$. The representation can be King-stable while retaining this entire scalar group.
+\item For a framed one-dimensional vertex with $i\ne0$, a stabilising scalar must satisfy $ci=i$. Thus $c=1$: the fixed framing removes the scalar automorphisms present in the unframed example.
+\end{enumerate}}
+
+\examplegloss{semi-invariant}{Semi-invariant}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For an arrow value $a$ between one-dimensional spaces, $a$ transforms as $g_2ag_1^{-1}$. It is a semi-invariant for $\chi(g_1,g_2)=g_2/g_1$; its nonvanishing selects the nonzero-arrow locus.
+\item For an isolated framed vertex with $v=w=1$, the coordinate $i$ transforms as $gi$. It is a semi-invariant for $\chi(g)=g$, while $j$ transforms by $g^{-1}$ and has the inverse character.
+\end{enumerate}}
+
+\examplegloss{semiprojectivity}{Semiprojectivity}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item The affine line with $t\cdot z=tz$ has a proper fixed locus consisting of the origin. Every point tends to the origin, so this is a basic example of the stated action-based semiprojectivity.
+\item In the isolated-vertex $T^*\PP^1$ example, full quiver dilation fixes the base and scales cotangent fibres by $t^2$. Every point limits to the projective zero section, which is the proper fixed locus.
+\end{enumerate}}
+
+\examplegloss{semisimple-representation}{Semisimple representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the one-loop quiver, a diagonal matrix $\operatorname{diag}(a,b)$ is semisimple: it is the direct sum of the two one-dimensional operators with eigenvalues $a,b$. Repeated eigenvalues are allowed in this direct-sum description.
+\item For $1\to2$ with dimensions $(1,1)$, the zero arrow is the direct sum of the simple representations supported separately at the two vertices. A nonzero arrow instead joins those pieces into an extension.
+\end{enumerate}}
+
+\examplegloss{semistable-representation}{Semistable representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow of dimensions $(1,1)$ and $\theta=(-1,1)$, every nonzero arrow is semistable and actually stable. The permanent target-only subrepresentation has weight $1$, so it satisfies the required inequality.
+\item For $\theta=0$, every representation is semistable. In particular, a nonzero nilpotent Jordan block is semistable, even though its orbit is not closed and its semisimplification is the zero operator.
+\end{enumerate}}
+
+\examplegloss{s-equivalence}{S-equivalence}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the one-loop quiver with $\theta=0$, the nonzero nilpotent $2\times2$ Jordan block has two zero-eigenvalue one-dimensional factors. It is S-equivalent to the zero $2\times2$ matrix, although they are not conjugate.
+\item For the Kronecker quiver of dimensions $(1,1)$ and $\theta=(-1,1)$, all nonzero arrow pairs are stable. Here S-equivalence is just isomorphism, and the moduli point is their ratio $[a:b]\in\PP^1$.
+\end{enumerate}}
+
+\examplegloss{simple-representation}{Simple representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a one-dimensional representation of the one-loop quiver, the operator is a scalar $a$. The only vector subspaces are zero and the whole space, so the representation is simple for every $a$.
+\item A nonzero arrow between one-dimensional spaces is not simple: the target-only spaces $(0,\mathbb C)$ form a proper subrepresentation. Nevertheless it is stable for $\theta=(-1,1)$, distinguishing the two definitions.
+\end{enumerate}}
+
+\examplegloss{stabiliser}{Stabiliser}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a nonzero arrow $a:\mathbb C\to\mathbb C$, the stabiliser consists of pairs $(c,c)$ with $c\ne0$. This common scalar changes the two bases compatibly and leaves the arrow unchanged.
+\item For the Jordan example with vertex and framing dimension one, cyclic stability requires $i\ne0$. A stabiliser must fix $i$, forcing its scalar to be $1$, regardless of the two loop-coordinate values.
+\end{enumerate}}
+
+\examplegloss{stable-representation}{Stable representation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For the arrow $1\to2$ of dimensions $(1,1)$ and $\theta=(-1,1)$, a nonzero arrow is stable. The only nonzero proper subrepresentation is target-only, with positive weight $1$.
+\item For two parallel arrows with the same dimensions and weight, a pair $(a,b)\ne(0,0)$ is stable. A source-only subrepresentation would require both arrows to vanish; the stable quotient is $\PP^1$.
+\end{enumerate}}
+
+\examplegloss{subrepresentation}{Subrepresentation}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For a nonzero arrow $\mathbb C\to\mathbb C$, the spaces $(0,\mathbb C)$ give a subrepresentation. The spaces $(\mathbb C,0)$ do not, because the arrow does not send the source into the chosen zero target.
+\item For a nilpotent Jordan operator $J$ with $Je_2=e_1$ and $Je_1=0$, the line $\mathbb C e_1$ is a subrepresentation. The line $\mathbb C e_2$ is not preserved by the loop.
+\end{enumerate}}
+
+\examplegloss{symmetric-product}{Symmetric product}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $\Sym^2\A^1$, invariant coordinates are $s=x_1+x_2$ and $p=x_1x_2$. They determine the monic polynomial $T^2-sT+p$, so the symmetric product is an affine plane.
+\item In $\Sym^2(\A^2)$, every length-two subscheme supported at the origin has the same cycle $2[0]$. The ideals $(x^2,y)$ and $(x,y^2)$ therefore have the same symmetric-product image but retain different directions.
+\end{enumerate}}
+
+\examplegloss{symplectic-form}{Symplectic form}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item On $\A^2_{x,y}$, the form $dx\wedge dy$ pairs the two coordinate directions nondegenerately. It is closed because differentiating the coordinate one-forms gives zero.
+\item On a pair of matrix spaces with coordinates $X,Y$, the form $\tr(dX\wedge dY)$ pairs the $ij$ entry of $X$ with the $ji$ entry of $Y$. This is the cotangent pairing behind doubled-quiver geometry.
+\end{enumerate}}
+
+\examplegloss{symplectic-quotient}{Symplectic quotient}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For an isolated vertex with $v=1,w=2$, the equation is $ij=0$. Quotienting its cyclic locus $i\ne0$ by $\Gm$ produces $T^*\PP^1$, with its cotangent symplectic form.
+\item For the Jordan quiver with $v=w=1$, cyclic gauge fixing gives $i=1,j=0$. The remaining loop coordinates $x,y$ form $\A^2$ with symplectic form $dx\wedge dy$.
+\end{enumerate}}
+
+\subsection*{T--Z}
+
+\examplegloss{trace-pairing}{Trace pairing}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For $1\times1$ matrices, the trace pairing is ordinary multiplication $ab$. Specifying the pairing with every scalar $b$ determines $a$, illustrating the identification of this Lie algebra with its dual.
+\item For matrix units, $\tr(E_{12}E_{21})=1$. Thus the nonzero matrix $E_{12}$ can pair nontrivially even though its own trace is zero; nondegeneracy uses all partner matrices.
+\end{enumerate}}
+
+\examplegloss{variation-of-stability}{Variation of stability}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For one arrow of dimensions $(1,1)$, $\theta=(-1,1)$ allows nonzero arrows. Reversing to $(1,-1)$ excludes every representation, because the unavoidable target-only subrepresentation now has weight $-1$.
+\item For an isolated framed vertex with $v=1,w=2$, the character selecting $i\ne0$ gives the quotient-Grassmannian presentation. The inverse character selects $j\ne0$, giving the dual, subspace-Grassmannian presentation of a cotangent projective line.
+\end{enumerate}}
+
+\examplegloss{vertex}{Vertex}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item In the quiver $1\to2$, vertex $1$ carries the source space and vertex $2$ the target space. Dimensions $(2,3)$ therefore specify a map from a two-dimensional to a three-dimensional space.
+\item The Jordan quiver has one vertex even though it has a loop. Doubling adds another loop at that same vertex, not another vector space; both resulting maps are endomorphisms of the original space.
+\end{enumerate}}
+
+\examplegloss{weight-of-a-scaling-action}{Weight of a scaling action}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item Under full dilation of the Jordan $v=w=1$ quiver variety $\A^2_{x,y}$, both coordinates have weight $1$. The two-form $dx\wedge dy$ consequently has weight $2$, reflecting its two differential factors.
+\item Under cotangent dilation on the same plane, $(x,y)\mapsto(x,ty)$. Now $x$ has weight $0$ and $y$ weight $1$; the fixed locus is the whole nonproper line $y=0$.
+\end{enumerate}}
+
+\examplegloss{zero-moment-fibre}{Zero moment fibre}{
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=2pt,topsep=3pt]
+\item For an isolated vertex with $v=w=1$, the equation is $ij=0$ in an affine plane. The zero fibre is the union of the two coordinate axes; cyclic stability keeps only $i\ne0,j=0$.
+\item For the Jordan quiver with $v=w=1$, scalar loops commute automatically. The zero fibre is $\A^2_{x,y}\times\{ij=0\}$. Quotienting its cyclic locus leaves the two free loop coordinates, hence $\A^2$.
+\end{enumerate}}
+
+\end{document}

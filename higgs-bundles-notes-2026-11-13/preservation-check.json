@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-13",
+  "existing_repository_files_checked_by_sha256": 136,
+  "repository_changed_or_missing": [],
+  "Literature_root": "/Users/Benjamin/Literature",
+  "Literature_files_inventoried": 1543,
+  "Literature_changed_size_or_mtime_or_missing": [],
+  "Literature_new_files": [],
+  "consulted_Literature_PDFs_checked_by_sha256": [
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Simon Donaldson/Riemann Surfaces (6)/Riemann Surfaces - Simon Donaldson.pdf",
+      "size": 1601373,
+      "sha256": "4c30470cc1e8b95776e1876be5f5c6e115be5c29c2dd885d2b4ec06189a0b4bd",
+      "unchanged_after_read": true,
+      "sha256_at_delivery": "4c30470cc1e8b95776e1876be5f5c6e115be5c29c2dd885d2b4ec06189a0b4bd",
+      "unchanged_at_delivery": true
+    },
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Peter E. Newstead/Introduction to Moduli Problems and Orbit Spaces (74)/Introduction to Moduli Problems and Orbit - Peter E. Newstead.pdf",
+      "size": 24531674,
+      "sha256": "c325fe73d9aca4b4706a5bfabf806bd3db8ec3479d06f3f20673a735a56bbf6a",
+      "unchanged_after_read": true,
+      "sha256_at_delivery": "c325fe73d9aca4b4706a5bfabf806bd3db8ec3479d06f3f20673a735a56bbf6a",
+      "unchanged_at_delivery": true
+    },
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/J. le Potier/Lectures on Vector Bundles (80)/Lectures on Vector Bundles - J. le Potier.pdf",
+      "size": 22604591,
+      "sha256": "af00d7178545afc674bca26530204d7f4429220e4d7b3c3e33ddc2605dd93126",
+      "unchanged_after_read": true,
+      "sha256_at_delivery": "af00d7178545afc674bca26530204d7f4429220e4d7b3c3e33ddc2605dd93126",
+      "unchanged_at_delivery": true
+    },
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Robin Hartshorne/Algebraic Geometry (34)/Algebraic Geometry - Robin Hartshorne.pdf",
+      "size": 1918896595,
+      "sha256": "837728f6b4628b3287578e3bf582e2d11bc39c4a34fd5a2b69252ed78aeb030a",
+      "unchanged_after_read": true,
+      "sha256_at_delivery": "837728f6b4628b3287578e3bf582e2d11bc39c4a34fd5a2b69252ed78aeb030a",
+      "unchanged_at_delivery": true
+    },
+    {
+      "path": "/Users/Benjamin/Literature/Algebraic & Complex Geometry/Daniel Huybrechts/The Geometry of Moduli Spaces of Sheaves (67)/The Geometry of Moduli Spaces of Sheaves - Daniel Huybrechts.pdf",
+      "size": 4603074,
+      "sha256": "2477c88f97c6eb5dbf3ad8c65adbaa2549a5007f9ee08dfbefc40e004d632f48",
+      "unchanged_after_read": true,
+      "sha256_at_delivery": "2477c88f97c6eb5dbf3ad8c65adbaa2549a5007f9ee08dfbefc40e004d632f48",
+      "unchanged_at_delivery": true
+    }
+  ],
+  "qualification": "All Literature files were compared by path, size and modification time. The five consulted textbook PDFs were additionally checked by SHA-256; the whole 23 GB library was not hashed."
+}

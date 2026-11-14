@@ -1,0 +1,658 @@
+{
+  "counts": {
+    "pages": 40,
+    "glossary_definitions": 64,
+    "examples_glossary_entries": 64,
+    "examples_in_examples_glossary": 128,
+    "exercises": 16,
+    "resolved_internal_link_annotations": 303,
+    "external_link_annotations": 10
+  },
+  "tex_log_issues": [],
+  "unresolved_internal_links": [],
+  "qpdf_check_exit_code": 0,
+  "pdf_sha256": "34d9866fd48d231497fb9604f04686442499fc15ccce4419449de400c60080f2",
+  "glossary_entries": [
+    {
+      "term": "Abstract deformation",
+      "slug": "abstract-deformation",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Associated graded algebra",
+      "slug": "associated-graded-algebra",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Base change",
+      "slug": "base-change",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Blow-up",
+      "slug": "blow-up",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cartier divisor",
+      "slug": "cartier-divisor",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 30,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Chern class",
+      "slug": "chern-class",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Chow group",
+      "slug": "chow-group",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Closed immersion",
+      "slug": "closed-immersion",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cone",
+      "slug": "cone",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Conormal sheaf",
+      "slug": "conormal-sheaf",
+      "gloss_page": 23,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cotangent sheaf",
+      "slug": "cotangent-sheaf",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Cycle",
+      "slug": "cycle",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 31,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Deformation",
+      "slug": "deformation",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Deformation functor",
+      "slug": "deformation-functor",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Deformation parameter",
+      "slug": "deformation-parameter",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Deformation to the normal cone",
+      "slug": "deformation-to-the-normal-cone",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Dual numbers",
+      "slug": "dual-numbers",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Embedded deformation",
+      "slug": "embedded-deformation",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 32,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Exceptional divisor",
+      "slug": "exceptional-divisor",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Excess intersection",
+      "slug": "excess-intersection",
+      "gloss_page": 24,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Excess normal bundle",
+      "slug": "excess-normal-bundle",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Expected dimension",
+      "slug": "expected-dimension",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Extended Rees algebra",
+      "slug": "extended-rees-algebra",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Fibre",
+      "slug": "fibre",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 33,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "First-order deformation",
+      "slug": "first-order-deformation",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Flat family",
+      "slug": "flat-family",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Flat pullback",
+      "slug": "flat-pullback",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Fundamental cycle",
+      "slug": "fundamental-cycle",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Gysin pullback",
+      "slug": "gysin-pullback",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Hilbert polynomial",
+      "slug": "hilbert-polynomial",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 34,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Ideal sheaf",
+      "slug": "ideal-sheaf",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Infinitesimal neighbourhood",
+      "slug": "infinitesimal-neighbourhood",
+      "gloss_page": 25,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Intersection multiplicity",
+      "slug": "intersection-multiplicity",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Intersection product",
+      "slug": "intersection-product",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Length",
+      "slug": "length",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Local complete intersection",
+      "slug": "local-complete-intersection",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 35,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Normal bundle",
+      "slug": "normal-bundle",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Normal cone",
+      "slug": "normal-cone",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Normal sheaf",
+      "slug": "normal-sheaf",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Obstruction",
+      "slug": "obstruction",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Ordinary Rees algebra",
+      "slug": "ordinary-rees-algebra",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Proper intersection",
+      "slug": "proper-intersection",
+      "gloss_page": 26,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 36,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Proper morphism",
+      "slug": "proper-morphism",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Projective completion of a cone",
+      "slug": "projective-completion-of-a-cone",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Rational equivalence",
+      "slug": "rational-equivalence",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Refined Gysin pullback",
+      "slug": "refined-gysin-pullback",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Regular embedding",
+      "slug": "regular-embedding",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Regular sequence",
+      "slug": "regular-sequence",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 37,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Saturation",
+      "slug": "saturation",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Scheme-theoretic intersection",
+      "slug": "scheme-theoretic-intersection",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Segre class",
+      "slug": "segre-class",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Self-intersection",
+      "slug": "self-intersection",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Smooth morphism",
+      "slug": "smooth-morphism",
+      "gloss_page": 27,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Specialization",
+      "slug": "specialization",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Strict transform",
+      "slug": "strict-transform",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 38,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Tangent cone",
+      "slug": "tangent-cone",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Tangent space",
+      "slug": "tangent-space",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Tor-independence",
+      "slug": "tor-independence",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Torsion-free module",
+      "slug": "torsion-free-module",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Total space of a vector bundle",
+      "slug": "total-space-of-a-vector-bundle",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Transversality",
+      "slug": "transversality",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 39,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Trivial deformation",
+      "slug": "trivial-deformation",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 40,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Vector bundle",
+      "slug": "vector-bundle",
+      "gloss_page": 28,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 40,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    },
+    {
+      "term": "Zero section",
+      "slug": "zero-section",
+      "gloss_page": 29,
+      "gloss_destination_resolves_to_expected_page": true,
+      "gloss_has_incoming_link": true,
+      "examples_page": 40,
+      "examples_destination_resolves_to_expected_page": true,
+      "examples_has_incoming_link": true
+    }
+  ],
+  "scope": "Checks compilation, PDF structure and link targets; mathematical review is described separately."
+}
